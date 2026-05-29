@@ -1,0 +1,33 @@
+Risk Assessment Worker Notice Target Audit
+Generated at: 2026-05-06 23:53:00
+Mode: READ_ONLY_TARGETED_AUDIT
+Target database: graph.v1
+Target query: 위험성평가 결과를 근로자에게 알려야 하나?
+Intent: obligation_check
+
+Query result counts:
+- audit_1_risk_and_worker: 3 rows
+- audit_2_risk_and_notice: 0 rows
+- audit_3_risk_result_worker_anchor: 0 rows
+- audit_4_source_hierarchy_context: 50 rows
+- Unique candidate rules/sources: 3
+
+Best candidate:
+- rule_id: b26632d5-1cc6-5432-95b7-136e9558389a
+- rule_type: DEFINITION
+- rule_subtype: UNKNOWN
+- law_name: 산업안전보건법 시행규칙
+- article_no: 제9조
+- score: 20
+- includes 위험성평가: True
+- includes 결과: False
+- includes 근로자: True
+- includes notice term: False
+- source_text: 제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 "고용노동부령으로 정하는 사항"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.
+- source_context_text: 제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 "고용노동부령으로 정하는 사항"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.
+- anchor_text: 
+
+Answer readiness judgment: NEEDS_REFINEMENT
+Reason: risk-assessment evidence exists, but the direct combination of result, worker, and notice/disclosure wording is weak.
+
+Security: no Neo4j secret value was written to this report.

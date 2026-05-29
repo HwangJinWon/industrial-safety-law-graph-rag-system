@@ -1,0 +1,1295 @@
+﻿# 00_final_file_roles.txt
+
+# Graph-RAG Knowledge Base 최종 파일 역할 설명서
+
+## 1. 문서 목적
+
+이 문서는 `graph_rag_knowledgement` 폴더에 정리된 최종 Graph-RAG knowledge base 파일들의 역할을 설명한다.
+
+이 폴더는 한국 산업안전보건법 / 중대재해처벌법 계열 법령을 대상으로 구축한 Graph-RAG 시스템의 Neo4j 적재 전 최종 정리본이다. 기존 작업 폴더에는 전처리 코드, 중간 산출물, 감사 파일, 실험 파일이 함께 존재하므로, 팀 공유와 논문 작성을 위해 실제 Graph-RAG 지식 베이스에 필요한 핵심 파일만 별도 폴더로 복사하여 정리하였다.
+
+중요한 점은 다음과 같다.
+
+1. `graph_rag_knowledgement`는 원본 작업 폴더를 대체하는 것이 아니라, 최종 활용 파일을 모아둔 정리본이다.
+2. 원본 CSV와 전체 작업 이력은 `<project-root>`의 기존 폴더 또는 `preparing` 폴더에 보존된다.
+3. CSV는 Neo4j 적재 전 기준의 source of truth이다.
+4. Neo4j에 직접 수정한 결과가 아니라, CSV 기반으로 재현 가능한 지식 베이스를 구성하는 것이 원칙이다.
+5. 이 폴더의 파일들은 향후 Neo4j 적재, Graph Retrieval, Evidence Pack 구성, LLM 기반 답변 생성의 입력으로 사용된다.
+
+현재 상태는 “전처리 완료 및 Neo4j 적재 준비 단계”로 볼 수 있다. 다만 이는 법령 QA 시스템이 완성되었다는 의미가 아니라, Graph-RAG에 필요한 Document Graph, Annex Source Graph, Reasoning Graph, Retrieval Evaluation 자료가 구조적으로 정리되었다는 의미이다.
+
+---
+
+## 2. 전체 폴더 구조와 역할
+
+`graph_rag_knowledgement` 폴더는 크게 다음과 같이 구성된다.
+
+```text
+graph_rag_knowledgement/
+├── document_graph/
+│   ├── nodes/
+│   ├── edges/
+│   └── source_annex/
+│
+├── reasoning_graph/
+│   ├── nodes/
+│   ├── edges/
+│   └── reports/
+│
+├── retrieval_evaluation/
+│   ├── test_cases/
+│   ├── results/
+│   ├── judgements/
+│   └── audits/
+│
+├── docs/
+│   ├── 00_final_file_roles.txt
+│   ├── 01_document_graph_preprocessing_process.txt
+│   ├── 02_reasoning_graph_preprocessing_process.txt
+│   ├── neo4j_schema_draft_before_load.md
+│   ├── pre_neo4j_readiness_report.md
+│   └── pre_neo4j_warning_fix_report.md
+│
+└── manifests/
+    ├── copied_files_manifest.csv
+    └── final_knowledge_base_summary.txt
+```
+
+각 상위 폴더의 역할은 다음과 같다.
+
+### 2.1 document_graph
+
+법령 본문과 Annex/별표/별지의 원문 구조를 보존한 source graph이다.
+
+주요 목적은 다음과 같다.
+
+- 법령 본문을 Law → Heading → Article → Paragraph → Item → Subitem → Addendum 계층으로 보존한다.
+- 각 조문 단위의 source_node_id와 source_text를 유지한다.
+- Reasoning Graph의 Rule이 어떤 원문에서 추출되었는지 추적할 수 있게 한다.
+- 답변 생성 시 법령명, 조문번호, 별표 제목, 원문 근거를 제공한다.
+- Annex/별표/별지의 physical row/cell과 logical row/cell을 분리하여 원문 추적성과 reasoning 추출 가능성을 함께 확보한다.
+
+### 2.2 reasoning_graph
+
+법령 본문 및 Annex source에서 추출한 의미 그래프이다.
+
+주요 목적은 다음과 같다.
+
+- 법령 적용 판단에 필요한 Rule, Requirement, Threshold, Exception, TemporalRule, EntityType, ListItem을 분리한다.
+- 단순 text chunk가 아니라 법령 판단 단위로 검색할 수 있게 한다.
+- 질문 의도에 따라 의무, 금지, 교육시간, 선임 기준, 제출/보고 의무, 예외, 벌칙, 목록 항목 등을 구조적으로 찾을 수 있게 한다.
+- 각 의미 노드가 source_node_id, source_text, source_context_text를 통해 원문으로 되돌아갈 수 있게 한다.
+
+### 2.3 retrieval_evaluation
+
+Graph-RAG 지식 베이스의 검색 성능과 한계를 검증하기 위한 평가 자료이다.
+
+주요 목적은 다음과 같다.
+
+- 사람이 설계한 curated 100개 대표 질문으로 retrieval baseline을 검증한다.
+- 원본 source 기반으로 생성한 확장 질문을 통해 broad stress test를 수행한다.
+- generated query 품질 감사를 통해 refined evaluation set을 구성한다.
+- Top-1, Top-3, Top-5 hit뿐 아니라 answerable audit을 통해 실제 답변 가능성도 추정한다.
+- retrieval hit와 실제 답변 정확도는 다르다는 점을 확인하고, Evidence Pack 설계 필요성을 도출한다.
+
+### 2.4 docs
+
+팀 공유와 논문 작성을 위한 설명 문서이다.
+
+주요 목적은 다음과 같다.
+
+- 최종 파일 역할 설명
+- Document Graph 전처리 과정 설명
+- Reasoning Graph 전처리 과정 설명
+- Neo4j 적재 전 schema draft
+- Neo4j 적재 준비 상태 보고
+- Pre-Neo4j warning fix 결과 보고
+
+### 2.5 manifests
+
+최종 knowledge base 폴더에 어떤 파일이 복사되었는지 기록하는 관리용 파일이다.
+
+주요 목적은 다음과 같다.
+
+- 원본 경로와 복사 경로 추적
+- 파일 개수와 크기 확인
+- 추후 버전 관리 또는 재정리에 활용
+- 팀원이 어떤 파일이 최종 정리본에 포함되었는지 확인 가능
+
+---
+
+## 3. document_graph 폴더
+
+`document_graph`는 법령 원문 구조를 보존하는 폴더이다. Reasoning Graph가 의미 추출 결과라면, Document Graph는 그 의미 노드가 근거로 삼은 원문 source이다.
+
+---
+
+## 3.1 document_graph/nodes
+
+### nodes_law.csv
+
+역할:
+- 법령 단위 노드이다.
+- 산업안전보건법, 산업안전보건법 시행령, 산업안전보건법 시행규칙, 산업안전보건기준에 관한 규칙, 중대재해 처벌 등에 관한 법률, 중대재해 처벌 등에 관한 법률 시행령 등 법령 단위를 표현한다.
+
+포함 정보:
+- 법령 ID
+- 법령명
+- 법령 버전 또는 시행 관련 메타데이터
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- 답변 citation에서 “어느 법령의 근거인가”를 표시하는 최상위 source node이다.
+- 동일한 조문번호라도 법령이 다를 수 있으므로, law_name 또는 law_id 식별이 필수이다.
+
+---
+
+### nodes_heading.csv
+
+역할:
+- 장, 절, 관 등 조문 상위 heading 구조를 표현한다.
+
+포함 정보:
+- heading_id 또는 node_id
+- heading title
+- 상위 법령 또는 상위 heading 정보
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- Article이 어떤 장/절 문맥에 위치하는지 제공한다.
+- 답변에서 조문 단독으로 부족한 경우 상위 heading을 함께 제시할 수 있다.
+
+---
+
+### nodes_article.csv
+
+역할:
+- 제N조 단위의 조문 노드이다.
+
+포함 정보:
+- article_id 또는 node_id
+- law_id 또는 law_name
+- article_no
+- article_title
+- source_text 또는 조문 원문 관련 컬럼
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- 대부분의 법령 citation은 article 단위로 제시되므로 핵심 source node이다.
+- Reasoning Rule의 source_node_id 또는 article_id와 연결되어 답변 근거 조문을 구성한다.
+
+---
+
+### nodes_paragraph.csv
+
+역할:
+- 조문 내 항 또는 본문 paragraph 단위 노드이다.
+
+포함 정보:
+- paragraph_id 또는 node_id
+- article_id
+- paragraph_no
+- source_text
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- Rule 추출의 주요 source_text 단위이다.
+- paragraph에는 “사업주는 다음 각 호의 조치를 하여야 한다”처럼 공통 주어와 의무 프레임이 포함되는 경우가 많다.
+- item/subitem rule을 해석할 때 parent context로 사용된다.
+
+---
+
+### nodes_item.csv
+
+역할:
+- 조문 내 호 또는 세부 항목 노드이다.
+
+포함 정보:
+- item_id 또는 node_id
+- parent paragraph 또는 article 정보
+- item_no
+- source_text
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- paragraph의 공통 문맥을 이어받는 세부 의무, 기준, 예외, 목록 항목의 원문 근거가 된다.
+- item 단독 텍스트는 주어가 생략될 수 있으므로 source_context_text와 함께 사용해야 한다.
+
+---
+
+### nodes_subitem.csv
+
+역할:
+- item 아래의 목 또는 더 세분화된 항목 노드이다.
+
+포함 정보:
+- subitem_id 또는 node_id
+- parent item 정보
+- subitem_no
+- source_text
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- 세부 안전기준, 세부 조치, 목록 항목의 source 근거로 사용된다.
+- 단독 의미가 부족할 수 있으므로 parent context와 함께 활용해야 한다.
+
+---
+
+### nodes_addendum.csv
+
+역할:
+- 부칙, 시행일, 경과조치, 적용례, 종전 규정 관련 원문 노드이다.
+
+포함 정보:
+- addendum_id 또는 node_id
+- law_id 또는 law_name
+- addendum title
+- source_text
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- TemporalRule 추출의 원문 근거이다.
+- “언제부터 시행되는가”, “유예기간이 있는가”, “종전 규정은 언제까지 적용되는가” 같은 질문에 필요하다.
+
+---
+
+## 3.2 document_graph/edges
+
+Document Graph edge 파일은 Law → Heading → Article → Paragraph → Item → Subitem/Addendum 계층 구조와 조문 간 참조 관계를 표현한다.
+
+주의:
+- 실제 최종 폴더에 포함된 edge 파일명은 `copied_files_manifest.csv`와 CSV 헤더를 기준으로 확인해야 한다.
+- 일부 edge 파일은 역할이 유사하거나 중복 가능성이 있으므로 Neo4j loader 구현 전 중복 여부를 확인해야 한다.
+
+---
+
+### edges_contains.csv / edges_law_hierarchy.csv
+
+역할:
+- 법령 본문 계층 관계를 표현한다.
+- 예: Law → Heading, Heading → Article, Article → Paragraph, Paragraph → Item, Item → Subitem.
+
+Graph-RAG에서의 역할:
+- source_node_id가 item/subitem인 경우 상위 Article과 Law를 찾아 citation을 구성하는 데 사용한다.
+- parent context를 복원하는 데 사용한다.
+
+주의:
+- 두 파일이 모두 존재하는 경우, 같은 계층 관계를 중복 표현하는지 또는 서로 다른 관계 범위를 갖는지 확인해야 한다.
+
+---
+
+### edges_article_references.csv / edges_refers.csv
+
+역할:
+- 본문 조문 간 참조 관계를 표현한다.
+- 예: “법 제N조에 따른”, “제M항에 따른” 등.
+
+Graph-RAG에서의 역할:
+- 하나의 조문만으로 답변이 부족할 때 참조 조문을 확장할 수 있다.
+- Reasoning Graph의 `REFERS_TO`, `DELEGATES_TO` 관계와 함께 사용될 수 있다.
+
+주의:
+- 참조 관계는 recall을 높일 수 있지만, 과도하게 확장하면 overmatch가 생길 수 있다.
+- 1차 retrieval에서는 제한적으로 사용하는 것이 안전하다.
+
+---
+
+### edges_law_rel.csv / edges_law_relations.csv
+
+역할:
+- 법령 간 관계 또는 상위 법령과 하위 법령 관계를 표현하는 보조 edge로 보인다.
+
+주의:
+- 두 파일은 역할과 크기가 유사할 가능성이 있으므로 loader 구현 전 중복 여부 확인이 필요하다.
+- 확실히 확인되기 전까지는 핵심 1차 적재 파일보다는 보조 source graph 파일로 취급하는 것이 안전하다.
+
+---
+
+## 3.3 document_graph/source_annex
+
+Annex Source Graph는 별표/별지/서식 등 부속자료의 구조를 보존한다. 산업안전보건 법령에서는 안전검사 대상 기계, 교육시간, 특별교육 대상 작업, 건강진단 항목, 자격 기준, 유해인자, 서식 항목 등이 Annex에 포함되는 경우가 많으므로, Graph-RAG에서 매우 중요하다.
+
+---
+
+### annexes.csv
+
+역할:
+- 별표/별지/서식 단위의 Annex 노드이다.
+
+포함 정보:
+- annex_id
+- annex_no
+- annex_title
+- related law 또는 article 정보
+- 원문 또는 정제 텍스트 관련 컬럼
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+Graph-RAG에서의 역할:
+- Annex 기반 evidence의 최상위 source node이다.
+- 답변에서 “별표 제목”을 표시할 때 사용한다.
+
+---
+
+### annex_sections.csv
+
+역할:
+- Annex 내부 section 구조를 표현한다.
+
+Graph-RAG에서의 역할:
+- 큰 Annex 안에서 표, 비고, 설명 문구가 어느 section에 속하는지 보존한다.
+- source context를 넓힐 때 사용된다.
+
+---
+
+### annex_physical_tables.csv
+
+역할:
+- Annex 원본 표의 physical table 단위를 보존한다.
+
+Graph-RAG에서의 역할:
+- 원문 표 구조 복원 또는 감사에 사용된다.
+- 1차 Neo4j 적재에서는 필수는 아니며, 2차 적재 대상으로 둘 수 있다.
+
+---
+
+### annex_physical_rows.csv
+
+역할:
+- 원본 표의 physical row 단위를 보존한다.
+
+Graph-RAG에서의 역할:
+- logical row가 어떤 원본 row에서 왔는지 추적하기 위해 사용된다.
+- 원문 재검증과 표 복원에 중요하다.
+
+---
+
+### annex_physical_cells.csv
+
+역할:
+- 원본 표의 physical cell 단위를 보존한다.
+
+Graph-RAG에서의 역할:
+- logical cell의 원천 cell을 추적한다.
+- 원문 표 구조의 세밀한 검증에 사용된다.
+
+---
+
+### annex_logical_rows.csv
+
+역할:
+- Reasoning 추출에 적합하도록 병합된 logical row 단위이다.
+
+Graph-RAG에서의 역할:
+- Annex 기반 rule/list item 추출의 핵심 단위이다.
+- 여러 physical row에 걸친 하나의 의미 단위를 하나의 logical row로 표현한다.
+- 안전검사 대상, 교육내용, 자격 기준, 건강진단 항목 등 목록형 질문에서 중요한 evidence가 된다.
+
+---
+
+### annex_logical_cells.csv
+
+역할:
+- logical row 안의 column별 cell 단위이다.
+
+Graph-RAG에서의 역할:
+- logical row 내부의 세부 항목, 기준값, 설명, 비고 등을 제공한다.
+- ListItem 또는 Threshold 추출의 원천이 될 수 있다.
+
+---
+
+### annex_notes.csv
+
+역할:
+- Annex의 비고, 주석, 작성 방법, 유의사항 등 설명성 텍스트를 보존한다.
+
+Graph-RAG에서의 역할:
+- 예외, 적용 범위, 산정 기준, 작성 방법 등이 비고에 들어가는 경우가 많으므로 answer evidence에 포함될 수 있다.
+
+---
+
+### edges_annex_to_articles.csv
+
+역할:
+- Annex 제목의 “제N조 관련” 등 정보를 기반으로 Annex와 본문 Article을 연결한다.
+
+Graph-RAG에서의 역할:
+- 본문 rule이 Annex 세부 기준을 위임하는 경우, 관련 Annex를 찾아 evidence pack에 포함하는 기반이다.
+
+---
+
+### edges_annex_to_sections.csv
+
+역할:
+- Annex와 그 내부 section을 연결한다.
+
+Graph-RAG에서의 역할:
+- Annex 내부 구조 traversal에 사용된다.
+
+---
+
+### edges_annex_to_physical_tables.csv
+
+역할:
+- Annex와 physical table을 연결한다.
+
+Graph-RAG에서의 역할:
+- 원문 표 복원과 table-level source expansion에 사용된다.
+
+---
+
+### edges_logical_row_to_logical_cells.csv
+
+역할:
+- logical row와 logical cell을 연결한다.
+
+Graph-RAG에서의 역할:
+- row 단위 evidence와 cell 단위 evidence를 함께 구성할 때 사용한다.
+
+---
+
+### edges_logical_row_to_source_physical_rows.csv
+
+역할:
+- logical row가 어떤 physical row들에서 왔는지 연결한다.
+
+Graph-RAG에서의 역할:
+- logical row 기반 답변 근거가 원문 표의 어떤 row에서 왔는지 추적할 수 있다.
+
+---
+
+### edges_logical_cell_to_source_physical_cells.csv
+
+역할:
+- logical cell이 어떤 physical cell들에서 왔는지 연결한다.
+
+Graph-RAG에서의 역할:
+- 병합/정제된 logical cell 값의 원천 physical cell을 확인할 수 있다.
+
+---
+
+### 기타 Annex 관련 edge 파일
+
+예:
+- edges_physical_table_to_logical_rows.csv
+- edges_section_to_notes.csv
+- edges_section_to_physical_tables.csv
+- edges_law_to_annex.csv
+
+역할:
+- Law, Annex, Section, PhysicalTable, LogicalRow, Note 간의 구조적 관계를 보존한다.
+
+주의:
+- 이 파일들은 Annex source graph를 풍부하게 만드는 데 중요하지만, 1차 Neo4j 적재에서는 logical row/cell 중심으로 우선 적재하고 physical 계층은 2차로 미룰 수 있다.
+
+---
+
+### mapping_annex_ids.csv / reasoning_input_manifest.csv
+
+역할:
+- Annex ID mapping과 reasoning input 구성 상태를 기록하는 보조 관리 파일이다.
+
+Graph-RAG에서의 역할:
+- 직접 retrieval 대상은 아니지만, Annex source graph와 Reasoning Graph 간의 추적성을 확인하는 데 도움이 된다.
+
+주의:
+- 이 파일은 Neo4j 1차 적재 핵심 파일이라기보다 관리/검증용 보조 파일로 취급한다.
+
+---
+
+## 4. reasoning_graph 폴더
+
+Reasoning Graph는 법령 적용 판단에 필요한 의미 노드와 관계를 담는다. Graph-RAG 검색의 1차 대상이며, 향후 Evidence Pack Builder의 중심이 된다.
+
+---
+
+## 4.1 reasoning_graph/nodes
+
+### nodes_rule.csv
+
+역할:
+- 법령 판단의 중심 의미 노드이다.
+- 의무, 금지, 정의, 벌칙, 예외, 위임, 절차, 자격, 교육, 기준 등 법령 문장 또는 Annex row/cell에서 추출된 rule을 담는다.
+
+주요 정보:
+- rule_id
+- rule_type
+- rule_subtype
+- target_subject
+- target_object
+- condition_text
+- requirement_text
+- exception_text
+- penalty_text
+- source_node_type
+- source_node_id
+- parent_source_node_type
+- parent_source_node_id
+- source_context_text
+- source_text
+- law_name
+- article_no
+- annex_title
+- confidence
+- needs_review
+
+Graph-RAG에서의 역할:
+- retrieval의 1차 검색 대상이다.
+- answer evidence pack의 중심 노드이다.
+- 모든 Rule은 원문 추적성을 위해 source_node_id와 source_text를 가져야 한다.
+
+필요한 이유:
+- 일반 RAG처럼 긴 chunk를 검색하면 법령 적용 조건, 의무, 예외, 벌칙을 구조적으로 판단하기 어렵다.
+- Rule 단위로 구조화해야 질문 의도에 맞는 graph traversal이 가능하다.
+
+---
+
+### nodes_requirement.csv
+
+역할:
+- Rule에서 분리된 실제 요구 행위 또는 의무 내용을 담는다.
+
+예:
+- 설치하여야 한다
+- 제출하여야 한다
+- 보존하여야 한다
+- 교육하여야 한다
+- 선임하여야 한다
+- 조치하여야 한다
+
+Graph-RAG에서의 역할:
+- obligation_check, document_requirement, appointment_requirement, safety_measure_lookup 질문의 핵심 evidence이다.
+- “무엇을 해야 하는가?”에 답할 때 Rule 전체보다 직접적인 근거가 된다.
+
+주의:
+- 모든 OBLIGATION rule이 별도 Requirement node를 가지는 것은 아니다.
+- 일부는 parent/list context가 필요하거나 source_text 자체가 requirement_text 역할을 한다.
+- answer pack에서는 Requirement node가 없을 경우 Rule.requirement_text 또는 source_text로 fallback할 수 있어야 한다.
+
+---
+
+### nodes_threshold.csv
+
+역할:
+- 수치, 기간, 시간, 금액, 거리, 중량, 빈도, 기한 등 기준값을 담는다.
+
+예:
+- 50명 이상
+- 8시간 이상
+- 3년간
+- 30일 이내
+- 2미터 이상
+- 100킬로그램 이상
+- 월 1회
+
+Graph-RAG에서의 역할:
+- education_time_lookup, record_retention_lookup, applicability_check, safety_measure_lookup 등에서 기준값 evidence로 사용된다.
+
+주의:
+- 조문번호, 항번호, 별표번호, 서식번호는 threshold가 아니다.
+- threshold 값은 source_text 문맥과 함께 제시해야 한다.
+- raw_expression만 단독으로 답변하면 의미가 왜곡될 수 있다.
+
+---
+
+### nodes_exception.csv
+
+역할:
+- 예외, 제외, 적용 범위 제한, 조건 수정 등을 표현한다.
+
+주요 유형:
+- EXCLUSION
+- MODIFICATION
+- SCOPE_EXCLUSION
+
+Graph-RAG에서의 역할:
+- applicability_check, exception_lookup 질문의 핵심 evidence이다.
+- 법령 적용 여부 판단에서 의무 조항만큼 중요하다.
+
+주의:
+- 괄호 안의 “제외한다”는 일반 예외가 아니라 대상 범위 제한인 SCOPE_EXCLUSION일 수 있다.
+- exception fragment는 자동 확정하지 않고 review 대상으로 관리한다.
+
+---
+
+### nodes_temporal_rule.csv
+
+역할:
+- 시행일, 유예기간, 경과조치, 적용례, 종전 규정 적용 등 시간 조건을 담는다.
+
+Graph-RAG에서의 역할:
+- temporal_rule_lookup, applicability_check, 부칙 관련 질문에 사용된다.
+- “언제부터 시행되는가?”, “유예기간이 있는가?” 같은 질문에서 필요하다.
+
+---
+
+### nodes_entity_type.csv
+
+역할:
+- 법령상 주체, 객체, 역할 엔티티를 표현한다.
+
+예:
+- 사업주
+- 경영책임자
+- 근로자
+- 일용근로자
+- 도급인
+- 관계수급인
+- 안전관리자
+- 보건관리자
+- 산업보건의
+
+Graph-RAG에서의 역할:
+- rule이 누구에게 적용되는지, 누가 의무 주체인지, 어떤 역할 요건인지 판단하는 데 사용된다.
+- query intent와 entity keyword를 기반으로 rule 후보를 필터링하거나 가중할 수 있다.
+
+---
+
+### nodes_list_item.csv
+
+역할:
+- Rule로 보기 어려운 목록 항목, 표 항목, 장비명, 물질명, 작업명, 질병명, 검사항목, 서식 필드 등을 담는다.
+
+주요 유형:
+- INSPECTION_ITEM
+- SUBSTANCE
+- DISEASE
+- HAZARD_FACTOR
+- WORK_TYPE
+- EQUIPMENT_ITEM
+- DOCUMENT_ITEM
+- FORM_FIELD
+- QUALIFICATION_ITEM
+- ARTICLE_REFERENCE_LIST
+- PENALTY_REFERENCE_LIST
+- UNKNOWN_LIST_ITEM
+
+Graph-RAG에서의 역할:
+- annex_list_lookup, inspection_requirement, special_education_work_lookup, education_content_lookup, qualification_lookup 질문에서 중요하다.
+- 예를 들어 “크레인은 안전검사 대상인가?”, “흉부방사선검사가 건강진단 항목에 포함되는가?” 같은 질문은 ListItem evidence가 필요하다.
+
+주의:
+- ListItem은 단독으로 답변 근거가 되기보다 parent Rule, Annex, source_text와 함께 evidence pack에 포함되어야 한다.
+- 목록 항목을 모두 Rule로 만들면 graph가 noisy해지고 retrieval overmatch가 증가할 수 있다.
+
+---
+
+## 4.2 reasoning_graph/edges
+
+### edges_rule_source.csv
+
+방향:
+- Rule → Source node
+
+역할:
+- Rule이 어떤 원문 node에서 추출되었는지 연결한다.
+
+Graph-RAG에서의 역할:
+- citation과 원문 검증의 핵심 연결이다.
+- Neo4j 1차 적재에서는 `Rule -[:EXTRACTED_FROM]-> SourceNode` 또는 실제 Article/Item/LogicalRow와의 연결로 구현할 수 있다.
+
+주의:
+- `to_node_id`가 실제 document/annex source graph node와 어떻게 resolve되는지는 Neo4j loader에서 확정해야 한다.
+- 안전한 방식은 SourceNode placeholder를 먼저 만들고, 이후 실제 Article/LogicalRow와 `RESOLVES_TO`로 연결하는 것이다.
+
+---
+
+### edges_rule_requirement.csv
+
+방향:
+- Rule → Requirement
+
+역할:
+- Rule이 요구하는 행위를 연결한다.
+
+Graph-RAG에서의 역할:
+- obligation/document/appointment/safety measure 질문의 직접 evidence가 된다.
+
+---
+
+### edges_rule_threshold.csv
+
+방향:
+- Rule → Threshold
+
+역할:
+- Rule에 포함된 수치/기간/기준을 연결한다.
+
+Graph-RAG에서의 역할:
+- 교육시간, 보존기간, 적용 기준, 안전기준 질문의 핵심 evidence이다.
+
+---
+
+### edges_rule_exception.csv
+
+방향:
+- Rule → Exception
+
+역할:
+- Rule에 대한 예외, 제외, 적용 제한을 연결한다.
+
+Graph-RAG에서의 역할:
+- 적용 여부와 예외 설명에 사용한다.
+
+---
+
+### edges_rule_temporal.csv
+
+방향:
+- Rule → TemporalRule
+
+역할:
+- Rule에 대한 시행일, 유예기간, 경과조치 등 시간 조건을 연결한다.
+
+Graph-RAG에서의 역할:
+- temporal/applicability 질문에서 사용한다.
+
+---
+
+### edges_rule_entity.csv
+
+방향:
+- Rule → EntityType
+
+역할:
+- Rule의 대상 주체, 객체, 역할을 연결한다.
+
+Graph-RAG에서의 역할:
+- “누가 해야 하는가?”, “어떤 대상에게 적용되는가?”를 판단하는 데 사용한다.
+
+---
+
+### edges_rule_list_item.csv
+
+방향:
+- Rule → ListItem
+
+역할:
+- Rule과 그 세부 목록 항목을 연결한다.
+
+Graph-RAG에서의 역할:
+- Annex/list 질문에서 parent Rule과 ListItem 근거를 함께 구성한다.
+
+---
+
+### edges_rule_reasoning.csv
+
+방향:
+- Rule → Rule
+
+역할:
+- Rule 간 참조, 위임, 벌칙 적용, Annex 보완, 유사 적용 등 reasoning 관계를 표현한다.
+
+주요 관계 예:
+- REFERS_TO
+- DELEGATES_TO
+- APPLIES_PENALTY_FOR
+- RULE_DETAIL_DEFINED_IN_ANNEX
+- RULE_SUPPORTED_BY_ANNEX
+- RULE_DELEGATES_DETAIL_TO_ANNEX
+- ANNEX_RULE_REFINES_ARTICLE_RULE
+- APPLIES_BY_ANALOGY
+- REQUIRES_PREREQUISITE
+
+Graph-RAG에서의 역할:
+- 하나의 Rule만으로 답변이 부족한 경우 관련 Rule을 확장한다.
+- 예를 들어 본문 rule이 “별표에 따른다”고 위임하고, 별표 rule/list item이 세부 기준을 제공하는 경우 함께 evidence pack에 들어가야 한다.
+
+주의:
+- reasoning edge는 recall을 높이지만, 과도하게 확장하면 overmatch가 생긴다.
+- 1차 answer generation에서는 reasoning edge를 제한적으로 사용하는 것이 안전하다.
+
+---
+
+## 4.3 reasoning_graph/reports
+
+### validation_report.csv
+
+역할:
+- Reasoning Graph CSV의 기본 validation 결과이다.
+
+주요 확인 항목:
+- ID 존재 여부
+- edge endpoint 존재 여부
+- source_text 누락 여부
+- enum 값 유효성
+- 기타 구조적 문제
+
+---
+
+### pre_neo4j_graph_readiness_audit.csv / pre_neo4j_graph_readiness_summary.txt
+
+역할:
+- Neo4j 적재 전 초기 readiness audit 결과이다.
+
+주의:
+- 이 파일은 warning fix 전 기준일 수 있다.
+- 최종 판단은 after_warning_fix 파일을 함께 확인해야 한다.
+
+---
+
+### pre_neo4j_graph_readiness_audit_after_warning_fix.csv / pre_neo4j_graph_readiness_summary_after_warning_fix.txt
+
+역할:
+- pre-Neo4j warning fix 이후 readiness audit 결과이다.
+
+현재 상태:
+- READY_WITH_WARNINGS
+- orphan edge count: 0
+- duplicate id count: 0
+- missing source_text count: 0
+- blocking issue: none
+
+Graph-RAG에서의 의미:
+- 1차 Neo4j 적재를 막는 구조적 오류는 없다.
+- 다만 UNKNOWN, needs_review, 일부 missing requirement/threshold warning은 남아 있다.
+
+---
+
+### pre_neo4j_warning_fix_comparison.txt
+
+역할:
+- warning fix 전후 비교 요약이다.
+
+포함 내용:
+- OBLIGATION without Requirement 변화
+- threshold-related without Threshold 변화
+- UNKNOWN 변화
+- retrieval before/after
+- answerable audit before/after
+
+---
+
+## 5. retrieval_evaluation 폴더
+
+`retrieval_evaluation`은 지식 베이스 자체라기보다, 구축된 knowledge base가 검색과 evidence 구성에 어느 정도 적합한지 확인하기 위한 평가 자료이다.
+
+---
+
+## 5.1 retrieval_evaluation/test_cases
+
+### query_test_cases.csv
+
+역할:
+- 사람이 직접 설계한 curated 100개 대표 질문이다.
+
+Graph-RAG에서의 역할:
+- baseline retrieval 성능 검증에 사용한다.
+- 대표적인 obligation, safety measure, education, appointment, document, penalty, applicability, definition, inspection 질문을 포함한다.
+
+주의:
+- curated 100개에서 높은 성능이 나온다고 해서 전체 법령 QA 성능을 보장하는 것은 아니다.
+
+---
+
+### query_test_candidates_from_sources.csv
+
+역할:
+- 원본 source 기반으로 자동 생성한 300개 후보 질문이다.
+
+Graph-RAG에서의 역할:
+- 법령 source coverage를 넓히기 위한 stress test 후보군이다.
+
+주의:
+- 자동 생성 질문에는 expected metadata 오류, query-source mismatch, 부자연스러운 질문이 포함될 수 있다.
+- 따라서 그대로 평가셋으로 사용하지 않고 품질 감사가 필요하다.
+
+---
+
+### review_source_based_query_quality_audit.csv
+
+역할:
+- source-based generated query의 품질 감사 결과이다.
+
+주요 분류:
+- KEEP
+- FIX_EXPECTED_METADATA
+- FIX_QUERY_TEXT
+- EXCLUDE_FROM_EVAL
+
+Graph-RAG에서의 역할:
+- 어떤 generated query를 refined evaluation set에 포함할지 결정하는 기준 자료이다.
+
+---
+
+### query_test_cases_extended_refined.csv
+
+역할:
+- curated 100개와 source-based 후보 중 품질 감사 후 유지한 209개를 합친 refined 309개 평가셋이다.
+
+Graph-RAG에서의 역할:
+- 현재 가장 중요한 retrieval evaluation set이다.
+- 기존 대표 질문뿐 아니라 원본 source 기반 질문까지 포함하므로 더 넓은 검증에 사용된다.
+
+---
+
+### query_test_cases_extended_refined_excluded.csv
+
+역할:
+- refined evaluation set에서 제외한 generated query와 제외 사유를 기록한다.
+
+Graph-RAG에서의 역할:
+- 평가셋 정제 과정의 투명성을 확보한다.
+- 논문에서 자동 생성 질의 중 일부를 제외한 근거로 활용할 수 있다.
+
+---
+
+## 5.2 retrieval_evaluation/results
+
+### review_query_retrieval_results_extended_refined.csv
+
+역할:
+- refined 309개 평가셋에 대한 retrieval 결과이다.
+
+포함 정보:
+- query_id
+- query
+- rank
+- candidate rule/list item/source 정보
+- score 관련 정보
+- 실제 컬럼은 CSV 헤더 기준으로 확인한다.
+
+---
+
+### review_query_retrieval_results_extended_refined_after_warning_fix.csv
+
+역할:
+- requirement/threshold warning fix 이후 refined 309개 평가셋에 대해 다시 수행한 retrieval 결과이다.
+
+Graph-RAG에서의 역할:
+- warning fix가 retrieval 성능에 악영향을 주지 않았는지 확인하는 자료이다.
+
+---
+
+## 5.3 retrieval_evaluation/judgements
+
+### retrieval_eval_summary_extended_refined.csv
+
+역할:
+- refined evaluation set의 Top-1, Top-3, Top-5 retrieval hit 요약이다.
+
+주의:
+- retrieval hit는 답변 정확도가 아니다.
+- expected metadata 기준으로 정답 후보가 Top-k 안에 들어왔는지를 보는 지표이다.
+
+---
+
+### retrieval_eval_by_intent_extended_refined.csv
+
+역할:
+- intent별 retrieval 성능 요약이다.
+
+Graph-RAG에서의 역할:
+- 어떤 질의 유형이 약한지 확인한다.
+- inspection_requirement, safety_measure_lookup, education_time_lookup 등 취약 intent를 식별할 수 있다.
+
+---
+
+### retrieval_eval_by_difficulty_extended_refined.csv
+
+역할:
+- difficulty별 retrieval 성능 요약이다.
+
+Graph-RAG에서의 역할:
+- easy/medium/hard 질문 난이도에 따라 검색 성능이 어떻게 달라지는지 확인한다.
+
+---
+
+### review_query_retrieval_judgement_extended_refined.csv
+
+역할:
+- query-candidate별 hit 여부와 관련성 판정 결과이다.
+
+Graph-RAG에서의 역할:
+- Top-k 후보 중 어떤 후보가 expected 기준에 부합하는지 확인한다.
+- failure diagnosis의 입력으로 사용된다.
+
+---
+
+### retrieval_eval_aspect_quality_extended_refined.csv
+
+역할:
+- wrong law, wrong article, wrong aspect, penalty overmatch, education aspect mixed, annex evidence missing 등 aspect 품질 위험을 표시한다.
+
+Graph-RAG에서의 역할:
+- 단순 hit 여부보다 더 세밀하게 후보의 위험성을 진단한다.
+- answer generation에서 잘못된 답변으로 이어질 수 있는 후보를 파악한다.
+
+---
+
+### retrieval_eval_aspect_quality_extended_refined_after_warning_fix.csv
+
+역할:
+- warning fix 이후 aspect quality audit 결과이다.
+
+Graph-RAG에서의 역할:
+- warning fix가 aspect quality에 어떤 영향을 주었는지 확인한다.
+
+---
+
+### retrieval_answerable_audit_extended_refined.csv
+
+역할:
+- Top-k retrieval hit와 별개로, 후보 evidence가 실제 답변 가능한 evidence pack을 구성할 수 있는지 자동 추정한 결과이다.
+
+Graph-RAG에서의 역할:
+- answer generation 전에 evidence completeness를 점검하는 자료이다.
+- Top-1/Top-3/Top-5/Top-10 answerable estimate를 제공한다.
+
+주의:
+- 자동 추정 결과이므로 실제 답변 정확도와 동일하지 않다.
+- 향후 수동 평가 또는 LLM claim check와 함께 검증해야 한다.
+
+---
+
+### retrieval_answerable_audit_extended_refined_after_warning_fix.csv
+
+역할:
+- warning fix 이후 answerable estimate 변화 확인 자료이다.
+
+Graph-RAG에서의 역할:
+- requirement/threshold 보강이 evidence pack 품질에 미친 영향을 확인한다.
+
+---
+
+## 5.4 retrieval_evaluation/audits
+
+### review_failed_queries_diagnosis_extended_refined.csv
+
+역할:
+- refined evaluation set에서 실패한 query의 진단 결과이다.
+
+Graph-RAG에서의 역할:
+- 어떤 query가 왜 실패했는지 파악한다.
+- ranking 문제, expected metadata 문제, broad query 문제, annex/list expansion 문제 등을 분리하는 데 사용한다.
+
+---
+
+### retrieval_failure_summary_by_intent_extended_refined.csv
+
+역할:
+- intent별 실패 원인 요약이다.
+
+Graph-RAG에서의 역할:
+- 향후 retrieval ranking 보정 또는 evidence pack 설계 우선순위를 정하는 데 사용한다.
+
+---
+
+### review_extended_failed_queries_audit.csv
+
+역할:
+- extended 387개 평가에서 실패한 97개 query에 대해 평가셋 문제와 진짜 retrieval 문제를 분리한 감사 결과이다.
+
+Graph-RAG에서의 역할:
+- source-based generated query가 그대로 평가셋으로 쓰기 어렵다는 점을 확인한 근거이다.
+- refined evaluation set 구성의 근거가 된다.
+
+---
+
+## 6. docs 폴더
+
+### 00_final_file_roles.txt
+
+역할:
+- 현재 문서이다.
+- graph_rag_knowledgement 폴더의 최종 파일 역할을 설명한다.
+
+---
+
+### 01_document_graph_preprocessing_process.txt
+
+역할:
+- Document Graph와 Annex Source Graph 전처리 과정을 설명한다.
+
+사용 목적:
+- 논문 Methods의 법령 원문 구조화 / Document Graph construction 파트 작성에 활용할 수 있다.
+
+---
+
+### 02_reasoning_graph_preprocessing_process.txt
+
+역할:
+- Reasoning Graph 전처리 과정을 설명한다.
+
+사용 목적:
+- 논문 Methods의 rule extraction / reasoning graph construction / quality audit 파트 작성에 활용할 수 있다.
+
+---
+
+### neo4j_schema_draft_before_load.md
+
+역할:
+- Neo4j 적재 전 schema draft이다.
+
+사용 목적:
+- Neo4j loader 구현 전 node label, relationship type, property, constraint, index, traversal query를 설계하는 기준 문서이다.
+
+주의:
+- 실제 loader 구현 전 source node resolution 전략을 확정해야 한다.
+- 현재 권장 방향은 Reasoning Graph + SourceNode + Article/Paragraph/Item/Subitem + Annex/LogicalRow/LogicalCell을 1차 적재하고, PhysicalTable/PhysicalRow/PhysicalCell은 2차 적재로 미루는 균형형 전략이다.
+
+---
+
+### pre_neo4j_readiness_report.md
+
+역할:
+- Neo4j 적재 전 전체 준비 상태를 정리한 보고서이다.
+
+주의:
+- 일부 수치는 warning fix 이전 기준일 수 있으므로, 최종 판단 시 `pre_neo4j_warning_fix_report.md`와 after-warning-fix readiness summary를 함께 확인해야 한다.
+
+---
+
+### pre_neo4j_warning_fix_report.md
+
+역할:
+- pre-Neo4j warning audit 및 conservative fix 결과 보고서이다.
+
+사용 목적:
+- warning fix 전후 비교, 자동 patch 기준, backup 여부, retrieval/answerable 영향 확인에 사용한다.
+
+---
+
+## 7. Neo4j 1차 적재에 직접 필요한 핵심 파일
+
+Neo4j 1차 적재는 다음 파일들을 중심으로 설계하는 것이 권장된다.
+
+### 7.1 Reasoning Graph 핵심 파일
+
+nodes:
+- reasoning_graph/nodes/nodes_rule.csv
+- reasoning_graph/nodes/nodes_requirement.csv
+- reasoning_graph/nodes/nodes_threshold.csv
+- reasoning_graph/nodes/nodes_exception.csv
+- reasoning_graph/nodes/nodes_temporal_rule.csv
+- reasoning_graph/nodes/nodes_entity_type.csv
+- reasoning_graph/nodes/nodes_list_item.csv
+
+edges:
+- reasoning_graph/edges/edges_rule_source.csv
+- reasoning_graph/edges/edges_rule_requirement.csv
+- reasoning_graph/edges/edges_rule_threshold.csv
+- reasoning_graph/edges/edges_rule_exception.csv
+- reasoning_graph/edges/edges_rule_temporal.csv
+- reasoning_graph/edges/edges_rule_entity.csv
+- reasoning_graph/edges/edges_rule_list_item.csv
+- reasoning_graph/edges/edges_rule_reasoning.csv
+
+### 7.2 Source Graph 핵심 파일
+
+본문 source:
+- document_graph/nodes/nodes_law.csv
+- document_graph/nodes/nodes_article.csv
+- document_graph/nodes/nodes_paragraph.csv
+- document_graph/nodes/nodes_item.csv
+- document_graph/nodes/nodes_subitem.csv
+- document_graph/nodes/nodes_addendum.csv
+- document_graph/edges/본문 계층 관계 edge 파일
+
+Annex logical source:
+- document_graph/source_annex/annexes.csv
+- document_graph/source_annex/annex_logical_rows.csv
+- document_graph/source_annex/annex_logical_cells.csv
+- document_graph/source_annex/annex_notes.csv
+- document_graph/source_annex/edges_annex_to_articles.csv
+- document_graph/source_annex/edges_logical_row_to_logical_cells.csv
+
+### 7.3 2차 적재로 미뤄도 되는 파일
+
+- annex_physical_tables.csv
+- annex_physical_rows.csv
+- annex_physical_cells.csv
+- edges_logical_row_to_source_physical_rows.csv
+- edges_logical_cell_to_source_physical_cells.csv
+- physical table/row/cell 관련 edge 파일
+
+이 파일들은 원문 표 복원과 감사에는 중요하지만, 1차 Graph-RAG answer generation에는 logical row/cell 기반 evidence만으로도 시작할 수 있다.
+
+---
+
+## 8. 논문 작성에 특히 중요한 파일
+
+논문에서 데이터 구축 및 평가를 설명할 때 특히 중요한 파일은 다음과 같다.
+
+### 8.1 데이터 구조 설명
+
+- document_graph/nodes/*
+- document_graph/source_annex/annex_logical_rows.csv
+- document_graph/source_annex/annex_logical_cells.csv
+- reasoning_graph/nodes/nodes_rule.csv
+- reasoning_graph/nodes/nodes_requirement.csv
+- reasoning_graph/nodes/nodes_threshold.csv
+- reasoning_graph/nodes/nodes_exception.csv
+- reasoning_graph/nodes/nodes_list_item.csv
+
+### 8.2 그래프 관계 설명
+
+- reasoning_graph/edges/edges_rule_source.csv
+- reasoning_graph/edges/edges_rule_requirement.csv
+- reasoning_graph/edges/edges_rule_threshold.csv
+- reasoning_graph/edges/edges_rule_exception.csv
+- reasoning_graph/edges/edges_rule_list_item.csv
+- reasoning_graph/edges/edges_rule_reasoning.csv
+- document_graph/source_annex/edges_annex_to_articles.csv
+
+### 8.3 품질 검증 및 평가
+
+- reasoning_graph/reports/pre_neo4j_graph_readiness_summary_after_warning_fix.txt
+- reasoning_graph/reports/pre_neo4j_warning_fix_comparison.txt
+- retrieval_evaluation/test_cases/query_test_cases.csv
+- retrieval_evaluation/test_cases/query_test_cases_extended_refined.csv
+- retrieval_evaluation/judgements/retrieval_eval_summary_extended_refined.csv
+- retrieval_evaluation/judgements/retrieval_answerable_audit_extended_refined_after_warning_fix.csv
+- retrieval_evaluation/audits/review_source_based_query_quality_audit.csv
+- docs/pre_neo4j_readiness_report.md
+- docs/pre_neo4j_warning_fix_report.md
+
+---
+
+## 9. 주요 주의사항
+
+1. Retrieval hit는 답변 정확도가 아니다.
+   - Top-1/Top-3/Top-5 hit는 expected metadata 기준으로 정답 후보가 Top-k 안에 들어왔는지를 보는 지표이다.
+   - 실제 답변 정확도는 evidence pack completeness, citation correctness, exception handling, claim check 등을 추가로 평가해야 한다.
+
+2. UNKNOWN과 needs_review가 남아 있는 것은 반드시 오류를 의미하지 않는다.
+   - 법령 문장, 표 조각, 참조 문구, 목록 항목 중에는 자동 확정이 위험한 경우가 있다.
+   - 이 프로젝트는 애매한 항목을 억지로 분류하지 않고 review 상태로 보존하는 보수적 전략을 사용했다.
+
+3. ListItem은 단독 답변 근거가 아니라 parent Rule 및 source context와 함께 사용해야 한다.
+   - 예: “크레인은 안전검사 대상인가?”라는 질문에는 크레인 ListItem뿐 아니라 안전검사 대상 rule과 Annex source가 함께 필요하다.
+
+4. Threshold는 source_text 문맥과 함께 사용해야 한다.
+   - raw expression만으로는 “30일”이 기한인지 기간인지 불명확할 수 있다.
+
+5. Document Graph와 Reasoning Graph는 source_node_id를 통해 연결된다.
+   - Neo4j loader 구현 시 `edges_rule_source.to_node_id`가 실제 source graph node와 어떻게 연결되는지 검증해야 한다.
+
+6. `graph_rag_knowledgement` 폴더는 최종 정리본이지만, 향후 수정은 원본 CSV patch 방식으로 수행하는 것이 좋다.
+   - Neo4j에서 직접 고친 내용은 재현성이 떨어질 수 있으므로, 데이터 수정은 CSV source of truth에 반영한 뒤 재적재하는 것이 원칙이다.
+
+---
+
+## 10. 요약
+
+`graph_rag_knowledgement` 폴더는 산업안전보건법 / 중대재해처벌법 계열 법령 Graph-RAG 시스템을 위한 최종 knowledge base 정리본이다.
+
+핵심 구성은 다음과 같다.
+
+1. `document_graph`
+   - 법령 본문과 Annex/별표/별지 원문 구조를 보존한다.
+   - source_node_id, source_text, source_context_text 기반 citation과 원문 추적성을 제공한다.
+
+2. `reasoning_graph`
+   - Rule, Requirement, Threshold, Exception, TemporalRule, EntityType, ListItem 의미 노드와 관계를 담는다.
+   - Graph-RAG retrieval과 evidence pack 구성의 중심이다.
+
+3. `retrieval_evaluation`
+   - curated 100개와 refined 309개 평가셋을 통해 retrieval 성능과 answerable evidence를 검증한다.
+   - 평가 결과는 Graph-RAG 답변 생성 전 evidence pack 설계의 기준이 된다.
+
+4. `docs`
+   - 전처리 과정, 파일 역할, Neo4j 적재 전 readiness, warning fix 결과를 설명한다.
+   - 팀 공유와 논문 Methods/Experiments 작성에 활용한다.
+
+현재 상태는 전처리 완료 및 Neo4j 1차 적재 준비 단계이다. 구조적 blocking issue는 없지만, UNKNOWN, needs_review, 일부 missing requirement/threshold warning은 남아 있다. 이는 적재를 막는 문제가 아니라, 향후 evidence pack 설계와 수동 검토를 통해 관리해야 할 품질 신호이다.
+

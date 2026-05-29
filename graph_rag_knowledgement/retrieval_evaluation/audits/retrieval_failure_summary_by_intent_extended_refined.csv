@@ -1,0 +1,16 @@
+﻿expected_intent,failure_reason,failed_query_count,query_ids
+education_time_lookup,ANNEX_NOT_REACHED,1,Q276
+education_time_lookup,EXPECTED_METADATA_TOO_STRICT,5,"Q219,Q223,Q276,Q277,Q281"
+education_time_lookup,RULE_SUBTYPE_MISMATCH,3,"Q276,Q277,Q281"
+education_time_lookup,SOURCE_EXISTS_BUT_RANK_LOW,5,"Q219,Q223,Q276,Q277,Q281"
+education_time_lookup,THRESHOLD_NOT_ATTACHED,2,"Q219,Q223"
+inspection_requirement,ANNEX_NOT_REACHED,3,"Q263,Q266,Q267"
+inspection_requirement,EXPECTED_METADATA_TOO_STRICT,8,"Q258,Q259,Q263,Q264,Q265,Q266,Q267,Q268"
+inspection_requirement,INTENT_WEIGHT_WEAK,1,Q258
+inspection_requirement,RULE_SUBTYPE_MISMATCH,5,"Q258,Q263,Q266,Q267,Q268"
+inspection_requirement,SOURCE_EXISTS_BUT_RANK_LOW,8,"Q258,Q259,Q263,Q264,Q265,Q266,Q267,Q268"
+safety_measure_lookup,EXPECTED_METADATA_TOO_STRICT,6,"Q292,Q294,Q295,Q297,Q299,Q306"
+safety_measure_lookup,INTENT_WEIGHT_WEAK,1,Q295
+safety_measure_lookup,KEYWORD_MATCH_WEAK,1,Q292
+safety_measure_lookup,RULE_SUBTYPE_MISMATCH,6,"Q292,Q294,Q295,Q297,Q299,Q306"
+safety_measure_lookup,SOURCE_EXISTS_BUT_RANK_LOW,6,"Q292,Q294,Q295,Q297,Q299,Q306"

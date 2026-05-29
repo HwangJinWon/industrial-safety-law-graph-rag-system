@@ -1,0 +1,66 @@
+﻿Step 10 Validation After Fix Report
+===================================
+
+created_at: 2026-05-08
+status: PASS
+
+Validation commands
+-------------------
+1. python -B 05_code\graph_rag_pipeline\smoke_test_frontend_compat_endpoints.py --root-dir .
+   - result: PASS
+   - report: graph_rag_knowledgement/neo4j_load/reports/frontend_compat_endpoint_implementation_report.txt
+   - samples: graph_rag_knowledgement/neo4j_load/evidence_traversal/frontend_compat_endpoint_smoke_test_samples.json
+   - strengthened checks: mojibake, candidate_penalty schema, risk guardrail, /law detail quality
+
+2. python -B 05_code\graph_rag_pipeline\smoke_test_end_to_end_ask.py --root-dir .
+   - result: PASS
+   - report: graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_report.txt
+   - samples: graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_samples.json
+
+3. python -B -c "import sys; sys.path.append('05_code'); from graph_rag_pipeline.ask_adapter import app; print('ASK_ADAPTER_IMPORT_OK')"
+   - result: PASS
+   - output: ASK_ADAPTER_IMPORT_OK
+
+4. npm run build in 05_code/frontend reference
+   - result: PASS
+   - Vite transformed 1724 modules and generated dist assets.
+   - dist/index.html exists: true
+
+E2E ask summary
+---------------
+- 안전관리자 선임 기준: READY / ALLOW_DIRECT_ANSWER
+- 정기 안전보건교육 시간: READY_WITH_WARNINGS / ALLOW_WITH_CAUTION
+- 안전검사 대상 기계 목록: READY_WITH_WARNINGS / ALLOW_WITH_CAUTION
+- 위험성평가 결과 근로자 고지: INDIRECT_ONLY / INDIRECT_ONLY_RESPONSE
+- 과태료 부과 경우: READY_WITH_WARNINGS / ALLOW_WITH_CAUTION
+- 적용 제외 경우: READY / ALLOW_DIRECT_ANSWER
+
+Frontend compatibility summary
+------------------------------
+- GET /health: 200
+- POST /site-checklist-ui: 200
+- POST /ask: 200 for tested queries
+- GET/POST /projects: 200
+- GET/POST /history/checklists: 200
+- GET/POST /history/chats: 200
+- GET/POST /history/exports: 200
+- GET /law/{nodeId}: 200 for first linked checklist node
+
+Quality validation
+------------------
+- User-facing mojibake in ask_adapter.py/App.jsx/index.css: none found by configured pattern scan.
+- /site-checklist-ui item title/description/law_title mojibake: PASS
+- /law detail summary/why_relevant/warnings mojibake: PASS
+- candidate_penalties[] schema fields: PASS
+- candidate_penalties[].is_confirmed=false: PASS
+- penalties[].is_confirmed=true where present: PASS
+- risk-assessment notice guardrail: PASS
+
+Safety
+------
+- Neo4j write executed: false
+- LLM call executed: false
+- CSV modified: false
+- loader modified: false
+- package.json modified: false
+- password/API key written to reports: false by pattern scan

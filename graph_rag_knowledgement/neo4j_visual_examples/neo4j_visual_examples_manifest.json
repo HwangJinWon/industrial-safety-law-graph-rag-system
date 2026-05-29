@@ -1,0 +1,42 @@
+[
+  {
+    "example": "Document Graph",
+    "source": "Neo4j",
+    "topic": "중대재해 처벌 등에 관한 법률 제2조",
+    "reason": "Direct Neo4j path showing Law?Heading?Article?Paragraph?Item?Subitem via CONTAINS.",
+    "png": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_document_graph_example_article2.png",
+    "svg": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_document_graph_example_article2.svg"
+  },
+  {
+    "example": "Annex Graph",
+    "source": "Neo4j",
+    "topic": "산업안전보건법 시행규칙 ?? 4",
+    "reason": "Direct Neo4j subgraph showing Annex?LogicalRow?LogicalCell with note and related article.",
+    "png": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_annex_graph_example_education_hours.png",
+    "svg": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_annex_graph_example_education_hours.svg"
+  },
+  {
+    "example": "Reasoning Graph",
+    "source": "Neo4j",
+    "topic": "Rule THRESHOLD/EDUCATION_TIME",
+    "reason": "Direct Neo4j Rule-centered subgraph with semantic components.",
+    "png": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_reasoning_graph_example_education_time_rule.png",
+    "svg": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_reasoning_graph_example_education_time_rule.svg"
+  },
+  {
+    "example": "Provenance Graph",
+    "source": "Neo4j",
+    "topic": "Rule?SourceNode?LogicalCell evidence",
+    "reason": "Direct Neo4j provenance traversal from Rule to concrete annex evidence.",
+    "png": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_provenance_graph_example_rule_to_source.png",
+    "svg": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_provenance_graph_example_rule_to_source.svg"
+  },
+  {
+    "example": "Integrated End-to-End",
+    "source": "Neo4j",
+    "topic": "Safety and health education hours",
+    "reason": "Direct Neo4j traversal connecting document, annex, provenance, and reasoning layers.",
+    "png": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_integrated_graph_example_education_hours.png",
+    "svg": "graph_rag_knowledgement\\neo4j_visual_examples\\neo4j_integrated_graph_example_education_hours.svg"
+  }
+]

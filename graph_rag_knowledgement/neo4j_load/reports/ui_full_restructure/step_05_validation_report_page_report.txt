@@ -1,0 +1,17 @@
+step_id: 05
+step_name: Validation/report page
+status: PASS
+
+신설 내용:
+- 검증/리포트 페이지를 추가했다.
+- 최근 QA 답변에서 answer_policy, evidence_readiness, claim_check_status, warnings 수, missing_evidence 수, evidence chip 수를 요약 표시한다.
+- 체크리스트의 direct penalties와 candidate penalties 개수를 분리해 표시한다.
+- 위험성평가 결과 고지 질문 가드레일 확인 카드를 추가했다.
+
+주요 검증 포인트:
+- 제한 답변이 필요한 질문은 INDIRECT_ONLY/INDIRECT_ONLY_RESPONSE로 확인할 수 있다.
+- 후보 처벌은 확정 처벌이 아니라 별도 검토 대상임을 설명한다.
+- 최근 답변의 warnings/missing_evidence 상태를 한 화면에서 볼 수 있다.
+
+Neo4j write: 없음
+LLM 호출: 없음

@@ -1,0 +1,88 @@
+Risk Assessment Notice Source Coverage Audit
+Generated at: 2026-05-07 11:34:04
+Mode: READ_ONLY_FILE_CSV_AUDIT
+Target query: 위험성평가 결과를 근로자에게 알려야 하나?
+
+Searched file scope:
+- graph_rag_knowledgement\document_graph\nodes
+- graph_rag_knowledgement\document_graph\source_annex
+- graph_rag_knowledgement\reasoning_graph\nodes
+- graph_rag_knowledgement\reasoning_graph\edges
+- 01_input\law_body
+- 01_input\annex_final
+
+Search keywords:
+- 위험성평가
+- 위험성평가 결과
+- 근로자에게 알
+- 근로자에게 알려
+- 근로자에게 주지
+- 근로자에게 고지
+- 근로자에게 통보
+- 결과를 근로자
+- 결과 근로자
+- 알려야
+- 주지시켜
+- 통보하여야
+- 고지하여야
+
+Match summary:
+- total matched rows: 659
+- STRONG_INDIRECT: 2
+- INDIRECT: 57
+- KEYWORD_ONLY: 600
+
+Matches by category:
+- annex_source: 207
+- document_graph: 309
+- reasoning_rule: 100
+- reasoning_requirement: 20
+- reasoning_list_item: 19
+- reasoning_nodes: 4
+
+Direct evidence check:
+- direct source evidence rows: 0
+- direct reasoning evidence rows: 0
+- indirect evidence rows: 59
+
+Top matches:
+- [STRONG_INDIRECT] 01_input\annex_final\annex_physical_tables.csv :: 5f199362d71a4d999a3dcc83de7bb220bd6d1d13 ::  
+  keyword=위험성평가
+  preview=┌────────┬───────────────────────────────────────┐ │교육대상 │교육내용 │ │ ├───────────────────┬───────────────────┤ │ │신규과정 │보수과정 │ ├────────┼───────────────────┼───────────────────┤ │가. 안전보건관 │1) 관리책임자의 책임과 직무에 관한 │1) 산업안전·보건정책에 관한 사항 │ │리책임자 │사항 │2) 자율안전·보건관리에 관한 사항 │ │ │2) 산업안전보건법령 및 안전·보건조치 │ │ │ │에 관한
+- [STRONG_INDIRECT] graph_rag_knowledgement\document_graph\source_annex\annex_physical_tables.csv :: 5f199362d71a4d999a3dcc83de7bb220bd6d1d13 ::  
+  keyword=위험성평가
+  preview=┌────────┬───────────────────────────────────────┐ │교육대상 │교육내용 │ │ ├───────────────────┬───────────────────┤ │ │신규과정 │보수과정 │ ├────────┼───────────────────┼───────────────────┤ │가. 안전보건관 │1) 관리책임자의 책임과 직무에 관한 │1) 산업안전·보건정책에 관한 사항 │ │리책임자 │사항 │2) 자율안전·보건관리에 관한 사항 │ │ │2) 산업안전보건법령 및 안전·보건조치 │ │ │ │에 관한
+- [INDIRECT] 01_input\law_body\law_articles.csv :: d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d ::  
+  keyword=위험성평가
+  preview=안전보건관리책임자의 업무 제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 "고용노동부령으로 정하는 사항"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.
+- [INDIRECT] 01_input\law_body\law_articles.csv :: 00c67606f836e177a7ed3c8247b0e4f0f1df2430 ::  
+  keyword=위험성평가
+  preview=위험성평가 실시내용 및 결과의 기록ㆍ보존 제37조(위험성평가 실시내용 및 결과의 기록ㆍ보존)
+- [INDIRECT] 01_input\law_body\law_items.csv :: cebd31978a866f67f3b345a2203d0ed7a76fbecb ::  
+  keyword=위험성평가; 위험성평가 결과
+  preview=9649a52da5b5cf4ce96b35b8dc89040328c534b0 2. 2. 공정위험성평가서 및 잠재위험에 대한 사고예방ㆍ피해 최소화 대책(공정위험성평가서는 공정의 특성 등을 고려하여 다음 각 목의 위험성평가 기법 중 한 가지 이상을 선정하여 위험성평가를 한 후 그 결과에 따라 작성해야 하며, 사고예방ㆍ피해최소화 대책은 위험성평가 결과 잠재위험이 있다고 인정되는 경우에만 작성한다)
+- [INDIRECT] 01_input\law_body\law_items.csv :: 2d78ec554b2d224c8415d3753dfed67b116ab997 ::  
+  keyword=위험성평가
+  preview=cab12072b334f85b05034a6b9a681ddf175b7a7a 3. 3. 사업 또는 사업장의 특성에 따른 유해ㆍ위험요인을 확인하여 개선하는 업무절차를 마련하고, 해당 업무절차에 따라 유해ㆍ위험요인의 확인 및 개선이 이루어지는지를 반기 1회 이상 점검한 후 필요한 조치를 할 것. 다만, 「산업안전보건법」 제36조에 따른 위험성평가를 하는 절차를 마련하고, 그 절차에 따라 위험성 평가를 직접 실시하거나 실시하도록 하여 실시 결과를 보고받은 경우에는 해당 업무절차에 따라 유해ㆍ위험요인의 확인 및 개선에 대한 점검을 한 것으로 
+- [INDIRECT] 01_input\law_body\law_paragraphs.csv :: d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d ::  
+  keyword=위험성평가
+  preview=제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 "고용노동부령으로 정하는 사항"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.
+- [INDIRECT] 01_input\law_body\law_paragraphs.csv :: 00c67606f836e177a7ed3c8247b0e4f0f1df2430 ::  
+  keyword=위험성평가
+  preview=① 사업주가 법 제36조제3항에 따라 위험성평가의 결과와 조치사항을 기록ㆍ보존할 때에는 다음 각 호의 사항이 포함되어야 한다.
+- [INDIRECT] 01_input\law_body\nodes_article.csv :: d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d ::  
+  keyword=위험성평가
+  preview=안전보건관리책임자의 업무 제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 "고용노동부령으로 정하는 사항"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.
+- [INDIRECT] 01_input\law_body\nodes_article.csv :: 00c67606f836e177a7ed3c8247b0e4f0f1df2430 ::  
+  keyword=위험성평가
+  preview=위험성평가 실시내용 및 결과의 기록ㆍ보존 제37조(위험성평가 실시내용 및 결과의 기록ㆍ보존)
+
+Reasoning Graph extraction gap assessment:
+- Only indirect evidence was found. No direct source wording was found, so this is not classified as a Reasoning Graph extraction gap.
+
+Final judgment: ONLY_INDIRECT_EVIDENCE_FOUND
+
+Interpretation:
+- Current files contain risk-assessment-related and worker/result/notice-adjacent evidence in limited forms, but not the direct duty wording that risk-assessment results must be notified/disclosed to workers.
+
+Security: no Neo4j access and no secret value was used or written.

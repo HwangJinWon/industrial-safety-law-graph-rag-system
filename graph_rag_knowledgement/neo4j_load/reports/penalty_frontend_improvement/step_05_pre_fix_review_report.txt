@@ -1,0 +1,51 @@
+﻿Step 05 Pre-Fix Review Report
+=============================
+
+created_at: 2026-05-08
+status: REVIEW_COMPLETE
+
+Scope
+-----
+Reviewed files:
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/frontend reference/src/App.jsx
+- 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/final_penalty_frontend_improvement_summary.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_01_penalty_link_audit_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_04_e2e_validation_report.txt
+
+Broken Korean / mojibake findings
+---------------------------------
+ask_adapter.py has hardcoded user-facing mojibake in these areas:
+- classify_intent: education_time_lookup guard still checks a broken keyword.
+- checklist_evidence_query: checklist item evidence queries are broken.
+- build_compat_checklist: default checklist title, description, law_title, hazard-specific items, safety_state fallback, and answer text are broken.
+- friendly_source_label: source label names are broken.
+- detail_summary_for: summary text is broken.
+- read_law_detail: DIRECT_PENALTY_NOT_FOUND warning and why_relevant text are broken.
+- candidate penalty notice is currently English and should be replaced with conservative Korean text.
+
+Candidate penalty display issue
+-------------------------------
+App.jsx currently joins detail.candidate_penalties into one long string. This loses match_type, confidence, candidate_notice, and is_confirmed. The detail panel then shows candidates as a single warning card, which makes candidate penalties less structured and easier to confuse with confirmed penalties.
+
+Smoke test gaps
+---------------
+smoke_test_frontend_compat_endpoints.py checks endpoint availability and basic fields, but it does not yet fail on hardcoded mojibake in user-facing fields, missing candidate penalty schema fields, candidate is_confirmed safety, direct risk-assessment guardrail phrasing, or developer-only why_relevant wording.
+
+Build status from prior report
+------------------------------
+Previous npm run build failed with Windows EPERM during Vite/Rolldown child process spawn. The previous report classified it as environment/process-spawn related, not confirmed source syntax failure.
+
+Files targeted for minimal fixes
+--------------------------------
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/frontend reference/src/App.jsx
+- 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+- 05_code/frontend reference/src/index.css only if styling support is needed for structured candidate cards.
+
+Safety
+------
+- Neo4j write executed: false
+- LLM call executed: false
+- CSV/loader/package changes: false

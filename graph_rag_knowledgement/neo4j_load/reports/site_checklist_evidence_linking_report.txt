@@ -1,0 +1,30 @@
+Site Checklist Evidence Linking Report
+======================================
+- created_at: 2026-05-08 14:21:57
+- final_status: PASS
+- modified_file: 05_code/graph_rag_pipeline/ask_adapter.py
+- smoke_test: 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+- neo4j_write_executed: false
+- llm_used: false
+- checklist_item_count: 6
+- linked_item_count: 6
+- evidence_non_empty_item_count: 6
+- first_linked_node_id: lrow_eadf26121ecf
+- law_detail_status: 200
+- law_detail_has_text: True
+- law_detail_citation_count: 2
+- law_detail_warning_count: 1
+
+Item summary:
+- id=compat-risk-assessment, node_id=lrow_eadf26121ecf, law_node_id=lrow_eadf26121ecf, evidences=3, readiness=READY_WITH_WARNINGS, policy=ALLOW_WITH_CAUTION
+- id=compat-education-tbm, node_id=1911c8e5de17c506d90a34b569c0543feaa899dd, law_node_id=1911c8e5de17c506d90a34b569c0543feaa899dd, evidences=3, readiness=READY_WITH_WARNINGS, policy=ALLOW_WITH_CAUTION
+- id=compat-fall-prevention, node_id=0fc746c875660b8085159dd8126463e84d063af1, law_node_id=0fc746c875660b8085159dd8126463e84d063af1, evidences=3, readiness=READY, policy=ALLOW_DIRECT_ANSWER
+- id=compat-falling-object, node_id=0fc746c875660b8085159dd8126463e84d063af1, law_node_id=0fc746c875660b8085159dd8126463e84d063af1, evidences=3, readiness=READY, policy=ALLOW_DIRECT_ANSWER
+- id=compat-confined-space, node_id=26eef9d26ee99fb6745facdd9b0c5186752d2b6b, law_node_id=26eef9d26ee99fb6745facdd9b0c5186752d2b6b, evidences=3, readiness=READY, policy=ALLOW_DIRECT_ANSWER
+- id=compat-safety-state-1, node_id=a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d, law_node_id=a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d, evidences=3, readiness=READY, policy=ALLOW_DIRECT_ANSWER
+
+Errors:
+- none
+
+Quality warnings:
+- none

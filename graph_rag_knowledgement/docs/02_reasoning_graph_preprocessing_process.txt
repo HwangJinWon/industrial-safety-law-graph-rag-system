@@ -1,0 +1,1410 @@
+# 02_reasoning_graph_preprocessing_process.txt
+
+# Reasoning Graph 전처리 과정 설명서
+
+## 1. 문서 목적
+
+이 문서는 산업안전보건법 / 중대재해처벌법 계열 법령 Graph-RAG 시스템에서 사용되는 Reasoning Graph의 전처리 과정을 설명한다.
+
+Reasoning Graph는 법령 본문과 Annex/별표/별지 source graph에서 추출한 의미 기반 그래프이다. 단순히 법령 문장을 text chunk로 저장하는 것이 아니라, 법령 적용 판단에 필요한 요소를 Rule, Requirement, Threshold, Exception, TemporalRule, EntityType, ListItem 등으로 분리하여 구조화한다.
+
+이 문서는 다음 내용을 설명한다.
+
+1. Reasoning Graph 전처리의 목적
+2. 입력 데이터와 source traceability 원칙
+3. Rule 후보 추출
+4. Rule classification
+5. Requirement, Threshold, Exception, TemporalRule, EntityType, ListItem 분리
+6. Reasoning edge 생성
+7. 누락 추출 보강과 review/audit 흐름
+8. Pre-Neo4j warning fix
+9. Retrieval evaluation 및 answerable audit
+10. 최종 산출 파일과 Graph-RAG에서의 활용 방식
+11. 한계와 향후 보완 방향
+
+중요한 점은, Reasoning Graph는 LLM이 상상해서 만든 지식 그래프가 아니라 원문 법령 source_text와 source_node_id를 기반으로 생성한 구조화된 법령 판단 그래프라는 점이다. LLM은 향후 답변 설명이나 문장화에 보조적으로 사용할 수 있으나, 핵심 판단 근거는 Graph와 source evidence에서 나와야 한다.
+
+---
+
+## 2. Reasoning Graph 전처리의 목적
+
+Reasoning Graph 전처리의 목적은 법령 본문과 Annex source에서 Graph-RAG 검색 및 법령 적용 판단에 필요한 의미 단위를 추출하고 연결하는 것이다.
+
+일반적인 vector RAG는 법령 원문을 chunk 단위로 분할한 뒤 유사도 검색을 수행한다. 하지만 법령 적용 판단에서는 단순 유사도 검색만으로는 충분하지 않다. 다음과 같은 구조적 정보가 필요하다.
+
+- 누가 의무 주체인가?
+- 어떤 행위가 요구되는가?
+- 어떤 조건에서 적용되는가?
+- 어떤 예외가 있는가?
+- 어떤 수치 기준이 있는가?
+- 교육시간이나 보존기간은 얼마인가?
+- 위반 시 벌칙 또는 과태료는 무엇인가?
+- 세부 기준은 별표에 있는가?
+- 특정 장비, 작업, 물질, 질병, 검사항목이 목록에 포함되는가?
+
+이를 위해 Reasoning Graph는 법령 원문을 다음 의미 노드로 분리한다.
+
+```text
+Rule
+Requirement
+Threshold
+Exception
+TemporalRule
+EntityType
+ListItem
+```
+
+각 의미 노드는 source_node_id와 source_text를 통해 원문으로 되돌아갈 수 있어야 한다. 이 추적성이 보장되어야 답변 생성 시 근거 조문, 별표 제목, 원문 문장을 함께 제시할 수 있다.
+
+---
+
+## 3. 입력 데이터
+
+Reasoning Graph의 입력은 크게 두 계열이다.
+
+## 3.1 Document Graph 본문 source
+
+법령 본문 Document Graph에서 다음 source를 입력으로 사용한다.
+
+```text
+Law
+Heading
+Article
+Paragraph
+Item
+Subitem
+Addendum
+```
+
+본문 source는 다음과 같은 정보를 제공한다.
+
+- law_name
+- article_no
+- paragraph_no
+- source_node_id
+- source_node_type
+- parent_source_node_id
+- parent_source_node_type
+- source_text
+- source_context_text
+- heading_context
+
+본문 source는 의무, 금지, 정의, 벌칙, 절차, 위임, 적용 조건, 부칙, 경과규정 등을 추출하는 기반이다.
+
+## 3.2 Annex Source Graph
+
+Annex/별표/별지 source graph에서 다음 source를 입력으로 사용한다.
+
+```text
+Annex
+AnnexSection
+LogicalRow
+LogicalCell
+AnnexNote
+```
+
+Annex source는 다음과 같은 정보를 제공한다.
+
+- annex_id
+- annex_no
+- annex_title
+- related_article_id
+- logical_row_id
+- logical_cell_id
+- source_text
+- source_context_text
+- note text
+- law_name
+
+Annex source는 안전검사 대상 기계, 특별교육 대상 작업, 교육내용, 교육시간, 자격 기준, 건강진단 항목, 유해인자 목록, 서식 항목 등 목록형 또는 표 기반 판단 근거를 추출하는 기반이다.
+
+## 3.3 Source traceability 원칙
+
+Reasoning Graph의 모든 주요 노드는 다음 추적 정보를 가능한 한 보존해야 한다.
+
+```text
+source_node_id
+source_node_type
+source_text
+source_context_text
+parent_source_node_id
+parent_source_node_type
+law_name
+article_no
+annex_title
+confidence
+needs_review
+```
+
+이 정보는 다음 목적에 필요하다.
+
+1. 원문 근거 확인
+2. 답변 citation 생성
+3. parent context 복원
+4. Annex row/cell 근거 제시
+5. 자동 추출 오류 감사
+6. Neo4j 적재 후 SourceNode 또는 실제 source graph node와 연결
+
+---
+
+## 4. 전체 Reasoning Graph 전처리 흐름
+
+Reasoning Graph 전처리는 다음 단계로 진행된다.
+
+```text
+1. Document Graph 및 Annex Source Graph 입력 로드
+2. 본문 조문 source에서 Rule 후보 추출
+3. Annex logical row/cell/note에서 Rule 또는 ListItem 후보 추출
+4. Rule type 및 subtype 분류
+5. Requirement 노드 추출
+6. Threshold 노드 추출
+7. Exception 노드 추출
+8. TemporalRule 노드 추출
+9. EntityType 노드 추출
+10. ListItem 노드 분리
+11. Rule-source / Rule-child edge 생성
+12. Rule-Rule reasoning edge 생성
+13. UNKNOWN 및 low-confidence audit
+14. Missing extraction audit 및 보강
+15. Exception / ListItem / Threshold 정제
+16. Retrieval evaluation 수행
+17. Pre-Neo4j readiness audit 수행
+18. Conservative warning fix 수행
+19. 최종 Reasoning Graph CSV 정리
+```
+
+이 과정에서 중요한 원칙은 “확실한 것은 구조화하고, 애매한 것은 review 대상으로 남기는 것”이다. 법령 문장은 모호한 참조, 목록 조각, 표 조각, parent context 의존 문장이 많기 때문에 모든 항목을 자동으로 확정 분류하는 것은 위험하다.
+
+---
+
+## 5. Rule 후보 추출
+
+## 5.1 Rule 후보의 의미
+
+Rule 후보는 법령 적용 판단에 의미가 있을 가능성이 있는 원문 단위이다. Rule 후보는 본문 조문, 항, 호, 목, 부칙, Annex logical row/cell, Annex note에서 추출된다.
+
+Rule 후보가 될 수 있는 문장은 다음과 같다.
+
+- 의무 문장
+- 금지 문장
+- 정의 문장
+- 벌칙 문장
+- 과태료 문장
+- 절차 문장
+- 위임 문장
+- 자격 기준 문장
+- 교육 기준 문장
+- 문서 제출/보고/보존 문장
+- 수치 기준 문장
+- 예외/제외 문장
+- 부칙/시행일 문장
+- 별표 기반 기준 또는 목록 문장
+
+## 5.2 본문 조문 기반 Rule 후보
+
+본문 조문에서는 다음 표현을 중심으로 Rule 후보를 추출한다.
+
+```text
+하여야 한다
+하여서는 아니 된다
+금지한다
+제출하여야 한다
+보고하여야 한다
+신고하여야 한다
+보존하여야 한다
+선임하여야 한다
+교육하여야 한다
+설치하여야 한다
+조치하여야 한다
+정한다
+따른다
+말한다
+뜻한다
+징역
+벌금
+과태료
+다만
+제외한다
+적용하지 아니한다
+```
+
+본문 조문 기반 후보는 Rule 추출의 핵심이다. 특히 산업안전보건기준에 관한 규칙에는 “~할 것”, “~일 것”, “구조일 것”처럼 안전기준을 나타내는 문장이 많다. 이러한 문장은 단순 list item이 아니라 safety standard 또는 requirement 성격의 rule로 유지해야 한다.
+
+## 5.3 Annex logical row/cell 기반 후보
+
+Annex source에서는 logical row/cell을 중심으로 후보를 추출한다. Annex 후보는 일반 본문 조문과 다르게 목록형, 표형, 기준형 정보가 많다.
+
+예를 들어 다음 항목은 Annex에서 주로 추출된다.
+
+- 안전검사 대상 기계
+- 특별교육 대상 작업
+- 교육시간
+- 교육내용
+- 건강진단 항목
+- 유해인자
+- 자격 기준
+- 서식 필드
+- 검사 항목
+- 보호구 종류
+
+Annex source에서 추출한 항목은 반드시 Rule이 되는 것은 아니다. 많은 항목은 ListItem으로 분리하는 것이 더 적절하다.
+
+## 5.4 Parent context 처리
+
+Rule 후보 추출 시 source_text만 사용하면 의미가 불완전한 경우가 많다.
+
+예를 들어 item source_text가 다음과 같을 수 있다.
+
+```text
+안전난간을 설치할 것
+```
+
+이 문장만으로는 의무 주체, 적용 조건, 법적 성격을 파악하기 어렵다. 상위 paragraph가 다음과 같다면 의미가 명확해진다.
+
+```text
+사업주는 근로자가 추락할 위험이 있는 장소에서 작업을 할 때에는 다음 각 호의 조치를 하여야 한다.
+```
+
+따라서 Reasoning Graph는 source_text와 함께 source_context_text, parent_source_node_id, parent_source_node_type을 보존한다.
+
+---
+
+## 6. Rule classification
+
+## 6.1 nodes_rule.csv 생성
+
+Rule 후보는 분류 과정을 거쳐 `nodes_rule.csv`에 저장된다. 이 파일은 Reasoning Graph의 중심 node 파일이다.
+
+주요 컬럼은 다음과 같다.
+
+```text
+rule_id
+rule_type
+rule_subtype
+target_subject
+target_object
+condition_text
+requirement_text
+exception_text
+penalty_text
+source_node_type
+source_node_id
+parent_source_node_type
+parent_source_node_id
+source_context_text
+source_text
+law_version_id
+law_name
+article_id
+article_no
+paragraph_no
+heading_context
+annex_id
+annex_no
+annex_title
+related_article_id
+query_intents_json
+confidence
+needs_review
+extraction_method
+```
+
+실제 컬럼은 CSV 헤더를 기준으로 확인해야 한다.
+
+## 6.2 rule_type
+
+주요 rule_type은 다음과 같다.
+
+```text
+OBLIGATION
+PROHIBITION
+PENALTY
+EXCLUSION
+DEFINITION
+DELEGATION
+THRESHOLD
+PROCEDURE
+TEMPORAL
+QUALIFICATION
+UNKNOWN
+```
+
+각 type의 의미는 다음과 같다.
+
+- OBLIGATION: 사업주, 경영책임자, 근로자 등에게 특정 행위를 요구하는 규칙
+- PROHIBITION: 특정 행위를 금지하는 규칙
+- PENALTY: 위반 시 징역, 벌금, 과태료 등 제재를 규정하는 규칙
+- EXCLUSION: 적용 제외, 예외, 범위 제한 규칙
+- DEFINITION: 용어 정의 규칙
+- DELEGATION: 별표, 시행령, 고용노동부령 등 다른 규정으로 세부사항을 위임하는 규칙
+- THRESHOLD: 수치 기준 자체가 중심인 규칙
+- PROCEDURE: 신청, 승인, 제출, 신고 등 절차 규칙
+- TEMPORAL: 시행일, 유예기간, 경과조치 등 시간 규칙
+- QUALIFICATION: 자격, 면허, 경력, 선임 기준 관련 규칙
+- UNKNOWN: 자동 분류가 확실하지 않은 규칙
+
+## 6.3 rule_subtype
+
+주요 rule_subtype은 다음과 같다.
+
+```text
+EDUCATION_REQUIREMENT
+EDUCATION_TIME
+EDUCATION_CONTENT
+APPOINTMENT_REQUIREMENT
+QUALIFICATION_REQUIREMENT
+DOCUMENT_REQUIREMENT
+DOCUMENT_SUBMISSION
+REPORTING_REQUIREMENT
+RECORD_RETENTION_REQUIREMENT
+ADMINISTRATIVE_FINE
+PENALTY_FINE
+SAFETY_STANDARD
+PROTECTIVE_EQUIPMENT_REQUIREMENT
+INSPECTION_REQUIREMENT
+APPLICABILITY_RULE
+ROLE_REQUIREMENT
+HEADCOUNT
+UNKNOWN
+```
+
+subtype은 질문 의도별 retrieval에서 중요하다. 예를 들어 “교육시간” 질문은 EDUCATION_TIME과 threshold evidence가 필요하고, “보건관리자 자격” 질문은 QUALIFICATION_REQUIREMENT 또는 QUALIFICATION_ITEM evidence가 필요하다.
+
+## 6.4 UNKNOWN 관리 원칙
+
+UNKNOWN을 0으로 만드는 것은 목표가 아니다. 오히려 애매한 원문을 억지로 분류하면 Graph가 오염될 수 있다.
+
+UNKNOWN으로 남길 수 있는 경우는 다음과 같다.
+
+- parent context 없이는 의미가 불완전한 문장
+- 조문 참조만 나열된 문장
+- 표 조각 또는 cell 조각
+- list item인지 rule인지 애매한 항목
+- 법적 효과가 명확하지 않은 설명 문구
+- 자동 분류 confidence가 낮은 문장
+
+이러한 항목은 needs_review=True 또는 confidence=low로 남기고, review CSV를 통해 수동 검토 대상으로 관리한다.
+
+---
+
+## 7. Requirement 추출
+
+## 7.1 nodes_requirement.csv 생성
+
+Requirement는 Rule에서 분리된 실제 요구 행위 또는 의무 내용을 의미한다.
+
+산출 파일은 다음과 같다.
+
+```text
+reasoning_graph/nodes/nodes_requirement.csv
+```
+
+Rule과 Requirement의 연결은 다음 edge로 표현된다.
+
+```text
+reasoning_graph/edges/edges_rule_requirement.csv
+```
+
+## 7.2 추출 기준
+
+Requirement 추출의 주요 패턴은 다음과 같다.
+
+```text
+하여야 한다
+조치하여야 한다
+제출하여야 한다
+작성하여야 한다
+보존하여야 한다
+실시하여야 한다
+선임하여야 한다
+교육하여야 한다
+보고하여야 한다
+신고하여야 한다
+설치하여야 한다
+갖추어야 한다
+착용하여야 한다
+게시하여야 한다
+알려야 한다
+마련하여야 한다
+수립하여야 한다
+확인하여야 한다
+점검하여야 한다
+```
+
+## 7.3 Graph-RAG에서의 역할
+
+Requirement는 다음 질문 유형에서 핵심 evidence가 된다.
+
+- 사업주는 무엇을 해야 하는가?
+- 어떤 안전조치를 해야 하는가?
+- 어떤 문서를 제출해야 하는가?
+- 어떤 기록을 보존해야 하는가?
+- 어떤 역할을 선임해야 하는가?
+- 어떤 교육을 실시해야 하는가?
+
+## 7.4 주의사항
+
+모든 OBLIGATION rule이 별도 Requirement node를 가져야 하는 것은 아니다. 일부 rule은 source_text 자체가 requirement 역할을 하거나, list item/parent context 없이는 requirement를 확정하기 어렵다.
+
+따라서 `OBLIGATION without Requirement` warning은 전부 오류가 아니다. 다만 answer generation에서는 Requirement node가 없을 경우 Rule.requirement_text 또는 source_text로 fallback해야 한다.
+
+## 7.5 Pre-Neo4j warning fix 결과
+
+Pre-Neo4j warning fix 과정에서 확실한 OBLIGATION without Requirement 5개에 대해 다음 patch를 적용하였다.
+
+```text
+Requirement node +5
+Rule-Requirement edge +5
+```
+
+이 보강은 retrieval 성능을 저하시키지 않았고, answerable audit에서 소폭 개선을 보였다.
+
+---
+
+## 8. Threshold 추출
+
+## 8.1 nodes_threshold.csv 생성
+
+Threshold는 법령상 수치, 기간, 금액, 인원수, 거리, 중량, 빈도, 기한 등을 표현한다.
+
+산출 파일은 다음과 같다.
+
+```text
+reasoning_graph/nodes/nodes_threshold.csv
+```
+
+Rule과 Threshold의 연결은 다음 edge로 표현된다.
+
+```text
+reasoning_graph/edges/edges_rule_threshold.csv
+```
+
+## 8.2 추출 대상
+
+Threshold 후보는 다음과 같은 표현에서 추출된다.
+
+```text
+50명 이상
+8시간 이상
+3년간
+30일 이내
+착공 전
+매년
+분기마다
+1회 이상
+100킬로그램 이상
+2미터 이상
+50억원 이상
+60개월
+월 1회
+```
+
+Threshold type은 문맥에 따라 다음과 같이 나눌 수 있다.
+
+```text
+TIME
+DURATION
+COUNT
+AMOUNT
+DISTANCE
+WEIGHT
+FREQUENCY
+DEADLINE
+SCALE
+HEADCOUNT
+```
+
+## 8.3 False positive 방지
+
+Threshold 추출에서 가장 중요한 점은 조문번호나 별표번호를 기준값으로 오인하지 않는 것이다.
+
+Threshold로 오인하면 안 되는 표현은 다음과 같다.
+
+```text
+제1조
+제2항
+제3호
+별표 1
+별지 제1호서식
+제1장
+제2절
+법 제10조
+시행령 제5조
+```
+
+이러한 숫자는 법적 기준값이 아니라 법령 구조나 참조 번호이다.
+
+## 8.4 Graph-RAG에서의 역할
+
+Threshold는 다음 질문에 필요하다.
+
+- 교육은 몇 시간 이상 해야 하는가?
+- 기록은 몇 년간 보존해야 하는가?
+- 몇 명 이상인 사업장에 적용되는가?
+- 언제까지 제출해야 하는가?
+- 안전난간은 어느 정도 하중을 견뎌야 하는가?
+- 높이 몇 미터 이상이면 추락 방지 조치가 필요한가?
+
+## 8.5 주의사항
+
+Threshold의 raw_expression만 단독으로 답변에 사용하면 의미가 왜곡될 수 있다. 예를 들어 “30일”이라는 표현은 문맥에 따라 기한, 기간, 유예기간, 보존기간 등으로 달라질 수 있다.
+
+따라서 answer generation에서는 Threshold node와 함께 source_text를 반드시 같이 제시해야 한다.
+
+## 8.6 Pre-Neo4j warning fix 결과
+
+Pre-Neo4j warning fix 과정에서 확실한 threshold 150개를 추가하였다.
+
+```text
+Threshold node +150
+Rule-Threshold edge +150
+```
+
+수천 개의 숫자 후보 중 조문번호, 별표번호, 서식번호 등 false positive 가능성이 있는 항목은 자동 확정하지 않고 review 대상으로 남겼다.
+
+---
+
+## 9. Exception 추출
+
+## 9.1 nodes_exception.csv 생성
+
+Exception은 예외, 제외, 적용 범위 제한, 조건 수정 등을 표현한다.
+
+산출 파일은 다음과 같다.
+
+```text
+reasoning_graph/nodes/nodes_exception.csv
+```
+
+Rule과 Exception의 연결은 다음 edge로 표현된다.
+
+```text
+reasoning_graph/edges/edges_rule_exception.csv
+```
+
+## 9.2 주요 exception_type
+
+주요 유형은 다음과 같다.
+
+```text
+EXCLUSION
+MODIFICATION
+SCOPE_EXCLUSION
+```
+
+각 유형의 의미는 다음과 같다.
+
+- EXCLUSION: 특정 조건에서 의무나 적용을 제외하는 일반 예외
+- MODIFICATION: 적용 방식이나 기준을 수정하는 단서
+- SCOPE_EXCLUSION: 용어, 장비, 대상 범위에서 일부를 제외하는 범위 제한
+
+## 9.3 SCOPE_EXCLUSION 분리
+
+괄호 내부에 “제외한다”가 있는 표현은 일반 예외가 아니라 범위 제한인 경우가 많다.
+
+예:
+
+```text
+리프트(자동차정비용 리프트는 제외한다)
+띠톱기계(목재가공용 띠톱기계는 제외한다)
+```
+
+이 경우는 특정 의무의 예외라기보다 “리프트” 또는 “띠톱기계”라는 대상 범위 자체를 제한하는 것이다. 따라서 일반 EXCLUSION이 아니라 SCOPE_EXCLUSION으로 분리하는 것이 적절하다.
+
+## 9.4 Exception fragment 관리
+
+“다만,”, “단,”처럼 문맥 없이 fragment만 추출된 항목은 자동 확정하지 않고 review 대상으로 보낸다. 이러한 fragment는 parent context 없이는 법적 효과를 판단하기 어렵다.
+
+---
+
+## 10. TemporalRule 추출
+
+## 10.1 nodes_temporal_rule.csv 생성
+
+TemporalRule은 시행일, 유예기간, 경과조치, 적용례, 종전 규정 적용 등 시간 관련 규칙을 표현한다.
+
+산출 파일은 다음과 같다.
+
+```text
+reasoning_graph/nodes/nodes_temporal_rule.csv
+```
+
+Rule과 TemporalRule의 연결은 다음 edge로 표현된다.
+
+```text
+reasoning_graph/edges/edges_rule_temporal.csv
+```
+
+## 10.2 추출 대상
+
+TemporalRule은 주로 Addendum source에서 추출된다.
+
+주요 표현은 다음과 같다.
+
+```text
+이 법은 ...부터 시행한다
+...까지 적용한다
+종전의 규정에 따른다
+...에 대해서는 ...부터 적용한다
+...의 시행일
+유예기간
+경과조치
+적용례
+```
+
+## 10.3 Graph-RAG에서의 역할
+
+TemporalRule은 다음 질문에 필요하다.
+
+- 이 규정은 언제부터 시행되는가?
+- 개정 규정은 언제부터 적용되는가?
+- 유예기간이 있는가?
+- 종전 규정은 계속 적용되는가?
+- 특정 대상에는 언제부터 적용되는가?
+
+---
+
+## 11. EntityType 추출
+
+## 11.1 nodes_entity_type.csv 생성
+
+EntityType은 법령상 주체, 객체, 역할, 적용 대상을 표현한다.
+
+산출 파일은 다음과 같다.
+
+```text
+reasoning_graph/nodes/nodes_entity_type.csv
+```
+
+Rule과 EntityType의 연결은 다음 edge로 표현된다.
+
+```text
+reasoning_graph/edges/edges_rule_entity.csv
+```
+
+## 11.2 주요 Entity 예시
+
+```text
+사업주
+경영책임자
+근로자
+일용근로자
+도급인
+관계수급인
+안전관리자
+보건관리자
+산업보건의
+관리감독자
+건설업
+제조업
+특수형태근로종사자
+```
+
+## 11.3 Graph-RAG에서의 역할
+
+EntityType은 다음 판단에 필요하다.
+
+- 의무 주체가 누구인가?
+- 적용 대상이 누구인가?
+- 어떤 역할을 선임해야 하는가?
+- 도급인과 관계수급인 중 누구에게 의무가 있는가?
+- 일용근로자와 일반 근로자에게 교육 기준이 다른가?
+
+---
+
+## 12. ListItem 분리
+
+## 12.1 nodes_list_item.csv 생성
+
+ListItem은 rule로 보기 어려운 목록 항목, 표 항목, 명칭 목록, 서식 필드 등을 표현한다.
+
+산출 파일은 다음과 같다.
+
+```text
+reasoning_graph/nodes/nodes_list_item.csv
+```
+
+Rule과 ListItem의 연결은 다음 edge로 표현된다.
+
+```text
+reasoning_graph/edges/edges_rule_list_item.csv
+```
+
+## 12.2 주요 list_item_type
+
+```text
+INSPECTION_ITEM
+SUBSTANCE
+DISEASE
+HAZARD_FACTOR
+WORK_TYPE
+EQUIPMENT_ITEM
+DOCUMENT_ITEM
+FORM_FIELD
+QUALIFICATION_ITEM
+ARTICLE_REFERENCE_LIST
+PENALTY_REFERENCE_LIST
+UNKNOWN_LIST_ITEM
+```
+
+## 12.3 ListItem으로 분리한 이유
+
+모든 법령 텍스트 조각이 Rule은 아니다. 예를 들어 다음 항목은 법적 판단 문장이라기보다 목록 항목이다.
+
+```text
+AST
+ALT
+KOH
+요검사
+흉부방사선검사
+크레인
+리프트
+곤돌라
+관리대상 유해물질명
+특별교육 대상 작업명
+서식 필드명
+```
+
+이러한 항목을 모두 Rule로 만들면 Graph가 지나치게 noisy해지고 retrieval overmatch가 증가한다. 따라서 목록형 항목은 ListItem으로 분리한다.
+
+## 12.4 Rule로 유지해야 하는 경우
+
+다음과 같은 문장은 ListItem이 아니라 Rule 또는 Requirement로 유지해야 한다.
+
+```text
+~할 것
+~일 것
+~구조일 것
+~갖출 것
+~조치할 것
+~설치할 것
+```
+
+특히 산업안전보건기준에 관한 규칙에는 이러한 안전기준 문장이 많다. 이 문장들은 단순 목록 항목이 아니라 법적 기준 또는 의무를 담고 있으므로 SAFETY_STANDARD 또는 Requirement 계열 Rule로 유지해야 한다.
+
+## 12.5 Graph-RAG에서의 역할
+
+ListItem은 다음 질문에 필요하다.
+
+- 안전검사 대상 기계에는 무엇이 있는가?
+- 크레인은 안전검사 대상인가?
+- 특별교육 대상 작업에는 무엇이 있는가?
+- 특정 작업은 특별교육 대상인가?
+- 건강진단 항목에 흉부방사선검사가 포함되는가?
+- 특정 자격이 보건관리자 자격 기준에 포함되는가?
+
+주의할 점은 ListItem은 단독 evidence로 쓰기보다 parent Rule, Annex title, source_text와 함께 evidence pack에 포함해야 한다는 것이다.
+
+---
+
+## 13. Rule-source 및 Rule-child edge 생성
+
+Reasoning Graph는 node만으로 구성되지 않는다. Rule과 source, Rule과 child evidence node를 연결하는 edge가 필요하다.
+
+## 13.1 Rule-source edge
+
+산출 파일:
+
+```text
+reasoning_graph/edges/edges_rule_source.csv
+```
+
+역할:
+
+```text
+Rule → Source node
+```
+
+이 edge는 Rule이 어떤 원문 source에서 추출되었는지 나타낸다. Graph-RAG에서 citation과 원문 검증의 핵심 연결이다.
+
+Neo4j 적재 시에는 다음 두 방식 중 하나를 사용할 수 있다.
+
+```text
+Rule -[:EXTRACTED_FROM]-> SourceNode
+Rule -[:EXTRACTED_FROM]-> Article/Paragraph/Item/Subitem/LogicalRow/LogicalCell
+```
+
+현재는 SourceNode placeholder를 활용하면서 실제 source graph node와 RESOLVES_TO로 연결하는 방식이 안전하다.
+
+## 13.2 Rule-child evidence edge
+
+산출 파일:
+
+```text
+edges_rule_requirement.csv
+edges_rule_threshold.csv
+edges_rule_exception.csv
+edges_rule_temporal.csv
+edges_rule_entity.csv
+edges_rule_list_item.csv
+```
+
+각 edge의 의미는 다음과 같다.
+
+```text
+Rule → Requirement
+Rule → Threshold
+Rule → Exception
+Rule → TemporalRule
+Rule → EntityType
+Rule → ListItem
+```
+
+이 연결은 향후 Evidence Pack Builder에서 중심이 된다.
+
+---
+
+## 14. Reasoning edge 생성
+
+## 14.1 edges_rule_reasoning.csv 생성
+
+Rule 간 추론 관계는 다음 파일에 저장된다.
+
+```text
+reasoning_graph/edges/edges_rule_reasoning.csv
+```
+
+## 14.2 주요 관계 유형
+
+```text
+REQUIRES_PREREQUISITE
+APPLIES_PENALTY_FOR
+DELEGATES_TO
+REFERS_TO
+APPLIES_BY_ANALOGY
+RULE_DETAIL_DEFINED_IN_ANNEX
+RULE_SUPPORTED_BY_ANNEX
+RULE_DELEGATES_DETAIL_TO_ANNEX
+ANNEX_RULE_REFINES_ARTICLE_RULE
+```
+
+## 14.3 Graph-RAG에서의 역할
+
+Reasoning edge는 하나의 Rule만으로 답변이 부족할 때 관련 Rule을 확장하는 데 사용된다.
+
+예:
+
+- 본문 조문이 “별표에 따른다”고 위임하고 Annex가 세부 기준을 제공하는 경우
+- 의무 조항과 벌칙 조항을 연결해야 하는 경우
+- 본문 Rule과 Annex Rule/ListItem을 함께 제시해야 하는 경우
+- 참조 조문을 따라 관련 의무를 보완해야 하는 경우
+
+## 14.4 과연결 축소
+
+초기 reasoning edge는 과도하게 많이 생성되어 retrieval precision을 떨어뜨릴 위험이 있었다. 과연결은 recall을 높일 수 있지만, 답변에 불필요한 후보가 함께 올라오는 overmatch를 유발한다.
+
+따라서 본문 rule 문맥과 Annex rule 문맥의 주제어, 법령명, 조문번호, annex_title, 관계 유형 등을 기준으로 edge를 축소하였다. 최종적으로 약 5,900개 수준의 reasoning edge로 정리하였다.
+
+## 14.5 주의사항
+
+Reasoning edge는 강한 근거와 약한 참조가 섞일 수 있다. 따라서 evidence pack에서는 관계 유형별로 가중치를 다르게 두는 것이 필요하다.
+
+예:
+
+- RULE_DETAIL_DEFINED_IN_ANNEX: 강한 연결
+- RULE_SUPPORTED_BY_ANNEX: 강한 연결
+- ANNEX_RULE_REFINES_ARTICLE_RULE: 강한 연결
+- REFERS_TO: 상대적으로 약한 연결
+
+---
+
+## 15. Missing extraction audit 및 보강
+
+Reasoning Graph 생성 후 source coverage audit을 수행하여 누락된 의미 노드 후보를 찾았다.
+
+## 15.1 주요 audit 파일
+
+```text
+review_source_coverage_audit.csv
+review_missing_extractions.csv
+review_added_thresholds.csv
+review_added_requirements.csv
+review_added_exceptions.csv
+review_missing_threshold_unlinked.csv
+review_missing_requirement_unlinked.csv
+review_missing_exception_unlinked.csv
+review_missing_exception_possible.csv
+```
+
+이 파일들은 최종 knowledge base 본체라기보다, 추출 품질 개선과 검토를 위한 audit 자료이다.
+
+## 15.2 보강 원칙
+
+보강 원칙은 다음과 같다.
+
+1. 명확한 threshold만 자동 보강한다.
+2. 명확한 requirement만 자동 보강한다.
+3. clear exception만 자동 보강한다.
+4. possible exception은 자동 확정하지 않고 review로 남긴다.
+5. rule/list item 대량 이동은 하지 않는다.
+6. source_node_id와 source_text 추적성을 유지한다.
+
+## 15.3 보강 결과의 의미
+
+Missing extraction 보강은 Graph의 source coverage를 높이는 데 기여했다. 그러나 자동 보강은 항상 보수적으로 수행해야 하며, 애매한 항목을 무리하게 추가하면 Graph의 precision이 떨어질 수 있다.
+
+---
+
+## 16. UNKNOWN / low confidence 관리
+
+## 16.1 UNKNOWN audit
+
+초기 Reasoning Graph에는 UNKNOWN rule_type 또는 UNKNOWN rule_subtype이 많았다. 이후 의무, 금지, 절차, 자격, 교육, 벌칙, 예외 표현을 보강하면서 UNKNOWN을 줄였다.
+
+하지만 UNKNOWN 0개가 목표는 아니다.
+
+## 16.2 UNKNOWN으로 남겨야 하는 경우
+
+다음 항목은 UNKNOWN 또는 needs_review로 남기는 것이 안전하다.
+
+- parent context 없이는 의미가 불완전한 항목
+- table/list fragment
+- 참조 조문 나열
+- list item인지 rule인지 애매한 항목
+- 법적 효과가 불명확한 설명 문구
+- 자동 분류 confidence가 낮은 항목
+
+## 16.3 Pre-Neo4j warning fix에서의 UNKNOWN 처리
+
+Pre-Neo4j warning fix 과정에서 UNKNOWN subtype update 100개가 patch preview에 포함되었으나, 테스트 후 retrieval regression 가능성이 있어 nodes_rule.csv를 백업에서 복원하였다. 따라서 최종 applied patch에는 UNKNOWN subtype update를 포함하지 않았다.
+
+이 결정은 적절하다. 자동 재분류로 수치상 UNKNOWN을 줄이는 것보다, retrieval 품질과 원문 기반 정확성을 유지하는 것이 더 중요하다.
+
+---
+
+## 17. Pre-Neo4j warning fix
+
+## 17.1 목적
+
+Pre-Neo4j warning fix의 목적은 Neo4j 적재 전 구조적 warning 중 확실하게 보강 가능한 항목만 보수적으로 수정하는 것이다.
+
+목표는 warning을 0으로 만드는 것이 아니라, evidence pack 품질에 직접 영향을 주는 명확한 Requirement와 Threshold 연결을 보강하는 것이다.
+
+## 17.2 warning before 상태
+
+주요 warning은 다음과 같았다.
+
+```text
+OBLIGATION without Requirement: 612
+threshold-related without Threshold node: 1227
+UNKNOWN rule type/subtype: 1995
+needs_review or low confidence: 1026
+```
+
+구조적 blocking issue는 없었다.
+
+```text
+orphan edge count: 0
+duplicate id count: 0
+missing source_text count: 0
+high-degree rule count: 0
+```
+
+## 17.3 적용된 patch
+
+최종 적용 patch는 다음과 같다.
+
+```text
+Requirement node +5
+Rule-Requirement edge +5
+Threshold node +150
+Rule-Threshold edge +150
+```
+
+적용하지 않은 patch:
+
+```text
+UNKNOWN subtype update
+```
+
+UNKNOWN subtype update는 preview 후 테스트했지만 regression 가능성이 있어 rollback하였다.
+
+## 17.4 warning after 상태
+
+Warning fix 후에도 readiness는 READY_WITH_WARNINGS이다. 그러나 blocking issue는 없다.
+
+주요 변화는 다음과 같다.
+
+```text
+OBLIGATION without Requirement: 612 → 607
+threshold-related without Threshold node: 1227 → 1210
+UNKNOWN rule type/subtype: 1995 → 1995
+needs_review or low confidence: 1026 → 1026
+orphan edge count: 0 → 0
+duplicate id count: 0 → 0
+missing source_text count: 0 → 0
+```
+
+## 17.5 retrieval 및 answerable 영향
+
+Refined retrieval before/after:
+
+```text
+Top-1: 265/309 → 266/309
+Top-3: 282/309 → 282/309
+Top-5: 290/309 → 290/309
+queries_without_matches: 0 유지
+```
+
+Answerable audit before/after:
+
+```text
+Top-1 answerable: 221/309 → 222/309
+Top-3 answerable: 252/309 → 256/309
+Top-5 answerable: 268/309 → 272/309
+Top-10 answerable: 276/309 → 280/309
+```
+
+이는 보수적 warning fix가 retrieval 성능을 떨어뜨리지 않으면서 evidence pack 가능성을 소폭 개선했음을 의미한다.
+
+---
+
+## 18. Retrieval evaluation
+
+Reasoning Graph의 검색 성능을 확인하기 위해 curated test와 source-based refined test를 수행하였다.
+
+## 18.1 Curated 100개 test
+
+Curated 100개 test는 사람이 설계한 대표 질문이다.
+
+주요 목적은 다음과 같다.
+
+- 대표 질의 유형에서 Rule retrieval이 작동하는지 확인
+- 교육, 벌칙, 정의, 문서, 선임, 안전조치, 적용 여부 등 주요 intent 검증
+- 초기 ranking 보정의 baseline 제공
+
+최종 결과는 다음과 같았다.
+
+```text
+Top-1: 89/100
+Top-3: 97/100
+Top-5: 100/100
+queries_without_matches: 0
+```
+
+이 결과는 curated 대표 질의에서는 retrieval이 안정적임을 보여준다. 그러나 이는 전체 법령 질문에 대한 답변 정확도가 아니다.
+
+## 18.2 Source-based query candidate 생성
+
+원본 source 기반으로 300개 query candidate를 생성하였다. 목적은 사람이 상상한 질문이 아니라 실제 법령 source에서 나올 수 있는 질문을 평가에 포함하는 것이다.
+
+그러나 자동 생성 query에는 다음 문제가 포함될 수 있다.
+
+- expected metadata 오류
+- source-query mismatch
+- 비문 또는 부자연스러운 질문
+- query가 너무 broad함
+- source_text가 질문으로 만들기에 부적절함
+- 하나의 질문에 여러 정답이 가능한 경우
+
+따라서 generated query는 품질 감사 후 refined set에 포함하였다.
+
+## 18.3 Extended 387개 stress test
+
+기존 curated 100개와 source-based generated 287개를 합쳐 extended 387개 stress test를 수행하였다.
+
+결과는 다음과 같았다.
+
+```text
+Top-1: 265/387
+Top-3: 282/387
+Top-5: 290/387
+queries_without_matches: 0
+Top-5 failed query count: 97
+```
+
+이 결과는 단순 ranking 성능 저하로 해석하면 안 된다. 실패 감사 결과, 많은 실패가 generated query 품질 문제, expected metadata 엄격성, source-query mismatch와 관련되어 있었다.
+
+## 18.4 Refined 309개 evaluation set
+
+Generated query 품질 감사를 통해 다음과 같이 정제하였다.
+
+```text
+curated query: 100
+source-based retained query: 209
+excluded generated query: 78
+total refined query: 309
+```
+
+Refined evaluation 결과는 다음과 같다.
+
+```text
+Top-1: 265/309
+Top-3: 282/309
+Top-5: 290/309
+queries_without_matches: 0
+```
+
+Warning fix 이후 결과는 다음과 같다.
+
+```text
+Top-1: 266/309
+Top-3: 282/309
+Top-5: 290/309
+queries_without_matches: 0
+```
+
+## 18.5 Retrieval hit와 답변 정확도의 차이
+
+Retrieval hit는 expected metadata 기준으로 정답 후보가 Top-k 안에 들어왔는지를 보는 지표이다. 이는 실제 답변 정확도와 다르다.
+
+실제 답변 정확도는 다음 요소에 영향을 받는다.
+
+- evidence pack completeness
+- source citation 정확도
+- 예외 조건 포함 여부
+- threshold 해석 정확도
+- list item과 parent rule 연결 여부
+- wrong law / wrong article / wrong aspect 위험
+- LLM answer generation의 근거 준수 여부
+
+따라서 retrieval evaluation은 Graph-RAG 답변 생성 전 단계의 검색 품질 검증으로 이해해야 한다.
+
+---
+
+## 19. Answerable audit
+
+## 19.1 목적
+
+Answerable audit은 Top-k retrieval hit와 별개로, 검색된 후보들이 실제 답변 가능한 evidence pack을 구성할 수 있는지를 자동 추정하는 평가이다.
+
+## 19.2 평가 기준
+
+질문 intent에 따라 필요한 evidence가 다르다.
+
+예:
+
+```text
+obligation_check → Requirement evidence 필요
+education_time_lookup → Threshold/time evidence 필요
+applicability_check → Exception/Temporal/Entity evidence 필요
+inspection_requirement → ListItem + Annex evidence 필요
+definition_lookup → exact term source evidence 필요
+penalty_lookup → Penalty rule/subtype evidence 필요
+```
+
+## 19.3 결과
+
+Warning fix 이후 answerable audit 결과는 다음과 같다.
+
+```text
+Top-1 answerable: 222/309
+Top-3 answerable: 256/309
+Top-5 answerable: 272/309
+Top-10 answerable: 280/309
+```
+
+이 결과는 Graph-RAG 답변 생성 시 raw Top-k 후보를 그대로 사용하면 안 되며, 반드시 Evidence Pack Builder가 필요함을 보여준다.
+
+---
+
+## 20. Reasoning Graph 최종 산출물
+
+## 20.1 node 파일
+
+```text
+reasoning_graph/nodes/nodes_rule.csv
+reasoning_graph/nodes/nodes_requirement.csv
+reasoning_graph/nodes/nodes_threshold.csv
+reasoning_graph/nodes/nodes_exception.csv
+reasoning_graph/nodes/nodes_temporal_rule.csv
+reasoning_graph/nodes/nodes_entity_type.csv
+reasoning_graph/nodes/nodes_list_item.csv
+```
+
+## 20.2 edge 파일
+
+```text
+reasoning_graph/edges/edges_rule_source.csv
+reasoning_graph/edges/edges_rule_requirement.csv
+reasoning_graph/edges/edges_rule_threshold.csv
+reasoning_graph/edges/edges_rule_exception.csv
+reasoning_graph/edges/edges_rule_temporal.csv
+reasoning_graph/edges/edges_rule_entity.csv
+reasoning_graph/edges/edges_rule_list_item.csv
+reasoning_graph/edges/edges_rule_reasoning.csv
+```
+
+## 20.3 report 파일
+
+```text
+reasoning_graph/reports/validation_report.csv
+reasoning_graph/reports/pre_neo4j_graph_readiness_audit_after_warning_fix.csv
+reasoning_graph/reports/pre_neo4j_graph_readiness_summary_after_warning_fix.txt
+reasoning_graph/reports/pre_neo4j_warning_fix_comparison.txt
+```
+
+---
+
+## 21. Graph-RAG에서의 활용 방식
+
+Reasoning Graph는 향후 Graph-RAG pipeline에서 다음 순서로 활용된다.
+
+```text
+1. User Query
+2. Query intent classifier
+3. Rule retrieval
+4. Rule-child evidence expansion
+5. Reasoning edge 기반 제한적 expansion
+6. Source evidence 연결
+7. Evidence Pack Builder
+8. LLM answer generation
+9. Claim check
+10. Citation formatter
+```
+
+이때 LLM은 판단 주체가 아니라 graph evidence를 사용자에게 설명하는 보조 역할을 한다.
+
+## 21.1 Evidence Pack 구성
+
+각 답변 후보는 다음 evidence를 포함해야 한다.
+
+```text
+Rule
+Requirement
+Threshold
+Exception
+TemporalRule
+EntityType
+ListItem
+SourceNode
+Article/Paragraph/Item/Subitem
+Annex/LogicalRow/LogicalCell
+```
+
+질문 intent에 따라 필요한 evidence는 다르다.
+
+예:
+
+- 교육시간 질문: Rule + Threshold + SourceText
+- 안전검사 대상 질문: Rule + ListItem + Annex LogicalRow/Cell
+- 적용 여부 질문: Rule + Exception + Entity + Threshold/Temporal
+- 벌칙 질문: Penalty Rule + 관련 의무 Rule
+- 문서 제출 질문: Document Requirement + Temporal/Deadline Threshold
+
+---
+
+## 22. Neo4j 적재 전 현재 상태
+
+현재 Reasoning Graph는 Neo4j 1차 적재가 가능한 상태이다.
+
+Readiness 상태:
+
+```text
+READY_WITH_WARNINGS
+```
+
+구조적 blocking issue는 없다.
+
+```text
+orphan edge count: 0
+duplicate id count: 0
+missing source_text count: 0
+high-degree rule count: 0
+```
+
+남은 warning은 다음과 같다.
+
+```text
+OBLIGATION without Requirement
+threshold-related without Threshold
+UNKNOWN rule type/subtype
+needs_review or low confidence
+```
+
+이 warning들은 적재를 막는 오류가 아니라, 향후 evidence pack 설계와 수동 검토를 통해 관리해야 하는 품질 신호이다.
+
+---
+
+## 23. 한계 및 향후 보완
+
+## 23.1 UNKNOWN / needs_review 잔존
+
+UNKNOWN과 needs_review는 남아 있다. 그러나 이는 반드시 오류가 아니라 자동 확정이 위험한 항목을 보수적으로 남긴 결과이다.
+
+향후 보완은 다음 방식이 적절하다.
+
+- refined failure query에 영향을 주는 UNKNOWN 우선 검토
+- list item 후보 수동 검토
+- rule/list item 경계 사례 검토
+- subtype compatibility group 보강
+
+## 23.2 Requirement / Threshold 누락
+
+일부 OBLIGATION rule은 별도 Requirement node가 없고, 일부 threshold-like source에는 Threshold node가 없다. 그러나 자동으로 모두 보강하는 것은 위험하다.
+
+향후에는 실제 사용자 질문 또는 failed query에서 필요한 항목을 우선적으로 보강하는 방식이 적절하다.
+
+## 23.3 Annex/List evidence pack 필요
+
+inspection_requirement, annex_list_lookup, education_content_lookup 등은 Rule 검색만으로 충분하지 않다. ListItem, Annex LogicalRow, parent Rule을 함께 묶는 evidence pack 설계가 필요하다.
+
+## 23.4 Reasoning edge overmatch
+
+Reasoning edge는 관련 근거 확장에 유용하지만, 과도하게 사용하면 overmatch가 발생할 수 있다. 관계 유형별로 강한 연결과 약한 연결을 구분하여 traversal depth와 weight를 제한해야 한다.
+
+## 23.5 Answer generation 미구현
+
+현재 단계는 Reasoning Graph 구축과 retrieval 검증 단계이다. LLM 기반 최종 답변 생성, claim check, citation formatter는 향후 구현해야 한다.
+
+---
+
+## 24. 논문 Methods에서 설명할 수 있는 핵심 포인트
+
+논문 또는 보고서에서는 Reasoning Graph 전처리를 다음과 같은 관점으로 설명할 수 있다.
+
+1. 법령 본문과 Annex source에서 의미 단위 Rule을 추출하였다.
+2. Rule을 OBLIGATION, PROHIBITION, PENALTY, EXCLUSION, DEFINITION 등으로 분류하였다.
+3. 의무 행위, 수치 기준, 예외, 시간 조건, 법령상 주체, 목록 항목을 별도 노드로 분리하였다.
+4. 모든 의미 노드는 source_node_id와 source_text를 통해 원문으로 역추적 가능하도록 설계하였다.
+5. Annex의 목록형 항목은 Rule이 아니라 ListItem으로 분리하여 retrieval noise를 줄였다.
+6. 본문 Rule과 Annex Rule/ListItem 간 reasoning edge를 생성하되, 과연결을 줄이기 위해 edge를 축소하였다.
+7. Missing extraction audit과 pre-Neo4j warning fix를 통해 명확한 requirement와 threshold를 보강하였다.
+8. Curated 100개와 refined 309개 평가셋을 이용해 retrieval 성능과 answerable evidence를 검증하였다.
+9. 현재 상태는 Neo4j 적재 전 Reasoning Graph 지식 베이스 구축 완료 단계이며, 답변 생성은 향후 Evidence Pack Builder와 함께 구현할 예정이다.
+
+---
+
+## 25. 요약
+
+Reasoning Graph 전처리는 법령 Graph-RAG 시스템의 핵심 지식 베이스를 구축하는 단계이다.
+
+핵심 산출물은 다음과 같다.
+
+1. Rule 중심 의미 그래프
+   - nodes_rule.csv
+   - rule_type / rule_subtype
+   - source_node_id / source_text 기반 원문 추적성
+
+2. Child evidence node
+   - Requirement
+   - Threshold
+   - Exception
+   - TemporalRule
+   - EntityType
+   - ListItem
+
+3. Rule-child edge
+   - HAS_REQUIREMENT
+   - HAS_THRESHOLD
+   - HAS_EXCEPTION
+   - HAS_TEMPORAL_CONDITION
+   - APPLIES_TO / TARGETS / REQUIRES_ROLE
+   - HAS_LIST_ITEM
+
+4. Rule-source 및 Rule-rule edge
+   - EXTRACTED_FROM
+   - REFERS_TO
+   - DELEGATES_TO
+   - APPLIES_PENALTY_FOR
+   - RULE_SUPPORTED_BY_ANNEX
+   - ANNEX_RULE_REFINES_ARTICLE_RULE
+
+5. 품질 관리 자료
+   - validation report
+   - pre-Neo4j readiness audit
+   - warning fix report
+   - retrieval evaluation
+   - answerable audit
+
+현재 Reasoning Graph는 구조적 blocking issue 없이 Neo4j 1차 적재가 가능한 상태이다. 다만 UNKNOWN, needs_review, 일부 missing requirement/threshold warning은 남아 있으며, 이는 적재를 막는 오류가 아니라 향후 evidence pack 설계와 수동 검토를 통해 관리해야 할 품질 신호이다.

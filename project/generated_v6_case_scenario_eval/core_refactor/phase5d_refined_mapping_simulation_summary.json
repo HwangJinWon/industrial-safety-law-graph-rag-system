@@ -1,0 +1,17 @@
+{
+  "total_173_branch_cases": 21,
+  "article_level_match_count": 21,
+  "branch_consistent_prediction_count": 21,
+  "likely_old_current_fine_branch_overmapped_count": 21,
+  "old_current_branch_ambiguous_count": 0,
+  "true_prediction_branch_error_count": 0,
+  "refined_policy_fine_chain_match_rate": 0.8108108108108109,
+  "original_fine_chain_match_rate": 0.43243243243243246,
+  "policy_adjusted_fine_chain_match_rate": 0.8108108108108109,
+  "delta_from_original": 0.3783783783783784,
+  "delta_from_phase5b_policy_adjusted": 0.0,
+  "strict_original_fine_chain_match_rate": 0.25925925925925924,
+  "strict_phase5b_policy_adjusted_fine_chain_match_rate": 0.7407407407407407,
+  "auxiliary_original_fine_chain_match_rate": 0.9,
+  "auxiliary_phase5b_policy_adjusted_fine_chain_match_rate": 1.0
+}

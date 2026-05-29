@@ -1,0 +1,41 @@
+﻿Penalty Link Audit Report
+=========================
+created_at: 2026-05-07 19:38:46
+mode: READ_ONLY
+neo4j_write_executed: false
+llm_used: false
+
+Purpose
+-------
+Audit whether current graph.v1 can connect checklist/source/rule evidence to penalty or administrative fine rules without creating new graph relationships.
+
+Graph counts
+------------
+- penalty_rule_count: 906
+- related_rule_penalty_edges: 290
+- non_penalty_rules_linked_to_penalty: 54
+
+Candidate results
+-----------------
+- total candidate links: 3032
+- by match_type: {'DIRECT_LINKED': 228, 'ARTICLE_REFERENCE_MATCH': 2804}
+- by confidence: {'high': 228, 'medium': 2804}
+
+Interpretation
+--------------
+- DIRECT_LINKED/high: safe to expose as directly connected penalty evidence.
+- ARTICLE_REFERENCE_MATCH/medium: safe to expose only as candidate penalty evidence, not as a final legal conclusion.
+- No candidate: retain conservative warning that direct penalty evidence is not confirmed.
+
+Recommendation
+--------------
+1. Add backend fields penalties[] and candidate_penalties[].
+2. Keep high-confidence RELATED_RULE matches in penalties[].
+3. Put article-reference matches in candidate_penalties[] with a caution label.
+4. Do not claim that a checklist item definitely triggers a penalty unless a direct graph relation exists.
+
+Outputs
+-------
+- CSV: <knowledge-base-path>\neo4j_load\reports\penalty_frontend_improvement\penalty_link_candidates.csv
+- JSON: <knowledge-base-path>\neo4j_load\reports\penalty_frontend_improvement\penalty_link_audit_samples.json
+

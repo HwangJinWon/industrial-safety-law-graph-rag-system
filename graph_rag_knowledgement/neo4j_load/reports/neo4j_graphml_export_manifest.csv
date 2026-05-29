@@ -1,0 +1,6 @@
+﻿name,description,file,source,format,nodes,relationships,properties,time
+document_graph_article2_hierarchy,Law?Heading?Article?Paragraph?Item?Subitem hierarchy from the final Neo4j graph.,graph_examples/document_graph_article2_hierarchy.graphml,"statement: nodes(8), rels(7)",graphml,8,7,49,12
+annex_graph_education_hours,Annex?LogicalRow?LogicalCell plus AnnexNote and RELATED_TO_ARTICLE for safety-health education hours.,graph_examples/annex_graph_education_hours.graphml,"statement: nodes(5), rels(4)",graphml,5,4,70,33
+reasoning_graph_education_time_rule,"Rule-centered semantic graph with Requirement, Threshold, and EntityType.",graph_examples/reasoning_graph_education_time_rule.graphml,"statement: nodes(9), rels(8)",graphml,9,8,100,34
+provenance_graph_rule_to_source,Rule?SourceNode?LogicalCell provenance path and source annex/article context.,graph_examples/provenance_graph_rule_to_source.graphml,"statement: nodes(6), rels(5)",graphml,6,5,98,22
+integrated_education_hours_evidence_chain,Integrated Document+Annex+Reasoning+Provenance evidence chain for education-hour retrieval.,graph_examples/integrated_education_hours_evidence_chain.graphml,"statement: nodes(14), rels(13)",graphml,14,13,176,27

@@ -1,0 +1,29 @@
+{
+  "existing_v6_reviewed_dataset_unmodified": true,
+  "gt_unmodified": true,
+  "prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase5b_outputs_not_overwritten": true,
+  "all_new_files_phase5c_prefix": true,
+  "article_173_branch_auto_change": false,
+  "article_38_fine_auto_change": false,
+  "reviewer_decision_blank": true,
+  "reviewer_note_blank": true,
+  "case_id_answer_hardcoding": false,
+  "candidate_treated_as_selected": false,
+  "old_current_ambiguity_review_flagged": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true,
+  "phase5c_files": [
+    "phase5c_corporate_branch_manual_review_package.csv",
+    "phase5c_manual_review_package.py",
+    "phase5c_manual_review_package_report.md",
+    "phase5c_manual_review_package_summary.json",
+    "phase5c_manual_review_package_summary_by_priority.csv",
+    "phase5c_manual_review_package_summary_by_type.csv",
+    "phase5c_manual_review_targets.csv",
+    "phase5c_obligation_fine_manual_review_package.csv",
+    "phase5c_review_decision_schema.csv",
+    "phase5c_validation_checklist.json"
+  ]
+}

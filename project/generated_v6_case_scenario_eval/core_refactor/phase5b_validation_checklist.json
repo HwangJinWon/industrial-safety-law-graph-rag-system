@@ -1,0 +1,22 @@
+{
+  "existing_v6_reviewed_dataset_unmodified": true,
+  "gt_unmodified": true,
+  "prediction_unmodified": true,
+  "existing_evaluator_unmodified": true,
+  "phase1_2_3_4_5a_outputs_not_overwritten": true,
+  "all_new_files_phase5b_prefix": true,
+  "article_173_item_1_2_auto_change": false,
+  "article_38_fine_auto_change": false,
+  "no_case_id_hardcoding": true,
+  "candidate_not_evaluated_as_selected": true,
+  "original_and_policy_metrics_separated": true,
+  "policy_adjusted_not_interpreted_as_model_improvement": true,
+  "old_current_ambiguity_flagged": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true,
+  "strict_aux_review_only_count": [
+    27,
+    10,
+    3
+  ]
+}

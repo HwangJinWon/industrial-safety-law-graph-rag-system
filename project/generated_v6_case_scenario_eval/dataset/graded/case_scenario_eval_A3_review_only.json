@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "3",
+    "source_case_id": "3",
+    "case_name": "산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사)",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20230426",
+      "selected_date_for_law_version": "20230426",
+      "accident_type": "추락",
+      "result": "사망",
+      "work_type": "지하, 보수, 제조",
+      "place": "지하, 공장, 작업장, 야외작업장",
+      "victim_type": "근로자, 관계수급인, 수급인 근로자, 종사자, 피해자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"경영책임자\", \"안전보건관리책임자\", \"관리감독자\", \"도급인\", \"수급인\", \"관계수급인\"]",
+      "unsafe_condition": "작업계획서, 관리감독, 안전보건관리체계",
+      "omitted_action": "",
+      "contractor_relation": "True",
+      "serious_accident_issue": "True",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 제62조",
+      "중대재해처벌법 제2조 제9호"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 제62조",
+      "중대재해처벌법 제2조 제9호"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [
+        "중대재해처벌법 제2조 제9호"
+      ],
+      "administrative_fine": [],
+      "procedure_or_management": [
+        "산업안전보건법 제62조"
+      ]
+    },
+    "expected_law_candidates": [],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20230426\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 지하, 보수, 제조\n- 장소: 지하, 공장, 작업장, 야외작업장\n- 피해자 유형: 근로자, 관계수급인, 수급인 근로자, 종사자, 피해자\n- 책임 주체: 사업주, 법인, 경영책임자, 안전보건관리책임자, 관리감독자, 도급인, 수급인, 관계수급인\n- 위반 또는 미조치 내용:  작업계획서, 관리감독, 안전보건관리체계\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20230426\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 지하, 보수, 제조\n- 장소: 지하, 공장, 작업장, 야외작업장\n- 피해자 유형: 근로자, 관계수급인, 수급인 근로자, 종사자, 피해자\n- 책임 주체: 사업주, 법인, 경영책임자, 안전보건관리책임자, 관리감독자, 도급인, 수급인, 관계수급인\n- 위반 또는 미조치 내용:  작업계획서, 관리감독, 안전보건관리체계\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20230426\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 지하, 보수, 제조\n- 장소: 지하, 공장, 작업장, 야외작업장\n- 피해자 유형: 근로자, 관계수급인, 수급인 근로자, 종사자, 피해자\n- 책임 주체: 사업주, 법인, 경영책임자, 안전보건관리책임자, 관리감독자, 도급인, 수급인, 관계수급인\n- 위반 또는 미조치 내용:  작업계획서, 관리감독, 안전보건관리체계\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "6",
+    "source_case_id": "6",
+    "case_name": "산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건]",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20210126",
+      "selected_date_for_law_version": "20210126",
+      "accident_type": "unknown",
+      "result": "사망",
+      "work_type": "지하",
+      "place": "지하, 공장",
+      "victim_type": "근로자, 종사자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"경영책임자\"]",
+      "unsafe_condition": "",
+      "omitted_action": "",
+      "contractor_relation": "False",
+      "serious_accident_issue": "True",
+      "health_issue": "False",
+      "safety_issue": "False",
+      "scope_issue": "True"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "중대재해처벌법 제1조",
+      "중대재해처벌법 제2조 제9호",
+      "중대재해처벌법 제3조"
+    ],
+    "ground_truth_laws": [
+      "중대재해처벌법 제1조",
+      "중대재해처벌법 제2조 제9호",
+      "중대재해처벌법 제3조"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [
+        "중대재해처벌법 제1조",
+        "중대재해처벌법 제2조 제9호",
+        "중대재해처벌법 제3조"
+      ],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20210126\n- 사고 유형: unknown\n- 결과: 사망\n- 작업 내용: 지하\n- 장소: 지하, 공장\n- 피해자 유형: 근로자, 종사자\n- 책임 주체: 사업주, 법인, 경영책임자\n- 위반 또는 미조치 내용:  \n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20210126\n- 사고 유형: unknown\n- 결과: 사망\n- 작업 내용: 지하\n- 장소: 지하, 공장\n- 피해자 유형: 근로자, 종사자\n- 책임 주체: 사업주, 법인, 경영책임자\n- 위반 또는 미조치 내용:  \n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20210126\n- 사고 유형: unknown\n- 결과: 사망\n- 작업 내용: 지하\n- 장소: 지하, 공장\n- 피해자 유형: 근로자, 종사자\n- 책임 주체: 사업주, 법인, 경영책임자\n- 위반 또는 미조치 내용:  \n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "15",
+    "source_case_id": "15",
+    "case_name": "산업안전보건법 위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20090206",
+      "selected_date_for_law_version": "20090206",
+      "accident_type": "추락",
+      "result": "사망",
+      "work_type": "크레인, 지하, 보수, 공사",
+      "place": "지하, 공사현장",
+      "victim_type": "근로자, 피해자",
+      "responsible_parties": "[\"법인\"]",
+      "unsafe_condition": "안전난간, 개구부, 방호조치",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "True",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 시행령 제27조 제2항"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 시행령 제27조 제2항"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건법 시행령 제27조 제2항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제39조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20090206\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 크레인, 지하, 보수, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 법인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 개구부, 방호조치\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20090206\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 크레인, 지하, 보수, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 법인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 개구부, 방호조치\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20090206\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 크레인, 지하, 보수, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 법인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 개구부, 방호조치\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "28",
+    "source_case_id": "28",
+    "case_name": "업무상과실치사·업무상과실치상·산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20140703",
+      "selected_date_for_law_version": "20140703",
+      "accident_type": "질식, 화재, 폭발",
+      "result": "사망",
+      "work_type": "지하, 선박, 보수, 건설, 제조, 공사",
+      "place": "선박, 지하, 작업장",
+      "victim_type": "근로자, 피해자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"도급인\", \"수급인\"]",
+      "unsafe_condition": "보호구",
+      "omitted_action": "",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "True",
+      "safety_issue": "True",
+      "scope_issue": "True"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 시행령 제26조 제1항"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 시행령 제26조 제1항"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건법 시행령 제26조 제1항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제63조",
+      "산업안전보건법 제64조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20140703\n- 사고 유형: 질식, 화재, 폭발\n- 결과: 사망\n- 작업 내용: 지하, 선박, 보수, 건설, 제조, 공사\n- 장소: 선박, 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 도급인, 수급인\n- 위반 또는 미조치 내용:  보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20140703\n- 사고 유형: 질식, 화재, 폭발\n- 결과: 사망\n- 작업 내용: 지하, 선박, 보수, 건설, 제조, 공사\n- 장소: 선박, 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 도급인, 수급인\n- 위반 또는 미조치 내용:  보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20140703\n- 사고 유형: 질식, 화재, 폭발\n- 결과: 사망\n- 작업 내용: 지하, 선박, 보수, 건설, 제조, 공사\n- 장소: 선박, 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 도급인, 수급인\n- 위반 또는 미조치 내용:  보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "32",
+    "source_case_id": "32",
+    "case_name": "산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20090730",
+      "selected_date_for_law_version": "20090730",
+      "accident_type": "unknown",
+      "result": "unknown",
+      "work_type": "전기, 지하, 보수, 건설, 제조",
+      "place": "지하",
+      "victim_type": "",
+      "responsible_parties": "[\"법인\"]",
+      "unsafe_condition": "작업계획서, 방호조치",
+      "omitted_action": "",
+      "contractor_relation": "False",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 제67조의2 제1호"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 제67조의2 제1호"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": [
+        "산업안전보건법 제67조의2 제1호"
+      ]
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제38조",
+      "산업안전보건법 제39조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20090730\n- 사고 유형: unknown\n- 결과: unknown\n- 작업 내용: 전기, 지하, 보수, 건설, 제조\n- 장소: 지하\n- 피해자 유형: \n- 책임 주체: 법인\n- 위반 또는 미조치 내용:  작업계획서, 방호조치\n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20090730\n- 사고 유형: unknown\n- 결과: unknown\n- 작업 내용: 전기, 지하, 보수, 건설, 제조\n- 장소: 지하\n- 피해자 유형: \n- 책임 주체: 법인\n- 위반 또는 미조치 내용:  작업계획서, 방호조치\n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20090730\n- 사고 유형: unknown\n- 결과: unknown\n- 작업 내용: 전기, 지하, 보수, 건설, 제조\n- 장소: 지하\n- 피해자 유형: \n- 책임 주체: 법인\n- 위반 또는 미조치 내용:  작업계획서, 방호조치\n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "34",
+    "source_case_id": "34",
+    "case_name": "산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20190115",
+      "selected_date_for_law_version": "20190115",
+      "accident_type": "unknown",
+      "result": "unknown",
+      "work_type": "지하",
+      "place": "지하",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\", \"법인\"]",
+      "unsafe_condition": "보호구",
+      "omitted_action": "",
+      "contractor_relation": "False",
+      "serious_accident_issue": "False",
+      "health_issue": "True",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건기준에 관한 규칙 제519조"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건기준에 관한 규칙 제519조"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건기준에 관한 규칙 제519조"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: unknown\n- 결과: unknown\n- 작업 내용: 지하\n- 장소: 지하\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인\n- 위반 또는 미조치 내용:  보호구\n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: unknown\n- 결과: unknown\n- 작업 내용: 지하\n- 장소: 지하\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인\n- 위반 또는 미조치 내용:  보호구\n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: unknown\n- 결과: unknown\n- 작업 내용: 지하\n- 장소: 지하\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인\n- 위반 또는 미조치 내용:  보호구\n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "35",
+    "source_case_id": "35",
+    "case_name": "업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20190507",
+      "selected_date_for_law_version": "20190507",
+      "accident_type": "추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도",
+      "result": "사망",
+      "work_type": "크레인, 전기, 지하, 선박, 건설, 공사, 중량물",
+      "place": "선박, 지하, 작업장",
+      "victim_type": "근로자, 종사자, 피해자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"대표이사\", \"현장소장\", \"안전보건관리책임자\", \"관리감독자\", \"도급인\", \"수급인\"]",
+      "unsafe_condition": "안전대, 작업계획서, 관리감독, 보호구",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "True",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "True"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 제14조 제1항",
+      "산업안전보건법 제14조 제2항",
+      "산업안전보건법 제41조의2 제1항",
+      "산업안전보건법 제41조의2 제3항",
+      "산업안전보건법 제5조 제1항"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 제14조 제1항",
+      "산업안전보건법 제14조 제2항",
+      "산업안전보건법 제41조의2 제1항",
+      "산업안전보건법 제41조의2 제3항",
+      "산업안전보건법 제5조 제1항"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": [
+        "산업안전보건법 제14조 제1항",
+        "산업안전보건법 제14조 제2항",
+        "산업안전보건법 제41조의2 제1항",
+        "산업안전보건법 제41조의2 제3항",
+        "산업안전보건법 제5조 제1항"
+      ]
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제38조",
+      "산업안전보건법 제63조",
+      "산업안전보건법 제64조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190507\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 선박, 건설, 공사, 중량물\n- 장소: 선박, 지하, 작업장\n- 피해자 유형: 근로자, 종사자, 피해자\n- 책임 주체: 사업주, 법인, 대표이사, 현장소장, 안전보건관리책임자, 관리감독자, 도급인, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독, 보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190507\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 선박, 건설, 공사, 중량물\n- 장소: 선박, 지하, 작업장\n- 피해자 유형: 근로자, 종사자, 피해자\n- 책임 주체: 사업주, 법인, 대표이사, 현장소장, 안전보건관리책임자, 관리감독자, 도급인, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독, 보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190507\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 선박, 건설, 공사, 중량물\n- 장소: 선박, 지하, 작업장\n- 피해자 유형: 근로자, 종사자, 피해자\n- 책임 주체: 사업주, 법인, 대표이사, 현장소장, 안전보건관리책임자, 관리감독자, 도급인, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독, 보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "36",
+    "source_case_id": "36",
+    "case_name": "업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건]",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20190115",
+      "selected_date_for_law_version": "20190115",
+      "accident_type": "추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도",
+      "result": "사망",
+      "work_type": "크레인, 지하, 제조, 중량물",
+      "place": "지하, 작업장",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\", \"관리감독자\", \"수급인\"]",
+      "unsafe_condition": "안전대, 작업계획서, 관리감독",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 시행규칙 제6조",
+      "산업안전보건법 시행령 제11조"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 시행규칙 제6조",
+      "산업안전보건법 시행령 제11조"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건법 시행규칙 제6조",
+        "산업안전보건법 시행령 제11조"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제38조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 지하, 제조, 중량물\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 관리감독자, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 지하, 제조, 중량물\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 관리감독자, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 충돌, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 지하, 제조, 중량물\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 관리감독자, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "40",
+    "source_case_id": "40",
+    "case_name": "업무상과실치사·산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20190115",
+      "selected_date_for_law_version": "20190115",
+      "accident_type": "감전",
+      "result": "사망",
+      "work_type": "건설, 공사",
+      "place": "",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"안전보건관리책임자\", \"도급인\", \"수급인\"]",
+      "unsafe_condition": "작업계획서",
+      "omitted_action": "",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건기준에 관한 규칙 제38조",
+      "산업안전보건법 시행규칙 제30조 제4항"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건기준에 관한 규칙 제38조",
+      "산업안전보건법 시행규칙 제30조 제4항"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건기준에 관한 규칙 제38조",
+        "산업안전보건법 시행규칙 제30조 제4항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제63조",
+      "산업안전보건법 제64조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 감전\n- 결과: 사망\n- 작업 내용: 건설, 공사\n- 장소: \n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 안전보건관리책임자, 도급인, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 감전\n- 결과: 사망\n- 작업 내용: 건설, 공사\n- 장소: \n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 안전보건관리책임자, 도급인, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 감전\n- 결과: 사망\n- 작업 내용: 건설, 공사\n- 장소: \n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 안전보건관리책임자, 도급인, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "41",
+    "source_case_id": "41",
+    "case_name": "업무상과실치사·산업안전보건법위반·업무상과실치상",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20190115",
+      "selected_date_for_law_version": "20190115",
+      "accident_type": "추락, 붕괴, 낙하/비래",
+      "result": "사망",
+      "work_type": "지하, 중량물",
+      "place": "지하",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"현장소장\", \"도급인\", \"수급인\"]",
+      "unsafe_condition": "",
+      "omitted_action": "",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 시행규칙 제6조",
+      "산업안전보건법 시행령 제11조"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 시행규칙 제6조",
+      "산업안전보건법 시행령 제11조"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건법 시행규칙 제6조",
+        "산업안전보건법 시행령 제11조"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제168조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 추락, 붕괴, 낙하/비래\n- 결과: 사망\n- 작업 내용: 지하, 중량물\n- 장소: 지하\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 현장소장, 도급인, 수급인\n- 위반 또는 미조치 내용:  \n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 추락, 붕괴, 낙하/비래\n- 결과: 사망\n- 작업 내용: 지하, 중량물\n- 장소: 지하\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 현장소장, 도급인, 수급인\n- 위반 또는 미조치 내용:  \n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190115\n- 사고 유형: 추락, 붕괴, 낙하/비래\n- 결과: 사망\n- 작업 내용: 지하, 중량물\n- 장소: 지하\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 현장소장, 도급인, 수급인\n- 위반 또는 미조치 내용:  \n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "43",
+    "source_case_id": "43",
+    "case_name": "업무상과실치사·산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20190813",
+      "selected_date_for_law_version": "20190813",
+      "accident_type": "추락, 붕괴, 감전, 화재, 폭발, 낙하/비래",
+      "result": "사망",
+      "work_type": "크레인, 비계, 전기, 지하, 하역, 건설, 공사",
+      "place": "지하, 작업장",
+      "victim_type": "근로자, 피해자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"안전보건관리책임자\", \"관리감독자\", \"도급인\", \"수급인\"]",
+      "unsafe_condition": "안전대, 작업계획서, 관리감독, 보호구",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건기준에 관한 규칙 제38조 제1항",
+      "산업안전보건법 제13조"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건기준에 관한 규칙 제38조 제1항",
+      "산업안전보건법 제13조"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건기준에 관한 규칙 제38조 제1항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": [
+        "산업안전보건법 제13조"
+      ]
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제63조",
+      "산업안전보건법 제64조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190813\n- 사고 유형: 추락, 붕괴, 감전, 화재, 폭발, 낙하/비래\n- 결과: 사망\n- 작업 내용: 크레인, 비계, 전기, 지하, 하역, 건설, 공사\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 안전보건관리책임자, 관리감독자, 도급인, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독, 보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190813\n- 사고 유형: 추락, 붕괴, 감전, 화재, 폭발, 낙하/비래\n- 결과: 사망\n- 작업 내용: 크레인, 비계, 전기, 지하, 하역, 건설, 공사\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 안전보건관리책임자, 관리감독자, 도급인, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독, 보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20190813\n- 사고 유형: 추락, 붕괴, 감전, 화재, 폭발, 낙하/비래\n- 결과: 사망\n- 작업 내용: 크레인, 비계, 전기, 지하, 하역, 건설, 공사\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 안전보건관리책임자, 관리감독자, 도급인, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 작업계획서, 관리감독, 보호구\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "50",
+    "source_case_id": "50",
+    "case_name": "산업안전보건법위반·업무상과실치사",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20230607",
+      "selected_date_for_law_version": "20230607",
+      "accident_type": "추락, 붕괴, 끼임/협착, 낙하/비래, 전도",
+      "result": "사망",
+      "work_type": "크레인, 비계, 지하, 보수, 하역, 건설, 제조, 공사, 중량물",
+      "place": "지하, 공사현장, 작업장, 건설현장",
+      "victim_type": "근로자, 관계수급인, 수급인 근로자, 피해자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"현장소장\", \"안전보건관리책임자\", \"도급인\", \"수급인\", \"관계수급인\"]",
+      "unsafe_condition": "안전난간, 안전대, 개구부, 덮개, 작업계획서, 관리감독",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "True"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건기준에 관한 규칙 제44조 제1항",
+      "산업안전보건기준에 관한 규칙 제619조 제1항",
+      "산업안전보건법 제2조 제6호"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건기준에 관한 규칙 제44조 제1항",
+      "산업안전보건기준에 관한 규칙 제619조 제1항",
+      "산업안전보건법 제2조 제6호"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건기준에 관한 규칙 제44조 제1항",
+        "산업안전보건기준에 관한 규칙 제619조 제1항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [
+        "산업안전보건법 제2조 제6호"
+      ],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20230607\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 비계, 지하, 보수, 하역, 건설, 제조, 공사, 중량물\n- 장소: 지하, 공사현장, 작업장, 건설현장\n- 피해자 유형: 근로자, 관계수급인, 수급인 근로자, 피해자\n- 책임 주체: 사업주, 법인, 현장소장, 안전보건관리책임자, 도급인, 수급인, 관계수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 안전대, 개구부, 덮개, 작업계획서, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20230607\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 비계, 지하, 보수, 하역, 건설, 제조, 공사, 중량물\n- 장소: 지하, 공사현장, 작업장, 건설현장\n- 피해자 유형: 근로자, 관계수급인, 수급인 근로자, 피해자\n- 책임 주체: 사업주, 법인, 현장소장, 안전보건관리책임자, 도급인, 수급인, 관계수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 안전대, 개구부, 덮개, 작업계획서, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20230607\n- 사고 유형: 추락, 붕괴, 끼임/협착, 낙하/비래, 전도\n- 결과: 사망\n- 작업 내용: 크레인, 비계, 지하, 보수, 하역, 건설, 제조, 공사, 중량물\n- 장소: 지하, 공사현장, 작업장, 건설현장\n- 피해자 유형: 근로자, 관계수급인, 수급인 근로자, 피해자\n- 책임 주체: 사업주, 법인, 현장소장, 안전보건관리책임자, 도급인, 수급인, 관계수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 안전대, 개구부, 덮개, 작업계획서, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "56",
+    "source_case_id": "56",
+    "case_name": "산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20070824",
+      "selected_date_for_law_version": "20070824",
+      "accident_type": "추락, 붕괴",
+      "result": "사망",
+      "work_type": "크레인, 전기, 지하, 보수, 건설, 공사",
+      "place": "지하, 공사현장",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"현장소장\", \"도급인\", \"수급인\"]",
+      "unsafe_condition": "작업계획서",
+      "omitted_action": "",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "True",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 시행규칙 제30조 제5항"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 시행규칙 제30조 제5항"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건법 시행규칙 제30조 제5항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제168조",
+      "산업안전보건법 제63조",
+      "산업안전보건법 제64조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20070824\n- 사고 유형: 추락, 붕괴\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 보수, 건설, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 현장소장, 도급인, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20070824\n- 사고 유형: 추락, 붕괴\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 보수, 건설, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 현장소장, 도급인, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20070824\n- 사고 유형: 추락, 붕괴\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 보수, 건설, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 현장소장, 도급인, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "57",
+    "source_case_id": "57",
+    "case_name": "업무상과실치사(변경된 죄명: 산업안전보건법위반)",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20041013",
+      "selected_date_for_law_version": "20041013",
+      "accident_type": "추락",
+      "result": "사망",
+      "work_type": "지하, 보수, 공사",
+      "place": "지하, 공사현장",
+      "victim_type": "근로자, 피해자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"대표이사\", \"현장소장\", \"관리감독자\", \"수급인\"]",
+      "unsafe_condition": "안전난간, 안전대, 관리감독",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "True",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 제2조 제3호"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 제2조 제3호"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [
+        "산업안전보건법 제2조 제3호"
+      ],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제168조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20041013\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 지하, 보수, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 대표이사, 현장소장, 관리감독자, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 안전대, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20041013\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 지하, 보수, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 대표이사, 현장소장, 관리감독자, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 안전대, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20041013\n- 사고 유형: 추락\n- 결과: 사망\n- 작업 내용: 지하, 보수, 공사\n- 장소: 지하, 공사현장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 법인, 대표이사, 현장소장, 관리감독자, 수급인\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전난간, 안전대, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "59",
+    "source_case_id": "59",
+    "case_name": "산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "19990628",
+      "selected_date_for_law_version": "19990628",
+      "accident_type": "추락, 낙하/비래",
+      "result": "사망",
+      "work_type": "크레인, 전기, 지하, 건설, 공사",
+      "place": "지하, 작업장",
+      "victim_type": "근로자, 피해자",
+      "responsible_parties": "[\"사업주\", \"현장소장\", \"수급인\"]",
+      "unsafe_condition": "작업계획서",
+      "omitted_action": "",
+      "contractor_relation": "True",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "True"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 제1조"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 제1조"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [
+        "산업안전보건법 제1조"
+      ],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제38조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 19990628\n- 사고 유형: 추락, 낙하/비래\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 건설, 공사\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 현장소장, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 19990628\n- 사고 유형: 추락, 낙하/비래\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 건설, 공사\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 현장소장, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 19990628\n- 사고 유형: 추락, 낙하/비래\n- 결과: 사망\n- 작업 내용: 크레인, 전기, 지하, 건설, 공사\n- 장소: 지하, 작업장\n- 피해자 유형: 근로자, 피해자\n- 책임 주체: 사업주, 현장소장, 수급인\n- 위반 또는 미조치 내용:  작업계획서\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "62",
+    "source_case_id": "62",
+    "case_name": "산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20060530",
+      "selected_date_for_law_version": "20060530",
+      "accident_type": "화재, 폭발",
+      "result": "사망",
+      "work_type": "전기, 지하",
+      "place": "지하, 공장, 작업장",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\"]",
+      "unsafe_condition": "",
+      "omitted_action": "",
+      "contractor_relation": "False",
+      "serious_accident_issue": "False",
+      "health_issue": "False",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 제69조 제1호"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 제69조 제1호"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": [
+        "산업안전보건법 제69조 제1호"
+      ]
+    },
+    "expected_law_candidates": [
+      "산업안전보건법 제38조"
+    ],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20060530\n- 사고 유형: 화재, 폭발\n- 결과: 사망\n- 작업 내용: 전기, 지하\n- 장소: 지하, 공장, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주\n- 위반 또는 미조치 내용:  \n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20060530\n- 사고 유형: 화재, 폭발\n- 결과: 사망\n- 작업 내용: 전기, 지하\n- 장소: 지하, 공장, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주\n- 위반 또는 미조치 내용:  \n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20060530\n- 사고 유형: 화재, 폭발\n- 결과: 사망\n- 작업 내용: 전기, 지하\n- 장소: 지하, 공장, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주\n- 위반 또는 미조치 내용:  \n- 도급 관계: False\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: True\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  },
+  {
+    "id": "65",
+    "source_case_id": "65",
+    "case_name": "산업안전보건법위반",
+    "input_type": "case_scenario",
+    "dataset_status": "READY_A",
+    "case_facts": {
+      "accident_date": "20030818",
+      "selected_date_for_law_version": "20030818",
+      "accident_type": "끼임/협착",
+      "result": "unknown",
+      "work_type": "전기, 지하, 제조, 공사",
+      "place": "지하, 공사현장, 공장, 작업장",
+      "victim_type": "근로자",
+      "responsible_parties": "[\"사업주\", \"법인\", \"대표이사\", \"관리감독자\"]",
+      "unsafe_condition": "안전대, 방호조치, 관리감독",
+      "omitted_action": "필요한 안전보건조치 미이행",
+      "contractor_relation": "True",
+      "serious_accident_issue": "True",
+      "health_issue": "True",
+      "safety_issue": "True",
+      "scope_issue": "False"
+    },
+    "original_law_refs": [],
+    "mapped_current_law_refs": [
+      "산업안전보건법 시행규칙 제48조 제1항 제5호",
+      "산업안전보건법 시행령 제27조 제1항"
+    ],
+    "ground_truth_laws": [
+      "산업안전보건법 시행규칙 제48조 제1항 제5호",
+      "산업안전보건법 시행령 제27조 제1항"
+    ],
+    "expected_legal_bundle": {
+      "primary_obligation": [],
+      "health_obligation": [],
+      "contractor_obligation": [],
+      "serious_accident_obligation": [],
+      "detail_rule": [
+        "산업안전보건법 시행규칙 제48조 제1항 제5호",
+        "산업안전보건법 시행령 제27조 제1항"
+      ],
+      "penalty": [],
+      "corporate_penalty": [],
+      "definition_or_scope": [],
+      "administrative_fine": [],
+      "procedure_or_management": []
+    },
+    "expected_law_candidates": [],
+    "case_scenario_prompt": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20030818\n- 사고 유형: 끼임/협착\n- 결과: unknown\n- 작업 내용: 전기, 지하, 제조, 공사\n- 장소: 지하, 공사현장, 공장, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 대표이사, 관리감독자\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 방호조치, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20030818\n- 사고 유형: 끼임/협착\n- 결과: unknown\n- 작업 내용: 전기, 지하, 제조, 공사\n- 장소: 지하, 공사현장, 공장, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 대표이사, 관리감독자\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 방호조치, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "rewritten_question": "다음 산업재해/중대재해 판례 상황에 대해 현행 산업안전보건법 및 중대재해처벌법 기준으로 적용 가능한 법령 조문을 판단하세요.\n\n[판례 상황]\n- 사고일 또는 기준일: 20030818\n- 사고 유형: 끼임/협착\n- 결과: unknown\n- 작업 내용: 전기, 지하, 제조, 공사\n- 장소: 지하, 공사현장, 공장, 작업장\n- 피해자 유형: 근로자\n- 책임 주체: 사업주, 법인, 대표이사, 관리감독자\n- 위반 또는 미조치 내용: 필요한 안전보건조치 미이행 안전대, 방호조치, 관리감독\n- 도급 관계: True\n- 보건 쟁점: True\n- 중대재해처벌법 쟁점: False\n\n[요구 출력]\n1. 적용 가능한 의무 조문\n2. 필요한 세부 안전보건 기준\n3. 처벌 조문\n4. 양벌규정 또는 법인 처벌\n5. 적용범위/정의 조문이 필요한 경우 그 근거\n6. 구법 조문이 판례에 등장한 경우 현행법 대응 후보와 불확실성\n\n중요:\n- 모르는 조문은 단정하지 말 것\n- 후보와 확정 근거를 구분할 것\n- evidence에 없는 조문을 만들지 말 것\n",
+    "review_reason": "A/current direct만 GT 포함. B는 candidate/review.",
+    "v6_audit_grade": "A3_REVIEW_ONLY",
+    "v6_audit_reason": "core obligation slot is missing; obligation candidates must be reviewed before strict evaluation",
+    "audit_issues": [
+      "no_core_selected_slot"
+    ]
+  }
+]

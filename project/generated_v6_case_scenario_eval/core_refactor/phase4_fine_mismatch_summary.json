@@ -1,0 +1,27 @@
+{
+  "total_fine_mismatch_count": 23,
+  "count_by_dataset_type": {
+    "strict": 13,
+    "auxiliary": 10
+  },
+  "count_by_mismatch_type": {
+    "ARTICLE_MATCH_WRONG_PARAGRAPH": 2,
+    "CORPORATE_FINE_MISSING": 21,
+    "WRONG_SIBLING_FINE_REF": 21
+  },
+  "count_by_law_article": {
+    "산업안전보건법 제38조": 2,
+    "산업안전보건법 제173조": 21
+  },
+  "auto_fix_allowed_count": 0,
+  "review_required_count": 23,
+  "candidate_fine_missing_count": 0,
+  "candidate_article_missing_count": 0,
+  "old_current_mapping_ambiguous_count": 0,
+  "penalty_fine_missing_count": 0,
+  "corporate_fine_missing_count": 21,
+  "serious_accident_penalty_fine_missing_count": 0,
+  "detail_rule_fine_missing_count": 0,
+  "wrong_sibling_fine_ref_count": 21,
+  "true_wrong_article_count": 0
+}

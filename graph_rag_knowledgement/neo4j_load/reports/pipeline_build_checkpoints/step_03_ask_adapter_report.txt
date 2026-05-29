@@ -1,0 +1,61 @@
+step_id: 3
+step_name: FastAPI Ask Adapter
+attempt_number: 1
+started_at: 2026-05-07 12:51:00
+finished_at: 2026-05-07 12:53:00
+
+Created files:
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/graph_rag_pipeline/smoke_test_ask_adapter.py
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/ask_adapter_smoke_test_report.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/ask_adapter_smoke_test_samples.json
+
+Modified files:
+- none
+
+Existing FastAPI structure:
+- no existing FastAPI /ask implementation was found in the searched Python files.
+- a new FastAPI-compatible adapter module was created.
+- smoke test used direct function calls rather than starting a server.
+
+Request compatibility:
+- accepts query
+- accepts question
+- accepts message
+- keeps mode = qa
+- accepts chat_history
+- accepts options.include_evidence/include_debug/top_k/use_llm
+
+Response compatibility:
+- answer present
+- citations present
+- evidence_chips present
+- legacy evidences[] present
+- claim_check present
+- risk-assessment notice answer_policy = INDIRECT_ONLY_RESPONSE
+
+Test command:
+- python -B 05_code/graph_rag_pipeline/smoke_test_ask_adapter.py --root-dir .
+
+Test result:
+- PASS
+
+Warnings:
+- adapter was verified by direct function smoke test; server runtime wiring can be verified later when launching FastAPI.
+- /law/{nodeId} compatibility endpoint was not implemented in this step because /ask was the blocker and no existing backend app was found.
+
+Errors:
+- none
+
+Safety checks:
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+- frontend modification: none
+- password value logged: no
+
+Decision:
+- PASS_WITH_WARNINGS
+- next_step_allowed: yes
+- manual_review_required: no

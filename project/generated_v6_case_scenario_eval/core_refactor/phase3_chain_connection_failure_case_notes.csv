@@ -1,0 +1,22 @@
+﻿case_id,dataset_type,case_name,failure_types,auto_fix_allowed_count,review_only_count,notes
+2,strict,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),"[""obligation_selected_but_penalty_not_connected""]",1,0,selected obligation has penalty candidate but chain lacks penalty connection
+3,strict,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+13,strict,산업안전보건법위반,"[""obligation_selected_but_penalty_not_connected""]",2,0,selected obligation has penalty candidate but chain lacks penalty connection
+26,strict,업무상과실치사·업무상과실치상·산업안전보건법위반,"[""obligation_selected_but_penalty_not_connected""]",2,0,selected obligation has penalty candidate but chain lacks penalty connection
+27,strict,증거인멸·산업안전보건법위반,"[""obligation_selected_but_penalty_not_connected""]",2,0,selected obligation has penalty candidate but chain lacks penalty connection
+30,strict,업무상과실치사·업무상과실치상·산업안전보건법위반,"[""obligation_selected_but_penalty_not_connected""]",2,0,selected obligation has penalty candidate but chain lacks penalty connection
+35,strict,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+49,strict,산업안전보건법위반·업무상과실치사,"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+52,strict,증거인멸·산업안전보건법위반,"[""obligation_selected_but_penalty_not_connected""]",2,0,selected obligation has penalty candidate but chain lacks penalty connection
+54,strict,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],"[""obligation_selected_but_penalty_not_connected""]",1,0,selected obligation has penalty candidate but chain lacks penalty connection
+57,strict,업무상과실치사(변경된 죄명: 산업안전보건법위반),"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+15,auxiliary,산업안전보건법 위반,"[""old_current_mapping_chain_ambiguity""]",0,2,chain mismatch not safely classifiable
+28,auxiliary,업무상과실치사·업무상과실치상·산업안전보건법위반,"[""penalty_selected_but_corporate_not_connected""]",3,0,selected penalty has corporate candidate but chain lacks corporate connection
+36,auxiliary,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+40,auxiliary,업무상과실치사·산업안전보건법위반,"[""penalty_selected_but_corporate_not_connected""]",2,0,selected penalty has corporate candidate but chain lacks corporate connection
+41,auxiliary,업무상과실치사·산업안전보건법위반·업무상과실치상,"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+43,auxiliary,업무상과실치사·산업안전보건법위반,"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+50,auxiliary,산업안전보건법위반·업무상과실치사,"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+56,auxiliary,산업안전보건법위반,"[""old_current_mapping_chain_ambiguity""]",0,2,chain mismatch not safely classifiable
+59,auxiliary,산업안전보건법위반,"[""old_current_mapping_chain_ambiguity""]",0,1,chain mismatch not safely classifiable
+62,auxiliary,산업안전보건법위반,"[""penalty_selected_but_corporate_not_connected""]",2,0,selected penalty has corporate candidate but chain lacks corporate connection

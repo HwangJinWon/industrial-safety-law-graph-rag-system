@@ -1,0 +1,33 @@
+{
+  "case_count": 27,
+  "pattern_counts": {
+    "other_overselection": 8,
+    "cross_law_overselection": 2,
+    "obligation_slot_overselection": 11,
+    "full_chain_overselection": 6
+  },
+  "avg_direct_f1": 0.8863168724279838,
+  "avg_safe_f1": 0.6522231883342995,
+  "large_improvement_cases": [
+    "4",
+    "5",
+    "7",
+    "8",
+    "13",
+    "14",
+    "21",
+    "22",
+    "26",
+    "27",
+    "30",
+    "44",
+    "45",
+    "48",
+    "51",
+    "52",
+    "55",
+    "60",
+    "68"
+  ],
+  "interpretation": "Large improvements mostly come from separating overselected cross-law or chain-completion references from direct selected laws."
+}

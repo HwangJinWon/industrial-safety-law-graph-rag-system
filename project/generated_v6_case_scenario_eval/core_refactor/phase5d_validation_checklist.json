@@ -1,0 +1,29 @@
+{
+  "existing_v6_reviewed_dataset_unmodified": true,
+  "original_gt_unmodified": true,
+  "prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase5c_outputs_not_overwritten": true,
+  "all_new_files_phase5d_prefix": true,
+  "article_173_2_directly_replaced_with_173_1": false,
+  "old_corporate_penalty_mapped_directly_only_to_article_173": true,
+  "subparagraph_1_2_decided_only_by_penalty_branch_resolver": true,
+  "reviewer_decision_auto_filled": false,
+  "reviewer_note_auto_filled": false,
+  "case_id_answer_hardcoding": false,
+  "candidate_treated_as_selected": false,
+  "refined_layer_replaces_original_gt": false,
+  "affects_original_gt_false_maintained": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true,
+  "phase5d_files": [
+    "phase5d_corporate_branch_resolver_rules.csv",
+    "phase5d_old_current_corporate_mapping_audit.csv",
+    "phase5d_old_current_corporate_mapping_refinement_report.md",
+    "phase5d_old_current_mapping_refinement.py",
+    "phase5d_refined_corporate_mapping_layer.csv",
+    "phase5d_refined_mapping_evaluation_simulation.csv",
+    "phase5d_refined_mapping_simulation_summary.json",
+    "phase5d_validation_checklist.json"
+  ]
+}

@@ -1,0 +1,22 @@
+step_id: 07
+step_name: CSS restructure
+status: PASS
+
+수정 파일:
+- 05_code/frontend reference/src/index.css
+
+추가/정리한 스타일:
+- qa-layout, qa-main-panel, qa-input-card, answer-card
+- explore-layout, explore-panel, explore-list, explore-item
+- validation-page, validation-grid, validation-layout, validation-item, guardrail-card
+- check-summary
+- responsive grid handling for checklist/qa/explore/validation
+
+디자인 원칙:
+- 업무 도구형 UI로 정보 밀도를 높였다.
+- 새 dependency를 추가하지 않았다.
+- candidate penalty와 direct penalty의 시각적 강도를 분리했다.
+- 내부 node id는 details 영역에서만 확인하도록 유지했다.
+
+Neo4j write: 없음
+LLM 호출: 없음

@@ -1,0 +1,25 @@
+step_id: 01
+step_name: Page architecture restructure
+status: PASS
+
+변경 내용:
+- 기존 checklist/dashboard/history 중심 사이드바를 checklist/qa/explore/validation/history 구조로 재구성했다.
+- pageInfo mapping을 추가해 각 페이지의 title/subtitle을 분리했다.
+- floating chat은 유지하되, 본격적인 법령 질의는 qa 페이지에서 수행하도록 했다.
+- selectedLaw와 openLaw() 기반 법령 상세 패널을 공통 renderLawPanel()로 분리했다.
+- 질문 제출 흐름을 submitQuestion()으로 공통화하고 sendChat(), sendQa()가 같은 /ask 로직을 사용하도록 했다.
+
+구성된 페이지:
+- 체크리스트
+- 법령 QA
+- 근거 탐색
+- 검증/리포트
+- History
+
+호환성:
+- 기존 /ask request/response 필드 유지
+- 기존 history 저장 필드 유지
+- 기존 checklist 생성 및 /law 상세 조회 유지
+
+Neo4j write: 없음
+LLM 호출: 없음

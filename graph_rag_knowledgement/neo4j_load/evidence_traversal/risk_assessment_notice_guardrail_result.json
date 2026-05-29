@@ -1,0 +1,650 @@
+{
+  "created_at": "2026-05-07 11:42:25",
+  "mode": "READ_ONLY_GUARDRAIL_CHECK",
+  "query": "위험성평가 결과를 근로자에게 알려야 하나?",
+  "intent": "obligation_check",
+  "status": "OK_WITH_WARNINGS",
+  "evidence_readiness": "INDIRECT_ONLY",
+  "primary_evidence_count": 5,
+  "citation_candidate_count": 3,
+  "warning_count": 3,
+  "missing_evidence_count": 1,
+  "warnings": [
+    {
+      "warning_type": "UNKNOWN_RULE_TYPE",
+      "severity": "medium",
+      "message": "Rule type or subtype is UNKNOWN.",
+      "related_id": "b26632d5-1cc6-5432-95b7-136e9558389a"
+    },
+    {
+      "warning_type": "UNKNOWN_RULE_TYPE",
+      "severity": "medium",
+      "message": "Rule type or subtype is UNKNOWN.",
+      "related_id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755"
+    },
+    {
+      "warning_type": "DIRECT_EVIDENCE_NOT_FOUND",
+      "severity": "high",
+      "message": "현재 KB에서는 해당 의무를 직접 뒷받침하는 조문 근거가 확인되지 않았으며, 간접 근거만 확인됩니다.",
+      "related_id": "",
+      "reference": {
+        "audit_report": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_audit.txt",
+        "audit_matches": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_matches.csv",
+        "source_coverage_judgment": "ONLY_INDIRECT_EVIDENCE_FOUND"
+      }
+    }
+  ],
+  "missing_evidence": [
+    {
+      "missing_type": "DIRECT_OBLIGATION_SOURCE",
+      "message": "Direct source wording for risk-assessment result notice/disclosure to workers was not found.",
+      "severity": "high",
+      "reference": {
+        "audit_report": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_audit.txt",
+        "audit_matches": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_matches.csv"
+      }
+    }
+  ],
+  "primary_evidence_top5": [
+    {
+      "evidence_kind": "rule",
+      "rule_id": "e6a390cd-532c-56c9-bccf-c46575f4cc7d",
+      "rule_type": "PROCEDURE",
+      "rule_subtype": "EDUCATION_CONTENT",
+      "law_name": "산업안전보건법 시행규칙",
+      "article_no": null,
+      "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+      "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+      "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+      "requirements": [
+        {
+          "rule_id": "e6a390cd-532c-56c9-bccf-c46575f4cc7d",
+          "needs_review": false,
+          "requirement_type": "OTHER",
+          "source_node_id": "lrow_eadf26121ecf",
+          "required_action": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "target_object": "보건관리자",
+          "confidence": "medium",
+          "requirement_id": "02084de3-1a28-5791-be84-b025bbab6b20",
+          "_labels": [
+            "Requirement"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "exceptions": [],
+      "temporal_rules": [],
+      "entities": [
+        {
+          "entity": {
+            "source_node_ids": "07d54906c02656c4186a1b9f420a502f90c677a5,09f143c4f0ce1692714a73130c9d82f167f8e936,0a9bf20f44c1dd5858acd6230a395aa9ab7a8bbc,0c3f5a77158939ceaaf966c4d60333eabf224d47,0c95bbda3013464bdb624bac1aa6ef5dafeed886,117364b603c9217da46b9eff2ed0daba51543330,1602bf864a6e06a02ef7a614d03ec69dfe6210c5,1a6600d740...",
+            "entity_category": "PERSON_ROLE",
+            "entity_name": "보건관리자",
+            "synonyms": "보건관리자",
+            "entity_type_id": "e9628533-9dd2-586c-801a-7fd48b755a74",
+            "_labels": [
+              "EntityType"
+            ]
+          },
+          "rel": "REQUIRES_ROLE"
+        },
+        {
+          "entity": {
+            "source_node_ids": "00260d39a5d5f073fbefc7ae5b7defa1e508aca3,009cf5bd5d388a8e1561aab29a23fb92bc66f9c1,009e8bd7e7159d8ca9acc530c157978814428660,00bf550a064a9dceb2ec153f0b2ca8c57f237038,00f9a856d8470c234e3ce5acc91263d352ad39ee,012ac1d4cc4a8bb880f6a9a01eb13c4ac3a29e97,01772b29acba7e37b50e4a554e9ca5eae3316080,024932a1e7...",
+            "entity_category": "WORKER_TYPE",
+            "entity_name": "근로자",
+            "synonyms": "근로자",
+            "entity_type_id": "235dd4b9-1de7-5508-8eba-f423e8fbb7f2",
+            "_labels": [
+              "EntityType"
+            ]
+          },
+          "rel": "APPLIES_TO"
+        }
+      ],
+      "list_items": [],
+      "source_nodes": [
+        {
+          "source_node_type": "annex_logical_row",
+          "source_origin": "nodes_rule.csv",
+          "law_name": "산업안전보건법 시행규칙",
+          "source_node_id": "lrow_eadf26121ecf",
+          "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "annex_no": 5,
+          "parent_source_node_type": "annex",
+          "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+          "parent_source_node_id": "5f199362d71a4d999a3dcc83de7bb220bd6d1d13",
+          "annex_id": "5f199362d71a4d999a3dcc83de7bb220bd6d1d13",
+          "source_context_text": "5 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련) 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "_labels": [
+            "SourceNode"
+          ]
+        }
+      ],
+      "source_anchors": [
+        {
+          "logical_cells_raw_json": "[\"관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항\", \"위하여 필요한 사항\"]",
+          "logical_cells_clean_json": "[\"관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항\", \"위하여 필요한 사항\"]",
+          "table_logical_row_index": 32,
+          "source_physical_row_ids_json": "[\"row_c992231c3693\"]",
+          "is_merged": false,
+          "merge_reason": "independent_table_row",
+          "table_id": "tbl_09a1a50db28c",
+          "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+          "logical_row_index": 2579,
+          "logical_row_data_json": "{\"교육대상\": \"관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항\", \"교육내용\": \"위하여 필요한 사항\"}",
+          "logical_row_id": "lrow_eadf26121ecf",
+          "is_note_row": false,
+          "logical_row_text_raw": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "source_line_end": 32,
+          "section_id": "sec_7d345789c5f7",
+          "cell_count": 2,
+          "logical_row_text_clean": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "merged_physical_row_count": 1,
+          "merge_quality": "maybe",
+          "annex_id": "5f199362d71a4d999a3dcc83de7bb220bd6d1d13",
+          "source_line_start": 32,
+          "is_header": false,
+          "_labels": [
+            "LogicalRow"
+          ]
+        }
+      ],
+      "source_anchor": {
+        "label": "LogicalRow",
+        "id": "lrow_eadf26121ecf",
+        "source_text_preview": ""
+      },
+      "related_rules": [],
+      "confidence": "medium",
+      "needs_review": false,
+      "score": 21
+    },
+    {
+      "evidence_kind": "rule",
+      "rule_id": "95a9d186-fed1-5604-82b2-14064ea64cff",
+      "rule_type": "PROCEDURE",
+      "rule_subtype": "EDUCATION_CONTENT",
+      "law_name": "산업안전보건법 시행규칙",
+      "article_no": null,
+      "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+      "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+      "source_text_preview": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+      "requirements": [
+        {
+          "rule_id": "95a9d186-fed1-5604-82b2-14064ea64cff",
+          "needs_review": false,
+          "requirement_type": "OTHER",
+          "source_node_id": "lcell_126568e2feba",
+          "required_action": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+          "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+          "target_object": "보건관리자",
+          "confidence": "medium",
+          "requirement_id": "d4756dd9-fecb-5079-99c9-5e5cbc90b30d",
+          "_labels": [
+            "Requirement"
+          ]
+        }
+      ],
+      "thresholds": [],
+      "exceptions": [],
+      "temporal_rules": [],
+      "entities": [
+        {
+          "entity": {
+            "source_node_ids": "07d54906c02656c4186a1b9f420a502f90c677a5,09f143c4f0ce1692714a73130c9d82f167f8e936,0a9bf20f44c1dd5858acd6230a395aa9ab7a8bbc,0c3f5a77158939ceaaf966c4d60333eabf224d47,0c95bbda3013464bdb624bac1aa6ef5dafeed886,117364b603c9217da46b9eff2ed0daba51543330,1602bf864a6e06a02ef7a614d03ec69dfe6210c5,1a6600d740...",
+            "entity_category": "PERSON_ROLE",
+            "entity_name": "보건관리자",
+            "synonyms": "보건관리자",
+            "entity_type_id": "e9628533-9dd2-586c-801a-7fd48b755a74",
+            "_labels": [
+              "EntityType"
+            ]
+          },
+          "rel": "REQUIRES_ROLE"
+        },
+        {
+          "entity": {
+            "source_node_ids": "00260d39a5d5f073fbefc7ae5b7defa1e508aca3,009cf5bd5d388a8e1561aab29a23fb92bc66f9c1,009e8bd7e7159d8ca9acc530c157978814428660,00bf550a064a9dceb2ec153f0b2ca8c57f237038,00f9a856d8470c234e3ce5acc91263d352ad39ee,012ac1d4cc4a8bb880f6a9a01eb13c4ac3a29e97,01772b29acba7e37b50e4a554e9ca5eae3316080,024932a1e7...",
+            "entity_category": "WORKER_TYPE",
+            "entity_name": "근로자",
+            "synonyms": "근로자",
+            "entity_type_id": "235dd4b9-1de7-5508-8eba-f423e8fbb7f2",
+            "_labels": [
+              "EntityType"
+            ]
+          },
+          "rel": "APPLIES_TO"
+        }
+      ],
+      "list_items": [],
+      "source_nodes": [
+        {
+          "source_node_type": "annex_logical_cell",
+          "source_origin": "nodes_rule.csv",
+          "law_name": "산업안전보건법 시행규칙",
+          "source_node_id": "lcell_126568e2feba",
+          "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+          "annex_no": 5,
+          "parent_source_node_type": "annex_logical_row",
+          "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+          "parent_source_node_id": "lrow_eadf26121ecf",
+          "annex_id": "5f199362d71a4d999a3dcc83de7bb220bd6d1d13",
+          "source_context_text": "5 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련) 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항 교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한...",
+          "_labels": [
+            "SourceNode"
+          ]
+        }
+      ],
+      "source_anchors": [
+        {
+          "cell_text_raw": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+          "header_clean": "교육대상",
+          "logical_cell_id": "lcell_126568e2feba",
+          "table_id": "tbl_09a1a50db28c",
+          "column_index": 0,
+          "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+          "cell_text_clean": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+          "logical_row_index": 2579,
+          "logical_row_id": "lrow_eadf26121ecf",
+          "section_id": "sec_7d345789c5f7",
+          "header_raw": "교육대상",
+          "original_empty_source": false,
+          "has_filled_down_source": false,
+          "merge_quality": "maybe",
+          "annex_id": "5f199362d71a4d999a3dcc83de7bb220bd6d1d13",
+          "source_physical_cell_ids_json": "[\"cell_ca342ce474d1\"]",
+          "_labels": [
+            "LogicalCell"
+          ]
+        }
+      ],
+      "source_anchor": {
+        "label": "LogicalCell",
+        "id": "lrow_eadf26121ecf",
+        "source_text_preview": ""
+      },
+      "related_rules": [],
+      "confidence": "medium",
+      "needs_review": false,
+      "score": 21
+    },
+    {
+      "evidence_kind": "rule",
+      "rule_id": "b26632d5-1cc6-5432-95b7-136e9558389a",
+      "rule_type": "DEFINITION",
+      "rule_subtype": "UNKNOWN",
+      "law_name": "산업안전보건법 시행규칙",
+      "article_no": "제9조",
+      "annex_title": null,
+      "source_text": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+      "source_text_preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+      "requirements": [],
+      "thresholds": [],
+      "exceptions": [],
+      "temporal_rules": [],
+      "entities": [
+        {
+          "entity": {
+            "source_node_ids": "00260d39a5d5f073fbefc7ae5b7defa1e508aca3,009cf5bd5d388a8e1561aab29a23fb92bc66f9c1,009e8bd7e7159d8ca9acc530c157978814428660,00bf550a064a9dceb2ec153f0b2ca8c57f237038,00f9a856d8470c234e3ce5acc91263d352ad39ee,012ac1d4cc4a8bb880f6a9a01eb13c4ac3a29e97,01772b29acba7e37b50e4a554e9ca5eae3316080,024932a1e7...",
+            "entity_category": "WORKER_TYPE",
+            "entity_name": "근로자",
+            "synonyms": "근로자",
+            "entity_type_id": "235dd4b9-1de7-5508-8eba-f423e8fbb7f2",
+            "_labels": [
+              "EntityType"
+            ]
+          },
+          "rel": "APPLIES_TO"
+        }
+      ],
+      "list_items": [],
+      "source_nodes": [
+        {
+          "source_node_type": "paragraph",
+          "source_origin": "nodes_rule.csv",
+          "law_name": "산업안전보건법 시행규칙",
+          "source_node_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+          "source_text": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+          "parent_source_node_type": "article",
+          "parent_source_node_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+          "article_no": "제9조",
+          "source_context_text": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+          "_labels": [
+            "SourceNode"
+          ]
+        }
+      ],
+      "source_anchors": [
+        {
+          "article_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+          "paragraph_no": "본문",
+          "method": "fallback_whole_article_as_paragraph",
+          "text": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+          "derived": true,
+          "paragraph_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+          "_labels": [
+            "Paragraph"
+          ]
+        }
+      ],
+      "source_anchor": {
+        "label": "Paragraph",
+        "id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "source_text_preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다."
+      },
+      "related_rules": [
+        {
+          "rule": {
+            "source_node_type": "paragraph",
+            "source_node_id": "63084ce149f945a26a1d6e34d82ecb140433e349",
+            "target_subject": "기관",
+            "query_intents_json": "[\"procedure_lookup\"]",
+            "source_text": "① 영 제23조제2항제1호에 따라 업종별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 광업으로 한다.",
+            "confidence": "medium",
+            "related_article_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "parent_source_node_type": "article",
+            "extraction_method": "pattern_match",
+            "heading_context": "9 제2장 안전보건관리체제 등",
+            "rule_subtype": "UNKNOWN",
+            "parent_source_node_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+            "source_context_text": "① 영 제23조제2항제1호에 따라 업종별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 광업으로 한다.",
+            "requirement_text": "① 영 제23조제2항제1호에 따라 업종별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 광업으로 한다.",
+            "rule_id": "798328c1-31a5-52a3-be7e-1cc49c8d5d1b",
+            "article_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "needs_review": false,
+            "paragraph_no": "①",
+            "law_name": "산업안전보건법 시행규칙",
+            "rule_type": "PROCEDURE",
+            "article_no": "제15조",
+            "_labels": [
+              "Rule"
+            ]
+          },
+          "rel": "REQUIRES_PREREQUISITE"
+        },
+        {
+          "rule": {
+            "source_node_type": "paragraph",
+            "source_node_id": "a784de132102a0f981038c19ad7f296c23370456",
+            "target_subject": "기관",
+            "query_intents_json": "[\"threshold_lookup\"]",
+            "source_text": "② 영 제23조제2항제1호에 따라 유해인자별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 다음 각 호와 같다.",
+            "confidence": "medium",
+            "related_article_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "parent_source_node_type": "article",
+            "extraction_method": "pattern_match",
+            "heading_context": "9 제2장 안전보건관리체제 등",
+            "rule_subtype": "UNKNOWN",
+            "parent_source_node_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+            "source_context_text": "② 영 제23조제2항제1호에 따라 유해인자별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 다음 각 호와 같다.",
+            "requirement_text": "② 영 제23조제2항제1호에 따라 유해인자별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 다음 각 호와 같다.",
+            "rule_id": "0507eae1-76c4-56ae-a0ca-e97cfd9376a8",
+            "article_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "needs_review": false,
+            "paragraph_no": "②",
+            "law_name": "산업안전보건법 시행규칙",
+            "rule_type": "THRESHOLD",
+            "article_no": "제15조",
+            "_labels": [
+              "Rule"
+            ]
+          },
+          "rel": "REQUIRES_PREREQUISITE"
+        },
+        {
+          "rule": {
+            "source_node_type": "paragraph",
+            "source_node_id": "9814b4b255fa1fad87776cda2fd65fe553ada6c7",
+            "target_subject": "사업주",
+            "query_intents_json": "[\"annex_detail_lookup\", \"delegated_standard_lookup\"]",
+            "source_text": "① 사업주 또는 법 제33조제1항에 따른 안전보건교육기관이 법 제29조ㆍ제31조 및 제32조에 따른 교육을 실시할 때에는 별표 5에 따른 안전보건교육의 교육대상별 교육내용에 적합한 교재를 사용해야 한다.",
+            "target_object": "교육",
+            "confidence": "high",
+            "condition_text": "① 사업주 또는 법 제33조제1항에 따른 안전보건교육기관이 법 제29조ㆍ제31조 및 제32조에 따른 교육을 실시할 때에는 별표 5에 따른 안전보건교육의 교육대상별 교육내용에 적합한 교재를 사용해야 한다.",
+            "related_article_id": "538c944f3b4a88628620ddeca4fb48f367d3dee8",
+            "parent_source_node_type": "article",
+            "extraction_method": "pattern_match",
+            "heading_context": "26 제3장 안전보건교육",
+            "rule_subtype": "EDUCATION_CONTENT",
+            "parent_source_node_id": "538c944f3b4a88628620ddeca4fb48f367d3dee8",
+            "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+            "source_context_text": "① 사업주 또는 법 제33조제1항에 따른 안전보건교육기관이 법 제29조ㆍ제31조 및 제32조에 따른 교육을 실시할 때에는 별표 5에 따른 안전보건교육의 교육대상별 교육내용에 적합한 교재를 사용해야 한다.",
+            "requirement_text": "① 사업주 또는 법 제33조제1항에 따른 안전보건교육기관이 법 제29조ㆍ제31조 및 제32조에 따른 교육을 실시할 때에는 별표 5에 따른 안전보건교육의 교육대상별 교육내용에 적합한 교재를 사용해야 한다.",
+            "rule_id": "f9343186-86aa-5fe8-8d2c-2756aedaced8",
+            "article_id": "538c944f3b4a88628620ddeca4fb48f367d3dee8",
+            "needs_review": false,
+            "paragraph_no": "①",
+            "law_name": "산업안전보건법 시행규칙",
+            "rule_type": "DELEGATION",
+            "article_no": "제36조",
+            "_labels": [
+              "Rule"
+            ]
+          },
+          "rel": "REQUIRES_PREREQUISITE"
+        },
+        {
+          "rule": {
+            "source_node_type": "paragraph",
+            "source_node_id": "a2e0c7bbb298ca8780d9a631b58e7efe51a1a23e",
+            "target_subject": "사업주",
+            "query_intents_json": "[\"procedure_lookup\"]",
+            "source_text": "② 안전보건교육기관이 사업주의 위탁을 받아 제26조에 따른 교육을 실시하였을 때에는 고용노동부장관이 정하는 교육 실시확인서를 발급해야 한다.",
+            "target_object": "교육",
+            "confidence": "high",
+            "condition_text": "② 안전보건교육기관이 사업주의 위탁을 받아 제26조에 따른 교육을 실시하였을 때에는 고용노동부장관이 정하는 교육 실시확인서를 발급해야 한다.",
+            "related_article_id": "538c944f3b4a88628620ddeca4fb48f367d3dee8",
+            "parent_source_node_type": "article",
+            "extraction_method": "pattern_match",
+            "heading_context": "26 제3장 안전보건교육",
+            "rule_subtype": "EDUCATION_REQUIREMENT",
+            "parent_source_node_id": "538c944f3b4a88628620ddeca4fb48f367d3dee8",
+            "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+            "source_context_text": "② 안전보건교육기관이 사업주의 위탁을 받아 제26조에 따른 교육을 실시하였을 때에는 고용노동부장관이 정하는 교육 실시확인서를 발급해야 한다.",
+            "requirement_text": "② 안전보건교육기관이 사업주의 위탁을 받아 제26조에 따른 교육을 실시하였을 때에는 고용노동부장관이 정하는 교육 실시확인서를 발급해야 한다.",
+            "rule_id": "fe08b49b-64d2-5ca4-97ae-df6ed0edb3e5",
+            "article_id": "538c944f3b4a88628620ddeca4fb48f367d3dee8",
+            "needs_review": false,
+            "paragraph_no": "②",
+            "law_name": "산업안전보건법 시행규칙",
+            "rule_type": "PROCEDURE",
+            "article_no": "제36조",
+            "_labels": [
+              "Rule"
+            ]
+          },
+          "rel": "REQUIRES_PREREQUISITE"
+        },
+        {
+          "rule": {
+            "source_node_type": "item",
+            "source_node_id": "17d5c1d802d5f41c301586080b2502ed539db57c",
+            "target_subject": "기관",
+            "query_intents_json": "[\"threshold_lookup\"]",
+            "source_text": "5. 법 제118조에 따라 제조ㆍ사용허가를 받아야 할 물질을 취급하는 사업",
+            "confidence": "medium",
+            "related_article_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "parent_source_node_type": "paragraph",
+            "extraction_method": "pattern_match",
+            "heading_context": "9 제2장 안전보건관리체제 등",
+            "rule_subtype": "APPROVAL_PERMISSION",
+            "parent_source_node_id": "a784de132102a0f981038c19ad7f296c23370456",
+            "law_version_id": "b6fa09bb4f2e711645b25f12207959d1ec27622c",
+            "source_context_text": "② 영 제23조제2항제1호에 따라 유해인자별 보건관리전문기관에 보건관리 업무를 위탁할 수 있는 사업은 다음 각 호와 같다. 5. 법 제118조에 따라 제조ㆍ사용허가를 받아야 할 물질을 취급하는 사업",
+            "requirement_text": "5. 법 제118조에 따라 제조ㆍ사용허가를 받아야 할 물질을 취급하는 사업",
+            "rule_id": "41d26d21-edb3-507e-b8fd-e4f257922930",
+            "article_id": "1a179283872dc209d8d27a9e370245dbcdd39756",
+            "needs_review": false,
+            "paragraph_no": "②",
+            "law_name": "산업안전보건법 시행규칙",
+            "rule_type": "THRESHOLD",
+            "article_no": "제15조",
+            "_labels": [
+              "Rule"
+            ]
+          },
+          "rel": "REQUIRES_PREREQUISITE"
+        }
+      ],
+      "confidence": "high",
+      "needs_review": false,
+      "score": 16
+    },
+    {
+      "evidence_kind": "rule",
+      "rule_id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755",
+      "rule_type": "DEFINITION",
+      "rule_subtype": "UNKNOWN",
+      "law_name": "산업안전보건법 시행령",
+      "article_no": "제15조",
+      "annex_title": null,
+      "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+      "source_text_preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+      "requirements": [],
+      "thresholds": [],
+      "exceptions": [],
+      "temporal_rules": [],
+      "entities": [],
+      "list_items": [],
+      "source_nodes": [
+        {
+          "source_node_type": "subitem",
+          "source_origin": "nodes_rule.csv",
+          "law_name": "산업안전보건법 시행령",
+          "source_node_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+          "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+          "parent_source_node_type": "item",
+          "parent_source_node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+          "article_no": "제15조",
+          "source_context_text": "① 법 제16조제1항에서 \"대통령령으로 정하는 업무\"란 다음 각 호의 업무를 말한다. <개정 2021.11.19> 6. 법 제36조에 따라 실시되는 위험성평가에 관한 다음 각 목의 업무 가. 유해ㆍ위험요인의 파악에 대한 참여",
+          "_labels": [
+            "SourceNode"
+          ]
+        }
+      ],
+      "source_anchors": [
+        {
+          "method": "json_structured_mok",
+          "item_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+          "subitem_no": "가.",
+          "text": "가.  유해ㆍ위험요인의 파악에 대한 참여",
+          "subitem_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+          "derived": false,
+          "_labels": [
+            "Subitem"
+          ]
+        }
+      ],
+      "source_anchor": {
+        "label": "Subitem",
+        "id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_text_preview": "가.  유해ㆍ위험요인의 파악에 대한 참여"
+      },
+      "related_rules": [],
+      "confidence": "high",
+      "needs_review": false,
+      "score": 18
+    },
+    {
+      "evidence_kind": "rule",
+      "rule_id": "2ffc23e4-1855-579b-878a-1bd394f86c7f",
+      "rule_type": "DEFINITION",
+      "rule_subtype": "CORRECTIVE_MEASURE",
+      "law_name": "산업안전보건법 시행령",
+      "article_no": "제15조",
+      "annex_title": null,
+      "source_text": "나. 개선조치의 시행에 대한 참여",
+      "source_text_preview": "나. 개선조치의 시행에 대한 참여",
+      "requirements": [],
+      "thresholds": [],
+      "exceptions": [],
+      "temporal_rules": [],
+      "entities": [],
+      "list_items": [],
+      "source_nodes": [
+        {
+          "source_node_type": "subitem",
+          "source_origin": "nodes_rule.csv",
+          "law_name": "산업안전보건법 시행령",
+          "source_node_id": "629bbf803e6fc9e3033f47ee4a5bf36c4dd7dae0",
+          "source_text": "나. 개선조치의 시행에 대한 참여",
+          "parent_source_node_type": "item",
+          "parent_source_node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+          "article_no": "제15조",
+          "source_context_text": "① 법 제16조제1항에서 \"대통령령으로 정하는 업무\"란 다음 각 호의 업무를 말한다. <개정 2021.11.19> 6. 법 제36조에 따라 실시되는 위험성평가에 관한 다음 각 목의 업무 나. 개선조치의 시행에 대한 참여",
+          "_labels": [
+            "SourceNode"
+          ]
+        }
+      ],
+      "source_anchors": [
+        {
+          "method": "json_structured_mok",
+          "item_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+          "subitem_no": "나.",
+          "text": "나.  개선조치의 시행에 대한 참여",
+          "subitem_id": "629bbf803e6fc9e3033f47ee4a5bf36c4dd7dae0",
+          "derived": false,
+          "_labels": [
+            "Subitem"
+          ]
+        }
+      ],
+      "source_anchor": {
+        "label": "Subitem",
+        "id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_text_preview": "나.  개선조치의 시행에 대한 참여"
+      },
+      "related_rules": [],
+      "confidence": "high",
+      "needs_review": false,
+      "score": 18
+    }
+  ],
+  "citation_candidates": [
+    {
+      "law_name": "산업안전보건법 시행규칙",
+      "article_no": "",
+      "paragraph_no": "",
+      "item_no": "",
+      "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+      "source_anchor_label": "LogicalRow",
+      "source_anchor_id": "lrow_eadf26121ecf",
+      "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+      "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)"
+    },
+    {
+      "law_name": "산업안전보건법 시행규칙",
+      "article_no": "제9조",
+      "paragraph_no": "",
+      "item_no": "",
+      "annex_title": "",
+      "source_anchor_label": "Paragraph",
+      "source_anchor_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+      "source_text_preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+      "citation_text": "산업안전보건법 시행규칙 제9조"
+    },
+    {
+      "law_name": "산업안전보건법 시행령",
+      "article_no": "제15조",
+      "paragraph_no": "",
+      "item_no": "",
+      "annex_title": "",
+      "source_anchor_label": "Subitem",
+      "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+      "source_text_preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+      "citation_text": "산업안전보건법 시행령 제15조"
+    }
+  ],
+  "source_coverage_reference": {
+    "audit_report": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_audit.txt",
+    "audit_matches": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_matches.csv",
+    "source_coverage_judgment": "ONLY_INDIRECT_EVIDENCE_FOUND"
+  },
+  "llm_used": false,
+  "neo4j_write_executed": false
+}

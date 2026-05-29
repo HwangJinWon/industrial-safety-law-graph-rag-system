@@ -1,0 +1,18 @@
+{
+  "gt_unmodified": true,
+  "prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase6_outputs_not_overwritten": true,
+  "all_new_files_phase7_prefix": true,
+  "candidate_treated_as_selected": false,
+  "diagnostic_metric_not_model_improvement": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true,
+  "phase7_files": [
+    "phase7_selected_core_chain_completion_adjustment.csv",
+    "phase7_selected_core_diagnostic.py",
+    "phase7_selected_core_diagnostic_report.md",
+    "phase7_selected_core_diagnostic_summary.json",
+    "phase7_validation_checklist.json"
+  ]
+}

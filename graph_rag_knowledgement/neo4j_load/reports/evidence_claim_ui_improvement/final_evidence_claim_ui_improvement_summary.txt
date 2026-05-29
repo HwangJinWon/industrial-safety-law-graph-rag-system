@@ -1,0 +1,141 @@
+﻿Final Evidence / Claim UI Improvement Summary
+=============================================
+
+created_at: 2026-05-08
+final_status: PASS
+
+1. Modified files
+-----------------
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+- 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+- 05_code/graph_rag_pipeline/ask_adapter.py
+
+2. Reports created
+------------------
+- graph_rag_knowledgement/neo4j_load/reports/evidence_claim_ui_improvement/step_00_pre_review_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/evidence_claim_ui_improvement/step_06_smoke_test_update_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/evidence_claim_ui_improvement/step_07_validation_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/evidence_claim_ui_improvement/final_evidence_claim_ui_improvement_summary.txt
+
+3. Claim Check panel improvement
+--------------------------------
+The chat answer card now has a structured claim-check panel for assistant messages. It displays:
+- evidence_readiness
+- answer_policy
+- claim_check.claim_check_status
+- claim_check.badges
+- claim_check.issues
+
+Answer policy display text:
+- ALLOW_DIRECT_ANSWER: 직접 근거 기반 답변
+- ALLOW_WITH_CAUTION: 주의 필요 답변
+- INDIRECT_ONLY_RESPONSE: 간접 근거만 확인
+- REFUSE_OR_REQUEST_MORE_EVIDENCE: 추가 근거 필요
+
+INDIRECT_ONLY_RESPONSE is highlighted as a limited answer with a clear explanation that the current knowledge base does not contain direct legal evidence for the question.
+
+4. Evidence Chips improvement
+-----------------------------
+The chat answer card now has a dedicated "연결된 근거" section. It displays evidence_chips[] first, with frontend-only fallback from citations[] or legacy evidences[] if evidence_chips[] is absent.
+
+Chip display priority:
+- label
+- citation_text
+- law_name + article_no
+- annex_title
+- type / evidence_kind
+
+Click criteria for opening /law detail:
+- source_node_id
+- source_anchor_id
+- rule_id
+- list_item_id
+- node_id
+
+Up to 8 chips are shown first. Additional chips are hidden under a collapsed "추가 근거" details area. Internal node ids are not displayed as chip text.
+
+5. Evidence Pack / Citations detail area
+----------------------------------------
+Assistant messages now include a collapsed "근거 상세 보기" area. It can show:
+- citations[] with citation_text, law_name, article_no, annex_title, evidence_kind, confidence
+- legacy evidences[] with law_name, title, type, score, source_text preview
+- evidence_pack primary/supporting count when present
+
+Long source_text is trimmed to a short preview in the UI.
+
+6. Warnings / Missing Evidence display
+--------------------------------------
+Assistant messages now show a structured caution panel:
+- warnings[] appear under "주의사항"
+- missing_evidence[] appears under "추가로 필요한 근거"
+- duplicate warning/missing messages are deduplicated in the frontend display
+- /ask response warning/missing lists are also deduplicated server-side before response
+
+For INDIRECT_ONLY_RESPONSE, this panel helps explain why a direct answer is restricted.
+
+7. History compatibility
+------------------------
+sendChat() continues to preserve these fields on assistantMessage:
+- evidences
+- citations
+- evidence_chips
+- evidence_readiness
+- answer_policy
+- claim_check
+- warnings
+- missing_evidence
+- evidence_pack
+
+saveChatHistory() now also includes warnings, missing_evidence, and evidence_pack in the payload while preserving existing fields.
+
+8. Test results
+---------------
+- smoke_test_frontend_compat_endpoints: PASS
+- smoke_test_end_to_end_ask: PASS
+- ask_adapter import: PASS
+- npm run build: PASS
+
+9. Guardrail status
+-------------------
+The risk-assessment notice query remains guarded:
+- query: 위험성평가 결과를 근로자에게 알려야 하나?
+- evidence_readiness: INDIRECT_ONLY
+- answer_policy: INDIRECT_ONLY_RESPONSE
+- no direct notice-duty assertion was introduced by this UI work
+
+10. Safety compliance
+---------------------
+- Neo4j write: none
+- CSV modification: none
+- loader modification: none
+- package.json modification: none
+- npm audit fix: not run
+- LLM call: none
+- password/API key logging: none found by pattern scan
+
+11. Remaining limitations
+-------------------------
+- The Evidence Pack area is still a compact verification UI, not a full reasoning graph browser.
+- Threshold/Exception/RelatedRule dedicated UI is still future work.
+- LogicalRow/LogicalCell table-like detail display is still future work.
+- Candidate penalties remain review candidates, not final legal conclusions.
+
+12. User checklist after return
+-------------------------------
+1. Ask a chat question and check the Claim Check panel under the answer.
+2. Confirm evidence chips are grouped under "연결된 근거".
+3. Click several chips and verify the right-side law detail panel opens.
+4. Open "근거 상세 보기" and inspect citations/evidences.
+5. Ask: 위험성평가 결과를 근로자에게 알려야 하나?
+   Confirm it is marked as indirect-only and does not assert a direct notice duty.
+6. Check warnings/missing_evidence panels where present.
+7. Confirm npm run build remains PASS in the local environment.
+
+13. Next recommended work
+-------------------------
+Next stage can proceed. Good candidates:
+- 별표/LogicalRow/LogicalCell table-like detail display improvement
+- Threshold/Exception/RelatedRule dedicated UI
+- Source hierarchy context exploration UI
+- ListItem list-answer card improvement

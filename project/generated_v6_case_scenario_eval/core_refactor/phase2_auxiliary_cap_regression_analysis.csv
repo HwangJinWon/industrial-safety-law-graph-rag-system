@@ -1,0 +1,6 @@
+﻿case_id,case_name,lost_gt_core_ref,group,slot,level,selected_core_f1_before,selected_core_f1_phase1,restored_in_phase2,why_compact_unfavorable
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제173조 제2호,core,corporate_penalty,fine,0.8333333333333333,0.7272727272727272,True,auxiliary_gt_contains_more_review_ready_core_refs; fixed dynamic cap removed previously matched core ref
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,0.8333333333333333,0.7272727272727272,True,auxiliary_gt_contains_more_review_ready_core_refs; fixed dynamic cap removed previously matched core ref
+43,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,0.8333333333333333,0.7272727272727272,True,auxiliary_gt_contains_more_review_ready_core_refs; fixed dynamic cap removed previously matched core ref
+50,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,0.8333333333333333,0.7272727272727272,True,auxiliary_gt_contains_more_review_ready_core_refs; fixed dynamic cap removed previously matched core ref
+59,산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,0.8333333333333333,0.7272727272727272,True,auxiliary_gt_contains_more_review_ready_core_refs; fixed dynamic cap removed previously matched core ref

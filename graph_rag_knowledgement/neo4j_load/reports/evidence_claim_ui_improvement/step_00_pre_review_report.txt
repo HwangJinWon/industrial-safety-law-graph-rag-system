@@ -1,0 +1,53 @@
+﻿Step 00 Pre Review Report
+=========================
+
+created_at: 2026-05-08
+status: REVIEW_COMPLETE
+
+Reviewed files
+--------------
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/final_recovery_and_validation_summary.txt
+
+Currently displayed in chat answer cards
+----------------------------------------
+- answer text is displayed as the assistant bubble content.
+- evidence_readiness and answer_policy are shown as compact badges.
+- claim_check.badges are shown when present.
+- INDIRECT_ONLY_RESPONSE shows a short warning message.
+- warnings[] and missing_evidence[] are shown as a simple small list with warning/missing prefixes.
+- evidence_chips[] are displayed inline, up to 5 chips, and clicking a chip opens /law/{nodeId} when an id is present.
+- legacy msg.law/evidences path is still available.
+
+Weak or missing display areas
+-----------------------------
+- claim_check.status and claim_check.issues are not shown in a structured panel.
+- answer_policy explanations are not shown per policy.
+- evidence_chips are not in a dedicated "connected evidence" section and only 5 are visible.
+- citations[] and legacy evidences[] do not have a dedicated collapsed detail area.
+- evidence_pack counts are not surfaced for debug/verification.
+- warnings[] and missing_evidence[] are not deduplicated and are visually weak.
+- INDIRECT_ONLY_RESPONSE is visible but not explained enough for users to understand why direct answer is restricted.
+
+Target frontend areas
+---------------------
+- Assistant message rendering block in App.jsx.
+- Existing evidence chip click handler in App.jsx.
+- CSS classes around graph-rag badges, warnings, evidence chips, and chat bubble detail UI.
+
+Out of scope for this step
+--------------------------
+- Neo4j graph/query changes.
+- /ask, /site-checklist-ui, and /law/{nodeId} backend behavior changes except possible smoke-test validation.
+- Candidate penalty backend semantics.
+- Full reasoning graph browser.
+- Threshold/Exception/RelatedRule dedicated UI.
+
+Safety
+------
+- Neo4j write executed: false
+- LLM call executed: false
+- CSV/loader/package changes: false

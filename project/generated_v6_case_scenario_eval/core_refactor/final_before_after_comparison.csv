@@ -1,0 +1,7 @@
+﻿split,metric_group,selected_core_compatible_f1_before,selected_core_compatible_f1_after,selected_core_article_f1_after,candidate_fine_recall_before,candidate_fine_recall_after,candidate_article_recall_before,candidate_article_recall_after,candidate_fine_missing_before,candidate_fine_missing_after,selected_law_count_before,selected_law_count_after,selected_overgeneration_rate_before,selected_overgeneration_rate_after
+strict,selected_core,0.5527590722035168,0.577542519209186,0.540526962749185,,,,,,,,,,
+strict,candidate,,,,0.6286816064593842,0.7034036950703617,0.8679012345679012,0.8679012345679012,1.8518518518518519,1.3703703703703705,,,,
+strict,overgeneration,,,,,,,,,,6.962962962962963,6.407407407407407,1.110626102292769,0.9306878306878306
+auxiliary,selected_core,0.8048717948717948,0.7579020979020978,0.7712121212121212,,,,,,,,,,
+auxiliary,candidate,,,,0.7367857142857142,0.7492857142857142,0.7047619047619047,0.7047619047619047,1.8,1.7,,,,
+auxiliary,overgeneration,,,,,,,,,,7.0,6.3,0.32404761904761903,0.2897619047619048

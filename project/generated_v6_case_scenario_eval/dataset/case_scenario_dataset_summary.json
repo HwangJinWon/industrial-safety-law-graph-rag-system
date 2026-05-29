@@ -1,0 +1,9 @@
+{
+  "candidate_count": 69,
+  "ready_count": 40,
+  "status_counts": {
+    "READY_A": 40,
+    "REVIEW_B": 17,
+    "INSUFFICIENT": 12
+  }
+}

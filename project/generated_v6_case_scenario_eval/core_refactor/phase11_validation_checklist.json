@@ -1,0 +1,9 @@
+{
+  "gt_unmodified": true,
+  "prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "all_new_files_phase11_prefix": true,
+  "direct_selected_not_collapsed_into_official_main_score": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true
+}

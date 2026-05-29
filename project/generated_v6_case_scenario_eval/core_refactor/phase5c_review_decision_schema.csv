@@ -1,0 +1,9 @@
+﻿decision_code,decision_name,applies_to,meaning,allowed_follow_up_action,affects_original_gt,affects_policy_adjusted_eval,requires_legal_expert
+KEEP_GT_FINE_STRICT,Keep GT fine strict,BOTH,Current GT fine branch is treated as valid; existing fine-level strict evaluation can be retained.,Keep strict evaluation without policy relaxation.,false,false,false
+ARTICLE_LEVEL_ONLY,Article-level only,BOTH,"Article-level correspondence is valid, but fine branch is not safely determined.",Count article-level match in policy-adjusted evaluation; keep fine strict as diagnostic.,false,true,false
+GT_FINE_BRANCH_REVISE_RECOMMENDED,GT fine branch revise recommended,BOTH,Original GT fine branch is suspect; no automatic GT edit is performed.,Record decision in reviewed evaluation layer.,false,true,true
+EXCLUDE_CORPORATE_FINE_FROM_STRICT,Exclude corporate fine from strict,CORPORATE_PENALTY_BRANCH,"Corporate penalty article is valid, but Article 173 subparagraph is excluded from strict fine scoring.",Report corporate article match and branch consistency separately.,false,true,false
+MOVE_TO_AUXILIARY,Move to auxiliary,BOTH,Case or ref is unsuitable for fine strict evaluation and should be auxiliary in reviewed layer.,Propose reviewed eval split adjustment.,false,true,true
+PRED_FINE_ACCEPT_AS_FACT_SUPPORTED,Accept prediction fine as fact-supported,OBLIGATION_FINE_BRANCH,Prediction fine branch is better supported by case facts; GT fine branch needs review.,Record prediction-supported flag in reviewed evaluation layer.,false,true,true
+SUPPORTING_DETAIL_ONLY,Supporting detail only,OBLIGATION_FINE_BRANCH,Fine ref is better treated as supporting detail than selected core.,Move to supporting bundle evaluation in reviewed layer.,false,true,false
+NEED_LEGAL_EXPERT_REVIEW,Need legal expert review,BOTH,Manual review of judgment/law text is required before a fine branch can be determined.,Keep review-only pending decision.,false,false,true

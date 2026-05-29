@@ -1,0 +1,33 @@
+{
+  "total_corporate_branch_mismatch": 21,
+  "count_by_dataset_type": {
+    "strict": 11,
+    "auxiliary": 10
+  },
+  "count_by_gt_branch_consistency": {
+    "OLD_CURRENT_FINE_AMBIGUOUS": 12,
+    "INCONSISTENT_OR_MAPPING_AMBIGUOUS": 9
+  },
+  "count_by_pred_branch_consistency": {
+    "CONSISTENT": 21
+  },
+  "count_by_branch_review_label": {
+    "PRED_BRANCH_CONSISTENT_GT_BRANCH_SUSPECT": 21
+  },
+  "count_by_recommended_eval_treatment": {
+    "REVIEW_GT_BRANCH": 21
+  },
+  "old_current_fine_ambiguous_count": 12,
+  "gt_branch_suspect_count": 21,
+  "pred_branch_wrong_count": 0,
+  "article_level_only_recommended_count": 0,
+  "penalty_selection_review_count": 0,
+  "insufficient_evidence_count": 0,
+  "obligation_fine_branch_review_count": 2,
+  "obligation_review_label_counts": {
+    "PRED_FINE_SUPPORTED": 2
+  },
+  "obligation_recommended_eval_treatment_counts": {
+    "REVIEW_GT_FINE": 2
+  }
+}

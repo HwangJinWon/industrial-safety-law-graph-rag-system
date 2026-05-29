@@ -1,0 +1,28 @@
+step_id: 03
+step_name: Law QA page
+status: PASS
+
+신설 내용:
+- 법령 QA 전용 페이지를 추가했다.
+- 상단 질문 입력창에서 기존 /ask endpoint를 호출한다.
+- 답변 카드는 다음을 구조적으로 표시한다.
+  - 답변 본문
+  - answer_policy 기반 사용자 문구
+  - evidence_readiness badge
+  - claim_check_status
+  - claim_check.badges
+  - claim_check.issues
+  - evidence_chips 기반 연결된 근거
+  - warnings
+  - missing_evidence
+  - citations/evidences/evidence_pack 접힘 영역
+
+가드레일 표시:
+- INDIRECT_ONLY_RESPONSE는 제한 답변 카드와 warning 스타일 claim panel로 눈에 띄게 표시한다.
+- 직접 근거가 없는 질문에 대해 직접 의무를 단정하는 UI 문구를 추가하지 않았다.
+
+근거 상세 연동:
+- evidence chip에 source_node_id/source_anchor_id/rule_id/list_item_id/node_id가 있으면 /law/{nodeId} 상세 패널을 연다.
+
+Neo4j write: 없음
+LLM 호출: 없음

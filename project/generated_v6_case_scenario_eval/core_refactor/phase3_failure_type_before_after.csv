@@ -1,0 +1,6 @@
+﻿failure_type,before,after
+candidate_article_missing,3,3
+candidate_fine_missing,18,16
+chain_connection_failure,32,15
+chain_fine_granularity_mismatch,13,23
+selected_promotion_failure,6,6

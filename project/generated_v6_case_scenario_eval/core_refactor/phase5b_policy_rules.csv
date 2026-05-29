@@ -1,0 +1,6 @@
+﻿policy_id,name,condition,policy_adjusted_treatment,notes
+PB1,Corporate penalty branch ambiguity,"Article 173 item mismatch, prediction branch consistent, GT branch ambiguous/suspect",article-level corporate match + branch consistency report,GT and prediction are not changed.
+PB2,Prediction branch consistency,Article 167(1) -> Article 173 item 1,branch_consistency=true,Do not mark as direct prediction error if GT branch is ambiguous.
+PB3,Article 173 item 2 selected condition,Article 168-172 selected/high-confidence candidate,allow Article 173 item 2 only then,No unconditional selected insertion.
+PB4,Article 38 fine branch GT review,PRED_FINE_SUPPORTED / REVIEW_GT_FINE,article-level obligation match; strict fine remains diagnostic,No automatic Article 38 fine correction.
+PB5,Original metric retained,all cases,report original strict and policy-adjusted separately,"Adjusted score is evaluation granularity, not model improvement."

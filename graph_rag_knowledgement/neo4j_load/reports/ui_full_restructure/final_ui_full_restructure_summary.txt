@@ -1,0 +1,82 @@
+final_status: PASS
+
+수정한 파일:
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+
+페이지 구조 변경 결과:
+- 체크리스트: 현장 조건 입력, 체크리스트 결과, 공통 법령 상세 패널 유지 및 상태 badge 강화
+- 법령 QA: /ask 답변을 전용 페이지에서 Claim Check, Evidence Chips, Warnings, Missing Evidence, Evidence detail과 함께 표시
+- 근거 탐색: 최근 QA/체크리스트 근거와 직접 node id 조회를 통한 /law 상세 패널 연동
+- 검증/리포트: 최근 답변 상태, warnings/missing_evidence, direct/candidate penalty, 위험성평가 guardrail 확인
+- History: 기존 기록 화면 유지
+
+체크리스트 페이지 개선:
+- direct_penalty, candidate_penalty, needs_review 필터 추가
+- 항목 카드에 근거 요약과 직접 처벌/후보 처벌/추가 검토 badge 표시
+- candidate penalty는 확정 처벌처럼 표시하지 않음
+
+법령 QA 페이지 개선:
+- answer_policy별 사용자 문구 표시
+- evidence_readiness badge 표시
+- claim_check.status/badges/issues 표시
+- evidence_chips 전용 영역 표시
+- warnings와 missing_evidence 패널 표시
+- citations/evidences/evidence_pack 접힘 영역 추가
+
+근거 탐색 페이지:
+- 최근 QA와 체크리스트에서 나온 근거를 client-side 탐색
+- node id 직접 조회 지원
+- 선택한 근거는 공통 /law 상세 패널로 표시
+
+검증/리포트 페이지:
+- 최근 답변의 answer_policy/evidence_readiness/claim_check 상태 확인
+- warnings/missing_evidence/evidence chip 수 표시
+- 위험성평가 guardrail 확인 카드 추가
+- direct penalty와 candidate penalty 분리 요약
+
+공통 상세 패널:
+- renderLawPanel()로 분리
+- 직접 처벌과 후보 처벌을 분리 표시
+- 후보 처벌은 후보/검토 필요/확정 아님 badge와 candidate_notice를 표시
+- 내부 node id는 details 접힘 영역에만 표시
+
+테스트 결과:
+- smoke_test_frontend_compat_endpoints: PASS
+- smoke_test_end_to_end_ask: PASS
+- ask_adapter import: PASS
+- npm run build: PASS
+
+위험성평가 guardrail:
+- 기존 smoke test에서 INDIRECT_ONLY_RESPONSE 유지 확인
+- UI에서도 제한 답변을 answer_policy 기반으로 눈에 띄게 표시
+
+금지사항 준수:
+- Neo4j write 없음
+- CSV 수정 없음
+- loader 수정 없음
+- package.json 수정 없음
+- LLM 호출 없음
+- password/API key 로그 없음
+
+남은 한계:
+- 근거 탐색은 아직 최근 근거 및 node id 기반의 최소 탐색이다.
+- full source hierarchy browser는 아직 아니다.
+- Threshold / Exception / RelatedRule 전용 UI는 아직 다음 단계다.
+- LogicalRow / LogicalCell의 표형 재구성 UI는 아직 다음 단계다.
+- candidate penalty는 여전히 최종 법적 결론이 아니라 검토 후보다.
+
+사용자가 돌아와서 확인할 것:
+- 사이드바에 체크리스트 / 법령 QA / 근거 탐색 / 검증·리포트 / History가 보이는지 확인
+- 체크리스트 생성 후 항목 카드의 처벌/검토 badge 확인
+- 항목 클릭 후 오른쪽 상세 패널 확인
+- 법령 QA 페이지에서 위험성평가 결과 고지 질문 입력 후 제한 답변 표시 확인
+- evidence chip 클릭 후 오른쪽 상세 패널 열림 확인
+- 근거 탐색 페이지에서 최근 근거 및 node id 조회 확인
+- 검증/리포트 페이지에서 answer_policy/evidence_readiness/warnings/missing_evidence 확인
+
+다음 권장 작업:
+- Threshold / Exception / RelatedRule 전용 UI
+- 별표 LogicalRow / LogicalCell 표형 상세 표시
+- source hierarchy browser 강화
+- 근거 탐색 검색 정교화

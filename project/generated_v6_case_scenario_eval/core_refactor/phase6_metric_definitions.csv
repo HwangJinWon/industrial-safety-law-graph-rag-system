@@ -1,0 +1,36 @@
+﻿metric_name,category,definition,interpretation,should_use_as_main_metric,caution,related_phase
+selected_core_f1,System Performance,F1 over compact selected core refs.,Main compact-answer quality metric.,true,Separate from full bundle F1.,Phase 1-3
+selected_core_precision,System Performance,Precision over selected core refs.,Measures unnecessary selected refs.,true,Interpret with recall.,Phase 1-3
+selected_core_recall,System Performance,Recall over GT core refs.,Measures essential core coverage.,true,Auxiliary requires recall guard.,Phase 2
+selected_core_compatible_f1,System Performance,Compatible-match F1 over selected core refs.,Useful when strict fine branch is ambiguous.,true,Do not mix with exact strict.,Phase 1-5B
+selected_law_count,System Performance,Average selected laws per case.,Compactness indicator.,true,Lower is not always better.,Phase 2
+selected_overgeneration,System Performance,Average overgenerated selected refs.,Precision-risk diagnostic.,true,Use with selected_core_recall.,Phase 2
+candidate_article_recall,Retrieval/Candidate,GT article-family recall in candidate pool.,Article-level retrieval upper bound.,true,Candidate is not answer.,Phase 1-2
+candidate_fine_recall,Retrieval/Candidate,GT fine-ref recall in candidate pool.,Fine selector upper bound.,true,Candidate is not selected.,Phase 2
+candidate_fine_missing,Retrieval/Candidate,Average GT fine refs absent from candidate pool.,Fine evidence gap.,true,Selector cannot promote absent refs.,Phase 2/4
+candidate_article_missing,Retrieval/Candidate,Average GT article families absent from candidate pool.,Article retrieval gap.,true,Phase 4 remaining issues were not article missing.,Phase 2/4
+obligation_to_penalty_connection_rate,Legal Chain,Rate of obligation to penalty chain connection.,Legal-chain construction quality.,true,Not a fine-branch metric.,Phase 3
+penalty_to_corporate_connection_rate,Legal Chain,Rate of penalty to corporate penalty connection.,Corporate chain completeness.,true,Article 173 branch ambiguity separate.,Phase 3
+corporate_penalty_attached_rate,Legal Chain,Corporate penalty attachment rate.,Corporate chain stability.,true,Attachment does not guarantee subparagraph strictness.,Phase 3
+fine_chain_match_rate_original,Legal Chain,Original strict fine-chain match rate.,Strict diagnostic.,true,Can understate quality under GT branch ambiguity.,Phase 3/5B
+fine_chain_match_rate_policy_adjusted,Policy-Adjusted,Fine-chain rate after branch ambiguity separation.,Evaluation interpretation metric.,false,Not model improvement.,Phase 5B
+fine_chain_match_rate_refined_policy,Refined Mapping,Fine-chain rate under refined old-current mapping interpretation.,Mapping rationale metric.,false,Not model improvement.,Phase 5D
+branch_consistency_rate,Legal Chain,Predicted corporate branch consistency with selected penalty branch.,Separates branch logic from GT ambiguity.,true,Report with original strict metric.,Phase 5A/5B
+policy_adjusted_fine_chain_match_rate,Policy-Adjusted,Alias for policy-adjusted fine-chain match.,Supplementary interpretation metric.,false,Disclose adjusted count.,Phase 5B
+corporate_penalty_article_match,Policy-Adjusted,Article-level corporate penalty match.,Useful for Article 173 ambiguity.,true,Subparagraph strictness separate.,Phase 5B
+corporate_penalty_branch_consistency,Policy-Adjusted,Consistency of penalty and corporate subparagraph branch.,Checks legal branch logic.,true,Does not revise GT.,Phase 5A/5B
+ambiguity_adjusted_count,Policy-Adjusted,Count adjusted due to ambiguity.,Explains policy-adjusted delta.,true,Must be disclosed.,Phase 5B
+refined_policy_fine_chain_match_rate,Refined Mapping,Weighted refined-policy fine-chain rate.,Impact of mapping Article 71 only to Article 173 article-level.,false,Supplementary only.,Phase 5D
+likely_old_current_fine_branch_overmapped_count,Refined Mapping,Cases likely overmapped to Article 173 fine branch.,Dataset/mapping reliability signal.,true,Requires manual review.,Phase 5D
+refined_corporate_mapping_layer_count,Refined Mapping,Rows in refined corporate mapping layer.,Layer coverage.,true,Does not replace GT.,Phase 5D
+affects_original_gt_count,Refined Mapping,Rows that affect original GT.,Should be zero.,true,Must remain false until reviewed.,Phase 5D
+old_current_mapping_level,Refined Mapping,Article-level vs fine-branch-level old-current mapping.,Mapping granularity indicator.,true,Old corporate provision maps to Article 173 article-level by default.,Phase 5D
+manual_review_pending_count,Dataset Reliability,Manual review target count.,Dataset reliability indicator.,true,Do not fold silently into strict metric.,Phase 5C
+old_current_fine_ambiguous_count,Dataset Reliability,Old-current fine ambiguity count.,Mapping uncertainty.,true,Manual review needed.,Phase 5A/5D
+gt_branch_suspect_count,Dataset Reliability,GT branch suspect count.,GT reliability risk.,true,Original GT preserved.,Phase 5A
+prediction_branch_wrong_count,Dataset Reliability,Prediction branch inconsistency count.,Separates prediction error from GT ambiguity.,true,Article 173 set had zero.,Phase 5A/5D
+review_priority_high_count,Dataset Reliability,High priority review count.,Review workload.,true,Not performance.,Phase 5C
+full_bundle_f1,Diagnostic,F1 against full legal bundle.,Full bundle restoration diagnostic.,false,Not main compact-answer metric.,Phase 1
+selected_legal_chain_f1,Diagnostic,F1 over selected legal chains.,Strict chain diagnostic.,false,Sensitive to fine ambiguity.,Phase 1/3
+chain_fine_granularity_mismatch,Diagnostic,Same article but fine-branch mismatch.,Fine branch audit target.,false,Do not auto-fix without review.,Phase 4
+chain_connection_failure,Diagnostic,Obligation/penalty/corporate connection failure.,Chain builder failure.,false,Phase 3 reduced this.,Phase 3

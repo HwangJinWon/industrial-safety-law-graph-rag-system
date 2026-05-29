@@ -1,0 +1,31 @@
+{
+  "existing_v6_reviewed_dataset_unmodified": true,
+  "gt_unmodified": true,
+  "prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase5d_outputs_not_overwritten": true,
+  "all_new_files_phase6_prefix": true,
+  "reviewer_decision_auto_filled": false,
+  "reviewer_note_auto_filled": false,
+  "article_173_branch_auto_change": false,
+  "article_38_fine_auto_change": false,
+  "original_policy_adjusted_and_refined_policy_metrics_separated": true,
+  "policy_adjusted_not_interpreted_as_system_improvement": true,
+  "refined_policy_not_interpreted_as_system_improvement": true,
+  "manual_review_pending_count_reported": true,
+  "refined_layer_replaces_original_gt": false,
+  "affects_original_gt_false_maintained": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true,
+  "phase6_files": [
+    "phase6_case_flow_summary.csv",
+    "phase6_error_decomposition_table.csv",
+    "phase6_final_evaluation_summary_table.csv",
+    "phase6_final_evaluation_synthesis_report.md",
+    "phase6_final_synthesis.py",
+    "phase6_input_file_inventory.csv",
+    "phase6_metric_definitions.csv",
+    "phase6_report_ready_interpretation.md",
+    "phase6_validation_checklist.json"
+  ]
+}

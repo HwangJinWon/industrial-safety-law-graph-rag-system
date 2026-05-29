@@ -1,0 +1,116 @@
+﻿ListItem -> SourceNode Link Dry-Run Review
+====================================================
+
+1. ?? ??
+ListItem.source_node_id? SourceNode.source_node_id? ???? (:ListItem)-[:ITEM_EXTRACTED_FROM]->(:SourceNode) ?? ?? ???? read-only ???? ????.
+
+2. ?? ?????
+- review_started: 2026-05-06 23:08:25
+- target_database: graph.v1
+- target_uri: <neo4j-uri>
+- user: neo4j
+- mode: READ_ONLY_DRY_RUN_REVIEW
+- write_queries_executed: NO
+- password_logged: NO
+
+3. CSV / Neo4j Count
+- CSV nodes_list_item.csv row count: 3604
+- CSV headers: list_item_id, list_item_type, item_text, source_node_type, source_node_id, parent_source_node_type, parent_source_node_id, source_context_text, law_version_id, law_name, article_id, article_no, annex_id, annex_no, annex_title, source_rule_id, needs_review, move_reason
+- Neo4j ListItem count: 3604
+- Neo4j SourceNode count: 8858
+
+4. source_node_id Coverage and SourceNode Matchability
+- ListItem total: 3604
+- with source_node_id: 3604
+- without source_node_id: 0
+- source_node_id coverage rate: 100.00%
+- SourceNode matched ListItem count: 0
+- SourceNode unmatched ListItem count: 3604
+- SourceNode match rate among source_node_id-bearing ListItems: 0.00%
+- expected ITEM_EXTRACTED_FROM relationship count: 0
+- duplicate pair count: 0
+
+5. list_item_type Distribution
+- ARTICLE_REFERENCE_LIST: 3151
+- UNKNOWN_LIST_ITEM: 120
+- WORK_TYPE: 66
+- INSPECTION_ITEM: 54
+- HAZARD_FACTOR: 49
+- SUBSTANCE: 40
+- EQUIPMENT_ITEM: 30
+- DISEASE: 29
+- DOCUMENT_ITEM: 22
+- EDUCATION_CONTENT_ITEM: 12
+- BUSINESS_TYPE: 11
+- FORM_FIELD: 10
+- PENALTY_REFERENCE_LIST: 8
+- QUALIFICATION_ITEM: 2
+
+6. SourceNode source_node_type Distribution for Direct Matches
+- (blank/null): 3604
+
+7. annex_title Top 20
+- 특수건강진단ㆍ배치전건강진단ㆍ수시건강진단의 검사항목(제206조 관련): 2379
+- (blank/null): 566
+- 안전검사기관의 인력ㆍ시설 및 장비 기준(제79조제2호 관련): 198
+- 자율안전검사기관의 인력ㆍ시설 및 장비 기준(제81조 관련): 99
+- 유해위험방지계획서 첨부서류(제42조제3항 관련): 65
+- 사전조사 및 작업계획서 내용(제38조제1항관련): 58
+- 행정처분기준(제240조 관련): 33
+- 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련): 28
+- 작업시작 전 점검사항(제35조제2항 관련): 20
+- 안전 및 보건에 관한 평가의 내용(제74조제2항 및 제78조제4항 관련): 17
+- (특수, 배치전, 수시, 임시)건강진단 결과표: 16
+- 안전인증기관의 인력ㆍ시설 및 장비 기준(제75조제2호 관련): 12
+- 산업안전보건관리비 사용계획서: 12
+- 안전보건교육 교육과정별 교육시간(제26조제1항 등 관련): 9
+- 제조업 등 유해위험방지계획서: 8
+- 관리감독자의 유해·위험 방지(제35조제1항 관련): 7
+- 건설공사 설계변경 요청서: 7
+- 안전보건표지의 기본모형(제40조제1항 관련): 5
+- 법 제2조제4호나목의 시설물 중 공중이용시설(제3조제2호 관련): 5
+- 작업환경측정 결과표(상, 하반기): 5
+
+8. Source Anchor Match Finding
+ListItem.source_node_id? ?? SourceNode.source_node_id?? ???? ???, source anchor node id?? ?? ????.
+- source anchor matched total: 3604
+- source anchor match rate: 100.00%
+- Paragraph matches: 35
+- Item matches: 482
+- Subitem matches: 49
+- LogicalRow matches: 1529
+- LogicalCell matches: 1495
+- AnnexNote matches: 14
+
+9. Sample Matching Summary
+- direct SourceNode matched sample rows: 0
+- direct SourceNode unmatched sample rows available: 30
+- source anchor sample rows written: 30
+- sample_csv: <knowledge-base-path>\neo4j_load\reports\listitem_source_link_sample.csv
+
+10. ?? ???
+- recommended_relationship_for_original_candidate: ITEM_EXTRACTED_FROM
+- current_candidate_result: NOT_READY because ListItem.source_node_id does not match SourceNode.source_node_id.
+- alternative_candidate: ListItem -> source anchor relationships, for example ITEM_RESOLVES_TO or ITEM_SOURCE_ANCHOR, should be reviewed before creating a ListItem -> SourceNode relation.
+
+11. ?? execute ?? ??
+- execute_feasibility_for_ITEM_EXTRACTED_FROM: NO
+- reason: expected ITEM_EXTRACTED_FROM relationship count is 0 because direct SourceNode matches are 0/3604.
+- execute_feasibility_for_source_anchor_link: HIGH, but requires a separate design and dry-run phase because it is not the requested ListItem -> SourceNode relation.
+
+12. ?? ??
+- ListItem.source_node_id naming is misleading for this phase: it appears to point to source anchor ids rather than SourceNode ids.
+- Direct ITEM_EXTRACTED_FROM would create 0 relationships unless a mapping bridge from source anchors to SourceNode is designed.
+- Creating guessed SourceNode links would risk semantic distortion; do not execute without an explicit mapping rule.
+- Rule direct edge? ?? ListItem 3573? ??? ListItem source anchor traversal ??? ??? ? ???, ?? ?? ?????? ???? ???.
+
+13. ?? ??
+- final_status: NOT_READY
+- conclusion: ListItem -> SourceNode ?? ??? ?? key ????? ???? ???. ?? ListItem.source_node_id? Paragraph/Item/Subitem/LogicalRow/LogicalCell/AnnexNote source anchor? 100% ?????, ?? 2? ??? ListItem -> source anchor ??? ??? ???? ?? ????.
+
+14. ?? ?? ??
+- loader phase ?? ?? listitem_source_anchor_links dry-run ??? ?? ????.
+- ?? ???: ITEM_RESOLVES_TO ?? ITEM_SOURCE_ANCHOR.
+- ?? ???? SourceNode? source anchor ??? ?? RESOLVES_TO ???? ??? evidence pack query?? ListItem -> Anchor <- SourceNode ??? ???? ????.
+- ?? ????? phase ?? ? execute? ???? ???.
+

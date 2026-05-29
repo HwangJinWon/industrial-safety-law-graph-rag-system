@@ -1,0 +1,11 @@
+{
+  "gt_unmodified": true,
+  "raw_prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase9_outputs_not_overwritten": true,
+  "all_new_files_phase10_prefix": true,
+  "chain_completion_refs_not_deleted": true,
+  "direct_selected_metric_not_claimed_as_official_strict_replacement": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true
+}

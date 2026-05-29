@@ -1,0 +1,86 @@
+Penalty + Frontend Evidence Improvement Final Summary
+====================================================
+
+created_at: 2026-05-07
+final_status: PASS_WITH_BUILD_WARNING
+
+Completed phases
+----------------
+1. Penalty/miscompliance read-only audit: PASS
+2. Backend penalty response enrichment: PASS
+3. Frontend detail/evidence display update: PASS
+4. E2E smoke validation: PASS_WITH_BUILD_WARNING
+
+Main outputs
+------------
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_01_penalty_link_audit_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/penalty_link_candidates.csv
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/penalty_link_audit_samples.json
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_02_backend_penalty_response_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_03_frontend_detail_panel_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_04_e2e_validation_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/pipeline_status.csv
+
+Modified code files
+-------------------
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/frontend reference/src/App.jsx
+
+Penalty audit result
+--------------------
+- penalty_rule_count: 906
+- related_rule_penalty_edges: 290
+- non_penalty_rules_linked_to_penalty: 54
+- direct linked candidates: 228
+- article-reference candidates: 2804
+
+Backend behavior after update
+-----------------------------
+- /law/{nodeId} returns penalties[] for direct graph-linked penalty evidence.
+- /law/{nodeId} returns candidate_penalties[] for article-reference penalty/fine candidates.
+- /law/{nodeId} keeps conservative warning when no direct penalty link exists.
+- /site-checklist-ui attaches penalties[], candidate_penalties[], and penalty_warnings[] to checklist items.
+
+Frontend behavior after update
+------------------------------
+- Law detail panel separates confirmed/direct penalty evidence from candidate penalty/fine provisions.
+- Candidate penalty evidence is labeled separately as candidate/review evidence.
+- Chat evidence chips now open law/source detail instead of only logging TODO.
+- Existing /ask and legacy evidences[] compatibility remain intact.
+
+Validation
+----------
+- ask E2E smoke test: PASS
+- frontend compatibility endpoint smoke test: PASS
+- risk assessment notice guardrail: INDIRECT_ONLY / INDIRECT_ONLY_RESPONSE preserved
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+
+Build status
+------------
+- npm run build attempted.
+- Result: FAIL due to Windows EPERM during Vite/Rolldown child process spawn.
+- This is not a confirmed source-code syntax failure.
+- package.json and dependencies were not modified.
+
+What to check when returning
+----------------------------
+1. Run the backend on port 8000:
+   python -m uvicorn graph_rag_pipeline.ask_adapter:app --app-dir 05_code --host 127.0.0.1 --port 8000
+2. Open the frontend and generate a checklist.
+3. Click checklist items and inspect the right law-detail panel.
+4. Confirm candidate penalty/fine provisions are shown separately from direct penalties.
+5. Ask: "위험성평가 결과를 근로자에게 알려야 하나?"
+   Confirm the answer remains INDIRECT_ONLY_RESPONSE and does not make a direct yes/no claim.
+6. Ask: "과태료가 부과되는 경우는 무엇인가?"
+   Confirm penalty lookup still returns a cautious answer with citations.
+7. Re-run npm run build after clearing Windows file lock/security restrictions around node/vite.
+
+Remaining limitations
+---------------------
+- Candidate penalties are not final legal conclusions.
+- Some checklist items still have no penalty candidate.
+- Full graph edge materialization for violation-to-penalty links has not been performed.
+- Physical table reconstruction is still out of scope.

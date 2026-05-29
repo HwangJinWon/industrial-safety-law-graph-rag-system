@@ -1,0 +1,20 @@
+{
+  "existing_v6_reviewed_dataset_unmodified": true,
+  "gt_unmodified": true,
+  "existing_evaluator_unmodified": true,
+  "strict_aux_review_only_count": [
+    27,
+    10,
+    3
+  ],
+  "phase2_outputs_not_overwritten": true,
+  "article_173_not_unconditionally_selected": true,
+  "candidate_not_evaluated_as_selected": true,
+  "selected_law_count_not_phase0_level_strict": true,
+  "selected_law_count_not_phase0_level_auxiliary": true,
+  "auxiliary_recall_not_lower_than_phase2": true,
+  "selected_overgeneration_not_worse_strict": true,
+  "selected_overgeneration_not_worse_auxiliary": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true
+}

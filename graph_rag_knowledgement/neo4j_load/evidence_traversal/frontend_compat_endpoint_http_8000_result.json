@@ -1,0 +1,158 @@
+{
+  "created_at": "2026-05-07T16:40:37",
+  "cmd": "C:\\Users\\hyens\\AppData\\Local\\Programs\\Python\\Python39\\python.exe -B -m uvicorn graph_rag_pipeline.ask_adapter:app --app-dir 05_code --host 127.0.0.1 --port 8000 --log-level warning",
+  "tests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8000/health",
+      "status": 200,
+      "elapsed_sec": 1.028,
+      "data": {
+        "status": "ok",
+        "service": "graph-rag-ask-adapter",
+        "graph_db": "graph.v1",
+        "llm_used_default": false
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8000/site-checklist-ui",
+      "status": 200,
+      "elapsed_sec": 0.004,
+      "data": {
+        "answer": "입력한 현장 조건을 기준으로 기본 안전 점검 항목을 생성했습니다. 본 결과는 1차 compatibility checklist이며, 세부 법령 근거 기반 체크리스트는 후속 Graph-RAG checklist pipeline에서 보강됩니다.",
+        "items": [
+          {
+            "id": "compat-risk-assessment",
+            "title": "사전 위험성평가 실시 여부 확인",
+            "text": "사전 위험성평가 실시 여부 확인 - 작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+            "description": "작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+            "risk": "high",
+            "law_title": "산업안전보건법 관련 위험성평가 근거",
+            "law_node_id": null,
+            "node_id": null,
+            "completed": false,
+            "evidences": []
+          },
+          {
+            "id": "compat-education-tbm",
+            "title": "작업 전 안전보건교육 및 TBM 실시 여부 확인",
+            "text": "작업 전 안전보건교육 및 TBM 실시 여부 확인 - 작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+            "description": "작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+            "risk": "mid",
+            "law_title": "산업안전보건법 관련 안전보건교육 근거",
+            "law_node_id": null,
+            "node_id": null,
+            "completed": false,
+            "evidences": []
+          },
+          {
+            "id": "compat-safety-state-1",
+            "title": "미완료 안전조치 확인: ????",
+            "text": "미완료 안전조치 확인: ???? - 현장 안전상태 입력에서 미완료로 표시된 항목을 우선 점검합니다.",
+            "description": "현장 안전상태 입력에서 미완료로 표시된 항목을 우선 점검합니다.",
+            "risk": "mid",
+            "law_title": "입력 현장조건 기반 compatibility 점검 항목",
+            "law_node_id": null,
+            "node_id": null,
+            "completed": false,
+            "evidences": []
+          }
+        ],
+        "evidences": [],
+        "debug": {
+          "adapter_type": "compatibility_checklist",
+          "llm_used": false,
+          "graph_db": "graph.v1",
+          "item_count": 3
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "url": "http://127.0.0.1:8000/ask",
+      "status": 200,
+      "elapsed_sec": 44.465,
+      "data": {
+        "answer": "[결론]\n현재 근거만으로는 답변하기 어렵습니다.\n\n[근거]\n- 사용할 수 있는 핵심 근거 preview가 제한적입니다.\n\n[주의]\n- warning: ASSEMBLY_ERROR - ServiceUnavailable: Unable to retrieve routing information\n- claim_check: NO_PRIMARY_EVIDENCE - Do not answer until more evidence is available.\n- claim_check: LIMITED_EVIDENCE - Review evidence before answer generation.\n- claim_check: CITATION_MISSING - Do not provide a direct legal answer without citation.\n\n[근거 조항]\n- 근거 위치 미확인",
+        "mode": "qa",
+        "intent": "obligation_check",
+        "status": "ERROR",
+        "evidence_readiness": "NOT_READY",
+        "answer_policy": "REFUSE_OR_REQUEST_MORE_EVIDENCE",
+        "claim_check": {
+          "query": "????? ??? ????? ??? ???",
+          "intent": "obligation_check",
+          "pack_status": "ERROR",
+          "evidence_readiness": "NOT_READY",
+          "claim_check_status": "FAIL",
+          "answer_policy": "REFUSE_OR_REQUEST_MORE_EVIDENCE",
+          "issues": [
+            {
+              "issue_type": "NO_PRIMARY_EVIDENCE",
+              "severity": "high",
+              "message": "No primary evidence was found.",
+              "related_id": "",
+              "recommendation": "Do not answer until more evidence is available."
+            },
+            {
+              "issue_type": "LIMITED_EVIDENCE",
+              "severity": "high",
+              "message": "Evidence readiness is NOT_READY.",
+              "related_id": "",
+              "recommendation": "Review evidence before answer generation."
+            },
+            {
+              "issue_type": "CITATION_MISSING",
+              "severity": "high",
+              "message": "No citation candidates or formatted citations were found.",
+              "related_id": "",
+              "recommendation": "Do not provide a direct legal answer without citation."
+            }
+          ],
+          "badges": [
+            {
+              "label": "답변 보류",
+              "severity": "danger",
+              "message": "Evidence is insufficient for answer generation."
+            }
+          ],
+          "summary": {
+            "primary_evidence_count": 0,
+            "citation_count": 0,
+            "warning_count": 1,
+            "missing_evidence_count": 0,
+            "high_severity_issue_count": 3
+          }
+        },
+        "citations": [],
+        "evidence_chips": [],
+        "evidences": [],
+        "warnings": [
+          {
+            "warning_type": "ASSEMBLY_ERROR",
+            "severity": "high",
+            "message": "ServiceUnavailable: Unable to retrieve routing information",
+            "related_id": ""
+          }
+        ],
+        "missing_evidence": [],
+        "debug": {
+          "llm_used": false,
+          "graph_db": "graph.v1",
+          "primary_evidence_count": 0,
+          "supporting_evidence_count": 0,
+          "citation_count": 0,
+          "legacy_evidence_count": 0,
+          "query_field_normalized": "query"
+        },
+        "evidence_pack": {
+          "primary_evidence_count": 0,
+          "supporting_evidence_count": 0
+        }
+      }
+    }
+  ],
+  "server_started": true,
+  "server_exit_code": 1
+}

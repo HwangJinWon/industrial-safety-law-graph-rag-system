@@ -1,0 +1,106 @@
+Neo4j Second Load Candidate Review
+==================================================
+
+검토 목적
+Neo4j graph.v1 1차 핵심 적재, source hierarchy 적재, evidence traversal 검증, ListItem source anchor 보강 적재 이후 남은 2차 적재 후보를 Graph-RAG 답변 품질, 구현 위험도, 현재 필요성 기준으로 정리한다.
+
+현재 결론
+- 지금 당장 추가 적재가 필수인 항목은 없다.
+- ListItem 목록형 evidence 보강은 ITEM_RESOLVES_TO 3604개로 완료되었다.
+- 다음 단계는 추가 적재보다 Evidence Pack Assembler 설계 및 구현이다.
+
+1. PhysicalTable / PhysicalRow / PhysicalCell
+- 현재 적재 여부: 미적재
+- 필요성: 원본 표의 물리 구조, 셀 좌표, PDF/HWP 표 재구성에는 유용하다.
+- Graph-RAG 답변 영향: 일반 evidence pack에는 LogicalRow/LogicalCell로 충분한 경우가 많다. 표 원형 복원이나 셀 위치 설명이 필요한 경우에는 도움이 된다.
+- 지금 추가 적재해야 하는지: 아니오.
+- 나중에 해도 되는지: 예, 2차 또는 보류 가능.
+- 위험도: 중간. 노드/edge 수가 늘고 physical/logical 매핑 의미를 명확히 해야 한다.
+- 추천: 표 원형 복원 요구가 명확해지면 PhysicalTable/Row/Cell을 별도 phase로 검토한다.
+
+2. Section / Physical 관련 edge
+- 현재 적재 여부: 미적재
+- 필요성: Annex section 단위 탐색과 physical table 연결에 필요하다.
+- Graph-RAG 답변 영향: 현재 LogicalRow/LogicalCell 기반 evidence pack에는 즉시 필수는 아니다.
+- 지금 추가 적재해야 하는지: 아니오.
+- 나중에 해도 되는지: 예.
+- 위험도: 중간. section 경계와 physical table 관계 검증이 필요하다.
+- 추천: PhysicalTable/Row/Cell 적재와 함께 2차 후보로 묶어 검토한다.
+
+3. law relation edge
+- 현재 적재 여부: 미적재
+- 필요성: 법령 간 관계 탐색에는 유용하다.
+- Graph-RAG 답변 영향: 1차 retrieval/evidence pack에는 필수 아님.
+- 지금 추가 적재해야 하는지: 아니오.
+- 나중에 해도 되는지: 예.
+- 위험도: 낮음. containment hierarchy와 의미가 다르므로 relationship type을 분리해야 한다.
+- 추천: cross-law navigation 요구가 생기면 별도 relationship type으로 추가 검토한다.
+
+4. Law -> Article direct shortcut edge
+- 현재 적재 여부: 미적재
+- 필요성: 쿼리 단순화와 성능 최적화에는 유용할 수 있다.
+- Graph-RAG 답변 영향: 현재 Law -> Heading -> Article 경로가 있으므로 필수 아님.
+- 지금 추가 적재해야 하는지: 아니오.
+- 나중에 해도 되는지: 예.
+- 위험도: 낮음. 다만 원본 계층과 shortcut edge가 혼동되지 않도록 DERIVED 계열 relationship type이 필요하다.
+- 추천: Evidence Pack Assembler 쿼리 성능/단순화 이슈가 확인되면 DERIVED_CONTAINS 또는 HAS_ARTICLE_SHORTCUT 같은 명시적 이름으로 추가 검토한다.
+
+5. ListItem -> SourceNode
+- 현재 적재 여부: 미적재
+- 최종 판단: 직접 연결 후보였으나 NOT_READY
+- 이유: ListItem.source_node_id라는 컬럼명과 달리 실제 값은 SourceNode.source_node_id가 아니라 Paragraph/Item/Subitem/LogicalRow/LogicalCell/AnnexNote 같은 source anchor ID를 가리킨다.
+- read-only 검토 결과:
+  - ListItem count: 3604
+  - SourceNode count: 8858
+  - ListItem.source_node_id 보유: 3604
+  - SourceNode.source_node_id 직접 매칭: 0
+  - unmatched to SourceNode: 3604
+  - duplicate pair: 0
+- Graph-RAG 답변 영향: SourceNode 직접 edge를 만들면 0건이므로 의미가 없다.
+- 지금 추가 적재해야 하는지: 아니오.
+- 위험도: 높음. key 의미가 다르므로 추정 연결을 만들면 semantic distortion 위험이 있다.
+- 추천: SourceNode 직접 연결은 하지 않는다.
+
+6. ListItem -> source anchor
+- 현재 적재 여부: 완료
+- phase: listitem_source_anchor
+- relationship: ITEM_RESOLVES_TO
+- 총 연결 수: 3604
+- Paragraph: 35
+- Item: 482
+- Subitem: 49
+- LogicalRow: 1529
+- LogicalCell: 1495
+- AnnexNote: 14
+- unmatched: 0
+- ambiguous: 0
+- duplicate pair: 0
+- 필요성: 목록형 evidence pack에서 ListItem을 실제 원문 anchor로 확장하는 데 매우 유용하다.
+- Graph-RAG 답변 영향: 높음. 안전검사 항목, 교육 내용, 장비 목록, 별표/별지 기반 질의에서 근거 회수 품질을 높인다.
+- 지금 추가 적재해야 하는지: 완료됨.
+- 위험도: 낮음. 모든 ListItem이 정확히 하나의 source anchor와 매칭되었고 MERGE로 적재되었다.
+- 추천: Evidence Pack Assembler에서 ListItem 중심 검색과 ITEM_RESOLVES_TO source anchor 확장을 적극 사용한다.
+
+7. Rule direct edge가 없는 ListItem 3573개
+- 현재 상태: ListItem 노드는 3604개이고 HAS_LIST_ITEM direct edge는 31개다. Rule direct edge가 없는 ListItem은 3573개다.
+- 기존 문제: 목록형 evidence를 Rule 중심 graph traversal에 바로 붙이기는 어렵다.
+- 보강 후 변화: ITEM_RESOLVES_TO로 모든 ListItem이 원문 source anchor를 추적할 수 있게 되어 blocker는 완화되었다.
+- Graph-RAG 답변 영향: Rule 중심 확장은 여전히 제한적이지만, ListItem 중심 검색 및 source anchor 확장으로 목록형 evidence pack을 구성할 수 있다.
+- 지금 자동 Rule 연결을 추가해야 하는지: 아니오.
+- 위험도: 중간~높음. 잘못된 Rule 자동 연결은 reasoning graph 품질을 떨어뜨릴 수 있다.
+- 추천: 자동 Rule 연결은 보류한다. Evidence Pack Assembler에서 ListItem 중심 검색과 ITEM_RESOLVES_TO 확장을 우선 사용한다.
+
+8. 남은 2차 후보 우선순위
+우선순위 낮음/보류:
+- PhysicalTable / PhysicalRow / PhysicalCell
+- Section / Physical 관련 edge
+- law relation edge
+- Law -> Article direct shortcut edge
+
+9. 최종 추천
+- 지금 당장 추가 적재 필수 항목 없음
+- 다음 단계는 Evidence Pack Assembler 설계 및 구현
+- 목록형 evidence는 ITEM_RESOLVES_TO를 적극 활용
+- Physical 계층은 표 원형 복원 요구가 생기면 2차로 검토
+- Law -> Article shortcut은 쿼리 단순화/성능 이슈가 확인되면 추가 검토
+- 원칙: Neo4j 직접 수정보다 CSV patch 후 reload 또는 명시적 loader phase로 관리

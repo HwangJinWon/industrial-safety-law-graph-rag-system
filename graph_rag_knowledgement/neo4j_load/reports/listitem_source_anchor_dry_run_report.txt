@@ -1,0 +1,50 @@
+ListItem Source Anchor Dry-Run Report
+====================================
+- created_at: 2026-05-06 23:15:49
+- mode: DRY_RUN_PLAN
+- target_database: graph.v1
+- recommended_relationship: ITEM_RESOLVES_TO
+
+1. Purpose
+Plan (:ListItem)-[:ITEM_RESOLVES_TO]->(source anchor) relationships by matching ListItem.source_node_id to the primary id of Paragraph, Item, Subitem, LogicalRow, LogicalCell, and AnnexNote.
+
+2. Counts
+- total ListItem count: 3604
+- source_node_id-bearing ListItem count: 3604
+- missing source_node_id count: 0
+- planned ITEM_RESOLVES_TO total count: 3604
+- unmatched count: 0
+- ambiguous multi-label match count: 0
+- duplicate pair count: 0
+
+3. Planned Count by Target Label
+- Paragraph: 35
+- Item: 482
+- Subitem: 49
+- LogicalRow: 1529
+- LogicalCell: 1495
+- AnnexNote: 14
+
+4. Mapping Rules
+- ListItem.source_node_id -> Paragraph.paragraph_id
+- ListItem.source_node_id -> Item.item_id
+- ListItem.source_node_id -> Subitem.subitem_id
+- ListItem.source_node_id -> LogicalRow.logical_row_id
+- ListItem.source_node_id -> LogicalCell.logical_cell_id
+- ListItem.source_node_id -> AnnexNote.note_id
+
+5. Execute Feasibility
+- execute_possible: True
+- execute_policy: not executed in this task; dry-run only
+
+6. Warnings
+- none
+
+7. Risks
+- A ListItem matching multiple anchor labels must be excluded to avoid semantic ambiguity.
+- Future execute must use MERGE and should keep this phase separate from Rule/SourceNode EXTRACTED_FROM relationships.
+- This phase improves list evidence anchoring, but it does not create additional Rule -> ListItem links.
+
+8. Final Decision
+- final_status: ITEM_SOURCE_ANCHOR_READY
+- conclusion: ListItem source anchor linking is ready for a separate execute phase if execute is explicitly approved later.

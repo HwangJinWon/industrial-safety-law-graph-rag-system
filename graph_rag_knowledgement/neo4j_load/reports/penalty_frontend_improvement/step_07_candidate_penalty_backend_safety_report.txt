@@ -1,0 +1,69 @@
+﻿Step 07 Candidate Penalty Backend Safety Report
+===============================================
+
+created_at: 2026-05-08
+status: PASS
+
+Modified file
+-------------
+- 05_code/graph_rag_pipeline/ask_adapter.py
+
+Separation rule
+---------------
+- penalties[] is reserved for direct graph-linked or direct penalty rule evidence and is_confirmed=true.
+- candidate_penalties[] is reserved for article-reference matches and is_confirmed=false.
+- Article-reference matching is not promoted to confirmed penalty evidence.
+
+Candidate schema
+----------------
+Each candidate_penalties[] item now includes:
+- law_name
+- article_no
+- title / citation_text
+- text
+- preview
+- match_type
+- confidence
+- match_reason
+- candidate_notice
+- source_node_id or rule_id when available
+- is_confirmed=false
+
+Direct penalty schema
+---------------------
+Each penalties[] item includes:
+- law_name
+- article_no
+- text
+- preview
+- match_type=DIRECT_LINKED or direct-linked equivalent in response context
+- confidence=high
+- source_node_id or rule_id when available
+- is_confirmed=true
+
+Candidate limit and dedupe
+--------------------------
+- candidate_penalties[] is limited to 5 items in /law/{nodeId} responses.
+- Duplicate candidates are removed by rule_id + article_no + preview + match_type.
+
+Warning behavior
+----------------
+- If direct penalties are absent and candidate penalties exist, both a direct-penalty-not-found warning and a candidate-review-required warning are returned.
+- If direct penalties and candidates both exist, they remain separated and candidates are treated as supplemental review material only.
+- If no direct or candidate penalty exists, only direct-penalty-not-found is returned.
+
+Sample candidate structure
+--------------------------
+Example observed in smoke sample:
+- law_name: 산업안전보건법
+- article_no: 제175조
+- match_type: ARTICLE_REFERENCE_MATCH
+- confidence: medium
+- is_confirmed: false
+- candidate_notice: present
+
+Safety
+------
+- Neo4j write executed: false
+- LLM call executed: false
+- CSV/loader/package changes: false

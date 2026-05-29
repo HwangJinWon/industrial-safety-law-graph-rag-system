@@ -1,0 +1,59 @@
+Backend Penalty Response Report
+===============================
+
+created_at: 2026-05-07
+status: PASS
+mode: read-only graph response enrichment
+
+Modified files
+--------------
+- 05_code/graph_rag_pipeline/ask_adapter.py
+
+Backend changes
+---------------
+1. Added candidate penalty helpers.
+   - compact_candidate_penalty()
+   - candidate_penalties_for_law_article()
+
+2. /law/{nodeId} now returns:
+   - penalties[]
+   - candidate_penalties[]
+   - warnings[]
+
+3. Penalty classification policy:
+   - penalties[]: direct graph-related penalty evidence through RELATED_RULE or penalty Rule itself.
+   - candidate_penalties[]: article-reference match from penalty text/source text.
+   - warning CANDIDATE_PENALTY_REQUIRES_REVIEW: candidate exists but no direct graph penalty link.
+   - warning DIRECT_PENALTY_NOT_FOUND: neither direct nor candidate penalty evidence exists.
+
+4. /site-checklist-ui item enrichment:
+   - each item keeps penalties[]
+   - each item keeps candidate_penalties[]
+   - each item keeps penalty_warnings[]
+
+Verification
+------------
+- Python AST check: PASS
+- smoke_test_frontend_compat_endpoints.py: PASS
+- /ask existing behavior: PASS
+- /site-checklist-ui: PASS
+- /law/{nodeId}: PASS
+- risk assessment INDIRECT_ONLY guardrail: preserved
+
+Observed sample
+---------------
+- compat-risk-assessment: penalties=0, candidate_penalties=2
+- compat-education-tbm: penalties=0, candidate_penalties=0
+- compat-confined-space: penalties=0, candidate_penalties=2
+- compat-safety-state-1: penalties=0, candidate_penalties=2
+
+Safety
+------
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+
+Remaining limitation
+--------------------
+Candidate penalties are not final legal conclusions. They must be displayed as review candidates, not as confirmed penalty outcomes.

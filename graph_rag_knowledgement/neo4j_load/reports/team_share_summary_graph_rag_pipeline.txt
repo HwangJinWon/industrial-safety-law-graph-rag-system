@@ -1,0 +1,58 @@
+Team Share Summary - Graph-RAG Pipeline
+=======================================
+
+What is completed:
+- Neo4j graph.v1 load completed.
+- Source hierarchy loaded.
+- ListItem -> ITEM_RESOLVES_TO -> source anchor links loaded.
+- GraphQueryLayer implemented and smoke-tested.
+- EvidencePackAssembler implemented and smoke-tested.
+- INDIRECT_ONLY guardrail implemented for direct-evidence gaps.
+- CitationFormatter implemented.
+- ClaimChecker implemented.
+- deterministic AnswerGenerator implemented with LLM disabled.
+- /ask adapter implemented for existing frontend request compatibility.
+- frontend minimal UI update added readiness badges, warnings, and evidence chips.
+
+What currently works:
+- /ask accepts the current frontend shape:
+  - question
+  - mode
+  - chat_history
+- /ask also accepts query/message aliases.
+- /ask returns:
+  - answer
+  - evidences[] legacy alias
+  - citations[]
+  - evidence_chips[]
+  - claim_check
+  - evidence_readiness
+  - answer_policy
+  - warnings
+  - missing_evidence
+- 6 smoke queries pass the backend schema checks.
+
+Important guardrail:
+- The risk-assessment notice query is not answered as a direct yes/no obligation.
+- It returns INDIRECT_ONLY_RESPONSE because direct source coverage was not found.
+
+What is not done yet:
+- production natural-language answer generation with an LLM
+- FastAPI server launch verification
+- frontend browser build verification
+- full UI evidence-detail routing
+- full retrieval evaluation rerun
+- source detail endpoint redesign
+
+Paper / documentation tasks:
+- Describe graph construction and Neo4j load.
+- Describe evidence traversal and source anchoring.
+- Describe evidence_readiness and INDIRECT_ONLY guardrails.
+- Compare direct evidence vs indirect evidence handling.
+- Document frontend-compatible Graph-RAG response schema.
+
+Team caution:
+- Do not treat retrieval hits as final legal correctness.
+- Do not remove the INDIRECT_ONLY guardrail.
+- Do not expose raw debug evidence_pack to users by default.
+- Do not log API keys or database credentials.

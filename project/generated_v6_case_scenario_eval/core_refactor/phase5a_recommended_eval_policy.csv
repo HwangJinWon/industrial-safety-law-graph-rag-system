@@ -1,0 +1,7 @@
+﻿policy_id,condition,recommended_treatment,reason
+P1,Article 173 article matches but item branch is old-current/mapping ambiguous,ARTICLE_LEVEL_ONLY_FOR_CORPORATE,Fine branch should not be forced without mapping evidence.
+P2,Prediction corporate branch follows selected penalty branch,REVIEW_GT_BRANCH_BEFORE_MARKING_WRONG,A different GT branch may reflect GT/mapping issue rather than prediction error.
+P3,GT penalty and GT corporate branch are consistent and prediction branch conflicts,KEEP_FINE_STRICT,This is a valid candidate for Phase 5-B branch correction.
+P4,Article 167(1) selected/high-confidence,ALLOW_173_1_SELECTED,Current-law branch consistency supports Article 173 item 1.
+P5,Article 168-172 selected/high-confidence,ALLOW_173_2_SELECTED,Current-law branch consistency supports Article 173 item 2.
+P6,Article 38/39 fine branch lacks fact specificity,ARTICLE_LEVEL_ONLY_FOR_OBLIGATION,Safety/health obligation fine branches are fact-sensitive.

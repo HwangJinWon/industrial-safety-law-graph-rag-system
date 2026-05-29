@@ -1,0 +1,4 @@
+﻿difficulty,total_queries,top1_hit,top3_hit,top5_hit,top1_hit_rate,top3_hit_rate,top5_hit_rate
+easy,114,105,110,112,0.9211,0.9649,0.9825
+hard,111,94,100,104,0.8468,0.9009,0.9369
+medium,84,66,72,74,0.7857,0.8571,0.881

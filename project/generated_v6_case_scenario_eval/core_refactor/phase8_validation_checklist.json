@@ -1,0 +1,11 @@
+{
+  "gt_unmodified": true,
+  "prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase7_outputs_not_overwritten": true,
+  "all_new_files_phase8_prefix": true,
+  "oracle_pruned_not_reported_as_model_performance": true,
+  "safe_pruning_is_simulation_only": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true
+}

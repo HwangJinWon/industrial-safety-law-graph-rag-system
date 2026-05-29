@@ -1,0 +1,38 @@
+# Pre-Neo4j Graph Readiness Summary
+
+Readiness: READY_WITH_WARNINGS
+
+## Node Row Counts
+- nodes_rule.csv: 8858
+- nodes_requirement.csv: 3639
+- nodes_threshold.csv: 1782
+- nodes_exception.csv: 647
+- nodes_temporal_rule.csv: 227
+- nodes_entity_type.csv: 586
+- nodes_list_item.csv: 3604
+
+## Edge Row Counts
+- edges_rule_entity.csv: 8973
+- edges_rule_exception.csv: 647
+- edges_rule_list_item.csv: 3604
+- edges_rule_reasoning.csv: 5907
+- edges_rule_requirement.csv: 3639
+- edges_rule_source.csv: 8858
+- edges_rule_temporal.csv: 279
+- edges_rule_threshold.csv: 1782
+
+- orphan_from_endpoint: 0
+- orphan_to_endpoint: 0
+- duplicate_id: 0
+- missing_source_text: 0
+- unknown_rule_type_or_subtype: 1995
+- high_degree_rule_count: 0
+
+## Must Fix Before Load
+- none
+
+## Warnings Acceptable For First Load
+- nodes_rule.csv / obligation_without_requirement: 607 
+- nodes_rule.csv / threshold_related_without_threshold_node: 1210 
+- nodes_rule.csv / unknown_rule_type_or_subtype: 1995 
+- nodes_rule.csv / needs_review_or_low_confidence: 1026 

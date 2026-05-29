@@ -1,0 +1,87 @@
+final_status: PASS
+
+수정한 파일:
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+
+App.jsx 문법 깨짐 선점검:
+- 검색 패턴: ".prev", "{ .v", "[.prev", "{ .", ".v,"
+- "[.prev" 발견 없음
+- "{ .v" 발견 없음
+- ".v,"는 정상 spread 문법인 "{ ...v, completed: !v.completed }"에서만 발견됨
+- npm run build로 JSX/JS 문법 정상 확인
+
+체크리스트 badge 우선순위 개선:
+- "추가 검토 필요"를 메인 warning badge에서 "추가 검토 참고" 보조 badge로 약화했다.
+- 체크리스트 항목 상단은 항목명 + 위험도 badge 중심으로 재정렬했다.
+- 메인 badge 영역은 근거 연결 여부, 처벌 관련 근거, 벌칙·과태료 후보를 우선 표시한다.
+- 필터를 다음 기준으로 정리했다.
+  - 전체
+  - 고위험
+  - 미완료
+  - 근거 연결
+  - 벌칙·과태료 후보
+  - 처벌 관련 근거
+  - 검토 참고
+
+후보 처벌 가시성 개선:
+- 체크리스트 카드에 "벌칙·과태료 후보 N건" badge를 강하게 표시한다.
+- 후보 처벌이 있는 항목에는 "후보 처벌은 확정 결론이 아니며, 실제 적용 여부는 원문 검토가 필요합니다." 안내를 표시한다.
+- 법령 상세 패널에서 직접 처벌이 없고 후보 처벌이 있으면 candidate-guide 안내를 먼저 표시한다.
+- 후보 처벌 카드는 emphasized 스타일과 후보/검토 필요/확정 아님 badge를 유지한다.
+
+QA 대화형 UI 개선:
+- 법령 QA 페이지를 보고서 카드형 UI에서 상담형 말풍선 UI로 변경했다.
+- 예시 질문 버튼을 추가했다.
+- 대화 본문은 qa-conversation 영역에서 user/assistant bubble로 표시한다.
+- 입력창은 하단 sticky 영역에 배치했다.
+- floating chat subtitle에 "간단 질문용 · 정식 근거 확인은 법령 QA 페이지에서 확인" 문구를 추가해 역할을 분리했다.
+
+법령 텍스트 줄바꿈/가독성 개선:
+- normalizeLegalText(), legalPreview(), splitBulletText() helper를 추가했다.
+- 제○조, ①, 1., 가., 다만 등 기준으로 줄바꿈을 보조한다.
+- 원문 의미를 바꾸지 않고 표시용 줄바꿈만 적용한다.
+- 긴 원문은 preview와 "원문 전체 보기" details로 분리했다.
+- requirements는 가능한 경우 bullet list로 표시한다.
+
+공통 상세 패널 개선:
+- summary, why, related, warnings, penalty preview에 legal-text 스타일을 적용했다.
+- 직접 처벌, 후보 처벌, 직접/후보 모두 없음 상태를 명확히 분리했다.
+- 내부 node id는 기존처럼 details 접힘 영역에만 표시한다.
+
+검증 결과:
+- npm run build: PASS
+- python -B 05_code\graph_rag_pipeline\smoke_test_frontend_compat_endpoints.py --root-dir .: PASS
+- python -B 05_code\graph_rag_pipeline\smoke_test_end_to_end_ask.py --root-dir .: PASS
+- ask_adapter import: PASS
+
+위험성평가 guardrail:
+- 기존 smoke test에서 위험성평가 결과 고지 질문의 INDIRECT_ONLY_RESPONSE 유지 확인
+- 이번 작업은 프론트 표시 구조만 수정했으며 /ask 판단 로직은 수정하지 않음
+
+금지사항 준수:
+- ask_adapter.py 수정 없음
+- Neo4j write 없음
+- CSV 수정 없음
+- loader 수정 없음
+- package.json 수정 없음
+- npm audit fix 없음
+- LLM 호출 없음
+- password/API key/NEO4J_PASSWORD 로그 없음
+
+남은 한계:
+- candidate penalty는 여전히 최종 법적 결론이 아니라 검토 후보임
+- 별표 LogicalRow/LogicalCell의 완전한 표형 재구성은 아직 다음 단계임
+- Threshold/Exception/RelatedRule 전용 UI는 아직 다음 단계임
+
+사용자가 직접 확인해야 할 것:
+- 체크리스트 항목에서 "추가 검토 참고"가 과하게 튀지 않는지 확인
+- 후보 처벌이 있는 항목에서 "벌칙·과태료 후보 N건"이 충분히 보이는지 확인
+- 법령 QA 페이지가 대화형 상담 UI처럼 보이는지 확인
+- 법령 상세 패널 원문이 줄바꿈되어 읽히는지 확인
+- 후보 처벌이 확정 처벌처럼 보이지 않는지 확인
+- 위험성평가 결과 고지 질문이 여전히 제한 답변으로 표시되는지 확인
+
+다음 단계 진행 가능 여부:
+- PASS. 다음 단계로 진행 가능.
+- 추천 다음 단계: 별표 LogicalRow/LogicalCell 표형 상세 표시, Threshold/Exception/RelatedRule 전용 UI, source hierarchy browser 강화.

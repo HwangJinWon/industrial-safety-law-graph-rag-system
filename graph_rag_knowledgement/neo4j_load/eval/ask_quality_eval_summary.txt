@@ -1,0 +1,32 @@
+Ask Quality Evaluation Summary
+==============================
+- created_at: 2026-05-08 13:40:20
+- total: 20
+- pass_count: 20
+- pass_rate: 100.0%
+- avg_answer_quality_score: 5.00
+- llm_used: false
+- neo4j_write_executed: false
+
+By category:
+- applicability: 1/1 pass
+- appointment: 1/1 pass
+- definition: 1/1 pass
+- education: 2/2 pass
+- education_time: 2/2 pass
+- emergency: 1/1 pass
+- inspection: 1/1 pass
+- msds: 1/1 pass
+- penalty: 1/1 pass
+- plan: 1/1 pass
+- ppe: 1/1 pass
+- risk_assessment: 1/1 pass
+- risk_assessment_notice: 1/1 pass
+- safety_measure: 3/3 pass
+- smalltalk: 2/2 pass
+
+Failed questions:
+- none
+
+Common failure reasons:
+- none

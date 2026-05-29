@@ -1,0 +1,210 @@
+﻿split,case_id,case_name,ref,law_name,article,group,slot,level,in_selected,in_supporting_pool,in_candidate_pool
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,False,False,True
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제1조,중대재해처벌법,제1조,supporting,definition,article,False,True,True
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제1조,산업안전보건법,제1조,supporting,definition,article,False,True,True
+strict,2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+strict,2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제1조,중대재해처벌법,제1조,supporting,definition,article,False,True,True
+strict,2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제4조,중대재해처벌법,제4조,core,serious_accident_obligation,article,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,False,False,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제62조,산업안전보건법,제62조,supporting,management_system,article,False,False,False
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제2조 제9호,중대재해처벌법,제2조,supporting,definition,fine,False,False,False
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제4조,중대재해처벌법,제4조,core,serious_accident_obligation,article,False,False,False
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제5조,중대재해처벌법,제5조,core,serious_accident_obligation,article,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,False,False,True
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제1항,산업안전보건법,제38조,core,primary_obligation,fine,False,False,False
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제3항 제1호,산업안전보건법,제38조,core,primary_obligation,fine,False,False,True
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 시행령 제4조 제5호,중대재해처벌법 시행령,제4조,supporting,enforcement_decree_detail,fine,False,False,False
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제2조 제2호,중대재해처벌법,제2조,supporting,definition,fine,False,False,False
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,False,False,True
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제1항,산업안전보건법,제38조,core,primary_obligation,fine,False,False,False
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제3항 제1호,산업안전보건법,제38조,core,primary_obligation,fine,False,False,True
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 시행령 제4조 제5호,중대재해처벌법 시행령,제4조,supporting,enforcement_decree_detail,fine,False,False,False
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제2조 제2호,중대재해처벌법,제2조,supporting,definition,fine,False,False,False
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제1조,중대재해처벌법,제1조,supporting,definition,article,False,True,True
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제2조 제9호,중대재해처벌법,제2조,supporting,definition,fine,False,False,False
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제3조,중대재해처벌법,제3조,supporting,scope,article,False,True,True
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제4조,중대재해처벌법,제4조,core,serious_accident_obligation,article,True,True,True
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조,중대재해처벌법,제6조,core,penalty,article,False,False,False
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,13,산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,13,산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,13,산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,14,산업안전보건법 위반·업무상과실치사,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,14,산업안전보건법 위반·업무상과실치사,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,14,산업안전보건법 위반·업무상과실치사,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,21,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,21,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,21,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,22,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,22,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,22,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제13조 제3항,산업안전보건법,제13조,supporting,management_system,fine,False,False,False
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제31조,산업안전보건법,제31조,supporting,management_system,article,False,False,False
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건기준에 관한 규칙 제619조,산업안전보건기준에 관한 규칙,제619조,supporting,safety_health_standard,article,False,True,True
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제14조,산업안전보건법,제14조,supporting,management_system,article,False,False,False
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제5조 제1항 제2호,산업안전보건법,제5조,supporting,management_system,fine,False,False,False
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제14조 제1항,산업안전보건법,제14조,supporting,management_system,fine,False,False,False
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제14조 제2항,산업안전보건법,제14조,supporting,management_system,fine,False,False,False
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,False,False,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제41조 제1항,산업안전보건법,제41조,supporting,management_system,fine,False,False,False
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제41조 제3항,산업안전보건법,제41조,supporting,management_system,fine,False,False,False
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제5조 제1항,산업안전보건법,제5조,supporting,management_system,fine,False,False,False
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,중대재해처벌법 제4조,중대재해처벌법,제4조,core,serious_accident_obligation,article,True,True,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,44,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,44,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,44,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,45,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 시행규칙 제30조 제4항,산업안전보건법 시행규칙,제30조,supporting,enforcement_rule_detail,fine,False,False,False
+strict,45,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,48,산업안전보건법위반,산업안전보건기준에 관한 규칙 제3조 제2항,산업안전보건기준에 관한 규칙,제3조,supporting,safety_health_standard,fine,False,False,False
+strict,48,산업안전보건법위반,산업안전보건기준에 관한 규칙 제619조 제1항,산업안전보건기준에 관한 규칙,제619조,supporting,safety_health_standard,fine,False,False,False
+strict,48,산업안전보건법위반,산업안전보건법 제167조,산업안전보건법,제167조,core,penalty,article,False,False,False
+strict,48,산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,48,산업안전보건법위반,산업안전보건법 제2조 제6호,산업안전보건법,제2조,supporting,definition,fine,False,False,False
+strict,48,산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건기준에 관한 규칙 제619조 제1항,산업안전보건기준에 관한 규칙,제619조,supporting,safety_health_standard,fine,False,False,False
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제2조,산업안전보건법,제2조,supporting,definition,article,False,True,True
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제2조 제10호,산업안전보건법,제2조,supporting,definition,fine,False,False,False
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제2조 제4호,산업안전보건법,제2조,supporting,definition,fine,False,False,False
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제13조 제3항,산업안전보건법,제13조,supporting,management_system,fine,False,False,False
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제31조,산업안전보건법,제31조,supporting,management_system,article,False,False,False
+strict,54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],산업안전보건기준에 관한 규칙 제1조,산업안전보건기준에 관한 규칙,제1조,supporting,safety_health_standard,article,False,False,False
+strict,54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제2조 제4호,산업안전보건법,제2조,supporting,definition,fine,False,False,False
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,False,False,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제2조 제3호,산업안전보건법,제2조,supporting,definition,fine,False,False,False
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),중대재해처벌법 제4조,중대재해처벌법,제4조,core,serious_accident_obligation,article,True,True,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),중대재해처벌법 제6조 제1항,중대재해처벌법,제6조,core,penalty,fine,True,True,True
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),중대재해처벌법 제7조 제1호,중대재해처벌법,제7조,core,corporate_penalty,fine,True,True,True
+strict,60,산업안전보건법위반,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,60,산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,60,산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,68,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조,산업안전보건법,제173조,core,corporate_penalty,article,False,False,False
+strict,68,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+strict,68,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,15,산업안전보건법 위반,산업안전보건법 시행령 제27조 제2항,산업안전보건법 시행령,제27조,supporting,enforcement_decree_detail,fine,False,False,False
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제39조,산업안전보건법,제39조,core,health_obligation,article,True,True,True
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 시행령 제26조 제1항,산업안전보건법 시행령,제26조,supporting,enforcement_decree_detail,fine,False,False,False
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,False,False,False
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제39조,산업안전보건법,제39조,core,health_obligation,article,True,True,True
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 시행규칙 제6조,산업안전보건법 시행규칙,제6조,supporting,enforcement_rule_detail,article,False,False,False
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 시행령 제11조,산업안전보건법 시행령,제11조,supporting,enforcement_decree_detail,article,False,False,False
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건기준에 관한 규칙 제38조,산업안전보건기준에 관한 규칙,제38조,supporting,safety_health_standard,article,False,False,False
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 시행규칙 제30조 제4항,산업안전보건법 시행규칙,제30조,supporting,enforcement_rule_detail,fine,False,False,False
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,False,False,False
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 시행규칙 제6조,산업안전보건법 시행규칙,제6조,supporting,enforcement_rule_detail,article,False,False,False
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 시행령 제11조,산업안전보건법 시행령,제11조,supporting,enforcement_decree_detail,article,False,False,False
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건기준에 관한 규칙 제38조 제1항,산업안전보건기준에 관한 규칙,제38조,supporting,safety_health_standard,fine,False,False,False
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제13조,산업안전보건법,제13조,supporting,management_system,article,False,False,False
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건기준에 관한 규칙 제44조 제1항,산업안전보건기준에 관한 규칙,제44조,supporting,safety_health_standard,fine,False,False,False
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건기준에 관한 규칙 제619조 제1항,산업안전보건기준에 관한 규칙,제619조,supporting,safety_health_standard,fine,False,False,False
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제2조 제6호,산업안전보건법,제2조,supporting,definition,fine,False,False,False
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,56,산업안전보건법위반,산업안전보건법 시행규칙 제30조 제5항,산업안전보건법 시행규칙,제30조,supporting,enforcement_rule_detail,fine,False,False,False
+auxiliary,56,산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,56,산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,56,산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,56,산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,56,산업안전보건법위반,산업안전보건법 제39조,산업안전보건법,제39조,core,health_obligation,article,True,True,True
+auxiliary,56,산업안전보건법위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,59,산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,59,산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,59,산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,59,산업안전보건법위반,산업안전보건법 제1조,산업안전보건법,제1조,supporting,definition,article,False,True,True
+auxiliary,59,산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,True,True,True
+auxiliary,59,산업안전보건법위반,산업안전보건법 제63조,산업안전보건법,제63조,core,contractor_obligation,article,True,True,True
+auxiliary,62,산업안전보건법위반,산업안전보건법 제167조 제1항,산업안전보건법,제167조,core,penalty,fine,True,True,True
+auxiliary,62,산업안전보건법위반,산업안전보건법 제173조 제1호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,62,산업안전보건법위반,산업안전보건법 제173조 제2호,산업안전보건법,제173조,core,corporate_penalty,fine,True,True,True
+auxiliary,62,산업안전보건법위반,산업안전보건법 제38조,산업안전보건법,제38조,core,primary_obligation,article,False,False,False
+auxiliary,62,산업안전보건법위반,산업안전보건법 제69조 제1호,산업안전보건법,제69조,supporting,other_supporting,fine,False,False,False

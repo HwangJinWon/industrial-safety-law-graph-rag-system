@@ -1,0 +1,14 @@
+﻿feature,weight,meaning
+obligation_role_match,5,obligation role match
+obligation_article_match,10,obligation article match
+obligation_fine_match,12,obligation fine match
+penalty_role_match,5,penalty role match
+penalty_article_match,12,penalty article match
+penalty_fine_match,15,penalty fine match
+corporate_article_match,8,corporate article match
+corporate_fine_match,10,corporate fine match
+case_fact_match,4,case fact match
+issue_type_match,4,issue type match
+chain_completeness,15,chain completeness
+supporting_detail_noise_penalty,-12,supporting detail noise penalty
+old_current_mapping_uncertainty_penalty,-10,old current mapping uncertainty penalty

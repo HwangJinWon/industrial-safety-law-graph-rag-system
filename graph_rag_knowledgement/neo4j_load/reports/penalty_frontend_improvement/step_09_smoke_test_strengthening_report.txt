@@ -1,0 +1,22 @@
+Step 09 Smoke Test Strengthening Report
+=======================================
+created_at: 2026-05-08 14:21:57
+final_status: PASS
+
+Added validations:
+- Broken Korean/mojibake checks on user-facing checklist and law detail fields.
+- Candidate penalty schema checks for match_type, confidence, candidate_notice, and is_confirmed=false.
+- Direct penalty is_confirmed=true check where present.
+- Risk assessment notice guardrail checks for INDIRECT_ONLY_RESPONSE and non-assertive phrasing.
+- Penalty lookup answer/citation/policy checks.
+- /law detail checks for duplicate warnings/citations and non-developer why_relevant wording.
+
+Errors:
+- none
+
+Quality warnings:
+- none
+
+Safety:
+- Neo4j write executed: false
+- LLM call executed: false

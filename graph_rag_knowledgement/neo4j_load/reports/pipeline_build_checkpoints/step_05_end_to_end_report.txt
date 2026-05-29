@@ -1,0 +1,55 @@
+step_id: 5
+step_name: End-to-End Smoke Test and Final Documentation
+attempt_number: 1
+started_at: 2026-05-07 12:56:00
+finished_at: 2026-05-07 12:59:00
+
+Created files:
+- 05_code/graph_rag_pipeline/smoke_test_end_to_end_ask.py
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_report.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_samples.json
+- graph_rag_knowledgement/neo4j_load/reports/graph_rag_pipeline_final_status_report.md
+- graph_rag_knowledgement/neo4j_load/reports/team_share_summary_graph_rag_pipeline.txt
+
+Modified files:
+- none
+
+Test command:
+- python -B 05_code/graph_rag_pipeline/smoke_test_end_to_end_ask.py --root-dir .
+
+Test result:
+- PASS
+
+Validated response fields:
+- answer
+- evidences[]
+- citations[]
+- evidence_chips[]
+- claim_check
+- answer_policy
+- evidence_readiness
+
+Key result:
+- all 6 smoke queries passed
+- risk-assessment notice query answer_policy = INDIRECT_ONLY_RESPONSE
+- LLM used: false
+- Neo4j write: none
+
+Warnings:
+- E2E test used direct adapter function calls, not a running FastAPI server.
+- frontend browser build remains unverified due missing dependencies.
+
+Errors:
+- none
+
+Safety checks:
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+- password value logged: no
+
+Decision:
+- PASS
+- next_step_allowed: final summary
+- manual_review_required: no

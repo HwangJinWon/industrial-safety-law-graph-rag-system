@@ -1,0 +1,13 @@
+{
+  "gt_unmodified": true,
+  "raw_prediction_outputs_unmodified": true,
+  "original_evaluator_unmodified": true,
+  "phase1_to_phase8_outputs_not_overwritten": true,
+  "all_new_files_phase9_prefix": true,
+  "only_safe_prune_refs_removed_from_selected_layer": true,
+  "chain_completion_refs_not_deleted": true,
+  "chain_completion_refs_separated": true,
+  "candidate_not_treated_as_selected": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true
+}

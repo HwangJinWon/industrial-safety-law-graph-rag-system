@@ -1,0 +1,23 @@
+step_id: 08
+step_name: Smoke test compatibility check
+status: PASS
+
+실행 명령:
+- python -B 05_code\graph_rag_pipeline\smoke_test_frontend_compat_endpoints.py --root-dir .
+- python -B 05_code\graph_rag_pipeline\smoke_test_end_to_end_ask.py --root-dir .
+
+결과:
+- frontend compatibility smoke test: PASS
+- end-to-end ask smoke test: PASS
+
+검증 유지 항목:
+- /ask 필수 필드 유지: answer, evidences, citations, evidence_chips, claim_check, answer_policy, evidence_readiness, warnings, missing_evidence
+- /site-checklist-ui 호환 유지
+- /law/{nodeId} 상세 조회 호환 유지
+- 위험성평가 결과 고지 질문 guardrail 유지
+- candidate_penalties 안전 구조 유지
+
+프론트 페이지 구조는 endpoint smoke test로 직접 검증하지 못하므로 npm run build와 수동 화면 확인이 필요하다.
+
+Neo4j write: 없음
+LLM 호출: 없음

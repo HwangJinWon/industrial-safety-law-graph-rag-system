@@ -1,0 +1,816 @@
+{
+  "created_at": "2026-05-07T17:45:38",
+  "server_started": true,
+  "server_exit_code": 1,
+  "tests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "elapsed_sec": 1.537,
+      "data": {
+        "status": "ok",
+        "service": "graph-rag-ask-adapter",
+        "graph_db": "graph.v1",
+        "llm_used_default": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/site-checklist-ui",
+      "status": 200,
+      "elapsed_sec": 2.406,
+      "data": {
+        "answer": "입력한 현장 조건을 기준으로 기본 안전 점검 항목을 생성했습니다. 본 결과는 1차 compatibility checklist이며, 세부 법령 근거 기반 체크리스트는 후속 Graph-RAG checklist pipeline에서 보강됩니다.",
+        "items": [
+          {
+            "id": "compat-risk-assessment",
+            "title": "사전 위험성평가 실시 여부 확인",
+            "text": "사전 위험성평가 실시 여부 확인 - 작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+            "description": "작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+            "risk": "high",
+            "law_title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+            "law_node_id": "lrow_eadf26121ecf",
+            "node_id": "lrow_eadf26121ecf",
+            "completed": false,
+            "evidences": [
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+                "node_id": "lrow_eadf26121ecf",
+                "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+                "score": null,
+                "type": "source"
+              },
+              {
+                "law_name": "산업안전보건법 시행령",
+                "title": "산업안전보건법 시행령 제15조",
+                "node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+                "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+                "score": null,
+                "type": "source"
+              },
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+                "node_id": "lcell_126568e2feba",
+                "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+                "score": null,
+                "type": "rule"
+              }
+            ],
+            "warnings": [],
+            "evidence_query": "위험성평가를 실시해야 하나?",
+            "evidence_intent": "obligation_check",
+            "evidence_readiness": "READY_WITH_WARNINGS",
+            "answer_policy": "ALLOW_WITH_CAUTION"
+          },
+          {
+            "id": "compat-education-tbm",
+            "title": "작업 전 안전보건교육 및 TBM 실시 여부 확인",
+            "text": "작업 전 안전보건교육 및 TBM 실시 여부 확인 - 작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+            "description": "작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+            "risk": "mid",
+            "law_title": "산업안전보건법 시행규칙 제26조",
+            "law_node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+            "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+            "completed": false,
+            "evidences": [
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 제26조",
+                "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+                "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+                "score": null,
+                "type": "source"
+              },
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 제27조",
+                "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+                "source_text": "④ 법 제30조제1항제3호에 따라 관리감독자가 다음 각 호의 어느 하나에 해당하는 교육을 이수한 경우 별표 4 제1호의2가목의 관리감독자 정기교육시간을 면제할 수 있다. <개정 2025.5.30>",
+                "score": null,
+                "type": "source"
+              },
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 안전보건교육 교육과정별 교육시간(제26조제1항 등 관련)",
+                "node_id": "lrow_1b5d201a73aa",
+                "source_text": "",
+                "score": null,
+                "type": "source"
+              }
+            ],
+            "warnings": [],
+            "evidence_query": "정기 안전보건교육은 몇 시간 해야 하나?",
+            "evidence_intent": "education_time_lookup",
+            "evidence_readiness": "READY_WITH_WARNINGS",
+            "answer_policy": "ALLOW_WITH_CAUTION"
+          },
+          {
+            "id": "compat-safety-state-1",
+            "title": "미완료 안전조치 확인: ???? ??",
+            "text": "미완료 안전조치 확인: ???? ?? - 현장 안전상태 입력에서 미완료로 표시된 항목을 우선 점검합니다.",
+            "description": "현장 안전상태 입력에서 미완료로 표시된 항목을 우선 점검합니다.",
+            "risk": "mid",
+            "law_title": "산업안전보건법 시행규칙 제27조",
+            "law_node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+            "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+            "completed": false,
+            "evidences": [
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 제27조",
+                "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+                "source_text": "② 영 제16조 및 제20조에 따른 안전관리자 및 보건관리자를 선임할 의무가 없는 사업장의 사업주가 법 제11조제3호에 따라 노무를 제공하는 자의 건강 유지ㆍ증진을 위하여 설치된 근로자건강센터(이하 \"근로자건강센터\"라 한다)에서 실시하는 안전보건교육, 건강상담, 건강관리프로그램 등 근로자 건강관리 활동에 해당 사업장의 근로자를 참여하게 한 경우에는 해당 시간을 제26조제1항에 따른 교육 중 해당 반기(관리감독자의 지위에 있는 사람의 경우 해당 연도)의 근로자 정기교육 시간에서 면제할 수 있다. 이 경우 사업주는 해당 사업장의 ...",
+                "score": null,
+                "type": "source"
+              },
+              {
+                "law_name": "중대재해 처벌 등에 관한 법률",
+                "title": "중대재해 처벌 등에 관한 법률 제5조",
+                "node_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+                "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+                "score": null,
+                "type": "source"
+              },
+              {
+                "law_name": "산업안전보건법 시행규칙",
+                "title": "산업안전보건법 시행규칙 제26조",
+                "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+                "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+                "score": null,
+                "type": "source"
+              }
+            ],
+            "warnings": [],
+            "evidence_query": "작업 전 안전보건 조치 의무는 무엇인가?",
+            "evidence_intent": "obligation_check",
+            "evidence_readiness": "READY",
+            "answer_policy": "ALLOW_DIRECT_ANSWER"
+          }
+        ],
+        "evidences": [
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+            "node_id": "lrow_eadf26121ecf",
+            "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "산업안전보건법 시행령",
+            "title": "산업안전보건법 시행령 제15조",
+            "node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+            "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+            "node_id": "lcell_126568e2feba",
+            "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+            "score": null,
+            "type": "rule"
+          },
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 제26조",
+            "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+            "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 제27조",
+            "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+            "source_text": "④ 법 제30조제1항제3호에 따라 관리감독자가 다음 각 호의 어느 하나에 해당하는 교육을 이수한 경우 별표 4 제1호의2가목의 관리감독자 정기교육시간을 면제할 수 있다. <개정 2025.5.30>",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 안전보건교육 교육과정별 교육시간(제26조제1항 등 관련)",
+            "node_id": "lrow_1b5d201a73aa",
+            "source_text": "",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 제27조",
+            "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+            "source_text": "② 영 제16조 및 제20조에 따른 안전관리자 및 보건관리자를 선임할 의무가 없는 사업장의 사업주가 법 제11조제3호에 따라 노무를 제공하는 자의 건강 유지ㆍ증진을 위하여 설치된 근로자건강센터(이하 \"근로자건강센터\"라 한다)에서 실시하는 안전보건교육, 건강상담, 건강관리프로그램 등 근로자 건강관리 활동에 해당 사업장의 근로자를 참여하게 한 경우에는 해당 시간을 제26조제1항에 따른 교육 중 해당 반기(관리감독자의 지위에 있는 사람의 경우 해당 연도)의 근로자 정기교육 시간에서 면제할 수 있다. 이 경우 사업주는 해당 사업장의 ...",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제5조",
+            "node_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "산업안전보건법 시행규칙",
+            "title": "산업안전보건법 시행규칙 제26조",
+            "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+            "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+            "score": null,
+            "type": "source"
+          }
+        ],
+        "warnings": [],
+        "debug": {
+          "adapter_type": "compatibility_checklist",
+          "llm_used": false,
+          "graph_db": "graph.v1",
+          "item_count": 3,
+          "linked_item_count": 3,
+          "evidence_item_count": 3
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/law/lrow_eadf26121ecf",
+      "status": 200,
+      "elapsed_sec": 0.076,
+      "data": {
+        "id": "lrow_eadf26121ecf",
+        "node_id": "lrow_eadf26121ecf",
+        "type": "SourceNode",
+        "label": "SourceNode",
+        "title": "산업안전보건법 시행규칙",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "summary": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "why_relevant": "이 체크리스트 항목은 Graph-RAG evidence lookup에서 선택된 node_id를 통해 이 근거 노드와 연결되었습니다.",
+        "requirements": [
+          {
+            "requirement_id": "02084de3-1a28-5791-be84-b025bbab6b20",
+            "text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+            "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항"
+          }
+        ],
+        "penalties": [],
+        "citations": [
+          {
+            "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+            "law_name": "산업안전보건법 시행규칙",
+            "article_no": "",
+            "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+            "source_anchor_label": "",
+            "source_anchor_id": "",
+            "source_node_id": "lrow_eadf26121ecf",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+            "evidence_kind": "source",
+            "confidence": "medium"
+          },
+          {
+            "citation_text": "LogicalRow:lrow_eadf26121ecf",
+            "law_name": "",
+            "article_no": "",
+            "annex_title": "",
+            "source_anchor_label": "LogicalRow",
+            "source_anchor_id": "lrow_eadf26121ecf",
+            "source_node_id": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "",
+            "evidence_kind": "source",
+            "confidence": "medium"
+          }
+        ],
+        "related_sources": [
+          {
+            "citation_text": "LogicalRow:lrow_eadf26121ecf",
+            "law_name": "",
+            "article_no": "",
+            "annex_title": "",
+            "source_anchor_label": "LogicalRow",
+            "source_anchor_id": "lrow_eadf26121ecf",
+            "source_node_id": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "",
+            "evidence_kind": "source",
+            "confidence": "medium"
+          }
+        ],
+        "warnings": [
+          {
+            "warning_type": "DIRECT_PENALTY_NOT_FOUND",
+            "severity": "medium",
+            "message": "현재 연결된 조항에서는 직접 처벌 근거가 확인되지 않았습니다."
+          }
+        ],
+        "text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "article_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "context": {
+          "parent": [],
+          "children": []
+        },
+        "children": [],
+        "neighbors": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ask",
+      "status": 200,
+      "elapsed_sec": 0.417,
+      "data": {
+        "answer": "[결론]\n확인된 근거를 기준으로 답변할 수 있습니다.\n\n[근거]\n- 4d6b714d-5695-5896-8156-4438ef8877e2: ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.\n- 014c4942-6b2c-5e27-a5c9-b3b1c0f78413: 제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.\n- 0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec: ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.\n\n[근거 조항]\n- 중대재해 처벌 등에 관한 법률 제4조 - ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.\n- 중대재해 처벌 등에 관한 법률 제5조 - 제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이\n- 중대재해 처벌 등에 관한 법률 제9조 - ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한",
+        "mode": "qa",
+        "intent": "obligation_check",
+        "status": "OK",
+        "evidence_readiness": "READY",
+        "answer_policy": "ALLOW_DIRECT_ANSWER",
+        "claim_check": {
+          "query": "????? ??? ????? ??? ???",
+          "intent": "obligation_check",
+          "pack_status": "OK",
+          "evidence_readiness": "READY",
+          "claim_check_status": "PASS",
+          "answer_policy": "ALLOW_DIRECT_ANSWER",
+          "issues": [],
+          "badges": [
+            {
+              "label": "직접 근거 확인",
+              "severity": "success",
+              "message": "Citation-backed direct answer is allowed."
+            }
+          ],
+          "summary": {
+            "primary_evidence_count": 5,
+            "citation_count": 11,
+            "warning_count": 0,
+            "missing_evidence_count": 0,
+            "high_severity_issue_count": 0
+          }
+        },
+        "citations": [
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제4조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제4조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+            "source_node_id": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "source",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제5조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제5조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "source_node_id": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "evidence_kind": "source",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_node_id": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "source",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제4조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제4조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+            "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+            "rule_id": "4d6b714d-5695-5896-8156-4438ef8877e2",
+            "list_item_id": "",
+            "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "rule",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제4조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제4조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "",
+            "source_anchor_id": "",
+            "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "source",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제5조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제5조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+            "rule_id": "014c4942-6b2c-5e27-a5c9-b3b1c0f78413",
+            "list_item_id": "",
+            "source_text_preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "evidence_kind": "rule",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제5조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제5조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "",
+            "source_anchor_id": "",
+            "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "evidence_kind": "source",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+            "rule_id": "0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec",
+            "list_item_id": "",
+            "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "rule",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "",
+            "source_anchor_id": "",
+            "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+            "rule_id": "",
+            "list_item_id": "",
+            "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "source",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_node_id": "9e7d2dcd8aefc77a8739dbaa573141f5c45aad6d",
+            "rule_id": "2578ff74-9655-50e8-bfcb-de7dca5cf6d8",
+            "list_item_id": "",
+            "source_text_preview": "② 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 공중이용시설 또는 공중교통수단의 설계, 설치, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "evidence_kind": "rule",
+            "confidence": "high"
+          },
+          {
+            "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "paragraph_no": "",
+            "item_no": "",
+            "subitem_no": "",
+            "annex_title": "",
+            "source_anchor_label": "Paragraph",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_node_id": "16405701ab74350e7e6457b73bc4a3d02fdaff5b",
+            "rule_id": "353cde78-8164-52da-a217-8d6de93a253f",
+            "list_item_id": "",
+            "source_text_preview": "③ 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 공중이용시설 또는 공중교통수단과 관련하여 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 제2항의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "evidence_kind": "rule",
+            "confidence": "high"
+          }
+        ],
+        "evidence_chips": [
+          {
+            "id": "6adff12319a4d7e0a751a82637484faa48340d94",
+            "label": "중대재해 처벌 등에 관한 법률 제4조",
+            "type": "source",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제4조",
+            "annex_title": "",
+            "source_node_id": "",
+            "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "",
+            "list_item_id": "",
+            "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "label": "중대재해 처벌 등에 관한 법률 제5조",
+            "type": "source",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제5조",
+            "annex_title": "",
+            "source_node_id": "",
+            "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "",
+            "list_item_id": "",
+            "preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "label": "중대재해 처벌 등에 관한 법률 제9조",
+            "type": "source",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "annex_title": "",
+            "source_node_id": "",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "",
+            "list_item_id": "",
+            "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "4d6b714d-5695-5896-8156-4438ef8877e2",
+            "label": "중대재해 처벌 등에 관한 법률 제4조",
+            "type": "rule",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제4조",
+            "annex_title": "",
+            "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+            "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "4d6b714d-5695-5896-8156-4438ef8877e2",
+            "list_item_id": "",
+            "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+            "label": "중대재해 처벌 등에 관한 법률 제4조",
+            "type": "source",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제4조",
+            "annex_title": "",
+            "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+            "source_anchor_id": "",
+            "source_anchor_label": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "014c4942-6b2c-5e27-a5c9-b3b1c0f78413",
+            "label": "중대재해 처벌 등에 관한 법률 제5조",
+            "type": "rule",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제5조",
+            "annex_title": "",
+            "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+            "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "014c4942-6b2c-5e27-a5c9-b3b1c0f78413",
+            "list_item_id": "",
+            "preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+            "label": "중대재해 처벌 등에 관한 법률 제5조",
+            "type": "source",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제5조",
+            "annex_title": "",
+            "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+            "source_anchor_id": "",
+            "source_anchor_label": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec",
+            "label": "중대재해 처벌 등에 관한 법률 제9조",
+            "type": "rule",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "annex_title": "",
+            "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec",
+            "list_item_id": "",
+            "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+            "label": "중대재해 처벌 등에 관한 법률 제9조",
+            "type": "source",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "annex_title": "",
+            "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+            "source_anchor_id": "",
+            "source_anchor_label": "",
+            "rule_id": "",
+            "list_item_id": "",
+            "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "2578ff74-9655-50e8-bfcb-de7dca5cf6d8",
+            "label": "중대재해 처벌 등에 관한 법률 제9조",
+            "type": "rule",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "annex_title": "",
+            "source_node_id": "9e7d2dcd8aefc77a8739dbaa573141f5c45aad6d",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "2578ff74-9655-50e8-bfcb-de7dca5cf6d8",
+            "list_item_id": "",
+            "preview": "② 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 공중이용시설 또는 공중교통수단의 설계, 설치, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "severity": "normal",
+            "clickable": true
+          },
+          {
+            "id": "353cde78-8164-52da-a217-8d6de93a253f",
+            "label": "중대재해 처벌 등에 관한 법률 제9조",
+            "type": "rule",
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "article_no": "제9조",
+            "annex_title": "",
+            "source_node_id": "16405701ab74350e7e6457b73bc4a3d02fdaff5b",
+            "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_anchor_label": "Paragraph",
+            "rule_id": "353cde78-8164-52da-a217-8d6de93a253f",
+            "list_item_id": "",
+            "preview": "③ 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 공중이용시설 또는 공중교통수단과 관련하여 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 제2항의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "severity": "normal",
+            "clickable": true
+          }
+        ],
+        "evidences": [
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제4조",
+            "node_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+            "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제5조",
+            "node_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+            "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제9조",
+            "node_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+            "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "score": null,
+            "type": "source"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제4조",
+            "node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+            "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "score": null,
+            "type": "rule"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제5조",
+            "node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+            "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "score": null,
+            "type": "rule"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제9조",
+            "node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+            "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "score": null,
+            "type": "rule"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제9조",
+            "node_id": "9e7d2dcd8aefc77a8739dbaa573141f5c45aad6d",
+            "source_text": "② 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 공중이용시설 또는 공중교통수단의 설계, 설치, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+            "score": null,
+            "type": "rule"
+          },
+          {
+            "law_name": "중대재해 처벌 등에 관한 법률",
+            "title": "중대재해 처벌 등에 관한 법률 제9조",
+            "node_id": "16405701ab74350e7e6457b73bc4a3d02fdaff5b",
+            "source_text": "③ 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 공중이용시설 또는 공중교통수단과 관련하여 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 제2항의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+            "score": null,
+            "type": "rule"
+          }
+        ],
+        "warnings": [],
+        "missing_evidence": [],
+        "debug": {
+          "llm_used": false,
+          "graph_db": "graph.v1",
+          "primary_evidence_count": 5,
+          "supporting_evidence_count": 0,
+          "citation_count": 11,
+          "legacy_evidence_count": 8,
+          "query_field_normalized": "query"
+        },
+        "evidence_pack": {
+          "primary_evidence_count": 5,
+          "supporting_evidence_count": 0
+        }
+      }
+    }
+  ],
+  "linked_node_id": "lrow_eadf26121ecf",
+  "linked_item_count": 3,
+  "evidence_item_count": 3
+}

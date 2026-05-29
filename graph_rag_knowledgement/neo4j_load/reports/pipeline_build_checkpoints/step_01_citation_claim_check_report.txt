@@ -1,0 +1,52 @@
+step_id: 1
+step_name: CitationFormatter + ClaimChecker
+attempt_number: 1
+started_at: 2026-05-07 12:45:00
+finished_at: 2026-05-07 12:46:00
+
+Created files:
+- none in this run; required Step 1 files already existed from previous implementation.
+
+Modified files:
+- none in this run.
+
+Validated files:
+- 05_code/graph_rag_pipeline/citation_formatter.py
+- 05_code/graph_rag_pipeline/claim_check.py
+- 05_code/graph_rag_pipeline/smoke_test_citation_and_claim_check.py
+- graph_rag_knowledgement/neo4j_load/reports/citation_and_claim_check_implementation_note.md
+
+Test command:
+- python -B 05_code/graph_rag_pipeline/smoke_test_citation_and_claim_check.py --root-dir .
+
+Test result:
+- PASS
+
+Key results:
+- all 6 smoke queries generated evidence packs
+- formatted citations generated for all 6 queries
+- evidence_chips generated for all 6 queries
+- legacy evidences[] generated for all 6 queries
+- claim_check generated for all 6 queries
+- risk-assessment notice query answer_policy = INDIRECT_ONLY_RESPONSE
+
+Warnings:
+- education_time_lookup, inspection_requirement, and penalty_lookup returned caution-level policies as expected quality signals.
+- risk-assessment notice query remains restricted by design due direct evidence gap.
+
+Errors:
+- none
+
+Safety checks:
+- Neo4j write: none
+- LLM call: none
+- natural-language answer generation: none
+- CSV modification: none
+- loader modification: none
+- frontend modification: none
+- password value logged: no
+
+Decision:
+- PASS
+- next_step_allowed: yes
+- manual_review_required: no

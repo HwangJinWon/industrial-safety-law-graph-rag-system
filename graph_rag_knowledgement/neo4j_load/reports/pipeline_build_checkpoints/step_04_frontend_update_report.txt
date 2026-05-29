@@ -1,0 +1,50 @@
+step_id: 4
+step_name: Frontend Minimal Graph-RAG Update
+attempt_number: 1
+started_at: 2026-05-07 12:53:00
+finished_at: 2026-05-07 12:56:00
+
+Created files:
+- graph_rag_knowledgement/neo4j_load/reports/frontend_graph_rag_ui_update_report.txt
+
+Modified files:
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+
+Test command:
+- npm run build
+
+Test result:
+- PASS_WITH_WARNINGS
+- build command could not run because vite is not available.
+- node_modules present: false
+- npm install was not run.
+
+Implemented UI behavior:
+- assistant messages store Graph-RAG response fields
+- readiness and answer_policy badges display in assistant bubbles
+- claim_check.badges display when present
+- INDIRECT_ONLY_RESPONSE displays a visible warning
+- warnings and missing_evidence display compactly
+- evidence_chips render as chip-like buttons
+- existing answer and evidences[0] display path remains intact
+
+Warnings:
+- frontend build was not validated due missing dependencies
+- evidence chip source detail click remains a TODO and logs to console
+
+Errors:
+- npm run build failed only because vite executable is unavailable in the dependency tree
+
+Safety checks:
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+- src deletion: none
+- password value logged: no
+
+Decision:
+- PASS_WITH_WARNINGS
+- next_step_allowed: yes
+- manual_review_required: no

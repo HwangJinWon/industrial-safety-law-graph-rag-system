@@ -1,0 +1,39 @@
+﻿Graph Query Layer Smoke Test Report
+===================================
+- created_at: 2026-05-06 23:27:39
+- root_dir: <project-root>
+- target_uri: <neo4j-uri>
+- target_database: graph.v1
+- user: neo4j
+- credential_note: password value intentionally omitted
+- mode: READ_ONLY_SMOKE_TEST
+- final_status: PASS
+
+Graph counts:
+- total_nodes: 60822
+- total_relationships: 75063
+- missing_source_text_rules: 0
+- rules_without_source: 0
+- unresolved_source_nodes: 0
+- item_resolves_to_count: 3604
+
+Check statuses:
+- graph_counts: PASS
+- requirement_evidence: PASS
+- threshold_evidence: PASS
+- exception_evidence: PASS
+- listitem_evidence: PASS
+- education_time_evidence: PASS
+- inspection_list_evidence: PASS
+- penalty_evidence: PASS
+- keyword:교육: PASS
+- keyword:안전검사: PASS
+- keyword:크레인: PASS
+- keyword:과태료: PASS
+- keyword:안전관리자: PASS
+- keyword:위험성평가: PASS
+- read_only_guard: PASS
+
+Errors:
+- none
+

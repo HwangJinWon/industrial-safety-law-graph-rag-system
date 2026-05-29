@@ -1,0 +1,40 @@
+CORS Preflight Fix Report
+==========================
+- created_at: 2026-05-07T16:51:00
+- modified_file: 05_code/graph_rag_pipeline/ask_adapter.py
+- change_summary: Added FastAPI CORSMiddleware for local Vite frontend origins.
+- graph_rag_logic_modified: false
+- frontend_modified: false
+- neo4j_write_executed: false
+- llm_called: false
+- password_logged: false
+
+Allowed origins:
+- http://127.0.0.1:5173
+- http://localhost:5173
+- http://127.0.0.1:5174
+- http://localhost:5174
+
+Smoke test:
+- command: python -B 05_code\graph_rag_pipeline\smoke_test_frontend_compat_endpoints.py --root-dir .
+- status: PASS
+
+Actual HTTP 8000 preflight test:
+- command: python -m uvicorn graph_rag_pipeline.ask_adapter:app --app-dir 05_code --host 127.0.0.1 --port 8000
+- server_started: True
+- OPTIONS /site-checklist-ui: status=200, allow_origin=http://localhost:5173, allow_methods=DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- OPTIONS /projects: status=200, allow_origin=http://localhost:5173, allow_methods=DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- OPTIONS /history/checklists: status=200, allow_origin=http://localhost:5173, allow_methods=DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+- OPTIONS /ask: status=200, allow_origin=http://localhost:5173, allow_methods=DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
+
+Existing endpoint behavior:
+- POST /site-checklist-ui: status=200, has_answer=True, has_items=True, has_evidences=True
+- POST /ask: status=200, has_answer=True, has_evidences=True, has_claim_check=True
+
+Result:
+- CORS preflight 405 issue is fixed for the tested local frontend origin http://localhost:5173.
+- Tested OPTIONS responses returned 200 with Access-Control-Allow-Origin.
+- Existing POST endpoints continued returning 200.
+
+Next recommendation:
+- Run backend on port 8000 and refresh the frontend. If frontend runs on a different Vite port, add that exact origin to the allow_origins list.

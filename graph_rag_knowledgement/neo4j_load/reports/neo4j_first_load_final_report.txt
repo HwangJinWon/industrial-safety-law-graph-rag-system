@@ -1,0 +1,121 @@
+Neo4j First Load Final Report
+==================================================
+
+1. 보고서 목적
+이 문서는 Neo4j graph.v1에 적재된 Graph-RAG knowledge base의 최종 적재 상태, validation 결과, source hierarchy 적재 결과, ListItem source anchor 보강 결과, evidence traversal 가능 여부를 팀 공유 및 논문 기록용으로 정리한다.
+
+2. Target Database
+- target database: graph.v1
+- final validation: LOAD_PASS_WITH_WARNINGS
+- evidence traversal: EVIDENCE_TRAVERSAL_PASS_WITH_WARNINGS
+
+3. 적재 단계 요약
+- constraints
+- reasoning_nodes
+- source_nodes
+- source_anchors
+- reasoning_edges
+- source_resolution
+- source_hierarchy
+- listitem_source_anchor
+- validate
+
+4. 최종 node count 요약
+- total nodes: 60822
+- node count 변화: ListItem source anchor 보강은 relationship 추가이므로 node 수는 기존과 동일
+- Rule: 8858
+- SourceNode: 8858
+- ListItem: 3604
+
+5. 최종 relationship count 요약
+- total relationships: 75063
+- 기존 relationships: 71459
+- 추가 ITEM_RESOLVES_TO: 3604
+- EXTRACTED_FROM: 8858
+- RESOLVES_TO: 8858
+- CONTAINS: 7582
+- ITEM_RESOLVES_TO: 3604
+
+6. 핵심 validation 결과
+- Rule source_text missing: 0
+- rules_without_source: 0
+- unresolved SourceNode: 0
+- duplicate ID: 0
+- source 연결 orphan: 0
+- ListItem without ITEM_RESOLVES_TO: 0
+
+7. source_hierarchy 적재 결과
+- CONTAINS: 7582
+- Law -> Heading: 194
+- Heading -> Article: 1270
+- Article -> Paragraph: 2567
+- Paragraph -> Item: 2957
+- Item -> Subitem: 513
+- Law -> Addendum: 81
+- RELATED_TO_ARTICLE: 101
+- HAS_LOGICAL_ROW: 7972
+- HAS_LOGICAL_CELL: 16741
+- HAS_NOTE: 119
+
+8. evidence traversal 검증 결과
+- final status: EVIDENCE_TRAVERSAL_PASS_WITH_WARNINGS
+- Requirement evidence: PASS
+- Threshold evidence: PASS
+- Exception evidence: PASS
+- EntityType evidence: PASS
+- Rule-to-Rule: PASS
+- SourceNode resolution: PASS
+- Source hierarchy: PASS
+- Annex traversal: PASS
+- Education time: PASS
+- Inspection/List: PASS
+- Penalty: PASS
+- Applicability/Exception: PASS
+
+9. ListItem source anchor 보강 결과
+- phase: listitem_source_anchor
+- relationship: ITEM_RESOLVES_TO
+- ITEM_RESOLVES_TO total: 3604
+- ListItem without ITEM_RESOLVES_TO: 0
+- unmatched: 0
+- ambiguous: 0
+- duplicate pair: 0
+
+Label별 ITEM_RESOLVES_TO 분포:
+- LogicalRow: 1529
+- LogicalCell: 1495
+- Item: 482
+- Subitem: 49
+- Paragraph: 35
+- AnnexNote: 14
+
+의미:
+- 기존 HAS_LIST_ITEM direct edge는 31개로 제한적이지만, 모든 ListItem이 실제 source anchor로 연결되었다.
+- 목록형 evidence pack은 ListItem -> ITEM_RESOLVES_TO -> Paragraph/Item/Subitem/LogicalRow/LogicalCell/AnnexNote 경로를 사용할 수 있다.
+- 안전검사 항목, 교육 내용, 장비 목록, 별표/별지 기반 목록형 질의의 근거 회수 안정성이 개선되었다.
+
+10. 남은 warning
+- UNKNOWN rule_type/subtype: 1995
+- needs_review: 513
+- HAS_LIST_ITEM direct edge: 31
+- RELATED_ENTITY / RELATED_RULE / HAS_LIST_ITEM 일부 CSV row 대비 count 차이는 MERGE 중복 또는 blank endpoint 성격이다.
+- ALLOW_NONEMPTY_USED는 phase 누적 적재에 따른 의도된 warning이다.
+- 위 warning은 적재 blocker가 아니라 quality/coverage signal로 관리한다.
+
+11. 의도적으로 제외한 항목
+- PhysicalTable / PhysicalRow / PhysicalCell
+- Section / Physical 관련 edge
+- law relation edge
+- Law -> Article direct shortcut edge
+- edges_contains.csv
+- HAS_ANNEX
+- Rule direct edge 없는 ListItem 자동 Rule 연결
+
+12. 보안 확인
+- 접속 비밀번호 실제 값은 로그와 보고서에 기록하지 않았다.
+- DELETE / DETACH DELETE 사용 없음
+- 기존 노드/관계 삭제 없음
+- CSV 원본 수정 없음
+
+13. 최종 결론
+Neo4j graph.v1 적재는 완료되었다. 최종 상태는 LOAD_PASS_WITH_WARNINGS이며, evidence traversal은 EVIDENCE_TRAVERSAL_PASS_WITH_WARNINGS이다. Rule/SourceNode/source hierarchy/Annex/ListItem source anchor 경로가 모두 구성되어 Graph-RAG evidence pack 설계 및 구현 단계로 넘어갈 수 있다. 추가 적재는 현재 필수는 아니며, 다음 단계는 Evidence Pack Assembler 설계와 read-only query layer 구현이다.

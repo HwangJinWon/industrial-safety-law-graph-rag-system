@@ -1,0 +1,4 @@
+﻿dataset_type,issue_category,case_count,adjustment_count,pred_branch_consistent_count
+strict,OBLIGATION_FINE_GT_REVIEW,2,2,0
+strict,CORPORATE_PENALTY_BRANCH_AMBIGUITY,11,11,11
+auxiliary,CORPORATE_PENALTY_BRANCH_AMBIGUITY,10,10,10

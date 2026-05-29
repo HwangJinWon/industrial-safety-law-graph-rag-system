@@ -1,0 +1,17 @@
+﻿check,status,count,details
+rule_source_ids_exist,PASS,0,missing source_node_id
+threshold_rule_ids_exist,PASS,0,missing threshold rule_id
+requirement_rule_ids_exist,PASS,0,missing requirement rule_id
+reasoning_rule_ids_exist,PASS,0,missing reasoning endpoint
+rule_type_enum,PASS,0,invalid rule_type
+confidence_enum,PASS,0,invalid confidence
+source_text_not_empty,PASS,0,empty source_text
+duplicate_rule_id,PASS,0,duplicate rule_id
+threshold_operator_enum,PASS,0,invalid threshold operator
+temporal_rule_ids_exist,PASS,0,missing temporal edge endpoint
+list_item_edge_ids_exist,PASS,0,missing list item edge endpoint
+item_subitem_parent_context,PASS,0,missing parent context for item/subitem
+annex_rule_source_ids_exist,PASS,0,missing annex source_node_id
+annex_related_article_id_present,INFO,463,annex rules without related_article_id
+needs_review_count,INFO,513,513/8858 rules need review
+unknown_rule_subtype_count,INFO,1956,rules with UNKNOWN or empty rule_subtype

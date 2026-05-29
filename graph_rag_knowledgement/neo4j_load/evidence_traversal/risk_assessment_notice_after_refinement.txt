@@ -1,0 +1,28 @@
+Risk Assessment Notice After Refinement
+Generated at: 2026-05-06 23:53:00
+Query: 위험성평가 결과를 근로자에게 알려야 하나?
+Intent: obligation_check
+Pack status: OK_WITH_WARNINGS
+Before status: NEEDS_REFINEMENT
+After status: NEEDS_REFINEMENT
+Primary evidence count: 5
+Citation candidate count: 3
+Warning count: 2
+Missing evidence count: 0
+
+Top primary evidence:
+1. rule_id=e6a390cd-532c-56c9-bccf-c46575f4cc7d type=PROCEDURE subtype=EDUCATION_CONTENT law=산업안전보건법 시행규칙 article=None
+   preview=관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항
+2. rule_id=95a9d186-fed1-5604-82b2-14064ea64cff type=PROCEDURE subtype=EDUCATION_CONTENT law=산업안전보건법 시행규칙 article=None
+   preview=교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항
+3. rule_id=b26632d5-1cc6-5432-95b7-136e9558389a type=DEFINITION subtype=UNKNOWN law=산업안전보건법 시행규칙 article=제9조
+   preview=제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 "고용노동부령으로 정하는 사항"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.
+4. rule_id=b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755 type=DEFINITION subtype=UNKNOWN law=산업안전보건법 시행령 article=제15조
+   preview=가. 유해ㆍ위험요인의 파악에 대한 참여
+5. rule_id=2ffc23e4-1855-579b-878a-1bd394f86c7f type=DEFINITION subtype=CORRECTIVE_MEASURE law=산업안전보건법 시행령 article=제15조
+   preview=나. 개선조치의 시행에 대한 참여
+
+Remaining issue:
+Targeted audit did not find direct risk-assessment result/worker/notice evidence in graph.v1.
+
+Security: no Neo4j secret value was written to this report.

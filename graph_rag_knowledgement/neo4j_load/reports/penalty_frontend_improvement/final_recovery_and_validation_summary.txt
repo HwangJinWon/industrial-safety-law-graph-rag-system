@@ -1,0 +1,111 @@
+﻿Final Recovery and Validation Summary
+=====================================
+
+created_at: 2026-05-08
+final_status: PASS
+
+1. Final state
+--------------
+The recovery/safety pass for the penalty/frontend improvement work is complete. Hardcoded Korean mojibake in backend user-facing messages was recovered, candidate penalty evidence is now conservative and structured, frontend detail rendering separates direct and candidate penalties, strengthened smoke tests pass, and frontend build succeeds.
+
+2. Modified files
+-----------------
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+- 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+
+3. Reports created/updated
+--------------------------
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_05_pre_fix_review_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_06_korean_text_recovery_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_07_candidate_penalty_backend_safety_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_08_candidate_penalty_frontend_ui_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_09_smoke_test_strengthening_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/step_10_validation_after_fix_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/penalty_frontend_improvement/final_recovery_and_validation_summary.txt
+
+4. Korean text recovery
+-----------------------
+Recovered hardcoded Korean strings in:
+- intent classification guard
+- checklist evidence queries
+- compatibility checklist titles/descriptions/law titles
+- source label names
+- law-detail summaries
+- why_relevant text
+- direct/candidate penalty warnings
+- checklist evidence warning messages
+
+Configured mojibake scan found no remaining hardcoded user-facing broken Korean in ask_adapter.py, App.jsx, or index.css. Original law/source data was not modified.
+
+5. Candidate penalty safety
+---------------------------
+- penalties[] remains for direct graph-linked or direct penalty evidence and carries is_confirmed=true.
+- candidate_penalties[] is reserved for ARTICLE_REFERENCE_MATCH review candidates and carries is_confirmed=false.
+- candidate_penalties[] includes match_type, confidence, match_reason, candidate_notice, rule/source ids where available, preview/text, law_name, and article_no.
+- candidate_penalties[] is limited to 5 and deduped by rule_id + article_no + preview + match_type.
+- Candidate penalties are never promoted to confirmed penalty conclusions.
+
+6. Frontend display improvement
+-------------------------------
+- Direct penalties and candidate penalties are displayed in separate sections.
+- Candidate cards show candidate/review/not-confirmed badges.
+- Candidate cards display match_type, confidence, match_reason, and candidate_notice.
+- No-penalty state uses a single conservative message.
+- Internal node id remains behind the developer details disclosure.
+
+7. Test results
+---------------
+- smoke_test_frontend_compat_endpoints: PASS
+- smoke_test_end_to_end_ask: PASS
+- ask_adapter import check: PASS
+- npm run build: PASS
+
+8. Guardrail status
+-------------------
+The risk-assessment notice query remains guarded:
+- query: 위험성평가 결과를 근로자에게 알려야 하나?
+- evidence_readiness: INDIRECT_ONLY
+- answer_policy: INDIRECT_ONLY_RESPONSE
+- strengthened smoke test confirms no direct obligation assertion phrase is emitted.
+
+9. Safety compliance
+--------------------
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+- package.json modification: none
+- password/API key logging: none found by pattern scan
+
+10. Remaining limitations
+-------------------------
+- Candidate penalties are still review candidates, not final legal conclusions.
+- Article-number reference matching can still overmatch in edge cases.
+- Violation-to-penalty edge materialization is not implemented.
+- Complete penalty reasoning by violation fact pattern remains future work.
+- PhysicalTable/PhysicalRow/PhysicalCell restoration remains out of scope.
+
+11. User check list after return
+--------------------------------
+1. Start backend:
+   python -m uvicorn graph_rag_pipeline.ask_adapter:app --app-dir 05_code --host 127.0.0.1 --port 8000
+2. Start frontend and generate a checklist.
+3. Click checklist items and inspect the right detail panel.
+4. Confirm candidate penalties are shown as candidates/review-needed, not confirmed penalties.
+5. Ask: 위험성평가 결과를 근로자에게 알려야 하나?
+   Confirm the answer remains indirect-only and does not make a direct yes/no claim.
+6. Ask: 과태료가 부과되는 경우는 무엇인가?
+   Confirm cautious penalty answer and citations appear.
+7. Re-run npm run build if the local environment changes.
+
+12. Next-stage decision
+-----------------------
+Next stage can proceed.
+Recommended next work:
+- Evidence Pack / Claim Check panel enhancement
+- evidence_chips[] full display improvement
+- missing_evidence[] display
+- 별표/LogicalRow/LogicalCell table-like detail display improvement
+- Threshold/Exception/RelatedRule dedicated UI sections

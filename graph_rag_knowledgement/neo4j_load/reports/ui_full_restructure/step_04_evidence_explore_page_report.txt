@@ -1,0 +1,22 @@
+step_id: 04
+step_name: Evidence explore page
+status: PASS
+
+신설 내용:
+- 근거 탐색 페이지를 추가했다.
+- 현재는 별도 backend search endpoint를 추가하지 않고, 최근 QA의 evidence_chips/citations/evidences와 체크리스트 항목의 law_node_id/node_id를 client-side로 탐색한다.
+- 검색 입력으로 최근 근거의 label/type/preview/node_id/source를 필터링한다.
+- node id를 알고 있는 경우 직접 /law/{nodeId} 조회가 가능하다.
+
+표시 항목:
+- 근거 label
+- 근거 source(최근 QA 또는 체크리스트)
+- 근거 type
+- preview
+
+한계:
+- full source hierarchy browser는 아직 아니다.
+- 법령명/조문번호 전체 검색은 아직 별도 endpoint가 없으므로 최근 사용 근거 기반 탐색이다.
+
+Neo4j write: 없음
+LLM 호출: 없음

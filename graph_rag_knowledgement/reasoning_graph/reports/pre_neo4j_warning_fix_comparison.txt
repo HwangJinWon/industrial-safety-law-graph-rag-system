@@ -1,0 +1,66 @@
+# Pre-Neo4j Warning Fix Comparison
+
+## Applied Patch Scope
+
+- ADD_REQUIREMENT_NODE: 5
+- ADD_RULE_REQUIREMENT_EDGE: 5
+- ADD_THRESHOLD_NODE: 150
+- ADD_RULE_THRESHOLD_EDGE: 150
+- UPDATE_RULE_SUBTYPE: previewed 100, not kept in final applied state
+
+The `UPDATE_RULE_SUBTYPE` preview was tested but rolled back by restoring `nodes_rule.csv` from `06_archive/pre_neo4j_warning_fix_backup/nodes_rule.csv`, because the first after-run introduced a small refined retrieval regression. The final after-warning-fix state keeps only requirement and threshold node/edge additions.
+
+## Warning Counts
+
+- OBLIGATION without Requirement: 612 -> 607
+- threshold-related without Threshold node: 1227 -> 1210
+- UNKNOWN rule type/subtype: 1995 -> 1995
+- needs_review or low confidence: 1026 -> 1026
+
+## Structural Checks
+
+- orphan edge count: 0 -> 0
+- duplicate id count: 0 -> 0
+- missing source_text count: 0 -> 0
+- high-degree rule count: 0 -> 0
+
+## Added Rows
+
+- Requirement nodes: +5
+- Rule-Requirement edges: +5
+- Threshold nodes: +150
+- Rule-Threshold edges: +150
+
+## Manual Review Remaining
+
+- obligation requirement manual review: 607
+- threshold manual review: 398
+- threshold false positive candidates: 4862
+- unknown manual review: 428
+- unknown to list item candidates: 1039
+- low confidence / needs_review classification: 513
+
+## Validation
+
+- pre_neo4j_graph_auditor readiness: READY_WITH_WARNINGS before and after
+- validator.py CLI run: not available in current import layout (`law_reasoning_extractor.config` import failed)
+
+## Refined Retrieval
+
+- Top-1: 265/309 -> 266/309
+- Top-3: 282/309 -> 282/309
+- Top-5: 290/309 -> 290/309
+- queries_without_matches: 0 -> 0
+- possible_overmatch_count: 428 -> 427
+
+## Answerable Audit
+
+- Top-1 answerable: 221/309 -> 222/309
+- Top-3 answerable: 252/309 -> 256/309
+- Top-5 answerable: 268/309 -> 272/309
+- Top-10 answerable: 276/309 -> 280/309
+- dangerous_wrong_answer_risk: 19 -> 20
+
+## Conclusion
+
+The final applied warning fix is conservative and structurally safe. It improves requirement/threshold evidence coverage slightly without lowering refined Top-3/Top-5 retrieval, while preserving UNKNOWN rules for review instead of forcing uncertain classifications.

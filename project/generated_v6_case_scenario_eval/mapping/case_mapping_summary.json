@@ -1,0 +1,12 @@
+{
+  "mapping_grade_counts": {
+    "B": 33420,
+    "D": 34,
+    "A": 15120
+  },
+  "bundle_status_counts": {
+    "READY_A": 40,
+    "REVIEW_B": 17,
+    "INSUFFICIENT": 12
+  }
+}

@@ -1,0 +1,88 @@
+Evidence Pack Assembler Refinement Report
+================================================
+
+- created_at: 2026-05-06 23:43:30
+- mode: READ_ONLY_REFINEMENT
+- neo4j_write_executed: false
+- llm_used: false
+
+Changed logic:
+- Korean query term extraction now expands intent-specific terms for risk assessment, education time, inspection machine lists, penalty, and applicability.
+- obligation_check with ????? uses risk-assessment-specific search and alignment scoring.
+- education_time_lookup adds Annex LogicalRow/LogicalCell supporting evidence and calibrates threshold missing logic.
+- inspection_requirement/list_lookup uses specialized ListItem inspection ranking and boosts equipment terms while penalizing procedure/institution terms.
+
+Smoke test after refinement:
+- final_status: PASS
+
+- appointment_requirement
+  query: 안전관리자는 어떤 기준으로 선임해야 하나?
+  pack_status: OK
+  primary_evidence_count: 5
+  supporting_evidence_count: 0
+  citation_candidate_count: 5
+  warning_count: 0
+  missing_evidence_count: 0
+  before -> after: READY_WITH_NOTES -> READY_WITH_NOTES
+  improvement: No targeted change; still strong appointment/reporting evidence.
+  remaining_warning: Some broad secondary appointment context remains.
+
+- education_time_lookup
+  query: 정기 안전보건교육은 몇 시간 해야 하나?
+  pack_status: OK_WITH_WARNINGS
+  primary_evidence_count: 5
+  supporting_evidence_count: 8
+  citation_candidate_count: 11
+  warning_count: 4
+  missing_evidence_count: 0
+  before -> after: NEEDS_REFINEMENT -> READY_WITH_WARNINGS
+  improvement: Annex logical supporting evidence is now included and missing_evidence for threshold was removed.
+  remaining_warning: Some Rule candidates still lack direct threshold; actual hour extraction needs citation formatter/table cell refinement.
+
+- inspection_requirement
+  query: 안전검사 대상 기계에는 어떤 것들이 있나?
+  pack_status: OK_WITH_WARNINGS
+  primary_evidence_count: 10
+  supporting_evidence_count: 0
+  citation_candidate_count: 8
+  warning_count: 2
+  missing_evidence_count: 0
+  before -> after: NEEDS_REFINEMENT -> READY_WITH_WARNINGS
+  improvement: Specialized inspection ranking now surfaces equipment/list items such as crane/lift/gondola and EQUIPMENT_ITEM near top.
+  remaining_warning: Some ARTICLE_REFERENCE_LIST/procedure-adjacent items still appear; list ranking can be refined further.
+
+- obligation_check
+  query: 위험성평가 결과를 근로자에게 알려야 하나?
+  pack_status: OK_WITH_WARNINGS
+  primary_evidence_count: 5
+  supporting_evidence_count: 0
+  citation_candidate_count: 3
+  warning_count: 2
+  missing_evidence_count: 0
+  before -> after: NOT_READY_FOR_THIS_QUERY -> NEEDS_REFINEMENT
+  improvement: Risk-assessment-specific retrieval now surfaces ????? candidates.
+  remaining_warning: Direct result/worker notice evidence is still weak; needs critical term alignment for ??+???+??/??.
+
+- penalty_lookup
+  query: 과태료가 부과되는 경우는 무엇인가?
+  pack_status: OK_WITH_WARNINGS
+  primary_evidence_count: 5
+  supporting_evidence_count: 0
+  citation_candidate_count: 2
+  warning_count: 1
+  missing_evidence_count: 0
+  before -> after: READY_WITH_WARNINGS -> READY_WITH_WARNINGS
+  improvement: Penalty evidence remains stable; warnings reduced to related-rule gap.
+  remaining_warning: Related violation/obligation rule still missing for detailed penalty answers.
+
+- applicability_check
+  query: 적용 제외되는 경우가 있나?
+  pack_status: OK
+  primary_evidence_count: 5
+  supporting_evidence_count: 0
+  citation_candidate_count: 5
+  warning_count: 0
+  missing_evidence_count: 0
+  before -> after: READY -> READY
+  improvement: No targeted change; exclusion/applicability evidence remains aligned.
+  remaining_warning: None material.

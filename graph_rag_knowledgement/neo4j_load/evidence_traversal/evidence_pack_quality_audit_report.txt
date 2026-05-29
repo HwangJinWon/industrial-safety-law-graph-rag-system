@@ -1,0 +1,177 @@
+Evidence Pack Quality Audit Report
+==================================================
+
+Audit purpose
+- Review evidence_pack_assembler_smoke_test_samples.json for six smoke-test questions.
+- Assess evidence quality only.
+- No answer generation, no LLM call, no Neo4j write, no retrieval re-evaluation.
+
+Input file
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/evidence_pack_assembler_smoke_test_samples.json
+
+Overall summary
+- Evidence pack generation works for all 6 smoke-test questions.
+- Every pack has primary_evidence and citation_candidates.
+- Evidence quality is uneven across intents.
+- Strongest packs: appointment_requirement, applicability_check, penalty_lookup as penalty-only source evidence.
+- Needs improvement before answer generation: education_time_lookup, inspection_requirement, obligation_check for the risk-assessment query.
+- Main recurring issue: beta keyword retrieval can return legally valid evidence that is not the best answer evidence for the user's exact question.
+
+1. 안전관리자는 어떤 기준으로 선임해야 하나?
+Intent: appointment_requirement
+Pack status: OK
+
+Audit judgment:
+- intent_primary_alignment: PASS
+- citation_quality: PASS
+- source_text_sufficiency: PASS
+- warning_missing_validity: PASS
+- answer_generation_readiness: READY_WITH_NOTES
+
+Findings:
+- Primary evidence contains APPOINTMENT_REQUIREMENT and safety/health manager appointment-related provisions.
+- Citations include 산업안전보건법 시행규칙 제11조, 제12조, 제23조, which are plausible for appointment/reporting and manager context.
+- Source text is sufficient for an evidence-grounded answer about appointment/reporting criteria.
+- No warning/missing evidence is acceptable for this pack.
+
+Before answer generation:
+- Prefer ranking APPOINTMENT_REQUIREMENT above general DEFINITION/SAFETY_STANDARD items.
+- Add entity highlighting for 안전관리자, 보건관리자, 사업주.
+
+2. 정기 안전보건교육은 몇 시간 해야 하나?
+Intent: education_time_lookup
+Pack status: OK_WITH_WARNINGS
+
+Audit judgment:
+- intent_primary_alignment: PARTIAL
+- citation_quality: PASS
+- source_text_sufficiency: PARTIAL
+- warning_missing_validity: PARTIAL
+- answer_generation_readiness: NEEDS_REFINEMENT
+
+Findings:
+- Primary evidence includes 산업안전보건법 시행규칙 제26조, which correctly points to safety/health education time and 별표 4.
+- However, the current primary evidence does not clearly surface the actual hour values from Annex LogicalRow/LogicalCell.
+- Warning THRESHOLD_MISSING appears for several candidates. This is directionally valid, but too broad because at least one primary candidate has education time relevance.
+- Missing THRESHOLD is too coarse for the whole pack. It should be evaluated per evidence item or considered satisfied when at least one threshold/annex table evidence exists.
+- Citation candidates are plausible but need stronger Annex LogicalRow/LogicalCell citation for "몇 시간" questions.
+
+Before answer generation:
+- Add an education_time-specific Annex LogicalRow/LogicalCell expansion step.
+- Promote candidates with concrete time/hour threshold values.
+- Reduce or scope THRESHOLD_MISSING to individual weak candidates.
+
+3. 안전검사 대상 기계에는 어떤 것들이 있나?
+Intent: inspection_requirement
+Pack status: OK_WITH_WARNINGS
+
+Audit judgment:
+- intent_primary_alignment: PARTIAL
+- citation_quality: PARTIAL
+- source_text_sufficiency: PARTIAL
+- warning_missing_validity: PASS
+- answer_generation_readiness: NEEDS_REFINEMENT
+
+Findings:
+- The pack correctly uses ListItem-centered evidence and ITEM_RESOLVES_TO.
+- Some primary ListItems relate to safety inspection procedure/institutions rather than the actual list of target machines.
+- Citations include 산업안전보건법 시행규칙 제126조, 제128조, 제129조. These are relevant context, but the question asks "which machines", so Annex/list table evidence should be stronger.
+- TOP_K_AMBIGUITY and LISTITEM_PATH_USED warnings are appropriate.
+- Source text is sufficient for general inspection context but not enough to enumerate target machines confidently.
+
+Before answer generation:
+- For inspection/list_lookup, boost EQUIPMENT_ITEM over ARTICLE_REFERENCE_LIST and INSPECTION_ITEM when query asks "대상 기계".
+- Prefer ListItems anchored to LogicalRow/LogicalCell in relevant annex/table lists.
+- Include resolved Annex title and LogicalCell/LogicalRow text in citation candidates.
+
+4. 위험성평가 결과를 근로자에게 알려야 하나?
+Intent: obligation_check
+Pack status: OK
+
+Audit judgment:
+- intent_primary_alignment: FAIL
+- citation_quality: PARTIAL
+- source_text_sufficiency: FAIL
+- warning_missing_validity: FAIL
+- answer_generation_readiness: NOT_READY_FOR_THIS_QUERY
+
+Findings:
+- Primary evidence appears to retrieve broad "결과", "근로자", or reporting-related rules, including safety certification and health diagnosis provisions.
+- It does not clearly retrieve 위험성평가 result communication/worker notification evidence.
+- Citations are valid legal citations but not sufficiently aligned with the query.
+- No warning was produced, but this pack should have a warning such as INTENT_EVIDENCE_MISMATCH or WEAK_KEYWORD_ALIGNMENT.
+- Current source_text is not sufficient to answer this question.
+
+Before answer generation:
+- Add risk-assessment specific keywords and subtype/Rule filters: 위험성평가, 평가 결과, 근로자에게 알림/주지, 작업 전 공유.
+- Add warning when high-scoring candidates lack critical query terms such as 위험성평가.
+- Do not use this pack for answer generation until retrieval alignment improves.
+
+5. 과태료가 부과되는 경우는 무엇인가?
+Intent: penalty_lookup
+Pack status: OK_WITH_WARNINGS
+
+Audit judgment:
+- intent_primary_alignment: PASS
+- citation_quality: PASS
+- source_text_sufficiency: PARTIAL
+- warning_missing_validity: PASS
+- answer_generation_readiness: READY_WITH_WARNINGS
+
+Findings:
+- Primary evidence contains ADMINISTRATIVE_FINE/PENALTY rules and annexes for 과태료 부과기준.
+- Citations to 중대재해 처벌 등에 관한 법률 시행령 and 산업안전보건법 시행령 과태료 부과기준 are appropriate.
+- Source text is sufficient for penalty/administrative fine criteria, but may not identify the underlying violation rule for each fine.
+- NEEDS_REVIEW and RELATED_RULE_MISSING warnings are appropriate.
+- Missing RELATED_VIOLATION_RULE is appropriate and should be preserved.
+
+Before answer generation:
+- Answer should explicitly say the pack contains penalty criteria but may lack linked violation/obligation rules.
+- Related obligation/prohibition expansion should be improved before detailed violation-specific answers.
+
+6. 적용 제외되는 경우가 있나?
+Intent: applicability_check
+Pack status: OK
+
+Audit judgment:
+- intent_primary_alignment: PASS
+- citation_quality: PASS
+- source_text_sufficiency: PASS
+- warning_missing_validity: PASS
+- answer_generation_readiness: READY
+
+Findings:
+- Primary evidence contains EXCLUSION/APPLICABILITY_RULE candidates such as 적용 제외 provisions.
+- Citations to 산업안전보건기준에 관한 규칙 제324조, 제626조, 제24조 are plausible.
+- Source text is sufficient for evidence-grounded applicability/exclusion answer.
+- No warning/missing evidence is acceptable for this pack.
+
+Before answer generation:
+- Consider grouping exclusions by law/article and keeping exact source_text excerpts separate.
+
+Cross-pack issues
+1. Encoding/display issue in PowerShell output
+- Some PowerShell output showed mojibake, but the JSON file itself is UTF-8 and Python reading displayed Korean correctly.
+- This is not an evidence quality issue.
+
+2. Query-term alignment
+- The assembler now decomposes Korean query text into terms, but quality audit shows some intents need domain-specific critical term checks.
+- Add per-intent required term or concept checks before allowing OK status.
+
+3. Warning calibration
+- Warnings are useful but need better pack-level vs item-level distinction.
+- education_time_lookup should not mark the whole pack as threshold-missing if at least one strong threshold/annex evidence exists.
+- obligation_check should warn when retrieved rules do not contain the core domain term.
+
+4. Citation quality
+- Citation candidates exist for every pack.
+- For table/list questions, citation should prefer Annex/LogicalRow/LogicalCell over broad article citations.
+
+Final recommendations
+- Do not proceed directly to answer generation for all intents.
+- Proceed with answer-generation prototype only for READY/READY_WITH_WARNINGS packs while preserving warnings.
+- Before answer generation, improve:
+  1. risk-assessment query retrieval alignment,
+  2. education-time Annex table expansion,
+  3. inspection/list equipment-specific ranking,
+  4. warning calibration for weak evidence alignment.

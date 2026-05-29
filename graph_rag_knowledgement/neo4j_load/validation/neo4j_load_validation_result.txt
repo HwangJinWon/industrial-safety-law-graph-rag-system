@@ -1,0 +1,30 @@
+Neo4j Load Validation Result
+============================
+- created_at: 2026-05-06 22:39:32
+- validation_executed_against_neo4j: True
+- credential_note: password value intentionally omitted
+
+Node label counts:
+
+Relationship type counts:
+
+Validation query outputs:
+- node_label_counts: [{'labels': ['Addendum'], 'count': 81}, {'labels': ['Annex'], 'count': 201}, {'labels': ['AnnexNote'], 'count': 119}, {'labels': ['Article'], 'count': 1270}, {'labels': ['EntityType'], 'count': 586}, {'labels': ['Exception'], 'count': 647}, {'labels': ['Heading'], 'count': 194}, {'labels': ['Item'], 'count': 2957}, {'labels': ['Law'], 'count': 6}, {'labels': ['ListItem'], 'count': 3604}, {'labels': ['LogicalCell'], 'count': 16741}, {'labels': ['LogicalRow'], 'count': 7972}, {'labels': ['Paragraph'], 'count': 2567}, {'labels': ['Requirement'], 'count': 3639}, {'labels': ['Rule'], 'count': 8858}, {'labels': ['SourceNode'], 'count': 8858}, {'labels': ['Subitem'], 'count': 513}, {'labels': ['TemporalRule'], 'count': 227}, {'labels': ['Threshold'], 'count': 1782}]
+- relationship_type_counts: [{'relationship_type': 'CONTAINS', 'count': 7582}, {'relationship_type': 'EXTRACTED_FROM', 'count': 8858}, {'relationship_type': 'HAS_EXCEPTION', 'count': 647}, {'relationship_type': 'HAS_LIST_ITEM', 'count': 31}, {'relationship_type': 'HAS_LOGICAL_CELL', 'count': 16741}, {'relationship_type': 'HAS_LOGICAL_ROW', 'count': 7972}, {'relationship_type': 'HAS_NOTE', 'count': 119}, {'relationship_type': 'HAS_REQUIREMENT', 'count': 3639}, {'relationship_type': 'HAS_TEMPORAL_CONDITION', 'count': 279}, {'relationship_type': 'HAS_THRESHOLD', 'count': 1782}, {'relationship_type': 'RELATED_ENTITY', 'count': 8969}, {'relationship_type': 'RELATED_RULE', 'count': 5881}, {'relationship_type': 'RELATED_TO_ARTICLE', 'count': 101}, {'relationship_type': 'RESOLVES_TO', 'count': 8858}]
+- rule_count: [{'count': 8858}]
+- requirement_threshold_count: [{'requirement_count': 3639, 'threshold_count': 1782}]
+- rule_missing_source_text: [{'count': 0}]
+- rule_without_extracted_from: [{'count': 0}]
+- source_node_count: [{'count': 8858}]
+- unresolved_source_node_count: [{'count': 0}]
+- unknown_rule_count: [{'count': 1995}]
+- needs_review_count: [{'count': 513}]
+- sample_evidence_pack: [{'rule_id': '0d3cf997-aa57-5891-8416-a45b43b1bb76', 'source_node_id': '5ae5e7f0d0de827868b8ed2fc13e2a35d45fe8b7', 'requirements': []}, {'rule_id': '1c5f7285-cd24-58a7-8fb4-b3a84d978109', 'source_node_id': 'baab7a4b60da504419b7b15026a20d9f435a86c6', 'requirements': []}, {'rule_id': '4d6b714d-5695-5896-8156-4438ef8877e2', 'source_node_id': '46054a4fe12f943d3362f688c33dd06d7d4a9d35', 'requirements': ['1d989675-7d67-542c-b1d9-fd104d1c3a8f']}, {'rule_id': '014c4942-6b2c-5e27-a5c9-b3b1c0f78413', 'source_node_id': '6ce11d5cb4c07ada53b7939bac6d4989baf836cb', 'requirements': ['56b7f6f9-b93e-59a0-8fa8-5b52ed1bb05f']}, {'rule_id': '8c5f578f-0916-5962-894d-ff04d61d9941', 'source_node_id': '189c2c40575f8f302f9e3f9415bac6f6ddf9ddcd', 'requirements': []}, {'rule_id': 'f36a8b61-731a-503f-bca7-21e0c26f660a', 'source_node_id': '8c0ed9fc7d3ccdb503942c531b0fc22ac12c70c8', 'requirements': []}, {'rule_id': '6cc18938-b0a5-5e5b-b3dd-800c8d814c05', 'source_node_id': 'd91b643129d9ed6c67e428694c74dbe22ca3ad5c', 'requirements': []}, {'rule_id': '3f256160-c116-54bd-a6c7-714c04276fbd', 'source_node_id': '7b5278c80481faa59804b89c83c9a129a29bad0a', 'requirements': []}, {'rule_id': '4c9a12a8-dd90-590e-b761-672cda5f79a8', 'source_node_id': '00b9e203789b1b2fbe59f984115815383e285995', 'requirements': []}, {'rule_id': '0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec', 'source_node_id': '34d01611aa61e4921b21d6c168e7abfc49c72307', 'requirements': ['6d5b32b4-eee9-5431-898d-b4726bfd3a19']}]
+
+Duplicate ID result: CSV pre-load verification duplicate id count 0
+Orphan edge result: CSV pre-load verification orphan edge count 0
+Missing source_text result: CSV pre-load verification nodes_rule empty source_text count 0
+SourceNode resolution count: planned RESOLVES_TO=0
+Sample evidence pack query result: see validation query outputs
+
+Final validation status: LOAD_PASS_WITH_WARNINGS

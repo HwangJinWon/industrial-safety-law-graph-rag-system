@@ -1,0 +1,10 @@
+﻿expected_intent,total_queries,top1_hit,top3_hit,top5_hit,top1_hit_rate,top3_hit_rate,top5_hit_rate
+applicability_check,36,33,34,36,0.9167,0.9444,1.0
+appointment_requirement,42,40,42,42,0.9524,1.0,1.0
+definition_lookup,15,15,15,15,1.0,1.0,1.0
+document_requirement,38,38,38,38,1.0,1.0,1.0
+education_time_lookup,62,48,54,57,0.7742,0.871,0.9194
+inspection_requirement,24,14,16,16,0.5833,0.6667,0.6667
+obligation_check,19,17,19,19,0.8947,1.0,1.0
+penalty_lookup,24,23,23,24,0.9583,0.9583,1.0
+safety_measure_lookup,49,38,41,43,0.7755,0.8367,0.8776

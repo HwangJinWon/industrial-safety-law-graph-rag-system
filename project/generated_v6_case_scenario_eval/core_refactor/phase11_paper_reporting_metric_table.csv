@@ -1,0 +1,8 @@
+﻿metric_group,metric_name,score,claim_type,paper_use,caution
+Official,Strict selected-core F1,0.5814706898040233,conservative official metric,main conservative result,Counts chain-completion refs as false positives when absent from GT core.
+Selector Policy Simulation,Safe-pruned selected-core F1,0.6522231883342995,selector pruning simulation,ablation / improved selected layer,Does not overwrite original predictions; removes only safe false positives.
+Direct Answer Layer,Direct-selected F1,0.8863168724279838,layer-separated direct citation metric,supplementary main table if direct vs chain layers are explained,Valid only with chain_completion_laws reported separately.
+Diagnostic,Chain-completion-neutral F1,0.7216249799583133,diagnostic evaluation design,error analysis,Not a model improvement score.
+Legal Chain,Corporate penalty attached rate,1.0,chain construction metric,legal chain completeness,Attachment does not by itself prove fine-branch correctness.
+Policy-adjusted,"Strict fine-chain match rate, policy-adjusted",0.7407407407407407,branch ambiguity diagnostic,supplementary metric,"Reflects evaluation granularity adjustment, not prediction modification."
+Dataset Reliability,Manual review pending count,23,dataset reliability flag,limitations / review package,Requires legal expert or source review before GT revision.

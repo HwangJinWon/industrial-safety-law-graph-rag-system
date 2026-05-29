@@ -1,0 +1,147 @@
+﻿scope,file,check,severity,count,details
+node,nodes_rule.csv,row_count,INFO,8858,
+node,nodes_rule.csv,required_id_column_missing,PASS,0,rule_id
+node,nodes_rule.csv,blank_id,PASS,0,rule_id
+node,nodes_rule.csv,duplicate_id,PASS,0,rule_id
+node,nodes_rule.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_rule.csv,null_string_values,PASS,0,
+node,nodes_rule.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_rule.csv,long_text_stats,INFO,2354,"p95=159; columns=condition_text,requirement_text,exception_text,penalty_text,source_context_text,source_text,heading_context"
+node,nodes_requirement.csv,row_count,INFO,3639,
+node,nodes_requirement.csv,required_id_column_missing,PASS,0,requirement_id
+node,nodes_requirement.csv,blank_id,PASS,0,requirement_id
+node,nodes_requirement.csv,duplicate_id,PASS,0,requirement_id
+node,nodes_requirement.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_requirement.csv,null_string_values,PASS,0,
+node,nodes_requirement.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_requirement.csv,long_text_stats,INFO,911,p95=156; columns=source_text
+node,nodes_threshold.csv,row_count,INFO,1782,
+node,nodes_threshold.csv,required_id_column_missing,PASS,0,threshold_id
+node,nodes_threshold.csv,blank_id,PASS,0,threshold_id
+node,nodes_threshold.csv,duplicate_id,PASS,0,threshold_id
+node,nodes_threshold.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_threshold.csv,null_string_values,PASS,0,
+node,nodes_threshold.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_threshold.csv,long_text_stats,INFO,0,p95=0; columns=
+node,nodes_exception.csv,row_count,INFO,647,
+node,nodes_exception.csv,required_id_column_missing,PASS,0,exception_id
+node,nodes_exception.csv,blank_id,PASS,0,exception_id
+node,nodes_exception.csv,duplicate_id,PASS,0,exception_id
+node,nodes_exception.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_exception.csv,null_string_values,PASS,0,
+node,nodes_exception.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_exception.csv,long_text_stats,INFO,2337,"p95=222; columns=condition_text,effect_text,source_text"
+node,nodes_temporal_rule.csv,row_count,INFO,227,
+node,nodes_temporal_rule.csv,required_id_column_missing,PASS,0,temporal_rule_id
+node,nodes_temporal_rule.csv,blank_id,PASS,0,temporal_rule_id
+node,nodes_temporal_rule.csv,duplicate_id,PASS,0,temporal_rule_id
+node,nodes_temporal_rule.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_temporal_rule.csv,null_string_values,PASS,0,
+node,nodes_temporal_rule.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_temporal_rule.csv,long_text_stats,INFO,2678,p95=90; columns=condition_text
+node,nodes_entity_type.csv,row_count,INFO,586,
+node,nodes_entity_type.csv,required_id_column_missing,PASS,0,entity_type_id
+node,nodes_entity_type.csv,blank_id,PASS,0,entity_type_id
+node,nodes_entity_type.csv,duplicate_id,PASS,0,entity_type_id
+node,nodes_entity_type.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_entity_type.csv,null_string_values,PASS,0,
+node,nodes_entity_type.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_entity_type.csv,long_text_stats,INFO,0,p95=0; columns=
+node,nodes_list_item.csv,row_count,INFO,3604,
+node,nodes_list_item.csv,required_id_column_missing,PASS,0,list_item_id
+node,nodes_list_item.csv,blank_id,PASS,0,list_item_id
+node,nodes_list_item.csv,duplicate_id,PASS,0,list_item_id
+node,nodes_list_item.csv,neo4j_unfriendly_column_names,PASS,0,
+node,nodes_list_item.csv,null_string_values,PASS,0,
+node,nodes_list_item.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+node,nodes_list_item.csv,long_text_stats,INFO,541,"p95=147; columns=item_text,source_context_text"
+edge,edges_rule_entity.csv,row_count,INFO,8973,
+edge,edges_rule_entity.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_entity.csv,null_string_values,PASS,0,
+edge,edges_rule_entity.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_entity.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_entity.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_entity.csv,endpoint_column_missing:to_entity_type_id,PASS,0,
+edge,edges_rule_entity.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_entity.csv,orphan_to_endpoint,PASS,0,to_entity_type_id
+edge,edges_rule_exception.csv,row_count,INFO,647,
+edge,edges_rule_exception.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_exception.csv,null_string_values,PASS,0,
+edge,edges_rule_exception.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_exception.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_exception.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_exception.csv,endpoint_column_missing:to_exception_id,PASS,0,
+edge,edges_rule_exception.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_exception.csv,orphan_to_endpoint,PASS,0,to_exception_id
+edge,edges_rule_list_item.csv,row_count,INFO,3604,
+edge,edges_rule_list_item.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_list_item.csv,null_string_values,PASS,0,
+edge,edges_rule_list_item.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_list_item.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_list_item.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_list_item.csv,endpoint_column_missing:to_list_item_id,PASS,0,
+edge,edges_rule_list_item.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_list_item.csv,orphan_to_endpoint,PASS,0,to_list_item_id
+edge,edges_rule_reasoning.csv,row_count,INFO,5907,
+edge,edges_rule_reasoning.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_reasoning.csv,null_string_values,PASS,0,
+edge,edges_rule_reasoning.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_reasoning.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_reasoning.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_reasoning.csv,endpoint_column_missing:to_rule_id,PASS,0,
+edge,edges_rule_reasoning.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_reasoning.csv,orphan_to_endpoint,PASS,0,to_rule_id
+edge,edges_rule_requirement.csv,row_count,INFO,3639,
+edge,edges_rule_requirement.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_requirement.csv,null_string_values,PASS,0,
+edge,edges_rule_requirement.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_requirement.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_requirement.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_requirement.csv,endpoint_column_missing:to_requirement_id,PASS,0,
+edge,edges_rule_requirement.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_requirement.csv,orphan_to_endpoint,PASS,0,to_requirement_id
+edge,edges_rule_source.csv,row_count,INFO,8858,
+edge,edges_rule_source.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_source.csv,null_string_values,PASS,0,
+edge,edges_rule_source.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_source.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_source.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_source.csv,endpoint_column_missing:to_node_id,PASS,0,
+edge,edges_rule_source.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_temporal.csv,row_count,INFO,279,
+edge,edges_rule_temporal.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_temporal.csv,null_string_values,PASS,0,
+edge,edges_rule_temporal.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_temporal.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_temporal.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_temporal.csv,endpoint_column_missing:to_temporal_id,PASS,0,
+edge,edges_rule_temporal.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_temporal.csv,orphan_to_endpoint,PASS,0,to_temporal_id
+edge,edges_rule_threshold.csv,row_count,INFO,1782,
+edge,edges_rule_threshold.csv,neo4j_unfriendly_column_names,PASS,0,
+edge,edges_rule_threshold.csv,null_string_values,PASS,0,
+edge,edges_rule_threshold.csv,encoding_suspicion,PASS,0,heuristic mojibake marker count
+edge,edges_rule_threshold.csv,long_text_stats,INFO,0,p95=0; columns=
+edge,edges_rule_threshold.csv,endpoint_column_missing:from_rule_id,PASS,0,
+edge,edges_rule_threshold.csv,endpoint_column_missing:to_threshold_id,PASS,0,
+edge,edges_rule_threshold.csv,orphan_from_endpoint,PASS,0,from_rule_id
+edge,edges_rule_threshold.csv,orphan_to_endpoint,PASS,0,to_threshold_id
+rule,nodes_rule.csv,missing_source_node_id,PASS,0,
+rule,nodes_rule.csv,missing_source_text,PASS,0,
+rule,nodes_rule.csv,obligation_without_requirement,WARN,607,
+rule,nodes_rule.csv,threshold_related_without_threshold_node,WARN,1210,
+rule,nodes_rule.csv,unknown_rule_type_or_subtype,WARN,1995,
+rule,nodes_rule.csv,needs_review_or_low_confidence,WARN,1026,
+rule,nodes_rule.csv,annex_rule_missing_annex_title,PASS,0,
+exception,nodes_exception.csv,blank_exception_condition_text,PASS,0,
+list_item,nodes_list_item.csv,list_item_without_edge,PASS,0,
+list_item,nodes_list_item.csv,annex_list_item_missing_annex_title,PASS,0,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:REQUIRES_PREREQUISITE,INFO,2834,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:RULE_DETAIL_DEFINED_IN_ANNEX,INFO,1823,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:REFERS_TO,INFO,1142,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:APPLIES_BY_ANALOGY,INFO,38,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:APPLIES_PENALTY_FOR,INFO,37,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:DELEGATES_TO,INFO,31,
+edge,edges_rule_reasoning.csv,reasoning_rel_count:OVERRIDES,INFO,2,
+edge,edges_rule_reasoning.csv,high_degree_rule_count,PASS,0,
+report,validation_report.csv,validation_report_pass,PASS,0,

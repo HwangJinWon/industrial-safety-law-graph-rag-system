@@ -1,0 +1,26 @@
+{
+  "original_grade_counts": {
+    "A1_STRICT": 12,
+    "A3_REVIEW_ONLY": 17,
+    "A2_ARTICLE_LEVEL_AUX": 11
+  },
+  "new_grade_counts": {
+    "A1_STRICT": 27,
+    "A2_ARTICLE_AUX": 10,
+    "A3_REVIEW_ONLY": 3
+  },
+  "upgrade_action_counts": {
+    "KEEP_A1": 12,
+    "A3_TO_A1": 4,
+    "A2_TO_A1": 11,
+    "A3_TO_A2": 10,
+    "KEEP_A3": 3
+  },
+  "promoted_A2_to_A1_count": 11,
+  "promoted_A3_to_A1_count": 4,
+  "promoted_A3_to_A2_count": 10,
+  "ready_sample_count": 27,
+  "auxiliary_sample_count": 10,
+  "review_only_sample_count": 3,
+  "note": "Only cases with explicit article-level penalty upgrade basis or strong case-fact/core-obligation basis were promoted automatically."
+}

@@ -1,0 +1,39 @@
+Frontend Detail Panel Report
+============================
+
+created_at: 2026-05-07
+status: PASS
+
+Modified files
+--------------
+- 05_code/frontend reference/src/App.jsx
+
+Frontend changes
+----------------
+1. Law detail panel now reads candidate_penalties[] from /law/{nodeId}.
+2. Direct penalty text remains in the existing "violation/penalty" section.
+3. Candidate penalty evidence is shown separately as "후보 벌칙·과태료 조항".
+4. Evidence chips in chat now open /law detail by source_node_id, source_anchor_id, rule_id, or list_item_id instead of only logging TODO.
+
+Display policy
+--------------
+- penalties[]: shown as direct penalty evidence.
+- candidate_penalties[]: shown as candidate penalty/fine provisions requiring review.
+- no candidate/direct penalty: conservative warning remains.
+
+Verification
+------------
+- Python backend AST check: PASS
+- frontend compatibility smoke test: PASS
+- /law detail sample includes candidate_penalties[] when article-reference candidates exist.
+
+Safety
+------
+- Neo4j write: none
+- LLM call: none
+- package.json modification: none
+- major UI redesign: none
+
+Remaining limitation
+--------------------
+The panel still relies on backend candidate quality. Article-reference candidates should remain visually labeled as candidates.

@@ -1,0 +1,16 @@
+{
+  "input_ready_count": 40,
+  "grade_counts": {
+    "A1_STRICT": 12,
+    "A3_REVIEW_ONLY": 17,
+    "A2_ARTICLE_LEVEL_AUX": 11
+  },
+  "a1_strict_path": "C:\\law_processing\\project\\generated_v6_case_scenario_eval\\dataset\\graded\\case_scenario_eval_A1_strict.json",
+  "a1_a2_aux_path": "C:\\law_processing\\project\\generated_v6_case_scenario_eval\\dataset\\graded\\case_scenario_eval_A1_A2_aux.json",
+  "a3_review_only_path": "C:\\law_processing\\project\\generated_v6_case_scenario_eval\\dataset\\graded\\case_scenario_eval_A3_review_only.json",
+  "policy": {
+    "A1_STRICT": "audit ok; strict evaluation target without article-level penalty relaxation",
+    "A2_ARTICLE_LEVEL_AUX": "article-level penalty GT; evaluate article level separately from fine level",
+    "A3_REVIEW_ONLY": "missing core obligation or unresolved audit issue; not used in strict/aux evaluation"
+  }
+}

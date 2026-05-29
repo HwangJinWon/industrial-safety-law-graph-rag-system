@@ -1,0 +1,11 @@
+{
+  "total_case_count": 69,
+  "found_case_count": 69,
+  "missing_or_duplicate_case_count": 0,
+  "file_type_distribution": {
+    "json": 69
+  },
+  "cases_with_text": 69,
+  "cases_without_text": 0,
+  "cases_needing_manual_path_review": []
+}

@@ -1,0 +1,37 @@
+﻿Step 06 Korean Text Recovery Report
+===================================
+
+created_at: 2026-05-08
+status: PASS
+
+Modified file
+-------------
+- 05_code/graph_rag_pipeline/ask_adapter.py
+
+Recovered functions / areas
+---------------------------
+- classify_intent: restored education intent guard to use "교육".
+- checklist_evidence_query: restored Korean evidence lookup queries for risk assessment, education/TBM, fall prevention, falling object, electric work, confined space, and fallback safety obligation.
+- build_compat_checklist: restored default checklist title, description, law_title, hazard-specific items, safety_state fallback, and compatibility answer text.
+- attach_graph_rag_evidence_to_checklist: restored Korean warning messages for missing node_id and empty legacy evidences.
+- friendly_source_label: restored Korean labels for Rule, SourceNode, Article, Paragraph, Item, Subitem, LogicalRow, LogicalCell, Annex, AnnexNote, and ListItem.
+- detail_summary_for: restored neutral Korean summaries by evidence node type.
+- read_law_detail: restored why_relevant and direct/candidate penalty warning messages.
+- compact_candidate_penalty: replaced English candidate_notice with conservative Korean notice.
+
+Recovery policy
+---------------
+- No legal duty was newly inferred from text recovery.
+- Risk-assessment notice remains guarded by the existing INDIRECT_ONLY policy.
+- User-facing mojibake patterns were removed from ask_adapter.py hardcoded strings.
+
+Remaining broken text
+---------------------
+- Code hardcoded user-facing mojibake in ask_adapter.py: none found by pattern scan.
+- Original law/source data was not modified; if source_text itself contains corrupted text, that is outside this recovery step.
+
+Safety
+------
+- Neo4j write executed: false
+- LLM call executed: false
+- CSV/loader/package changes: false

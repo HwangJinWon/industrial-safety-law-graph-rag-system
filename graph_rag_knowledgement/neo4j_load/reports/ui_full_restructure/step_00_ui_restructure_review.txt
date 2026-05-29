@@ -1,0 +1,35 @@
+step_id: 00
+step_name: UI full restructure pre-review
+status: PASS
+
+현재 구조 요약:
+- App.jsx는 checklist/dashboard/history 중심의 page state를 사용하고 있었다.
+- 체크리스트 화면은 현장 조건 입력, 체크리스트 결과, 오른쪽 법령 상세 패널의 3열 구조였다.
+- 법령 QA 기능은 floating chat 안에 존재했고, 이미 answer_policy, evidence_readiness, claim_check, evidence_chips, warnings, missing_evidence, citations/evidences 접힘 영역을 일부 표시하고 있었다.
+- /law/{nodeId} 상세 패널은 체크리스트 항목과 evidence chip 클릭에서 재사용 가능한 구조였다.
+
+재사용 가능한 영역:
+- openLaw()와 selectedLaw 상태
+- answerPolicyInfo(), readinessBadgeClass(), badgeLabel()
+- fallbackEvidenceChips(), chipNodeId(), chipLabel()
+- 기존 법령 상세 패널의 direct penalties / candidate penalties 분리 표시
+
+표시가 약했던 영역:
+- QA가 독립 페이지가 아니어서 답변 상태와 근거 검증 정보가 업무 흐름 안에서 덜 보였다.
+- 근거 탐색 전용 페이지가 없어 최근 citations/evidence_chips를 다시 열어보기 어려웠다.
+- answer_policy, evidence_readiness, warnings, missing_evidence를 모아 보는 검증/리포트 화면이 없었다.
+- 체크리스트 항목 목록에서 direct penalty / candidate penalty / 검토 필요 상태가 즉시 보이지 않았다.
+
+이번 작업 수정 대상:
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+
+이번 작업에서 건드리지 않은 영역:
+- Neo4j graph schema 및 data
+- CSV, loader
+- Graph-RAG 판단 로직
+- package.json dependency
+- LLM 호출 흐름
+
+Neo4j write: 없음
+LLM 호출: 없음

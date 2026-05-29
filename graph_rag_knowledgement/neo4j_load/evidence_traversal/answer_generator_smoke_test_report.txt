@@ -1,0 +1,72 @@
+﻿AnswerGenerator Smoke Test Report
+=================================
+- created_at: 2026-05-07 12:50:39
+- root_dir: <project-root>
+- target_uri: <neo4j-uri>
+- target_database: graph.v1
+- user: neo4j
+- mode: TEMPLATE_ANSWER_SMOKE_TEST
+- use_llm: false
+- llm_used: false
+- neo4j_write_executed: false
+- final_status: PASS
+
+Query Results:
+- query: 안전관리자는 어떤 기준으로 선임해야 하나?
+  intent: appointment_requirement
+  pack_status: OK
+  evidence_readiness: READY
+  claim_check_status: PASS
+  answer_policy: ALLOW_DIRECT_ANSWER
+  answer_length: 1717
+  citation_count: 15
+  policy_enforced: True
+- query: 정기 안전보건교육은 몇 시간 해야 하나?
+  intent: education_time_lookup
+  pack_status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  claim_check_status: PASS_WITH_WARNINGS
+  answer_policy: ALLOW_WITH_CAUTION
+  answer_length: 1419
+  citation_count: 22
+  policy_enforced: True
+- query: 안전검사 대상 기계에는 어떤 것들이 있나?
+  intent: inspection_requirement
+  pack_status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  claim_check_status: PASS_WITH_WARNINGS
+  answer_policy: ALLOW_WITH_CAUTION
+  answer_length: 1113
+  citation_count: 18
+  policy_enforced: True
+- query: 위험성평가 결과를 근로자에게 알려야 하나?
+  intent: obligation_check
+  pack_status: OK_WITH_WARNINGS
+  evidence_readiness: INDIRECT_ONLY
+  claim_check_status: RESTRICTED
+  answer_policy: INDIRECT_ONLY_RESPONSE
+  answer_length: 1637
+  citation_count: 12
+  policy_enforced: True
+- query: 과태료가 부과되는 경우는 무엇인가?
+  intent: penalty_lookup
+  pack_status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  claim_check_status: PASS_WITH_WARNINGS
+  answer_policy: ALLOW_WITH_CAUTION
+  answer_length: 673
+  citation_count: 9
+  policy_enforced: True
+- query: 적용 제외되는 경우가 있나?
+  intent: applicability_check
+  pack_status: OK
+  evidence_readiness: READY
+  claim_check_status: PASS
+  answer_policy: ALLOW_DIRECT_ANSWER
+  answer_length: 1243
+  citation_count: 15
+  policy_enforced: True
+
+Errors:
+- none
+

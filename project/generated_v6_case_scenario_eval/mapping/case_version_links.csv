@@ -1,0 +1,415 @@
+﻿case_id,case_name,selected_date_for_law_version,date_basis,law_group,law_name,applicable_mst,applicable_effective_date,next_effective_date,applicable_promulgation_no,link_method,link_confidence,review_reason
+1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20210126,case_text_first_date,osh_act,산업안전보건법,219125,20200609,20211014,제17433호,effective_date_range,medium,
+1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20210126,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,228679,20210112,20210401,제31387호,effective_date_range,medium,
+1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20210126,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,228783,20210119,20210713,제00308호,effective_date_range,medium,
+1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20210126,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,212719,20200116,20210528,제00273호,effective_date_range,medium,
+1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20210126,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20210126,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230823,case_text_first_date,osh_act,산업안전보건법,253643,20230808,20240517,제19611호,effective_date_range,medium,
+2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230823,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,252135,20230627,20231212,제33597호,effective_date_range,medium,
+2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230823,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,244353,20220818,20230927,제00363호,effective_date_range,medium,
+2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230823,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,245059,20221018,20231114,제00367호,effective_date_range,medium,
+2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230823,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230823,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,245785,20221208,20250807,제33023호,effective_date_range,medium,
+3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230426,case_text_first_date,osh_act,산업안전보건법,234717,20220818,20230808,제18426호,effective_date_range,medium,
+3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230426,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,244251,20220818,20230627,제32873호,effective_date_range,medium,
+3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230426,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,244353,20220818,20230927,제00363호,effective_date_range,medium,
+3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230426,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,245059,20221018,20231114,제00367호,effective_date_range,medium,
+3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230426,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20230426,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,245785,20221208,20250807,제33023호,effective_date_range,medium,
+4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_act,산업안전보건법,234717,20220818,20230808,제18426호,effective_date_range,medium,
+4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,244251,20220818,20230627,제32873호,effective_date_range,medium,
+4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,244353,20220818,20230927,제00363호,effective_date_range,medium,
+4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,245059,20221018,20231114,제00367호,effective_date_range,medium,
+4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,235883,20220127,20221208,제32020호,effective_date_range,medium,
+5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_act,산업안전보건법,234717,20220818,20230808,제18426호,effective_date_range,medium,
+5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,244251,20220818,20230627,제32873호,effective_date_range,medium,
+5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,244353,20220818,20230927,제00363호,effective_date_range,medium,
+5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,245059,20221018,20231114,제00367호,effective_date_range,medium,
+5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),20221018,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,235883,20220127,20221208,제32020호,effective_date_range,medium,
+6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],20210126,case_text_first_date,osh_act,산업안전보건법,219125,20200609,20211014,제17433호,effective_date_range,medium,
+6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],20210126,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,228679,20210112,20210401,제31387호,effective_date_range,medium,
+6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],20210126,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,228783,20210119,20210713,제00308호,effective_date_range,medium,
+6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],20210126,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,212719,20200116,20210528,제00273호,effective_date_range,medium,
+6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],20210126,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],20210126,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20220315,case_text_first_date,osh_act,산업안전보건법,232227,20211119,20220818,제18180호,effective_date_range,medium,
+7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20220315,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,241245,20220308,20220818,제32528호,effective_date_range,medium,
+7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20220315,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,236899,20211119,20220818,제00336호,effective_date_range,medium,
+7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20220315,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,236905,20211119,20220810,제00337호,effective_date_range,medium,
+7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20220315,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20220315,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,235883,20220127,20221208,제32020호,effective_date_range,medium,
+8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20250228,case_text_first_date,osh_act,산업안전보건법,253521,20240517,20250601,제19591호,effective_date_range,medium,
+8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20250228,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,268917,20250131,20250429,제35240호,effective_date_range,medium,
+8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20250228,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,265591,20240926,20250429,제00426호,effective_date_range,medium,
+8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20250228,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,263747,20240628,20250717,제00417호,effective_date_range,medium,
+8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20250228,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+8,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),20250228,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,245785,20221208,20250807,제33023호,effective_date_range,medium,
+9,"업무상과실치사,엄무상과실치상,엄무상과실기차전복,산업안전보건법위반",19940124,case_text_first_date,osh_act,산업안전보건법,4830,19900714,19940628,제04220호,effective_date_range,medium,
+9,"업무상과실치사,엄무상과실치상,엄무상과실기차전복,산업안전보건법위반",19940124,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,19848,19931120,19941223,제14010호,effective_date_range,medium,
+9,"업무상과실치사,엄무상과실치상,엄무상과실기차전복,산업안전보건법위반",19940124,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+9,"업무상과실치사,엄무상과실치상,엄무상과실기차전복,산업안전보건법위반",19940124,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+9,"업무상과실치사,엄무상과실치상,엄무상과실기차전복,산업안전보건법위반",19940124,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+9,"업무상과실치사,엄무상과실치상,엄무상과실기차전복,산업안전보건법위반",19940124,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+10,산업안전보건법위반·업무상과실치사,20080124,case_text_first_date,osh_act,산업안전보건법,78976,20080101,20080526,제08475호,effective_date_range,medium,
+10,산업안전보건법위반·업무상과실치사,20080124,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,82210,20080101,20080229,제20483호,effective_date_range,medium,
+10,산업안전보건법위반·업무상과실치사,20080124,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+10,산업안전보건법위반·업무상과실치사,20080124,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+10,산업안전보건법위반·업무상과실치사,20080124,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+10,산업안전보건법위반·업무상과실치사,20080124,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+11,산업안전보건법위반·업무상과실치사,20060930,case_text_first_date,osh_act,산업안전보건법,73455,20060925,20070411,제07920호,effective_date_range,medium,
+11,산업안전보건법위반·업무상과실치사,20060930,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,75525,20060925,20070701,제19691호,effective_date_range,medium,
+11,산업안전보건법위반·업무상과실치사,20060930,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+11,산업안전보건법위반·업무상과실치사,20060930,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+11,산업안전보건법위반·업무상과실치사,20060930,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+11,산업안전보건법위반·업무상과실치사,20060930,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+12,산업안전보건법위반·업무상과실치사,20090206,case_text_first_date,osh_act,산업안전보건법,79923,20090101,20090807,제08562호,effective_date_range,medium,
+12,산업안전보건법위반·업무상과실치사,20090206,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,91189,20090114,20090807,제21263호,effective_date_range,medium,
+12,산업안전보건법위반·업무상과실치사,20090206,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+12,산업안전보건법위반·업무상과실치사,20090206,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+12,산업안전보건법위반·업무상과실치사,20090206,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+12,산업안전보건법위반·업무상과실치사,20090206,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+13,산업안전보건법위반,19941215,case_text_first_date,osh_act,산업안전보건법,4831,19940628,19950105,제04622호,effective_date_range,medium,
+13,산업안전보건법위반,19941215,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,19848,19931120,19941223,제14010호,effective_date_range,medium,
+13,산업안전보건법위반,19941215,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+13,산업안전보건법위반,19941215,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+13,산업안전보건법위반,19941215,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+13,산업안전보건법위반,19941215,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+14,산업안전보건법 위반·업무상과실치사,20070517,case_text_first_date,osh_act,산업안전보건법,78310,20070411,20080101,제08373호,effective_date_range,medium,
+14,산업안전보건법 위반·업무상과실치사,20070517,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,75525,20060925,20070701,제19691호,effective_date_range,medium,
+14,산업안전보건법 위반·업무상과실치사,20070517,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+14,산업안전보건법 위반·업무상과실치사,20070517,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+14,산업안전보건법 위반·업무상과실치사,20070517,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+14,산업안전보건법 위반·업무상과실치사,20070517,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+15,산업안전보건법 위반,20090206,case_text_first_date,osh_act,산업안전보건법,79923,20090101,20090807,제08562호,effective_date_range,medium,
+15,산업안전보건법 위반,20090206,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,91189,20090114,20090807,제21263호,effective_date_range,medium,
+15,산업안전보건법 위반,20090206,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+15,산업안전보건법 위반,20090206,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+15,산업안전보건법 위반,20090206,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+15,산업안전보건법 위반,20090206,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+16,업무상과실치사·산업안전보건법위반,20110725,case_text_first_date,osh_act,산업안전보건법,98026,20101230,20120126,제09847호,effective_date_range,medium,
+16,업무상과실치사·산업안전보건법위반,20110725,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,111882,20110519,20111026,제22824호,effective_date_range,medium,
+16,업무상과실치사·산업안전보건법위반,20110725,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,114642,20110706,20120126,제00030호,effective_date_range,medium,
+16,업무상과실치사·산업안전보건법위반,20110725,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,114622,20110706,20120305,제00030호,effective_date_range,medium,
+16,업무상과실치사·산업안전보건법위반,20110725,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+16,업무상과실치사·산업안전보건법위반,20110725,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+17,업무상과실치사·산업안전보건법위반,20121025,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+17,업무상과실치사·산업안전보건법위반,20121025,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+17,업무상과실치사·산업안전보건법위반,20121025,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,122531,20120126,20130323,제00047호,effective_date_range,medium,
+17,업무상과실치사·산업안전보건법위반,20121025,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,125809,20120531,20130321,제00054호,effective_date_range,medium,
+17,업무상과실치사·산업안전보건법위반,20121025,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+17,업무상과실치사·산업안전보건법위반,20121025,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+18,업무상과실치사·산업안전보건법위반,20110715,case_text_first_date,osh_act,산업안전보건법,98026,20101230,20120126,제09847호,effective_date_range,medium,
+18,업무상과실치사·산업안전보건법위반,20110715,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,111882,20110519,20111026,제22824호,effective_date_range,medium,
+18,업무상과실치사·산업안전보건법위반,20110715,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,114642,20110706,20120126,제00030호,effective_date_range,medium,
+18,업무상과실치사·산업안전보건법위반,20110715,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,114622,20110706,20120305,제00030호,effective_date_range,medium,
+18,업무상과실치사·산업안전보건법위반,20110715,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+18,업무상과실치사·산업안전보건법위반,20110715,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+19,산업안전보건법위반,20130612,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+19,산업안전보건법위반,20130612,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+19,산업안전보건법위반,20130612,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,140903,20130603,20130806,제00082호,effective_date_range,medium,
+19,산업안전보건법위반,20130612,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,137568,20130323,20140930,제00078호,effective_date_range,medium,
+19,산업안전보건법위반,20130612,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+19,산업안전보건법위반,20130612,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+20,"업무상과실치사,업무상과실치상,건설기술관리법위반,건설업법위반,산업안전보건법위반",19930611,case_text_first_date,osh_act,산업안전보건법,4830,19900714,19940628,제04220호,effective_date_range,medium,
+20,"업무상과실치사,업무상과실치상,건설기술관리법위반,건설업법위반,산업안전보건법위반",19930611,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,19847,19930306,19931120,제13870호,effective_date_range,medium,
+20,"업무상과실치사,업무상과실치상,건설기술관리법위반,건설업법위반,산업안전보건법위반",19930611,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+20,"업무상과실치사,업무상과실치상,건설기술관리법위반,건설업법위반,산업안전보건법위반",19930611,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+20,"업무상과실치사,업무상과실치상,건설기술관리법위반,건설업법위반,산업안전보건법위반",19930611,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+20,"업무상과실치사,업무상과실치상,건설기술관리법위반,건설업법위반,산업안전보건법위반",19930611,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+21,업무상과실치사·업무상과실치상·산업안전보건법위반,20130930,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+21,업무상과실치사·업무상과실치상·산업안전보건법위반,20130930,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+21,업무상과실치사·업무상과실치상·산업안전보건법위반,20130930,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,142823,20130806,20140101,제00086호,effective_date_range,medium,
+21,업무상과실치사·업무상과실치상·산업안전보건법위반,20130930,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,137568,20130323,20140930,제00078호,effective_date_range,medium,
+21,업무상과실치사·업무상과실치상·산업안전보건법위반,20130930,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+21,업무상과실치사·업무상과실치상·산업안전보건법위반,20130930,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+22,업무상과실치사·업무상과실치상·산업안전보건법위반,20130314,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+22,업무상과실치사·업무상과실치상·산업안전보건법위반,20130314,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+22,업무상과실치사·업무상과실치상·산업안전보건법위반,20130314,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,122531,20120126,20130323,제00047호,effective_date_range,medium,
+22,업무상과실치사·업무상과실치상·산업안전보건법위반,20130314,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,125809,20120531,20130321,제00054호,effective_date_range,medium,
+22,업무상과실치사·업무상과실치상·산업안전보건법위반,20130314,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+22,업무상과실치사·업무상과실치상·산업안전보건법위반,20130314,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+23,산업안전보건법위반,20130215,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+23,산업안전보건법위반,20130215,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+23,산업안전보건법위반,20130215,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,122531,20120126,20130323,제00047호,effective_date_range,medium,
+23,산업안전보건법위반,20130215,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,125809,20120531,20130321,제00054호,effective_date_range,medium,
+23,산업안전보건법위반,20130215,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+23,산업안전보건법위반,20130215,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+24,업무상과실치사·산업안전보건법위반,20150403,case_text_first_date,osh_act,산업안전보건법,140954,20150101,20161028,제11862호,effective_date_range,medium,
+24,업무상과실치사·산업안전보건법위반,20150403,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,168463,20150210,20160107,제26093호,effective_date_range,medium,
+24,업무상과실치사·산업안전보건법위반,20150403,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,167604,20150116,20160217,제00122호,effective_date_range,medium,
+24,업무상과실치사·산업안전보건법위반,20150403,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,166089,20150101,20151231,제00117호,effective_date_range,medium,
+24,업무상과실치사·산업안전보건법위반,20150403,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+24,업무상과실치사·산업안전보건법위반,20150403,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+25,업무상과실치사·업무상과실치상·산업안전보건법위반,20130612,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+25,업무상과실치사·업무상과실치상·산업안전보건법위반,20130612,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+25,업무상과실치사·업무상과실치상·산업안전보건법위반,20130612,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,140903,20130603,20130806,제00082호,effective_date_range,medium,
+25,업무상과실치사·업무상과실치상·산업안전보건법위반,20130612,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,137568,20130323,20140930,제00078호,effective_date_range,medium,
+25,업무상과실치사·업무상과실치상·산업안전보건법위반,20130612,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+25,업무상과실치사·업무상과실치상·산업안전보건법위반,20130612,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+26,업무상과실치사·업무상과실치상·산업안전보건법위반,20130131,case_text_first_date,osh_act,산업안전보건법,115322,20120126,20140313,제10968호,effective_date_range,medium,
+26,업무상과실치사·업무상과실치상·산업안전보건법위반,20130131,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,126054,20120608,20140101,제23845호,effective_date_range,medium,
+26,업무상과실치사·업무상과실치상·산업안전보건법위반,20130131,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,122531,20120126,20130323,제00047호,effective_date_range,medium,
+26,업무상과실치사·업무상과실치상·산업안전보건법위반,20130131,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,125809,20120531,20130321,제00054호,effective_date_range,medium,
+26,업무상과실치사·업무상과실치상·산업안전보건법위반,20130131,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+26,업무상과실치사·업무상과실치상·산업안전보건법위반,20130131,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+27,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_act,산업안전보건법,52282,20020301,20030701,제06590호,effective_date_range,medium,
+27,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,55006,20010224,20030701,제17137호,effective_date_range,medium,
+27,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+27,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+27,증거인멸·산업안전보건법위반,20021230,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+27,증거인멸·산업안전보건법위반,20021230,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+28,업무상과실치사·업무상과실치상·산업안전보건법위반,20140703,case_text_first_date,osh_act,산업안전보건법,140247,20140523,20150101,제11794호,effective_date_range,medium,
+28,업무상과실치사·업무상과실치상·산업안전보건법위반,20140703,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,151862,20140313,20150101,제25251호,effective_date_range,medium,
+28,업무상과실치사·업무상과실치상·산업안전보건법위반,20140703,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,151967,20140313,20141231,제00099호,effective_date_range,medium,
+28,업무상과실치사·업무상과실치상·산업안전보건법위반,20140703,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,137568,20130323,20140930,제00078호,effective_date_range,medium,
+28,업무상과실치사·업무상과실치상·산업안전보건법위반,20140703,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+28,업무상과실치사·업무상과실치상·산업안전보건법위반,20140703,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+29,산업안전보건법위반,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+29,산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+29,산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+29,산업안전보건법위반,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+29,산업안전보건법위반,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+29,산업안전보건법위반,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+30,업무상과실치사·업무상과실치상·산업안전보건법위반,20160125,case_text_first_date,osh_act,산업안전보건법,140954,20150101,20161028,제11862호,effective_date_range,medium,
+30,업무상과실치사·업무상과실치상·산업안전보건법위반,20160125,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,178956,20160107,20160217,제26858호,effective_date_range,medium,
+30,업무상과실치사·업무상과실치상·산업안전보건법위반,20160125,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,167604,20150116,20160217,제00122호,effective_date_range,medium,
+30,업무상과실치사·업무상과실치상·산업안전보건법위반,20160125,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,178844,20151231,20160407,제00144호,effective_date_range,medium,
+30,업무상과실치사·업무상과실치상·산업안전보건법위반,20160125,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+30,업무상과실치사·업무상과실치상·산업안전보건법위반,20160125,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+31,업무상과실치사·업무상과실치상·배임수재·산업안전보건법위반·업무상과실폭발물파열·도로법위반·건축법위반,19951229,case_text_first_date,osh_act,산업안전보건법,55226,19950501,19970301,제04826호,effective_date_range,medium,
+31,업무상과실치사·업무상과실치상·배임수재·산업안전보건법위반·업무상과실폭발물파열·도로법위반·건축법위반,19951229,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,19853,19951019,19970516,제14787호,effective_date_range,medium,
+31,업무상과실치사·업무상과실치상·배임수재·산업안전보건법위반·업무상과실폭발물파열·도로법위반·건축법위반,19951229,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+31,업무상과실치사·업무상과실치상·배임수재·산업안전보건법위반·업무상과실폭발물파열·도로법위반·건축법위반,19951229,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+31,업무상과실치사·업무상과실치상·배임수재·산업안전보건법위반·업무상과실폭발물파열·도로법위반·건축법위반,19951229,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+31,업무상과실치사·업무상과실치상·배임수재·산업안전보건법위반·업무상과실폭발물파열·도로법위반·건축법위반,19951229,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+32,산업안전보건법위반,20090730,case_text_first_date,osh_act,산업안전보건법,79923,20090101,20090807,제08562호,effective_date_range,medium,
+32,산업안전보건법위반,20090730,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,91189,20090114,20090807,제21263호,effective_date_range,medium,
+32,산업안전보건법위반,20090730,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+32,산업안전보건법위반,20090730,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+32,산업안전보건법위반,20090730,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+32,산업안전보건법위반,20090730,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+33,노동조합및노동관계조정법위반·산업안전보건법위반,20051227,case_text_first_date,osh_act,산업안전보건법,67675,20050701,20060401,제07467호,effective_date_range,medium,
+33,노동조합및노동관계조정법위반·산업안전보건법위반,20051227,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,65911,20050101,20060101,제18609호,effective_date_range,medium,
+33,노동조합및노동관계조정법위반·산업안전보건법위반,20051227,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+33,노동조합및노동관계조정법위반·산업안전보건법위반,20051227,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+33,노동조합및노동관계조정법위반·산업안전보건법위반,20051227,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+33,노동조합및노동관계조정법위반·산업안전보건법위반,20051227,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+34,산업안전보건법위반,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+34,산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+34,산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+34,산업안전보건법위반,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+34,산업안전보건법위반,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+34,산업안전보건법위반,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,20190507,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,20190507,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,20190507,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,208507,20190419,20191223,제00250호,effective_date_range,medium,
+35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,20190507,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,208417,20190419,20191015,제00251호,effective_date_range,medium,
+35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,20190507,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,20190507,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+37,산업안전보건법위반[타워크레인을 임차한 회사가 타워크레인이 손상된 채 작업을 진행한 사건],20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+37,산업안전보건법위반[타워크레인을 임차한 회사가 타워크레인이 손상된 채 작업을 진행한 사건],20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+37,산업안전보건법위반[타워크레인을 임차한 회사가 타워크레인이 손상된 채 작업을 진행한 사건],20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+37,산업안전보건법위반[타워크레인을 임차한 회사가 타워크레인이 손상된 채 작업을 진행한 사건],20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+37,산업안전보건법위반[타워크레인을 임차한 회사가 타워크레인이 손상된 채 작업을 진행한 사건],20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+37,산업안전보건법위반[타워크레인을 임차한 회사가 타워크레인이 손상된 채 작업을 진행한 사건],20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+38,산업안전보건법위반,20190124,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+38,산업안전보건법위반,20190124,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+38,산업안전보건법위반,20190124,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+38,산업안전보건법위반,20190124,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+38,산업안전보건법위반,20190124,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+38,산업안전보건법위반,20190124,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+39,산업안전보건법위반,20070315,case_text_first_date,osh_act,산업안전보건법,73455,20060925,20070411,제07920호,effective_date_range,medium,
+39,산업안전보건법위반,20070315,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,75525,20060925,20070701,제19691호,effective_date_range,medium,
+39,산업안전보건법위반,20070315,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+39,산업안전보건법위반,20070315,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+39,산업안전보건법위반,20070315,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+39,산업안전보건법위반,20070315,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+40,업무상과실치사·산업안전보건법위반,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+40,업무상과실치사·산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+40,업무상과실치사·산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+40,업무상과실치사·산업안전보건법위반,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+40,업무상과실치사·산업안전보건법위반,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+40,업무상과실치사·산업안전보건법위반,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+41,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+42,"건설업법위반, 건설기술관리법위반(예비적 죄명：건축법위반), 업무상과실치상, 산업안전보건법위반",19990129,case_text_first_date,osh_act,산업안전보건법,4836,19980101,19990509,제05454호,effective_date_range,medium,
+42,"건설업법위반, 건설기술관리법위반(예비적 죄명：건축법위반), 업무상과실치상, 산업안전보건법위반",19990129,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,19856,19980101,19990208,제15598호,effective_date_range,medium,
+42,"건설업법위반, 건설기술관리법위반(예비적 죄명：건축법위반), 업무상과실치상, 산업안전보건법위반",19990129,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+42,"건설업법위반, 건설기술관리법위반(예비적 죄명：건축법위반), 업무상과실치상, 산업안전보건법위반",19990129,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+42,"건설업법위반, 건설기술관리법위반(예비적 죄명：건축법위반), 업무상과실치상, 산업안전보건법위반",19990129,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+42,"건설업법위반, 건설기술관리법위반(예비적 죄명：건축법위반), 업무상과실치상, 산업안전보건법위반",19990129,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+43,업무상과실치사·산업안전보건법위반,20190813,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+43,업무상과실치사·산업안전보건법위반,20190813,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,209711,20190702,20200116,제29950호,effective_date_range,medium,
+43,업무상과실치사·산업안전보건법위반,20190813,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,208507,20190419,20191223,제00250호,effective_date_range,medium,
+43,업무상과실치사·산업안전보건법위반,20190813,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,208417,20190419,20191015,제00251호,effective_date_range,medium,
+43,업무상과실치사·산업안전보건법위반,20190813,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+43,업무상과실치사·산업안전보건법위반,20190813,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+44,업무상과실치사·산업안전보건법위반·업무상과실치상,20190509,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+44,업무상과실치사·산업안전보건법위반·업무상과실치상,20190509,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+44,업무상과실치사·산업안전보건법위반·업무상과실치상,20190509,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,208507,20190419,20191223,제00250호,effective_date_range,medium,
+44,업무상과실치사·산업안전보건법위반·업무상과실치상,20190509,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,208417,20190419,20191015,제00251호,effective_date_range,medium,
+44,업무상과실치사·산업안전보건법위반·업무상과실치상,20190509,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+44,업무상과실치사·산업안전보건법위반·업무상과실치상,20190509,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+45,업무상과실치사·산업안전보건법위반·업무상과실치상,20180618,case_text_first_date,osh_act,산업안전보건법,193408,20171019,20181018,제14788호,effective_date_range,medium,
+45,업무상과실치사·산업안전보건법위반·업무상과실치상,20180618,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,197849,20171019,20181018,제28368호,effective_date_range,medium,
+45,업무상과실치사·산업안전보건법위반·업무상과실치상,20180618,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,203066,20180330,20181018,제00214호,effective_date_range,medium,
+45,업무상과실치사·산업안전보건법위반·업무상과실치상,20180618,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,203067,20180330,20180814,제00215호,effective_date_range,medium,
+45,업무상과실치사·산업안전보건법위반·업무상과실치상,20180618,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+45,업무상과실치사·산업안전보건법위반·업무상과실치상,20180618,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+46,업무상과실치사·업무상과실치상·산업안전보건법위반,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+46,업무상과실치사·업무상과실치상·산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+46,업무상과실치사·업무상과실치상·산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+46,업무상과실치사·업무상과실치상·산업안전보건법위반,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+46,업무상과실치사·업무상과실치상·산업안전보건법위반,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+46,업무상과실치사·업무상과실치상·산업안전보건법위반,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+47,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+47,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+47,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+47,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+47,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+47,업무상과실치사·산업안전보건법위반·업무상과실치상,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+48,산업안전보건법위반,20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+48,산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+48,산업안전보건법위반,20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+48,산업안전보건법위반,20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+48,산업안전보건법위반,20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+48,산업안전보건법위반,20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+49,산업안전보건법위반·업무상과실치사,20200603,case_text_first_date,osh_act,산업안전보건법,218289,20200526,20200609,제17326호,effective_date_range,medium,
+49,산업안전보건법위반·업무상과실치사,20200603,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,215125,20200303,20200828,제30509호,effective_date_range,medium,
+49,산업안전보건법위반·업무상과실치사,20200603,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,212709,20200116,20210119,제00272호,effective_date_range,medium,
+49,산업안전보건법위반·업무상과실치사,20200603,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,212719,20200116,20210528,제00273호,effective_date_range,medium,
+49,산업안전보건법위반·업무상과실치사,20200603,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+49,산업안전보건법위반·업무상과실치사,20200603,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+50,산업안전보건법위반·업무상과실치사,20230607,case_text_first_date,osh_act,산업안전보건법,234717,20220818,20230808,제18426호,effective_date_range,medium,
+50,산업안전보건법위반·업무상과실치사,20230607,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,244251,20220818,20230627,제32873호,effective_date_range,medium,
+50,산업안전보건법위반·업무상과실치사,20230607,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,244353,20220818,20230927,제00363호,effective_date_range,medium,
+50,산업안전보건법위반·업무상과실치사,20230607,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,245059,20221018,20231114,제00367호,effective_date_range,medium,
+50,산업안전보건법위반·업무상과실치사,20230607,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+50,산업안전보건법위반·업무상과실치사,20230607,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,245785,20221208,20250807,제33023호,effective_date_range,medium,
+51,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_act,산업안전보건법,232227,20211119,20220818,제18180호,effective_date_range,medium,
+51,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,241245,20220308,20220818,제32528호,effective_date_range,medium,
+51,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,236899,20211119,20220818,제00336호,effective_date_range,medium,
+51,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,236905,20211119,20220810,제00337호,effective_date_range,medium,
+51,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+51,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,235883,20220127,20221208,제32020호,effective_date_range,medium,
+52,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_act,산업안전보건법,52282,20020301,20030701,제06590호,effective_date_range,medium,
+52,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,55006,20010224,20030701,제17137호,effective_date_range,medium,
+52,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+52,증거인멸·산업안전보건법위반,20021230,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+52,증거인멸·산업안전보건법위반,20021230,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+52,증거인멸·산업안전보건법위반,20021230,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+53,업무상과실치사·산업안전보건법위반,20080717,case_text_first_date,osh_act,산업안전보건법,81804,20080701,20081231,제08694호,effective_date_range,medium,
+53,업무상과실치사·산업안전보건법위반,20080717,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,84899,20080229,20090101,제20681호,effective_date_range,medium,
+53,업무상과실치사·산업안전보건법위반,20080717,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+53,업무상과실치사·산업안전보건법위반,20080717,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+53,업무상과실치사·산업안전보건법위반,20080717,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+53,업무상과실치사·산업안전보건법위반,20080717,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],20190115,case_text_first_date,osh_act,산업안전보건법,203199,20181018,20200116,제15588호,effective_date_range,medium,
+54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],20190115,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,205725,20181213,20190702,제29360호,effective_date_range,medium,
+54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],20190115,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,206538,20190101,20190131,제00239호,effective_date_range,medium,
+54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],20190115,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,204244,20180814,20190131,제00225호,effective_date_range,medium,
+54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],20190115,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],20190115,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+55,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_act,산업안전보건법,232227,20211119,20220818,제18180호,effective_date_range,medium,
+55,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,241245,20220308,20220818,제32528호,effective_date_range,medium,
+55,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_enforcement_rule,산업안전보건법 시행규칙,236899,20211119,20220818,제00336호,effective_date_range,medium,
+55,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,osh_standards_rule,산업안전보건기준에 관한 규칙,236905,20211119,20220810,제00337호,effective_date_range,medium,
+55,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,serious_accidents_act,중대재해 처벌 등에 관한 법률,228817,20220127,,제17907호,effective_date_range,medium,
+55,업무상과실치사·산업안전보건법위반,20220725,case_text_first_date,serious_accidents_enforcement_decree,중대재해 처벌 등에 관한 법률 시행령,235883,20220127,20221208,제32020호,effective_date_range,medium,
+56,산업안전보건법위반,20070824,case_text_first_date,osh_act,산업안전보건법,78310,20070411,20080101,제08373호,effective_date_range,medium,
+56,산업안전보건법위반,20070824,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,77005,20070701,20080101,제19804호,effective_date_range,medium,
+56,산업안전보건법위반,20070824,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+56,산업안전보건법위반,20070824,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+56,산업안전보건법위반,20070824,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+56,산업안전보건법위반,20070824,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+57,업무상과실치사(변경된 죄명: 산업안전보건법위반),20041013,case_text_first_date,osh_act,산업안전보건법,55702,20030701,20050701,제06847호,effective_date_range,medium,
+57,업무상과실치사(변경된 죄명: 산업안전보건법위반),20041013,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,7204,20040330,20050101,제18343호,effective_date_range,medium,
+57,업무상과실치사(변경된 죄명: 산업안전보건법위반),20041013,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+57,업무상과실치사(변경된 죄명: 산업안전보건법위반),20041013,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+57,업무상과실치사(변경된 죄명: 산업안전보건법위반),20041013,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+57,업무상과실치사(변경된 죄명: 산업안전보건법위반),20041013,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+58,산업안전보건법위반,20050217,case_text_first_date,osh_act,산업안전보건법,55702,20030701,20050701,제06847호,effective_date_range,medium,
+58,산업안전보건법위반,20050217,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,65911,20050101,20060101,제18609호,effective_date_range,medium,
+58,산업안전보건법위반,20050217,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+58,산업안전보건법위반,20050217,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+58,산업안전보건법위반,20050217,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+58,산업안전보건법위반,20050217,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+59,산업안전보건법위반,19990628,case_text_first_date,osh_act,산업안전보건법,4959,19990509,20000708,제05886호,effective_date_range,medium,
+59,산업안전보건법위반,19990628,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,55016,19990608,20000805,제16388호,effective_date_range,medium,
+59,산업안전보건법위반,19990628,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+59,산업안전보건법위반,19990628,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+59,산업안전보건법위반,19990628,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+59,산업안전보건법위반,19990628,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+60,산업안전보건법위반,20040714,case_text_first_date,osh_act,산업안전보건법,55702,20030701,20050701,제06847호,effective_date_range,medium,
+60,산업안전보건법위반,20040714,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,7204,20040330,20050101,제18343호,effective_date_range,medium,
+60,산업안전보건법위반,20040714,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+60,산업안전보건법위반,20040714,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+60,산업안전보건법위반,20040714,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+60,산업안전보건법위반,20040714,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+61,노동조합및노동관계조정법위반·산업안전보건법위반,20040924,case_text_first_date,osh_act,산업안전보건법,55702,20030701,20050701,제06847호,effective_date_range,medium,
+61,노동조합및노동관계조정법위반·산업안전보건법위반,20040924,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,7204,20040330,20050101,제18343호,effective_date_range,medium,
+61,노동조합및노동관계조정법위반·산업안전보건법위반,20040924,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+61,노동조합및노동관계조정법위반·산업안전보건법위반,20040924,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+61,노동조합및노동관계조정법위반·산업안전보건법위반,20040924,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+61,노동조합및노동관계조정법위반·산업안전보건법위반,20040924,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+62,산업안전보건법위반,20060530,case_text_first_date,osh_act,산업안전보건법,67674,20060401,20060925,제07428호,effective_date_range,medium,
+62,산업안전보건법위반,20060530,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,72496,20060101,20060701,제19203호,effective_date_range,medium,
+62,산업안전보건법위반,20060530,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+62,산업안전보건법위반,20060530,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+62,산업안전보건법위반,20060530,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+62,산업안전보건법위반,20060530,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+63,산업안전보건법위반·업무상과실치사·업무상과실치상,20050421,case_text_first_date,osh_act,산업안전보건법,55702,20030701,20050701,제06847호,effective_date_range,medium,
+63,산업안전보건법위반·업무상과실치사·업무상과실치상,20050421,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,65911,20050101,20060101,제18609호,effective_date_range,medium,
+63,산업안전보건법위반·업무상과실치사·업무상과실치상,20050421,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+63,산업안전보건법위반·업무상과실치사·업무상과실치상,20050421,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+63,산업안전보건법위반·업무상과실치사·업무상과실치상,20050421,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+63,산업안전보건법위반·업무상과실치사·업무상과실치상,20050421,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+64,업무상과실치사·산업안전보건법위반,20080501,case_text_first_date,osh_act,산업안전보건법,78976,20080101,20080526,제08475호,effective_date_range,medium,
+64,업무상과실치사·산업안전보건법위반,20080501,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,84899,20080229,20090101,제20681호,effective_date_range,medium,
+64,업무상과실치사·산업안전보건법위반,20080501,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+64,업무상과실치사·산업안전보건법위반,20080501,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+64,업무상과실치사·산업안전보건법위반,20080501,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+64,업무상과실치사·산업안전보건법위반,20080501,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+65,산업안전보건법위반,20030818,case_text_first_date,osh_act,산업안전보건법,55702,20030701,20050701,제06847호,effective_date_range,medium,
+65,산업안전보건법위반,20030818,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,56503,20030701,20040317,제18043호,effective_date_range,medium,
+65,산업안전보건법위반,20030818,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+65,산업안전보건법위반,20030818,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+65,산업안전보건법위반,20030818,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+65,산업안전보건법위반,20030818,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+66,산업안전보건법위반,20060324,case_text_first_date,osh_act,산업안전보건법,67675,20050701,20060401,제07467호,effective_date_range,medium,
+66,산업안전보건법위반,20060324,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,72496,20060101,20060701,제19203호,effective_date_range,medium,
+66,산업안전보건법위반,20060324,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+66,산업안전보건법위반,20060324,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+66,산업안전보건법위반,20060324,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+66,산업안전보건법위반,20060324,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+67,산업안전보건법위반,20081022,case_text_first_date,osh_act,산업안전보건법,81804,20080701,20081231,제08694호,effective_date_range,medium,
+67,산업안전보건법위반,20081022,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,84899,20080229,20090101,제20681호,effective_date_range,medium,
+67,산업안전보건법위반,20081022,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+67,산업안전보건법위반,20081022,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+67,산업안전보건법위반,20081022,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+67,산업안전보건법위반,20081022,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+68,산업안전보건법위반·업무상과실치사,20070517,case_text_first_date,osh_act,산업안전보건법,78310,20070411,20080101,제08373호,effective_date_range,medium,
+68,산업안전보건법위반·업무상과실치사,20070517,case_text_first_date,osh_enforcement_decree,산업안전보건법 시행령,75525,20060925,20070701,제19691호,effective_date_range,medium,
+68,산업안전보건법위반·업무상과실치사,20070517,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+68,산업안전보건법위반·업무상과실치사,20070517,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+68,산업안전보건법위반·업무상과실치사,20070517,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+68,산업안전보건법위반·업무상과실치사,20070517,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+69,업무상과실치사·업무상과실치상·산업안전보건법위반·건설산업기본법위반,20060324,case_text_first_date,osh_act,산업안전보건법,67675,20050701,20060401,제07467호,effective_date_range,medium,
+69,업무상과실치사·업무상과실치상·산업안전보건법위반·건설산업기본법위반,20060324,case_text_first_date,osh_enforcement_decree,산업안전보건법시행령,72496,20060101,20060701,제19203호,effective_date_range,medium,
+69,업무상과실치사·업무상과실치상·산업안전보건법위반·건설산업기본법위반,20060324,case_text_first_date,osh_enforcement_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+69,업무상과실치사·업무상과실치상·산업안전보건법위반·건설산업기본법위반,20060324,case_text_first_date,osh_standards_rule,,,,,,NO_VERSION_FOUND,low,해당 날짜 version link 실패
+69,업무상과실치사·업무상과실치상·산업안전보건법위반·건설산업기본법위반,20060324,case_text_first_date,serious_accidents_act,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전
+69,업무상과실치사·업무상과실치상·산업안전보건법위반·건설산업기본법위반,20060324,case_text_first_date,serious_accidents_enforcement_decree,,,,,,NOT_APPLICABLE,high,중대재해처벌법 시행 전

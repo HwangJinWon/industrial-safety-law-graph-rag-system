@@ -1,0 +1,20 @@
+{
+  "sample_count": 27,
+  "before_precision": 0.4597295708406819,
+  "before_recall": 0.806496178718401,
+  "before_f1": 0.5558814642147976,
+  "before_selected_count": 6.925925925925926,
+  "before_overgenerated_count": 3.7777777777777777,
+  "after_precision": 0.5749559082892417,
+  "after_recall": 0.806496178718401,
+  "after_f1": 0.6522231883342995,
+  "after_selected_count": 5.555555555555555,
+  "after_overgenerated_count": 2.4074074074074074,
+  "f1_delta": 0.0963417241195019,
+  "recall_delta": 0.0,
+  "pruned_count": 1.3703703703703705,
+  "chain_completion_count": 2.4074074074074074,
+  "total_pruned_refs": 37,
+  "total_chain_completion_refs": 65,
+  "interpretation": "This is a conservative selected-layer split. It moves only Phase 8 safe-prune refs out of selected_laws and keeps chain-completion refs in a separate chain_completion_laws layer. It does not modify GT, raw predictions, or the original evaluator."
+}

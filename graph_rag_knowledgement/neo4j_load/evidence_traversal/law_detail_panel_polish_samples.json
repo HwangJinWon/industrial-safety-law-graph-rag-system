@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-05-07",
+  "final_status": "PASS_WITH_BUILD_WARNING",
+  "modified_files": [
+    "05_code/graph_rag_pipeline/ask_adapter.py",
+    "05_code/frontend reference/src/App.jsx",
+    "05_code/frontend reference/src/index.css",
+    "05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py"
+  ],
+  "smoke_test": {
+    "command": "python -B 05_code\\graph_rag_pipeline\\smoke_test_frontend_compat_endpoints.py --root-dir .",
+    "status": "PASS",
+    "site_checklist_ui": "PASS",
+    "law_detail": "PASS",
+    "ask": "PASS",
+    "risk_assessment_guardrail_preserved": true,
+    "neo4j_write_executed": false,
+    "llm_used": false
+  },
+  "law_detail_checks": {
+    "source_text_or_preview_present": true,
+    "summary_rule_based": true,
+    "summary_equals_source_text": false,
+    "warnings_deduplicated": true,
+    "citations_deduplicated": true,
+    "internal_id_primary_display_reduced": true,
+    "developer_node_id_collapsible": true
+  },
+  "sample_detail_shape": {
+    "fields": [
+      "id",
+      "node_id",
+      "type",
+      "title",
+      "law_name",
+      "article_no",
+      "annex_title",
+      "source_text",
+      "preview",
+      "summary",
+      "why_relevant",
+      "requirements",
+      "penalties",
+      "citations",
+      "related_sources",
+      "warnings",
+      "context"
+    ],
+    "warning_count": 1,
+    "citation_count": 2,
+    "requirements_after_dedupe_count": 0
+  },
+  "frontend_build": {
+    "node_modules_present": true,
+    "command": "npm run build",
+    "status": "FAIL",
+    "error_summary": "Vite config load failed with Windows EPERM during child process spawn.",
+    "package_json_modified": false,
+    "dependency_versions_modified": false
+  }
+}

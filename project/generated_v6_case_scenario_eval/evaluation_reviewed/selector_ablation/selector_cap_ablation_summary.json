@@ -1,0 +1,60 @@
+{
+  "selected_cap": 8,
+  "selection_reason": "cap 8 gave the best article-level F1 while keeping selected_law_count within the requested 6-8 range.",
+  "rows": [
+    {
+      "cap": 6,
+      "sample_count": 27,
+      "selected_law_count": 5.851851851851852,
+      "selected_chain_count": 3.0,
+      "role_level_f1": 0.49266618155507047,
+      "article_level_f1": 0.3981668537224093,
+      "fine_level_f1": 0.32009057079576514,
+      "selected_fine_grained_exact_f1": 0.32009057079576514,
+      "selected_fine_grained_soft_f1": 0.2555599710905869,
+      "selected_legal_chain_f1": 0.28637149367104053,
+      "legal_chain_article_f1": 0.3880415880415881,
+      "legal_chain_fine_f1": 0.28637149367104053,
+      "bundle_slot_f1": 0.7437389770723105,
+      "candidate_recall": 0.6086198780643224,
+      "selected_overgeneration_rate": 1.0407104212659768,
+      "candidate_overgeneration_rate_auxiliary": 1.8604938271604938
+    },
+    {
+      "cap": 7,
+      "sample_count": 27,
+      "selected_law_count": 6.666666666666667,
+      "selected_chain_count": 3.0,
+      "role_level_f1": 0.4969520191742414,
+      "article_level_f1": 0.393563323628683,
+      "fine_level_f1": 0.31714663936886156,
+      "selected_fine_grained_exact_f1": 0.31714663936886156,
+      "selected_fine_grained_soft_f1": 0.2549316115982783,
+      "selected_legal_chain_f1": 0.28637149367104053,
+      "legal_chain_article_f1": 0.3880415880415881,
+      "legal_chain_fine_f1": 0.28637149367104053,
+      "bundle_slot_f1": 0.7437389770723105,
+      "candidate_recall": 0.6086198780643224,
+      "selected_overgeneration_rate": 1.2268646990869214,
+      "candidate_overgeneration_rate_auxiliary": 1.8604938271604938
+    },
+    {
+      "cap": 8,
+      "sample_count": 27,
+      "selected_law_count": 7.2592592592592595,
+      "selected_chain_count": 3.0,
+      "role_level_f1": 0.4948944060055172,
+      "article_level_f1": 0.39930814767416073,
+      "fine_level_f1": 0.3202826142884622,
+      "selected_fine_grained_exact_f1": 0.3202826142884622,
+      "selected_fine_grained_soft_f1": 0.26236202583424806,
+      "selected_legal_chain_f1": 0.28637149367104053,
+      "legal_chain_article_f1": 0.3880415880415881,
+      "legal_chain_fine_f1": 0.28637149367104053,
+      "bundle_slot_f1": 0.7437389770723105,
+      "candidate_recall": 0.6086198780643224,
+      "selected_overgeneration_rate": 1.3623304678860237,
+      "candidate_overgeneration_rate_auxiliary": 1.8604938271604938
+    }
+  ]
+}

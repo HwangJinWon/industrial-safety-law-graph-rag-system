@@ -1,0 +1,81 @@
+﻿HTTP Ask Smoke Test Report
+==========================
+- started_at: 2026-05-07 14:52:35
+- finished_at: 2026-05-07 14:52:41
+- endpoint: http://127.0.0.1:8765/ask
+- app_entrypoint: graph_rag_pipeline.ask_adapter:app
+- uvicorn_executed: true
+- llm_used: false
+- neo4j_write_executed: false
+- final_status: PASS
+
+Query Results:
+- query: 안전관리자는 어떤 기준으로 선임해야 하나?
+  http_status: 200
+  intent: appointment_requirement
+  status: OK
+  evidence_readiness: READY
+  answer_policy: ALLOW_DIRECT_ANSWER
+  answer_present: True
+  evidences_count: 10
+  citations_count: 15
+  evidence_chips_count: 15
+  claim_check_present: True
+- query: 정기 안전보건교육은 몇 시간 해야 하나?
+  http_status: 200
+  intent: education_time_lookup
+  status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  answer_policy: ALLOW_WITH_CAUTION
+  answer_present: True
+  evidences_count: 16
+  citations_count: 22
+  evidence_chips_count: 22
+  claim_check_present: True
+- query: 안전검사 대상 기계에는 어떤 것들이 있나?
+  http_status: 200
+  intent: inspection_requirement
+  status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  answer_policy: ALLOW_WITH_CAUTION
+  answer_present: True
+  evidences_count: 8
+  citations_count: 18
+  evidence_chips_count: 18
+  claim_check_present: True
+- query: 위험성평가 결과를 근로자에게 알려야 하나?
+  http_status: 200
+  intent: obligation_check
+  status: OK_WITH_WARNINGS
+  evidence_readiness: INDIRECT_ONLY
+  answer_policy: INDIRECT_ONLY_RESPONSE
+  answer_present: True
+  evidences_count: 7
+  citations_count: 12
+  evidence_chips_count: 10
+  claim_check_present: True
+- query: 과태료가 부과되는 경우는 무엇인가?
+  http_status: 200
+  intent: penalty_lookup
+  status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  answer_policy: ALLOW_WITH_CAUTION
+  answer_present: True
+  evidences_count: 7
+  citations_count: 9
+  evidence_chips_count: 9
+  claim_check_present: True
+- query: 적용 제외되는 경우가 있나?
+  http_status: 200
+  intent: applicability_check
+  status: OK
+  evidence_readiness: READY
+  answer_policy: ALLOW_DIRECT_ANSWER
+  answer_present: True
+  evidences_count: 10
+  citations_count: 15
+  evidence_chips_count: 15
+  claim_check_present: True
+
+Errors:
+- none

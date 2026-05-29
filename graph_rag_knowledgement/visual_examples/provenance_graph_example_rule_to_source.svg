@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1072.8pt" height="354.864582pt" viewBox="0 0 1072.8 354.864582" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-05-18T12:30:20.851074</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 354.864582 
+L 1072.8 354.864582 
+L 1072.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 107.690832 61.867933 
+Q 186.516216 66.129959 264.001917 61.940314 
+" clip-path="url(#pc192e8d7aa)" style="fill: none; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 257.43848 59.090524 
+L 264.001917 61.940314 
+L 257.784023 65.481189 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #555555; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 282.632981 61.867933 
+Q 361.458365 66.129959 438.944065 61.940314 
+" clip-path="url(#pc192e8d7aa)" style="fill: none; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 432.380629 59.090524 
+L 438.944065 61.940314 
+L 432.726172 65.481189 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #555555; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 457.57513 61.867933 
+Q 536.400514 66.129959 613.886214 61.940314 
+" clip-path="url(#pc192e8d7aa)" style="fill: none; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 607.322778 59.090524 
+L 613.886214 61.940314 
+L 607.66832 65.481189 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #555555; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 632.517278 61.867933 
+Q 711.342662 66.129959 788.828363 61.940314 
+" clip-path="url(#pc192e8d7aa)" style="fill: none; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 782.264926 59.090524 
+L 788.828363 61.940314 
+L 782.610469 65.481189 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #555555; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 807.459427 61.867933 
+Q 886.284811 66.129959 963.770512 61.940314 
+" clip-path="url(#pc192e8d7aa)" style="fill: none; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 957.207075 59.090524 
+L 963.770512 61.940314 
+L 957.552618 65.481189 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #555555; stroke: #555555; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <g id="patch_7">
+     <path d="M 153.108813 66.959487 
+L 212.924906 66.959487 
+Q 215.024906 66.959487 215.024906 64.859487 
+L 215.024906 57.890112 
+Q 215.024906 55.790112 212.924906 55.790112 
+L 153.108813 55.790112 
+Q 151.008813 55.790112 151.008813 57.890112 
+L 151.008813 64.859487 
+Q 151.008813 66.959487 153.108813 66.959487 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 7px 'Malgun Gothic'; text-anchor: middle" x="183.01686" y="63.204644" transform="rotate(-0 183.01686 63.204644)">EXTRACTED_FROM</text>
+    </g>
+   </g>
+   <g id="text_2">
+    <g id="patch_8">
+     <path d="M 336.117368 66.959487 
+L 379.800649 66.959487 
+Q 381.900649 66.959487 381.900649 64.859487 
+L 381.900649 57.890112 
+Q 381.900649 55.790112 379.800649 55.790112 
+L 336.117368 55.790112 
+Q 334.017368 55.790112 334.017368 57.890112 
+L 334.017368 64.859487 
+Q 334.017368 66.959487 336.117368 66.959487 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 7px 'Malgun Gothic'; text-anchor: middle" x="357.959008" y="63.204644" transform="rotate(-0 357.959008 63.204644)">RESOLVES_TO</text>
+    </g>
+   </g>
+   <g id="text_3">
+    <g id="patch_9">
+     <path d="M 502.234595 66.959487 
+L 563.56772 66.959487 
+Q 565.66772 66.959487 565.66772 64.859487 
+L 565.66772 57.890112 
+Q 565.66772 55.790112 563.56772 55.790112 
+L 502.234595 55.790112 
+Q 500.134595 55.790112 500.134595 57.890112 
+L 500.134595 64.859487 
+Q 500.134595 66.959487 502.234595 66.959487 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 7px 'Malgun Gothic'; text-anchor: middle" x="532.901157" y="63.204644" transform="rotate(-0 532.901157 63.204644)">BELONGS_TO_ROW</text>
+    </g>
+   </g>
+   <g id="text_4">
+    <g id="patch_10">
+     <path d="M 673.725415 66.959487 
+L 741.961196 66.959487 
+Q 744.061196 66.959487 744.061196 64.859487 
+L 744.061196 57.890112 
+Q 744.061196 55.790112 741.961196 55.790112 
+L 673.725415 55.790112 
+Q 671.625415 55.790112 671.625415 57.890112 
+L 671.625415 64.859487 
+Q 671.625415 66.959487 673.725415 66.959487 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 7px 'Malgun Gothic'; text-anchor: middle" x="707.843306" y="63.204644" transform="rotate(-0 707.843306 63.204644)">BELONGS_TO_ANNEX</text>
+    </g>
+   </g>
+   <g id="text_5">
+    <g id="patch_11">
+     <path d="M 848.57897 66.959487 
+L 916.991939 66.959487 
+Q 919.091939 66.959487 919.091939 64.859487 
+L 919.091939 57.890112 
+Q 919.091939 55.790112 916.991939 55.790112 
+L 848.57897 55.790112 
+Q 846.47897 55.790112 846.47897 57.890112 
+L 846.47897 64.859487 
+Q 846.47897 66.959487 848.57897 66.959487 
+z
+" clip-path="url(#pc192e8d7aa)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 7px 'Malgun Gothic'; text-anchor: middle" x="882.785455" y="63.204644" transform="rotate(-0 882.785455 63.204644)">RELATED_TO_ARTICLE</text>
+    </g>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="C0_0_84e9c3fae5" d="M 0 27.386128 
+C 7.262886 27.386128 14.229281 24.500553 19.364917 19.364917 
+C 24.500553 14.229281 27.386128 7.262886 27.386128 -0 
+C 27.386128 -7.262886 24.500553 -14.229281 19.364917 -19.364917 
+C 14.229281 -24.500553 7.262886 -27.386128 0 -27.386128 
+C -7.262886 -27.386128 -14.229281 -24.500553 -19.364917 -19.364917 
+C -24.500553 -14.229281 -27.386128 -7.262886 -27.386128 0 
+C -27.386128 7.262886 -24.500553 14.229281 -19.364917 19.364917 
+C -14.229281 24.500553 -7.262886 27.386128 0 27.386128 
+z
+"/>
+    </defs>
+    <g clip-path="url(#pc192e8d7aa)">
+     <use xlink:href="#C0_0_84e9c3fae5" x="99.044628" y="61.3748" style="fill: #2ca02c; stroke: #333333; stroke-width: 0.8"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <use xlink:href="#C0_0_84e9c3fae5" x="273.986777" y="61.3748" style="fill: #7f7f7f; stroke: #333333; stroke-width: 0.8"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <use xlink:href="#C0_0_84e9c3fae5" x="448.928926" y="61.3748" style="fill: #e7d4ef; stroke: #333333; stroke-width: 0.8"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <use xlink:href="#C0_0_84e9c3fae5" x="623.871074" y="61.3748" style="fill: #c5b0d5; stroke: #333333; stroke-width: 0.8"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <use xlink:href="#C0_0_84e9c3fae5" x="798.813223" y="61.3748" style="fill: #9467bd; stroke: #333333; stroke-width: 0.8"/>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <use xlink:href="#C0_0_84e9c3fae5" x="973.755372" y="61.3748" style="fill: #9ecae1; stroke: #333333; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="text_6">
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(90.675448 58.720011)">Rule</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(38.786933 68.473495)">THRESHOLD/EDUCATION_TIME</text>
+    </g>
+   </g>
+   <g id="text_7">
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(250.317597 53.82069)">SourceNode</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(240.157441 63.574175)">annex_logical_cell</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(236.936074 73.372815)">lcell_d2eb6e55df8b</text>
+    </g>
+   </g>
+   <g id="text_8">
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(423.321347 48.779261)">Resolved Cell</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(393.994355 58.532745)">교육과정: 고 12시간은 3개월</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(393.645722 68.660761)">이내에서 분할하여 실시가능)</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(428.479785 78.414245)">단기간 작?</text>
+    </g>
+   </g>
+   <g id="text_9">
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(602.281074 48.83398)">LogicalRow</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(600.695293 58.63262)">고 12시간은</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(576.041973 68.386105)">3개월 이내에서 분할하여</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(563.64459 78.359526)">실시가능) 단기간 작업 또는 간?</text>
+    </g>
+   </g>
+   <g id="text_10">
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(783.016504 48.721886)">Annex 4</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(773.313223 58.47537)">안전보건교육</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(733.7517 68.498198)">교육과정별 교육시간(제26조제1항</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(783.274161 78.47162)">등 관련)</text>
+    </g>
+   </g>
+   <g id="text_11">
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(946.806388 53.843269)">Article 제26조</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(956.755372 63.596753)">교육시간</text>
+    </g>
+    <g clip-path="url(#pc192e8d7aa)">
+     <text style="font: 8.5px 'Malgun Gothic'" transform="translate(945.267091 73.350237)">및 교육내용 등</text>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="font: 14px 'Malgun Gothic'; text-anchor: middle" x="536.4" y="17.829062" transform="rotate(-0 536.4 17.829062)">Provenance Example: Rule Back to Source Evidence</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_12">
+     <path d="M 363.68125 330.608332 
+L 379.68125 330.608332 
+L 379.68125 325.008332 
+L 363.68125 325.008332 
+z
+" style="fill: #2ca02c; stroke: #333333; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_13">
+     <text style="font: 8px 'Malgun Gothic'; text-anchor: start" x="386.08125" y="330.608332" transform="rotate(-0 386.08125 330.608332)">Rule</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 363.68125 342.573332 
+L 379.68125 342.573332 
+L 379.68125 336.973332 
+L 363.68125 336.973332 
+z
+" style="fill: #7f7f7f; stroke: #333333; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_14">
+     <text style="font: 8px 'Malgun Gothic'; text-anchor: start" x="386.08125" y="342.573332" transform="rotate(-0 386.08125 342.573332)">SourceNode</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 446.635 330.608332 
+L 462.635 330.608332 
+L 462.635 325.008332 
+L 446.635 325.008332 
+z
+" style="fill: #e7d4ef; stroke: #333333; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_15">
+     <text style="font: 8px 'Malgun Gothic'; text-anchor: start" x="469.035" y="330.608332" transform="rotate(-0 469.035 330.608332)">LogicalCell</text>
+    </g>
+    <g id="patch_15">
+     <path d="M 523.66 330.608332 
+L 539.66 330.608332 
+L 539.66 325.008332 
+L 523.66 325.008332 
+z
+" style="fill: #c5b0d5; stroke: #333333; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_16">
+     <text style="font: 8px 'Malgun Gothic'; text-anchor: start" x="546.06" y="330.608332" transform="rotate(-0 546.06 330.608332)">LogicalRow</text>
+    </g>
+    <g id="patch_16">
+     <path d="M 602.7 330.608332 
+L 618.7 330.608332 
+L 618.7 325.008332 
+L 602.7 325.008332 
+z
+" style="fill: #9467bd; stroke: #333333; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_17">
+     <text style="font: 8px 'Malgun Gothic'; text-anchor: start" x="625.1" y="330.608332" transform="rotate(-0 625.1 330.608332)">Annex</text>
+    </g>
+    <g id="patch_17">
+     <path d="M 663.61625 330.608332 
+L 679.61625 330.608332 
+L 679.61625 325.008332 
+L 663.61625 325.008332 
+z
+" style="fill: #9ecae1; stroke: #333333; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_18">
+     <text style="font: 8px 'Malgun Gothic'; text-anchor: start" x="686.01625" y="330.608332" transform="rotate(-0 686.01625 330.608332)">Article</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc192e8d7aa">
+   <rect x="7.2" y="31.829062" width="1058.4" height="296.144"/>
+  </clipPath>
+ </defs>
+</svg>

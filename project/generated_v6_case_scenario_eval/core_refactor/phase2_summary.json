@@ -1,0 +1,64 @@
+{
+  "strict": {
+    "sample_count": 27,
+    "selected_core_f1_before": 0.5527590722035168,
+    "selected_core_f1_phase1": 0.577542519209186,
+    "selected_core_f1_phase2": 0.5814706898040233,
+    "selected_core_recall_before": 0.7990887713109935,
+    "selected_core_recall_phase1": 0.806496178718401,
+    "selected_core_recall_phase2": 0.8139035861258083,
+    "selected_law_count_before": 6.962962962962963,
+    "selected_law_count_phase1": 6.407407407407407,
+    "selected_law_count_phase2": 6.444444444444445,
+    "selected_overgeneration_before": 1.110626102292769,
+    "selected_overgeneration_phase1": 0.9306878306878306,
+    "selected_overgeneration_phase2": 0.9353174603174602,
+    "candidate_fine_recall": 0.7034036950703617,
+    "supporting_compatible_recall": 0.2839506172839506,
+    "policy_counts": {
+      "strict_dynamic_default": 12,
+      "strict_dynamic_high_confidence": 14,
+      "strict_dynamic_recall_guard": 1
+    }
+  },
+  "auxiliary": {
+    "sample_count": 10,
+    "selected_core_f1_before": 0.8048717948717948,
+    "selected_core_f1_phase1": 0.7579020979020978,
+    "selected_core_f1_phase2": 0.8109324009324009,
+    "selected_core_recall_before": 0.9383333333333332,
+    "selected_core_recall_phase1": 0.8383333333333333,
+    "selected_core_recall_phase2": 0.9383333333333332,
+    "selected_law_count_before": 7.0,
+    "selected_law_count_phase1": 6.3,
+    "selected_law_count_phase2": 6.8,
+    "selected_overgeneration_before": 0.32404761904761903,
+    "selected_overgeneration_phase1": 0.2897619047619048,
+    "selected_overgeneration_phase2": 0.2897619047619048,
+    "candidate_fine_recall": 0.7492857142857142,
+    "supporting_compatible_recall": 0.13333333333333333,
+    "policy_counts": {
+      "auxiliary_soft_cap_no_regression": 5,
+      "auxiliary_soft_cap_restore_core_hits": 5
+    }
+  },
+  "chain": {
+    "selected_penalty_chain_exists": 1.0,
+    "selected_penalty_article_match": 0.5675675675675675,
+    "selected_penalty_fine_match": 0.5675675675675675,
+    "corporate_penalty_attached_rate": 0.9639639639639639,
+    "selected_penalty_without_corporate_count": 4,
+    "corporate_without_selected_penalty_count": 0,
+    "article_167_1_to_173_1_applicable": 31,
+    "article_167_1_to_173_1_success": 31,
+    "article_168_172_to_173_2_applicable": 0,
+    "article_168_172_to_173_2_success": 0
+  },
+  "chain_failure_counts": {
+    "candidate_fine_missing": 18,
+    "selected_promotion_failure": 6,
+    "chain_connection_failure": 32,
+    "chain_fine_granularity_mismatch": 13,
+    "candidate_article_missing": 3
+  }
+}

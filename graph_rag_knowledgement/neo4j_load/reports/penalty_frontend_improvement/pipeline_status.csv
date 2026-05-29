@@ -1,0 +1,5 @@
+﻿step_id,step_name,status,started_at,finished_at,files_created,files_modified,tests_run,test_status,blocking_issue,notes
+1,Penalty Link Audit,PASS,2026-05-07,2026-05-07,"step_01_penalty_link_audit_report.txt; penalty_link_candidates.csv; penalty_link_audit_samples.json","","read-only graph audit",PASS,,"Penalty candidates found: DIRECT_LINKED=228 ARTICLE_REFERENCE_MATCH=2804"
+2,Backend Penalty Response,PASS,2026-05-07,2026-05-07,"step_02_backend_penalty_response_report.txt","05_code/graph_rag_pipeline/ask_adapter.py","AST check; frontend compat smoke",PASS,,"Added penalties[] and candidate_penalties[] separation"
+3,Frontend Detail/Evidence UI,PASS,2026-05-07,2026-05-07,"step_03_frontend_detail_panel_report.txt","05_code/frontend reference/src/App.jsx","frontend compat smoke",PASS,,"Detail panel displays candidate penalties separately; evidence chips open detail"
+4,E2E Validation,PASS_WITH_WARNINGS,2026-05-07,2026-05-07,"step_04_e2e_validation_report.txt; final_penalty_frontend_improvement_summary.txt","","ask E2E smoke; frontend compat smoke; npm run build",PASS_WITH_WARNINGS,,"Smoke tests passed; npm build blocked by Windows EPERM"

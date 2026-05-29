@@ -1,0 +1,103 @@
+Source Hierarchy Limited Plan Summary
+====================================
+- created_at: 2026-05-06 22:39:22
+- mode: DRY_RUN_PLAN
+- execute_possible: True
+
+Used/planned edge sources:
+- Heading_CONTAINS_Article
+  source: document_graph/edges/edges_law_hierarchy.csv
+  relationship: (Heading)-[:CONTAINS]->(Article)
+  mapping: rel=HAS_ARTICLE; Heading.heading_id=from_id -> Article.article_id=to_id
+  input_rows: 1270
+  planned_edge_count: 1270
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Article_CONTAINS_Paragraph
+  source: document_graph/edges/edges_law_hierarchy.csv
+  relationship: (Article)-[:CONTAINS]->(Paragraph)
+  mapping: rel=HAS_PARAGRAPH; Article.article_id=from_id -> Paragraph.paragraph_id=to_id
+  input_rows: 2567
+  planned_edge_count: 2567
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Paragraph_CONTAINS_Item
+  source: document_graph/edges/edges_law_hierarchy.csv
+  relationship: (Paragraph)-[:CONTAINS]->(Item)
+  mapping: rel=HAS_ITEM; Paragraph.paragraph_id=from_id -> Item.item_id=to_id
+  input_rows: 2957
+  planned_edge_count: 2957
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Item_CONTAINS_Subitem
+  source: document_graph/edges/edges_law_hierarchy.csv
+  relationship: (Item)-[:CONTAINS]->(Subitem)
+  mapping: rel=HAS_SUBITEM; Item.item_id=from_id -> Subitem.subitem_id=to_id
+  input_rows: 513
+  planned_edge_count: 513
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Law_CONTAINS_Heading
+  source: document_graph/edges/edges_law_hierarchy.csv
+  relationship: (Law)-[:CONTAINS]->(Heading)
+  mapping: rel=HAS_HEADING; Law.law_version_id=from_id -> Heading.heading_id=to_id
+  input_rows: 194
+  planned_edge_count: 194
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Law_CONTAINS_Addendum
+  source: document_graph/edges/edges_law_hierarchy.csv
+  relationship: (Law)-[:CONTAINS]->(Addendum)
+  mapping: rel=HAS_ADDENDUM; Law.law_version_id=from_id -> Addendum.addendum_id=to_id
+  input_rows: 81
+  planned_edge_count: 81
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Annex_RELATED_TO_ARTICLE_Article
+  source: document_graph/source_annex/edges_annex_to_articles.csv
+  relationship: (Annex)-[:RELATED_TO_ARTICLE]->(Article)
+  mapping: Annex.annex_id=from -> Article.article_id=to
+  input_rows: 102
+  planned_edge_count: 101
+  duplicate_pair_count: 1
+  unresolved_endpoint_count: 0
+- Annex_HAS_LOGICAL_ROW_LogicalRow
+  source: document_graph/source_annex/annex_logical_rows.csv
+  relationship: (Annex)-[:HAS_LOGICAL_ROW]->(LogicalRow)
+  mapping: Annex.annex_id=annex_id -> LogicalRow.logical_row_id=logical_row_id
+  input_rows: 7972
+  planned_edge_count: 7972
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- LogicalRow_HAS_LOGICAL_CELL_LogicalCell
+  source: document_graph/source_annex/edges_logical_row_to_logical_cells.csv
+  relationship: (LogicalRow)-[:HAS_LOGICAL_CELL]->(LogicalCell)
+  mapping: LogicalRow.logical_row_id=from_logical_row_id -> LogicalCell.logical_cell_id=to_logical_cell_id
+  input_rows: 16741
+  planned_edge_count: 16741
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+- Annex_HAS_NOTE_AnnexNote
+  source: document_graph/source_annex/annex_notes.csv
+  relationship: (Annex)-[:HAS_NOTE]->(AnnexNote)
+  mapping: Annex.annex_id=annex_id -> AnnexNote.note_id=note_id
+  input_rows: 119
+  planned_edge_count: 119
+  duplicate_pair_count: 0
+  unresolved_endpoint_count: 0
+
+Excluded files:
+- document_graph/edges/edges_contains.csv: excluded because duplicate of edges_law_hierarchy.csv
+- document_graph/edges/edges_law_rel.csv: excluded because law-to-law relation is not containment hierarchy
+- document_graph/edges/edges_law_relations.csv: excluded because duplicate law-to-law relation candidate
+- document_graph/source_annex/edges_physical_table_to_logical_rows.csv: excluded because PhysicalTable is SECOND_LOAD
+- document_graph/edges/edges_law_hierarchy.csv rel=HAS_ANNEX: excluded from first source_hierarchy; rows=163
+- document_graph/source_annex/annex_logical_cells.csv logical_row_id fallback: excluded because explicit edge CSV is available
+
+Warnings before execute:
+- HAS_ARTICLE mapping note: edges_law_hierarchy.csv from_id matches Heading.heading_id, so plan uses Heading -> Article rather than direct Law -> Article
+
+Final recommendation:
+- Do not run broad/all source_hierarchy. Run only this limited explicit plan after review.
+- Use MERGE for all relationships.
+- Keep edges_contains.csv and law relation files excluded from first source_hierarchy.

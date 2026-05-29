@@ -1,0 +1,45 @@
+Evidence Pack Guardrail Update Report
+Generated at: 2026-05-07 11:42:25
+Mode: READ_ONLY_EVIDENCE_PACK_GUARDRAIL_UPDATE
+Purpose: distinguish direct evidence, indirect evidence, and source coverage limitation before answer generation.
+
+Implemented guardrail:
+- Added top-level evidence_readiness field.
+- Added DIRECT_EVIDENCE_NOT_FOUND high warning for risk-assessment result notice/disclosure queries when direct evidence is absent.
+- Added DIRECT_OBLIGATION_SOURCE missing_evidence for the same case.
+- Linked guardrail to source coverage audit artifacts.
+
+Risk-assessment notice query result:
+- query: 위험성평가 결과를 근로자에게 알려야 하나?
+- status: OK_WITH_WARNINGS
+- evidence_readiness: INDIRECT_ONLY
+- primary_evidence_count: 5
+- citation_candidate_count: 3
+- warning_count: 3
+- missing_evidence_count: 1
+
+Warnings:
+- UNKNOWN_RULE_TYPE [medium]: Rule type or subtype is UNKNOWN.
+- UNKNOWN_RULE_TYPE [medium]: Rule type or subtype is UNKNOWN.
+- DIRECT_EVIDENCE_NOT_FOUND [high]: 현재 KB에서는 해당 의무를 직접 뒷받침하는 조문 근거가 확인되지 않았으며, 간접 근거만 확인됩니다.
+
+Missing evidence:
+- DIRECT_OBLIGATION_SOURCE [high]: Direct source wording for risk-assessment result notice/disclosure to workers was not found.
+
+Smoke test summary:
+- intent=appointment_requirement status=OK evidence_readiness=READY primary=5 citations=5 warnings=0 missing=0
+- intent=education_time_lookup status=OK_WITH_WARNINGS evidence_readiness=READY_WITH_WARNINGS primary=5 citations=11 warnings=4 missing=0
+- intent=inspection_requirement status=OK_WITH_WARNINGS evidence_readiness=READY_WITH_WARNINGS primary=10 citations=8 warnings=2 missing=0
+- intent=obligation_check status=OK_WITH_WARNINGS evidence_readiness=INDIRECT_ONLY primary=5 citations=3 warnings=3 missing=1
+- intent=penalty_lookup status=OK_WITH_WARNINGS evidence_readiness=READY_WITH_WARNINGS primary=5 citations=2 warnings=1 missing=0
+- intent=applicability_check status=OK evidence_readiness=READY primary=5 citations=5 warnings=0 missing=0
+
+Source coverage references:
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_audit.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_matches.csv
+
+Safety:
+- Neo4j write: false
+- LLM used: false
+- Answer generation: false
+- Secret values written: false

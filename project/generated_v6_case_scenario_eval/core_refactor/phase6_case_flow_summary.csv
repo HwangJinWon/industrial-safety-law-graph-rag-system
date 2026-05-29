@@ -1,0 +1,18 @@
+﻿stage,case_count,description,notes
+original_cases,69,Original precedent/case corpus,from project handoff summary
+case_text_available,69,Case text available for extraction,from project handoff summary
+date_extracted,69,Dates extracted for law-version linking,from project handoff summary
+law_version_linked,69,Old/current law linking attempted,from project handoff summary
+initial_READY_A,40,Initial ready-A candidates,from project handoff summary
+initial_REVIEW_B,17,Initial review-B candidates,from project handoff summary
+initial_INSUFFICIENT,12,Insufficient cases,from project handoff summary
+original_A1_STRICT,12,Original A1 strict after audit,from project handoff summary
+original_A2_ARTICLE_AUX,11,Original A2 article auxiliary,from project handoff summary
+original_A3_REVIEW_ONLY,17,Original A3 review-only,from project handoff summary
+reviewed_strict,27,Reviewed strict set,confirmed by phase summaries
+reviewed_auxiliary,10,Reviewed auxiliary set,confirmed by phase summaries
+reviewed_review_only,3,Reviewed review-only set,from project handoff summary
+phase5c_manual_review_targets,23,Manual review targets,from phase5c summary
+corporate_branch_review_targets,21,Article 173 branch ambiguity targets,from phase5c summary
+obligation_fine_review_targets,2,Article 38 obligation fine review targets,from phase5c summary
+likely_old_current_fine_branch_overmapped,21,Likely old-current fine branch overmapped Article 173 cases,from phase5d summary

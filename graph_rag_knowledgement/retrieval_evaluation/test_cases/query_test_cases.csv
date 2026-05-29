@@ -1,0 +1,101 @@
+﻿query_id,query,expected_intent,expected_law,expected_article_no,expected_annex_title,expected_rule_type,expected_rule_subtype,expected_keywords,expected_answer_hint,difficulty
+Q001,사업주는 안전보건관리체계를 반드시 갖춰야 하나?,obligation_check,중대재해 처벌 등에 관한 법률,,,OBLIGATION,CORRECTIVE_MEASURE,사업주;안전보건관리체계;확보의무,안전보건 확보의무 확인,easy
+Q002,도급인이 관계수급인 근로자에게 해야 할 안전보건조치는 무엇인가?,obligation_check,산업안전보건법,,,OBLIGATION,CORRECTIVE_MEASURE,도급인;관계수급인;안전보건조치,도급 관계 안전보건조치,easy
+Q003,사업주는 산업재해 발생 사실을 은폐하면 안 되나?,obligation_check,산업안전보건법,,,PROHIBITION,,산업재해;은폐;금지,산업재해 은폐 금지,easy
+Q004,건설공사 발주자는 안전보건대장을 작성해야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,DOCUMENT_REQUIREMENT,건설공사;발주자;안전보건대장;작성,건설공사 발주자 의무,medium
+Q005,사업주는 보호구를 지급해야 하는 작업에서 어떤 의무가 있나?,obligation_check,산업안전보건기준에 관한 규칙,,,OBLIGATION,PROTECTIVE_EQUIPMENT_REQUIREMENT,사업주;보호구;지급;착용,보호구 지급 및 착용 의무,medium
+Q006,경영책임자등은 안전보건 관계 법령 이행점검을 해야 하나?,obligation_check,중대재해 처벌 등에 관한 법률 시행령,,,OBLIGATION,CORRECTIVE_MEASURE,경영책임자등;안전보건 관계 법령;이행점검,중대재해 시행령상 이행점검,medium
+Q007,사업주는 유해위험요인을 확인하고 개선해야 하나?,obligation_check,중대재해 처벌 등에 관한 법률 시행령,,,OBLIGATION,CORRECTIVE_MEASURE,유해위험요인;확인;개선;점검,유해위험요인 확인 개선 절차,medium
+Q008,물질안전보건자료대상물질을 양도할 때 사업주의 의무는 무엇인가?,obligation_check,산업안전보건법,,,OBLIGATION,DOCUMENT_REQUIREMENT,물질안전보건자료대상물질;양도;제공,MSDS 제공 의무,medium
+Q009,도급인은 혼재작업으로 인한 위험을 방지해야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,CORRECTIVE_MEASURE,도급인;혼재작업;위험;방지,혼재작업 위험 방지,medium
+Q010,사업주는 위험성평가 결과를 근로자에게 알려야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,REPORTING_REQUIREMENT,위험성평가;근로자;알림;게시,위험성평가 고지 의무,medium
+Q011,사업주는 안전보건표지를 설치해야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,SAFETY_STANDARD,안전보건표지;설치;부착,안전보건표지 설치 의무,easy
+Q012,사업주는 고객응대근로자 건강장해 예방조치를 해야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,CORRECTIVE_MEASURE,고객응대근로자;건강장해;예방조치,고객응대근로자 보호 의무,medium
+Q013,사업주는 작업중지 조치를 해야 하는 급박한 위험 상황이 있나?,obligation_check,산업안전보건법,,,OBLIGATION,CORRECTIVE_MEASURE,작업중지;급박한 위험;대피,급박한 위험 시 작업중지,medium
+Q014,건설업 사업주는 산업안전보건관리비를 계상해야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,PAYMENT_REQUIREMENT,건설업;산업안전보건관리비;계상,산업안전보건관리비 의무,hard
+Q015,사업주는 석면 해체작업에서 어떤 사전조치를 해야 하나?,obligation_check,산업안전보건법,,,OBLIGATION,CORRECTIVE_MEASURE,석면;해체;제거;사전조치,석면 작업 의무,hard
+Q016,밀폐공간 작업 전에 어떤 안전조치를 해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,밀폐공간;작업;환기;측정,밀폐공간 사전 안전조치,easy
+Q017,추락 위험 장소에서 사업주가 해야 할 조치는 무엇인가?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,추락;위험;난간;방호,추락 방지 조치,easy
+Q018,굴착작업을 할 때 붕괴 위험 방지조치는 무엇인가?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,굴착;붕괴;흙막이;방지,굴착 붕괴 방지,medium
+Q019,프레스 작업에서 방호장치를 설치해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,프레스;방호장치;설치,프레스 방호장치,easy
+Q020,컨베이어 사용 시 끼임 위험을 막기 위한 조치는 무엇인가?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,컨베이어;끼임;방호;비상정지,컨베이어 안전조치,medium
+Q021,리프트를 사용할 때 안전조치는 어떻게 해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,리프트;안전조치;방호,리프트 안전기준,medium
+Q022,크레인 작업 전 점검해야 할 안전사항은 무엇인가?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,INSPECTION_REQUIREMENT,크레인;작업 전;점검;안전,크레인 작업 전 점검,medium
+Q023,전기작업 중 감전 위험을 줄이기 위한 조치는 무엇인가?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,전기작업;감전;절연;전원,감전 방지 조치,medium
+Q024,화학물질 취급 장소에서 국소배기장치를 설치해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,화학물질;국소배기장치;설치,국소배기장치 안전조치,medium
+Q025,소음 발생 작업장에서 청력보호구를 착용해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,PROTECTIVE_EQUIPMENT_REQUIREMENT,소음;청력보호구;착용,소음 보호구,medium
+Q026,고소작업대 사용 시 추락 방지를 위해 무엇을 해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,고소작업대;추락;안전대;방호,고소작업대 안전조치,hard
+Q027,산소결핍 위험 작업에서 공기 상태를 확인해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,INSPECTION_REQUIREMENT,산소결핍;공기;측정;환기,산소결핍 방지 조치,hard
+Q028,용접 작업에서 화재 예방을 위해 어떤 조치를 해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,용접;화재;불꽃;예방,용접 화재 예방,medium
+Q029,차량계 하역운반기계를 사용할 때 유도자를 배치해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,SAFETY_STANDARD,차량계;하역운반기계;유도자,차량계 기계 안전조치,hard
+Q030,분진 발생 작업장에서 호흡용 보호구를 착용해야 하나?,safety_measure_lookup,산업안전보건기준에 관한 규칙,,,OBLIGATION,PROTECTIVE_EQUIPMENT_REQUIREMENT,분진;호흡용 보호구;착용,분진 보호구,medium
+Q031,관리감독자 정기교육 시간은 몇 시간인가?,education_time_lookup,산업안전보건법 시행규칙,,별표,THRESHOLD,EDUCATION_TIME,관리감독자;정기교육;시간,관리감독자 교육시간 별표 확인,easy
+Q032,신규 채용 근로자 안전보건교육은 몇 시간 해야 하나?,education_time_lookup,산업안전보건법 시행규칙,,별표,THRESHOLD,EDUCATION_TIME,신규채용;근로자;교육;시간,채용 시 교육시간,easy
+Q033,특별교육 대상 작업별 교육내용은 어디에서 확인하나?,education_time_lookup,산업안전보건법 시행규칙,,별표,OBLIGATION,EDUCATION_CONTENT,특별교육;대상작업;교육내용,특별교육 별표 내용,easy
+Q034,건설업 기초안전보건교육 시간은 얼마인가?,education_time_lookup,산업안전보건법 시행규칙,,별표,THRESHOLD,EDUCATION_TIME,건설업;기초안전보건교육;시간,건설업 기초교육 시간,easy
+Q035,일용근로자는 채용 시 교육을 몇 시간 받아야 하나?,education_time_lookup,산업안전보건법 시행규칙,,별표,THRESHOLD,EDUCATION_TIME,일용근로자;채용;교육;시간,일용근로자 교육시간,easy
+Q036,특별교육을 16시간 해야 하는 작업은 무엇인가?,education_time_lookup,산업안전보건법 시행규칙,,별표,THRESHOLD,EDUCATION_TIME,특별교육;16시간;작업,특별교육 시간 및 대상작업,easy
+Q037,물질안전보건자료 교육은 어떤 내용을 포함해야 하나?,education_time_lookup,산업안전보건법 시행규칙,,별표,OBLIGATION,EDUCATION_CONTENT,물질안전보건자료;교육내용;포함,MSDS 교육내용,easy
+Q038,정기교육 내용에는 산업재해 예방 사항이 포함되나?,education_time_lookup,산업안전보건법 시행규칙,,별표,OBLIGATION,EDUCATION_CONTENT,정기교육;산업재해;예방,정기교육 내용,easy
+Q039,관리감독자 교육에는 위험성평가 내용이 들어가나?,education_time_lookup,산업안전보건법 시행규칙,,별표,OBLIGATION,EDUCATION_CONTENT,관리감독자;위험성평가;교육,관리감독자 교육내용,medium
+Q040,특수형태근로종사자 안전보건교육 시간은 얼마인가?,education_time_lookup,산업안전보건법 시행규칙,,별표,THRESHOLD,EDUCATION_TIME,특수형태근로종사자;안전보건교육;시간,특수형태근로종사자 교육시간,medium
+Q041,교육 면제나 일부 면제가 가능한 경우가 있나?,education_time_lookup,산업안전보건법 시행규칙,,,EXCLUSION,APPLICABILITY_RULE,교육;면제;제외,교육 면제 예외,hard
+Q042,타워크레인 신호작업 특별교육은 어떤 내용인가?,education_time_lookup,산업안전보건법 시행규칙,,별표,OBLIGATION,EDUCATION_CONTENT,타워크레인;신호작업;특별교육,특별교육 세부 내용,hard
+Q043,사업주는 안전관리자를 언제 선임해야 하나?,appointment_requirement,산업안전보건법 시행령,,,OBLIGATION,APPOINTMENT_REQUIREMENT,안전관리자;선임;사업주,안전관리자 선임의무,easy
+Q044,보건관리자 선임 기준은 어떻게 되나?,appointment_requirement,산업안전보건법 시행령,,,OBLIGATION,APPOINTMENT_REQUIREMENT,보건관리자;선임;기준,보건관리자 선임기준,easy
+Q045,안전보건관리담당자는 어떤 사업장에서 두어야 하나?,appointment_requirement,산업안전보건법 시행령,,,OBLIGATION,APPOINTMENT_REQUIREMENT,안전보건관리담당자;사업장;선임,안전보건관리담당자 선임,easy
+Q046,산업보건의는 언제 선임해야 하나?,appointment_requirement,산업안전보건법 시행령,,,OBLIGATION,APPOINTMENT_REQUIREMENT,산업보건의;선임,산업보건의 선임의무,easy
+Q047,안전관리전문기관의 지정 요건은 무엇인가?,appointment_requirement,산업안전보건법 시행령,,,PROCEDURE,QUALIFICATION_REQUIREMENT,안전관리전문기관;지정;요건,전문기관 지정 요건,easy
+Q048,보건관리전문기관 인력 기준은 어떻게 되나?,appointment_requirement,산업안전보건법 시행령,,별표,OBLIGATION,QUALIFICATION_REQUIREMENT,보건관리전문기관;인력;기준,전문기관 인력 기준,easy
+Q049,건설재해예방전문지도기관은 어떤 인력을 갖춰야 하나?,appointment_requirement,산업안전보건법 시행령,,별표,OBLIGATION,QUALIFICATION_REQUIREMENT,건설재해예방전문지도기관;인력;기술사,지도기관 인력 요건,medium
+Q050,안전관리자의 자격에는 어떤 것이 있나?,appointment_requirement,산업안전보건법 시행령,,별표,DEFINITION,QUALIFICATION_REQUIREMENT,안전관리자;자격;기술사;기사,안전관리자 자격 목록,medium
+Q051,보건관리자의 자격 기준에 의사나 간호사가 포함되나?,appointment_requirement,산업안전보건법 시행령,,별표,DEFINITION,QUALIFICATION_REQUIREMENT,보건관리자;자격;의사;간호사,보건관리자 자격 목록,hard
+Q052,관리책임자를 선임해야 하는 사업장 규모 기준은 무엇인가?,appointment_requirement,산업안전보건법 시행령,,별표,THRESHOLD,APPOINTMENT_REQUIREMENT,관리책임자;선임;상시근로자;규모,관리책임자 선임 규모,hard
+Q053,유해위험방지계획서는 언제 제출해야 하나?,document_requirement,산업안전보건법,,,PROCEDURE,DOCUMENT_REQUIREMENT,유해위험방지계획서;제출,유해위험방지계획서 제출의무,easy
+Q054,물질안전보건자료는 어떤 경우 제출해야 하나?,document_requirement,산업안전보건법,,,PROCEDURE,DOCUMENT_REQUIREMENT,물질안전보건자료;제출,MSDS 제출의무,easy
+Q055,산업재해 발생 보고는 언제 해야 하나?,document_requirement,산업안전보건법,,,PROCEDURE,REPORTING_REQUIREMENT,산업재해;발생;보고,산업재해 발생 보고,easy
+Q056,안전검사 신청서에는 어떤 서류가 첨부되나?,document_requirement,산업안전보건법 시행규칙,,별지,PROCEDURE,DOCUMENT_REQUIREMENT,안전검사;신청서;첨부서류,안전검사 신청 서류,medium
+Q057,건강진단 결과 서류는 얼마 동안 보존해야 하나?,document_requirement,산업안전보건법 시행규칙,,,OBLIGATION,RECORD_RETENTION_REQUIREMENT,건강진단;결과;보존,건강진단 서류 보존기간,medium
+Q058,작업환경측정 결과는 얼마 동안 보존해야 하나?,document_requirement,산업안전보건법 시행규칙,,,OBLIGATION,RECORD_RETENTION_REQUIREMENT,작업환경측정;결과;보존,작업환경측정 결과 보존,medium
+Q059,도급사업 안전보건협의체 회의록은 작성해야 하나?,document_requirement,산업안전보건법,,,OBLIGATION,DOCUMENT_REQUIREMENT,도급;협의체;회의록;작성,협의체 회의록 작성,medium
+Q060,공정안전보고서는 어떤 사업장에서 제출해야 하나?,document_requirement,산업안전보건법,,,PROCEDURE,DOCUMENT_REQUIREMENT,공정안전보고서;제출;사업장,공정안전보고서 제출대상,medium
+Q061,석면조사 결과 보고서는 누구에게 제출해야 하나?,document_requirement,산업안전보건법,,,PROCEDURE,REPORTING_REQUIREMENT,석면조사;결과;보고서;제출,석면조사 결과 제출,medium
+Q062,안전보건개선계획은 언제 수립하고 제출해야 하나?,document_requirement,산업안전보건법,,,PROCEDURE,DOCUMENT_REQUIREMENT,안전보건개선계획;수립;제출,안전보건개선계획 제출,medium
+Q063,중대재해 재발방지 대책은 서류로 보관해야 하나?,document_requirement,중대재해 처벌 등에 관한 법률 시행령,,,OBLIGATION,RECORD_RETENTION_REQUIREMENT,중대재해;재발방지;서면;보관,중대재해 조치 서면 보관,hard
+Q064,화학물질 명칭과 함유량 대체자료 승인 신청에는 어떤 자료가 필요한가?,document_requirement,산업안전보건법 시행규칙,,별지,PROCEDURE,DOCUMENT_REQUIREMENT,화학물질;명칭;함유량;대체자료;승인;신청,대체자료 승인 신청서류,hard
+Q065,산업재해 발생 사실을 은폐하면 어떤 벌칙이 있나?,penalty_lookup,산업안전보건법,,,PENALTY,PENALTY_IMPRISONMENT,산업재해;은폐;벌칙,산업재해 은폐 벌칙,easy
+Q066,안전보건교육을 하지 않으면 과태료가 얼마인가?,penalty_lookup,산업안전보건법,,,PENALTY,ADMINISTRATIVE_FINE,안전보건교육;과태료,교육 미실시 과태료,easy
+Q067,안전검사를 받지 않은 기계를 사용하면 어떤 제재가 있나?,penalty_lookup,산업안전보건법,,,PENALTY,ADMINISTRATIVE_FINE,안전검사;기계;사용;제재,안전검사 미실시 제재,easy
+Q068,중대산업재해로 사망자가 발생하면 사업주 처벌은 어떻게 되나?,penalty_lookup,중대재해 처벌 등에 관한 법률,,,PENALTY,PENALTY_IMPRISONMENT,중대산업재해;사망자;사업주;처벌,중대재해 사망 처벌,easy
+Q069,중대재해처벌법에서 법인에게 벌금이 병과되나?,penalty_lookup,중대재해 처벌 등에 관한 법률,,,PENALTY,PENALTY_FINE,법인;벌금;양벌규정,법인 양벌 벌금,medium
+Q070,유해위험방지계획서를 제출하지 않으면 과태료가 있나?,penalty_lookup,산업안전보건법,,,PENALTY,ADMINISTRATIVE_FINE,유해위험방지계획서;미제출;과태료,계획서 미제출 과태료,medium
+Q071,물질안전보건자료를 제출하지 않으면 벌칙이나 과태료가 있나?,penalty_lookup,산업안전보건법,,,PENALTY,ADMINISTRATIVE_FINE,물질안전보건자료;미제출;과태료,MSDS 미제출 제재,medium
+Q072,작업중지 명령을 위반하면 어떤 처벌을 받나?,penalty_lookup,산업안전보건법,,,PENALTY,PENALTY_IMPRISONMENT,작업중지;명령;위반;처벌,작업중지 명령 위반,medium
+Q073,도급인의 안전보건조치 의무 위반 시 벌칙은 무엇인가?,penalty_lookup,산업안전보건법,,,PENALTY,PENALTY_FINE,도급인;안전보건조치;위반;벌칙,도급인 의무 위반 벌칙,medium
+Q074,공정안전보고서를 거짓으로 제출하면 제재가 있나?,penalty_lookup,산업안전보건법,,,PENALTY,ADMINISTRATIVE_FINE,공정안전보고서;거짓;제출;제재,공정안전보고서 거짓 제출,hard
+Q075,석면 해체작업 기준을 위반하면 어떤 벌칙이 있나?,penalty_lookup,산업안전보건법,,,PENALTY,PENALTY_FINE,석면;해체;위반;벌칙,석면 기준 위반 벌칙,hard
+Q076,중대시민재해가 발생하면 경영책임자는 어떤 처벌을 받나?,penalty_lookup,중대재해 처벌 등에 관한 법률,,,PENALTY,PENALTY_IMPRISONMENT,중대시민재해;경영책임자;처벌,중대시민재해 처벌,hard
+Q077,5명 미만 사업장은 산업안전보건법 적용 대상인가?,applicability_check,산업안전보건법,,,EXCLUSION,APPLICABILITY_RULE,5명 미만;사업장;적용,상시근로자 수 적용범위,easy
+Q078,상시근로자 50명 미만 사업장도 중대재해처벌법이 적용되나?,applicability_check,중대재해 처벌 등에 관한 법률,,,THRESHOLD,HEADCOUNT,상시근로자;50명;미만;적용,중대재해처벌법 적용 유예/범위,easy
+Q079,건설공사 금액 50억원 미만이면 중대재해처벌법 적용이 달라지나?,applicability_check,중대재해 처벌 등에 관한 법률,,,THRESHOLD,APPLICABILITY_RULE,건설공사;50억원;미만;적용,공사금액 적용범위,medium
+Q080,산업안전보건법에서 사업주에는 개인사업주도 포함되나?,applicability_check,산업안전보건법,,,DEFINITION,APPLICABILITY_RULE,사업주;개인사업주;포함,사업주 정의/범위,medium
+Q081,소상공인은 중대재해 조치 보관 의무에서 제외되나?,applicability_check,중대재해 처벌 등에 관한 법률 시행령,,,EXCLUSION,APPLICABILITY_RULE,소상공인;제외;보관,소상공인 제외 여부,medium
+Q082,자동차정비용 리프트는 리프트 안전기준에서 제외되나?,applicability_check,산업안전보건기준에 관한 규칙,,,EXCLUSION,SCOPE_EXCLUSION,자동차정비용 리프트;제외,장비 범위 제외,medium
+Q083,알킬알루미늄 같은 유기금속화합물 제외 표현은 적용 예외인가?,applicability_check,산업안전보건기준에 관한 규칙,,,EXCLUSION,SCOPE_EXCLUSION,알킬알루미늄;유기금속화합물;제외,물질 범위 제외,medium
+Q084,일용근로자도 정기교육 대상인가?,applicability_check,산업안전보건법 시행규칙,,별표,EXCLUSION,APPLICABILITY_RULE,일용근로자;정기교육;대상,교육 대상 적용 여부,hard
+Q085,파견근로자는 안전보건교육을 누가 해야 하나?,applicability_check,산업안전보건법,,,OBLIGATION,APPLICABILITY_RULE,파견근로자;안전보건교육;사업주,파견근로자 교육 책임,hard
+Q086,중대재해처벌법의 적용범위에서 공중이용시설은 어떻게 정해지나?,applicability_check,중대재해 처벌 등에 관한 법률 시행령,,,DEFINITION,APPLICABILITY_RULE,공중이용시설;적용범위;시행령,공중이용시설 범위,hard
+Q087,중대산업재해란 무엇인가?,definition_lookup,중대재해 처벌 등에 관한 법률,,,DEFINITION,APPLICABILITY_RULE,중대산업재해;뜻;재해,중대산업재해 정의,easy
+Q088,경영책임자등의 정의는 무엇인가?,definition_lookup,중대재해 처벌 등에 관한 법률,,,DEFINITION,APPLICABILITY_RULE,경영책임자등;뜻;정의,경영책임자등 정의,easy
+Q089,산업재해란 무엇을 말하나?,definition_lookup,산업안전보건법,,,DEFINITION,APPLICABILITY_RULE,산업재해;정의;뜻,산업재해 정의,easy
+Q090,도급의 정의는 무엇인가?,definition_lookup,산업안전보건법,,,DEFINITION,APPLICABILITY_RULE,도급;정의;명칭,도급 정의,medium
+Q091,물질안전보건자료대상물질이란 무엇인가?,definition_lookup,산업안전보건법,,,DEFINITION,APPLICABILITY_RULE,물질안전보건자료대상물질;정의,MSDS 대상물질 정의,medium
+Q092,중대시민재해란 무엇인가?,definition_lookup,중대재해 처벌 등에 관한 법률,,,DEFINITION,APPLICABILITY_RULE,중대시민재해;정의;재해,중대시민재해 정의,medium
+Q093,공중교통수단의 범위는 어떻게 정의되나?,definition_lookup,중대재해 처벌 등에 관한 법률 시행령,,,DEFINITION,APPLICABILITY_RULE,공중교통수단;범위;정의,공중교통수단 정의,hard
+Q094,관계수급인이란 어떤 사람을 말하나?,definition_lookup,산업안전보건법,,,DEFINITION,APPLICABILITY_RULE,관계수급인;정의;도급,관계수급인 정의,medium
+Q095,작업환경측정은 언제 실시해야 하나?,inspection_requirement,산업안전보건법,,,OBLIGATION,INSPECTION_REQUIREMENT,작업환경측정;실시;주기,작업환경측정 실시,easy
+Q096,특수건강진단 대상 유해인자는 무엇인가?,inspection_requirement,산업안전보건법 시행규칙,,별표,OBLIGATION,INSPECTION_REQUIREMENT,특수건강진단;유해인자;대상,특수건강진단 대상 유해인자,easy
+Q097,건강진단 검사항목에는 흉부방사선검사가 포함되나?,inspection_requirement,산업안전보건법 시행규칙,,별표,OBLIGATION,INSPECTION_ITEM,건강진단;검사항목;흉부방사선검사,건강진단 검사항목,medium
+Q098,국소배기장치는 주기적으로 점검해야 하나?,inspection_requirement,산업안전보건기준에 관한 규칙,,,OBLIGATION,INSPECTION_REQUIREMENT,국소배기장치;점검;주기,국소배기장치 점검,medium
+Q099,안전검사 대상 기계에는 어떤 것들이 있나?,inspection_requirement,산업안전보건법 시행령,,별표,OBLIGATION,INSPECTION_ITEM,안전검사;대상;기계,안전검사 대상 기계 목록,hard
+Q100,작업환경측정 결과 노출기준 초과 시 어떤 조치를 해야 하나?,inspection_requirement,산업안전보건법,,,OBLIGATION,CORRECTIVE_MEASURE,작업환경측정;노출기준;초과;조치,측정 결과 초과 시 조치,hard

@@ -1,0 +1,959 @@
+# 01_document_graph_preprocessing_process.txt
+
+# Document Graph 및 Annex Source Graph 전처리 과정 설명서
+
+## 1. 문서 목적
+
+이 문서는 산업안전보건법 / 중대재해처벌법 계열 법령 Graph-RAG 시스템에서 사용되는 Document Graph와 Annex Source Graph의 전처리 과정을 설명한다.
+
+Document Graph는 법령 본문을 계층적 원문 구조로 보존한 그래프이며, Annex Source Graph는 별표/별지/서식 등 부속자료의 표와 목록 구조를 보존한 그래프이다. 이 두 그래프는 Reasoning Graph가 추출되는 원천(source of truth)이며, 향후 Neo4j 적재와 Graph-RAG 답변 생성에서 citation과 source evidence를 제공하는 기반이 된다.
+
+이 문서는 다음 내용을 설명한다.
+
+1. 입력 데이터의 범위
+2. 법령 본문 Document Graph 생성 과정
+3. Annex/별표/별지 Source Graph 생성 과정
+4. physical row/cell과 logical row/cell 분리 이유
+5. Document Graph와 Reasoning Graph의 연결 방식
+6. 최종 산출 파일의 역할
+7. 품질 관리 및 한계
+
+중요한 점은, Document Graph 전처리는 법령 내용을 새로 해석하거나 의미 규칙을 생성하는 단계가 아니라는 것이다. 이 단계의 목적은 원문 구조를 가능한 한 손상 없이 보존하고, 이후 Reasoning Graph가 원문으로 되돌아갈 수 있도록 안정적인 source_node_id와 source_text를 제공하는 것이다.
+
+---
+
+## 2. Document Graph 전처리의 목적
+
+Document Graph 전처리의 핵심 목적은 법령 본문과 부속자료를 Graph-RAG에서 활용 가능한 원문 source graph로 변환하는 것이다.
+
+법령 본문은 일반적인 문서와 달리 다음과 같은 계층 구조를 가진다.
+
+```text
+Law
+→ Heading
+→ Article
+→ Paragraph
+→ Item
+→ Subitem
+→ Addendum
+```
+
+이 구조를 보존해야 하는 이유는 다음과 같다.
+
+1. 법령 조문은 계층 문맥에 따라 의미가 달라진다.
+2. item/subitem은 단독으로 보면 주어와 의무 내용이 생략된 경우가 많다.
+3. Rule 추출 시 parent paragraph 또는 article context가 필요하다.
+4. 답변 생성 시 법령명, 조문번호, 항/호/목, 원문을 정확히 제시해야 한다.
+5. 법령 적용 시 부칙, 시행일, 경과조치, 별표 관련 조항이 함께 필요할 수 있다.
+
+따라서 Document Graph는 다음 기능을 수행한다.
+
+- 원문 법령 구조 보존
+- source_node_id 부여
+- source_text 보존
+- parent-child hierarchy 보존
+- 조문 참조 관계 보존
+- Reasoning Graph의 source citation 제공
+- Annex/별표/별지와 본문 조문의 연결 기반 제공
+
+---
+
+## 3. 입력 데이터 범위
+
+### 3.1 대상 법령
+
+프로젝트 범위에 포함된 법령은 다음 계열이다.
+
+1. 산업안전보건법
+2. 산업안전보건법 시행령
+3. 산업안전보건법 시행규칙
+4. 산업안전보건기준에 관한 규칙
+5. 중대재해 처벌 등에 관한 법률
+6. 중대재해 처벌 등에 관한 법률 시행령
+
+이 법령들은 본문 조문뿐 아니라 별표, 별지, 서식, 비고, 부칙에 중요한 판단 기준이 포함되어 있다. 따라서 본문 조문과 Annex를 모두 전처리 대상으로 삼았다.
+
+### 3.2 입력 데이터 위치
+
+원본 또는 중간 입력 후보 위치는 다음과 같다.
+
+```text
+01_input/law_body/
+01_input/annex_final/
+```
+
+최종 정리본 기준 위치는 다음과 같다.
+
+```text
+graph_rag_knowledgement/document_graph/nodes/
+graph_rag_knowledgement/document_graph/edges/
+graph_rag_knowledgement/document_graph/source_annex/
+```
+
+주의할 점은, 현재 최종 knowledge base에는 최종 source graph CSV가 포함되어 있으며, 원본 JSON을 CSV로 변환하는 전체 코드나 모든 중간 파일이 포함되어 있는 것은 아니라는 점이다. 논문이나 팀 공유에서는 최종 지식 베이스에 포함된 CSV를 중심으로 설명하는 것이 적절하다.
+
+---
+
+## 4. 전체 전처리 흐름 요약
+
+Document Graph 및 Annex Source Graph 전처리는 크게 다음 단계로 진행된다.
+
+```text
+1. 법령 본문 JSON/원문 데이터 수집
+2. 법령 단위 Law node 생성
+3. 본문 heading/article/paragraph/item/subitem/addendum 계층 분해
+4. 각 source 단위에 source_node_id와 source_text 부여
+5. parent-child hierarchy edge 생성
+6. 조문 참조 관계 추출
+7. Annex/별표/별지 원본 구조 파싱
+8. Annex physical table/row/cell 보존
+9. Annex logical row/cell 병합
+10. Annex note 추출
+11. Annex와 본문 Article 연결
+12. Document Graph 최종 CSV 정리
+13. Reasoning Graph 추출 입력으로 사용
+```
+
+이 중 1~6단계는 본문 법령 Document Graph 전처리이고, 7~11단계는 Annex Source Graph 전처리이다.
+
+---
+
+## 5. 법령 본문 Document Graph 생성 과정
+
+## 5.1 Law node 생성
+
+### 목적
+
+Law node는 법령 단위의 최상위 노드이다. 법령명, 법령 버전, 시행 상태 등 법령 전체를 식별하기 위한 메타데이터를 보존한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_law.csv
+```
+
+### 역할
+
+이 파일은 다음 역할을 한다.
+
+- 같은 조문번호라도 어떤 법령에 속하는지 구분
+- 답변 citation에서 법령명 표시
+- 하위 Heading, Article, Annex와 연결되는 최상위 기준점 제공
+
+### Graph-RAG에서의 사용
+
+예를 들어 “제10조”라는 조문번호만으로는 산업안전보건법의 제10조인지 시행령의 제10조인지 알 수 없다. 따라서 Rule evidence에는 반드시 law_name 또는 law_id가 함께 있어야 하며, Law node는 이를 보장하는 source anchor 역할을 한다.
+
+---
+
+## 5.2 Heading node 생성
+
+### 목적
+
+Heading node는 장, 절, 관 등 법령 본문의 상위 구조를 표현한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_heading.csv
+```
+
+### 역할
+
+Heading node는 Article의 상위 문맥을 제공한다. 법령 조문은 어느 장/절에 속하는지에 따라 적용 영역과 의미가 더 명확해질 수 있다.
+
+### Graph-RAG에서의 사용
+
+답변 생성 시 특정 조문이 어떤 장/절에 포함되는지 함께 제시하면 사용자가 근거의 위치를 더 쉽게 이해할 수 있다. 또한 특정 영역의 조문을 탐색하거나 필터링할 때 heading context를 활용할 수 있다.
+
+---
+
+## 5.3 Article node 생성
+
+### 목적
+
+Article node는 제N조 단위의 법령 조문을 표현한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_article.csv
+```
+
+### 역할
+
+Article은 법령 citation의 핵심 단위이다. 대부분의 법령 근거는 “산업안전보건법 제○조”처럼 조문 단위로 제시되므로, Article node는 Document Graph에서 매우 중요하다.
+
+### Graph-RAG에서의 사용
+
+Reasoning Rule은 source_node_id 또는 article_id를 통해 Article과 연결될 수 있다. 답변 생성 시 Article node는 다음 정보를 제공한다.
+
+- 법령명
+- 조문번호
+- 조문 제목
+- 원문 조문 위치
+- 하위 paragraph/item/subitem context
+
+---
+
+## 5.4 Paragraph node 생성
+
+### 목적
+
+Paragraph node는 조문 내 본문 또는 항 단위를 표현한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_paragraph.csv
+```
+
+### 역할
+
+Paragraph는 법령 문장에서 의무 주체, 조건, 공통 행위 프레임이 포함되는 경우가 많다.
+
+예를 들어 다음과 같은 구조가 있을 수 있다.
+
+```text
+사업주는 다음 각 호의 조치를 하여야 한다.
+1. 안전난간을 설치할 것
+2. 덮개를 설치할 것
+```
+
+이 경우 paragraph에는 “사업주는 ... 조치를 하여야 한다”라는 공통 의무 프레임이 있고, item에는 세부 조치만 존재한다.
+
+### Graph-RAG에서의 사용
+
+Reasoning Graph에서 item/subitem rule을 추출할 때 paragraph context가 필요하다. 따라서 paragraph source_text는 단독 Rule 추출뿐 아니라 하위 source의 source_context_text 구성에도 사용된다.
+
+---
+
+## 5.5 Item node 생성
+
+### 목적
+
+Item node는 조문 내 호 또는 세부 항목 단위를 표현한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_item.csv
+```
+
+### 역할
+
+Item은 세부 의무, 기준, 예외, 목록 항목을 담는 경우가 많다. 다만 item은 상위 paragraph의 주어와 의무 동사를 생략하고 세부 내용만 제공하는 경우가 많다.
+
+### Graph-RAG에서의 사용
+
+Item source_text만으로는 “누가 해야 하는지” 또는 “어떤 조건에서 적용되는지”가 불분명할 수 있다. 따라서 item 기반 Rule은 parent_source_node_id, parent_source_node_type, source_context_text와 함께 관리해야 한다.
+
+---
+
+## 5.6 Subitem node 생성
+
+### 목적
+
+Subitem node는 item 아래의 목 또는 더 세분화된 조문 단위를 표현한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_subitem.csv
+```
+
+### 역할
+
+Subitem에는 매우 구체적인 안전기준, 작업 조건, 물질명, 검사 항목, 세부 절차 등이 들어가는 경우가 있다.
+
+### Graph-RAG에서의 사용
+
+Subitem은 세부 판단 근거로 중요하지만, 단독으로는 문맥이 부족할 수 있다. 따라서 item과 마찬가지로 parent context와 함께 사용해야 한다.
+
+---
+
+## 5.7 Addendum node 생성
+
+### 목적
+
+Addendum node는 부칙, 시행일, 경과조치, 적용례, 종전 규정 등 시간 관련 원문을 표현한다.
+
+### 산출 파일
+
+```text
+document_graph/nodes/nodes_addendum.csv
+```
+
+### 역할
+
+부칙은 법령 적용 시점 판단에서 중요하다. 본문 조문이 존재하더라도 실제 적용일, 유예기간, 경과규정은 부칙에 따로 정해져 있을 수 있다.
+
+### Graph-RAG에서의 사용
+
+Reasoning Graph에서는 Addendum source를 기반으로 TemporalRule을 생성한다. 이는 다음과 같은 질문에 필요하다.
+
+- 이 규정은 언제부터 시행되는가?
+- 종전 규정은 언제까지 적용되는가?
+- 유예기간이 있는가?
+- 개정 규정은 어떤 대상부터 적용되는가?
+
+---
+
+## 6. Document Graph edge 생성 과정
+
+Document Graph의 edge는 본문 구조의 계층 관계와 참조 관계를 표현한다.
+
+## 6.1 계층 관계 edge
+
+### 산출 파일 후보
+
+```text
+document_graph/edges/edges_contains.csv
+document_graph/edges/edges_law_hierarchy.csv
+```
+
+### 역할
+
+Law → Heading → Article → Paragraph → Item → Subitem/Addendum 계층 관계를 표현한다.
+
+### 사용 목적
+
+- source_node_id가 item/subitem인 경우 상위 Article과 Law를 찾기 위함
+- 답변 citation에서 법령명과 조문번호를 복원하기 위함
+- parent context를 따라 올라가 원문 문맥을 확장하기 위함
+
+### 주의사항
+
+두 파일이 모두 존재하는 경우, 서로 동일한 계층 관계를 중복 표현하는지 또는 관계 범위가 다른지 확인해야 한다. Neo4j loader 구현 전 중복 여부를 확인하는 것이 안전하다.
+
+---
+
+## 6.2 조문 참조 관계 edge
+
+### 산출 파일 후보
+
+```text
+document_graph/edges/edges_article_references.csv
+document_graph/edges/edges_refers.csv
+```
+
+### 역할
+
+본문 조문 간 참조 관계를 표현한다.
+
+예:
+
+```text
+법 제N조에 따른
+제M항에 따른
+별표에 따른
+고용노동부령으로 정하는
+```
+
+### 사용 목적
+
+법령 판단은 직접 조문뿐 아니라 참조 조문까지 함께 필요한 경우가 있다. 조문 참조 edge는 관련 조문을 확장하는 기반이 된다.
+
+### 주의사항
+
+참조 관계는 recall을 높일 수 있지만, 무분별하게 확장하면 unrelated evidence가 함께 따라와 overmatch가 발생할 수 있다. 따라서 1차 Graph-RAG retrieval에서는 제한적으로 사용하는 것이 안전하다.
+
+---
+
+## 6.3 법령 간 관계 edge
+
+### 산출 파일 후보
+
+```text
+document_graph/edges/edges_law_rel.csv
+document_graph/edges/edges_law_relations.csv
+```
+
+### 역할
+
+법령 간 관계 또는 상위 법령과 하위 법령 관계를 표현하는 보조 edge로 볼 수 있다.
+
+### 주의사항
+
+두 파일은 역할이 유사할 수 있으므로, Neo4j loader 구현 전 중복 여부와 실제 컬럼 구조를 확인해야 한다. 확인 전에는 핵심 retrieval edge라기보다 보조 source graph edge로 취급하는 것이 안전하다.
+
+---
+
+## 7. Parent context 처리
+
+법령 조문은 계층 구조상 하위 항목이 상위 문맥에 의존하는 경우가 많다. 따라서 Document Graph 전처리에서는 단순히 각 조문 단위를 분리하는 것뿐 아니라, Reasoning Graph가 사용할 수 있도록 parent context를 보존해야 한다.
+
+### 7.1 Parent context가 필요한 이유
+
+다음과 같은 조문 구조를 생각할 수 있다.
+
+```text
+사업주는 다음 각 호의 조치를 하여야 한다.
+1. 안전난간을 설치할 것
+2. 덮개를 설치할 것
+```
+
+이 경우 item의 source_text는 “안전난간을 설치할 것”일 수 있다. 하지만 이 문장만으로는 다음 정보가 부족하다.
+
+- 누가 설치해야 하는가?
+- 어떤 상황에서 설치해야 하는가?
+- 이것이 의무인지 권고인지?
+- 어떤 조문과 연결되는가?
+
+따라서 item/subitem 기반 Rule은 반드시 상위 paragraph 또는 article context와 함께 해석되어야 한다.
+
+### 7.2 보존되는 문맥 정보
+
+Reasoning Graph에서는 다음 필드를 통해 parent context를 활용한다.
+
+```text
+source_node_id
+source_node_type
+parent_source_node_id
+parent_source_node_type
+source_context_text
+source_text
+law_name
+article_no
+annex_title
+```
+
+### 7.3 Graph-RAG에서의 활용
+
+Parent context는 다음 작업에 사용된다.
+
+- Rule classification
+- Requirement extraction
+- Entity extraction
+- Answer evidence pack 구성
+- citation 문맥 보강
+- 위험한 단독 list item 해석 방지
+
+---
+
+## 8. Annex/별표/별지 전처리의 목적
+
+산업안전보건 법령에서는 핵심 판단 기준이 본문 조문이 아니라 Annex/별표/별지에 들어 있는 경우가 많다.
+
+예를 들어 다음 정보는 별표나 별지에 있을 가능성이 높다.
+
+- 안전검사 대상 기계
+- 안전인증 또는 자율안전확인 대상
+- 특별교육 대상 작업
+- 교육시간
+- 교육내용
+- 건강진단 항목
+- 유해인자 목록
+- 자격 기준
+- 서식 항목
+- 점검 항목
+- 비고에 포함된 예외 조건
+
+따라서 Annex를 단순한 text chunk로 처리하면 다음 문제가 생긴다.
+
+1. 표의 행과 열 관계가 사라진다.
+2. 목록 항목과 기준값이 섞인다.
+3. 비고와 본문 표의 연결이 끊긴다.
+4. 별표가 어떤 조문과 관련되는지 추적하기 어렵다.
+5. list item을 rule로 잘못 추출하여 retrieval noise가 증가할 수 있다.
+
+이 문제를 해결하기 위해 Annex Source Graph는 physical 구조와 logical 구조를 분리하여 생성하였다.
+
+---
+
+## 9. Annex Source Graph 생성 과정
+
+## 9.1 Annex 단위 추출
+
+### 산출 파일
+
+```text
+document_graph/source_annex/annexes.csv
+```
+
+### 역할
+
+annexes.csv는 별표/별지/서식 단위의 메타데이터와 원문 정보를 담는다.
+
+포함 가능한 정보는 다음과 같다.
+
+- annex_id
+- annex_no
+- annex_title
+- law_name 또는 law_version_id
+- related article 정보
+- source_text_raw
+- clean text
+- 기타 메타데이터
+
+### Graph-RAG에서의 역할
+
+Annex 기반 evidence의 최상위 source node이다. 답변에서 “별표 제목”을 표시하거나, 본문 rule이 “별표에 따른다”고 위임한 경우 관련 Annex를 찾아가는 기준점이 된다.
+
+---
+
+## 9.2 Annex section 추출
+
+### 산출 파일
+
+```text
+document_graph/source_annex/annex_sections.csv
+```
+
+### 역할
+
+annex_sections.csv는 Annex 내부의 section 구조를 표현한다. 큰 Annex는 여러 표, 비고, 설명 문구로 구성될 수 있으므로 section 단위가 필요하다.
+
+### Graph-RAG에서의 역할
+
+source context를 확장할 때 logical row 또는 note가 어느 section에 속하는지 확인하는 데 사용된다.
+
+---
+
+## 9.3 Physical table/row/cell 보존
+
+### 산출 파일
+
+```text
+document_graph/source_annex/annex_physical_tables.csv
+document_graph/source_annex/annex_physical_rows.csv
+document_graph/source_annex/annex_physical_cells.csv
+```
+
+### 역할
+
+Physical 구조는 원본 Annex 표의 표시 구조를 가능한 한 보존한다.
+
+- physical table: 원본 표 블록
+- physical row: 원본 표에서 보이는 행
+- physical cell: 원본 표의 셀
+
+### 왜 필요한가?
+
+별표 표는 병합 셀, 줄바꿈, 반복 header, 빈 셀, 다단 구조를 포함할 수 있다. reasoning 추출을 위해 logical row/cell로 병합하더라도, 나중에 원문 검증을 위해 어떤 physical row/cell에서 왔는지 추적할 수 있어야 한다.
+
+### Graph-RAG에서의 역할
+
+1차 answer generation에서는 logical row/cell이 더 중요할 수 있다. 하지만 원문 표 복원, 감사, citation 정밀화에는 physical 구조가 필요하다. 따라서 physical table/row/cell은 2차 Neo4j 적재 대상으로 둘 수 있다.
+
+---
+
+## 9.4 Logical row/cell 생성
+
+### 산출 파일
+
+```text
+document_graph/source_annex/annex_logical_rows.csv
+document_graph/source_annex/annex_logical_cells.csv
+```
+
+### 역할
+
+Logical 구조는 reasoning 추출에 적합하도록 병합된 의미 단위이다.
+
+- logical row: 여러 physical row에 걸친 하나의 의미 단위
+- logical cell: logical row 안의 column별 의미 단위
+
+### 왜 필요한가?
+
+표의 physical row가 그대로 의미 단위가 되지 않는 경우가 많다. 예를 들어 하나의 안전검사 대상 항목이 여러 줄에 걸쳐 있거나, 하나의 기준값이 여러 셀에 분산되어 있을 수 있다. 이 경우 reasoning 추출은 physical 구조가 아니라 logical 구조를 기준으로 수행해야 한다.
+
+### Graph-RAG에서의 역할
+
+Logical row/cell은 다음 질문의 핵심 evidence가 된다.
+
+- 안전검사 대상 기계에는 무엇이 있는가?
+- 특정 장비가 안전검사 대상인가?
+- 특별교육 대상 작업에는 무엇이 있는가?
+- 교육내용에는 어떤 항목이 포함되는가?
+- 건강진단 항목에는 어떤 검사가 포함되는가?
+- 자격 기준에는 어떤 자격이 포함되는가?
+
+---
+
+## 9.5 Annex note 추출
+
+### 산출 파일
+
+```text
+document_graph/source_annex/annex_notes.csv
+```
+
+### 역할
+
+annex_notes.csv는 Annex의 비고, 주석, 작성 방법, 유의사항 등 설명성 텍스트를 보존한다.
+
+### Graph-RAG에서의 역할
+
+비고에는 예외 조건, 적용 범위, 산정 기준, 작성 방법, 해석상 주의사항이 포함될 수 있다. 따라서 Annex note는 applicability_check, exception_lookup, document_requirement, form-related 질문에서 중요한 evidence가 될 수 있다.
+
+---
+
+## 10. Annex Source Graph edge 생성
+
+## 10.1 Annex와 Article 연결
+
+### 산출 파일
+
+```text
+document_graph/source_annex/edges_annex_to_articles.csv
+```
+
+### 역할
+
+Annex 제목에 포함된 “제N조 관련” 등의 정보를 기반으로 Annex와 본문 Article을 연결한다.
+
+### Graph-RAG에서의 역할
+
+본문 rule이 “별표에 따른다”고 되어 있고 실제 세부 기준이 Annex에 있는 경우, 본문 Article과 Annex를 함께 evidence pack에 포함할 수 있다.
+
+---
+
+## 10.2 Logical row와 logical cell 연결
+
+### 산출 파일
+
+```text
+document_graph/source_annex/edges_logical_row_to_logical_cells.csv
+```
+
+### 역할
+
+logical row와 그 내부 logical cell을 연결한다.
+
+### Graph-RAG에서의 역할
+
+row 단위 evidence와 cell 단위 evidence를 함께 구성할 수 있게 한다. 예를 들어 안전검사 대상 기계 목록에서 row는 대상 기계군을 나타내고, cell은 세부 장비명 또는 기준값을 나타낼 수 있다.
+
+---
+
+## 10.3 Logical source와 physical source 연결
+
+### 산출 파일
+
+```text
+document_graph/source_annex/edges_logical_row_to_source_physical_rows.csv
+document_graph/source_annex/edges_logical_cell_to_source_physical_cells.csv
+```
+
+### 역할
+
+logical row/cell이 어떤 physical row/cell에서 왔는지 추적한다.
+
+### Graph-RAG에서의 역할
+
+이 연결은 원문 표 복원과 source traceability를 보장한다. logical row/cell로 답변하더라도, 필요하면 원본 표의 physical 위치로 되돌아갈 수 있다.
+
+---
+
+## 10.4 기타 Annex 구조 edge
+
+### 산출 파일 예
+
+```text
+document_graph/source_annex/edges_annex_to_sections.csv
+document_graph/source_annex/edges_annex_to_physical_tables.csv
+document_graph/source_annex/edges_section_to_notes.csv
+document_graph/source_annex/edges_section_to_physical_tables.csv
+document_graph/source_annex/edges_physical_table_to_logical_rows.csv
+document_graph/source_annex/edges_law_to_annex.csv
+```
+
+### 역할
+
+Law, Annex, Section, PhysicalTable, LogicalRow, Note 간의 구조적 관계를 보존한다.
+
+### 주의사항
+
+이 파일들은 Annex source graph의 구조적 완성도에는 중요하지만, 1차 Neo4j 적재에서는 logical row/cell 중심으로 우선 적재하고 physical 계층은 2차 적재로 미룰 수 있다.
+
+---
+
+## 11. Annex ID mapping 및 reasoning input manifest
+
+### 산출 파일 예
+
+```text
+document_graph/source_annex/mapping_annex_ids.csv
+document_graph/source_annex/reasoning_input_manifest.csv
+```
+
+### 역할
+
+이 파일들은 Annex ID mapping과 reasoning input 구성 상태를 기록하는 보조 관리 파일이다.
+
+### Graph-RAG에서의 역할
+
+직접 retrieval 대상은 아니지만, Annex source graph와 Reasoning Graph의 추적성을 확인하는 데 도움이 된다. 특히 Annex source가 Reasoning Graph rule/list item으로 어떻게 이어졌는지 추적할 때 참고할 수 있다.
+
+---
+
+## 12. Document Graph와 Reasoning Graph의 연결
+
+Document Graph와 Reasoning Graph는 source_node_id를 통해 연결된다.
+
+핵심 연결은 다음과 같다.
+
+```text
+Rule
+→ edges_rule_source.csv
+→ source_node_id
+→ Document Graph 또는 Annex Source Graph의 source node
+```
+
+Reasoning Graph의 Rule은 다음 정보를 가진다.
+
+```text
+source_node_id
+source_node_type
+parent_source_node_id
+parent_source_node_type
+source_context_text
+source_text
+law_name
+article_no
+annex_title
+```
+
+이 정보 덕분에 Rule은 다음 source로 되돌아갈 수 있다.
+
+- Article
+- Paragraph
+- Item
+- Subitem
+- Addendum
+- Annex
+- LogicalRow
+- LogicalCell
+- AnnexNote
+
+Neo4j 적재 시에는 두 가지 방식이 가능하다.
+
+### 12.1 SourceNode placeholder 방식
+
+```text
+Rule -[:EXTRACTED_FROM]-> SourceNode
+```
+
+SourceNode에 source_node_id, source_text, source_context_text, law_name, article_no, annex_title 등을 저장한다. 이 방식은 1차 적재가 단순하고 안전하다.
+
+### 12.2 실제 source graph node와 직접 연결
+
+```text
+Rule -[:EXTRACTED_FROM]-> Article/Paragraph/Item/Subitem/LogicalRow/LogicalCell
+```
+
+이 방식은 traversal이 풍부하지만, source_node_id와 실제 source graph node ID의 매칭을 더 엄격하게 확인해야 한다.
+
+### 12.3 권장 방식
+
+현재 권장 방식은 균형형이다.
+
+```text
+1차 적재:
+Reasoning Graph
++ SourceNode
++ Article/Paragraph/Item/Subitem
++ Annex/LogicalRow/LogicalCell/AnnexNote
+
+2차 적재:
+PhysicalTable/PhysicalRow/PhysicalCell
++ rich source hierarchy
+```
+
+이렇게 하면 답변 생성에 필요한 source evidence를 충분히 확보하면서도, 초기 loader의 복잡도를 줄일 수 있다.
+
+---
+
+## 13. 최종 Document Graph 산출물
+
+## 13.1 본문 node 파일
+
+```text
+document_graph/nodes/nodes_law.csv
+document_graph/nodes/nodes_heading.csv
+document_graph/nodes/nodes_article.csv
+document_graph/nodes/nodes_paragraph.csv
+document_graph/nodes/nodes_item.csv
+document_graph/nodes/nodes_subitem.csv
+document_graph/nodes/nodes_addendum.csv
+```
+
+## 13.2 본문 edge 파일
+
+```text
+document_graph/edges/edges_contains.csv
+document_graph/edges/edges_law_hierarchy.csv
+document_graph/edges/edges_article_references.csv
+document_graph/edges/edges_refers.csv
+document_graph/edges/edges_law_rel.csv
+document_graph/edges/edges_law_relations.csv
+```
+
+주의:
+- 실제 최종 폴더에 포함된 파일명은 copied_files_manifest.csv 기준으로 확인한다.
+- 유사 edge 파일은 loader 구현 전 중복 여부를 확인해야 한다.
+
+## 13.3 Annex source graph 파일
+
+```text
+document_graph/source_annex/annexes.csv
+document_graph/source_annex/annex_sections.csv
+document_graph/source_annex/annex_physical_tables.csv
+document_graph/source_annex/annex_physical_rows.csv
+document_graph/source_annex/annex_physical_cells.csv
+document_graph/source_annex/annex_logical_rows.csv
+document_graph/source_annex/annex_logical_cells.csv
+document_graph/source_annex/annex_notes.csv
+document_graph/source_annex/edges_annex_to_articles.csv
+document_graph/source_annex/edges_logical_row_to_logical_cells.csv
+document_graph/source_annex/edges_logical_row_to_source_physical_rows.csv
+document_graph/source_annex/edges_logical_cell_to_source_physical_cells.csv
+```
+
+기타 Annex 구조 edge와 manifest 파일은 최종 폴더 구성에 따라 함께 포함될 수 있다.
+
+---
+
+## 14. 품질 관리 기준
+
+Document Graph 전처리에서 가장 중요한 품질 기준은 원문 추적성이다.
+
+### 14.1 source_text 보존
+
+각 source node는 원문 또는 정제된 원문 텍스트를 보존해야 한다. Reasoning Rule은 source_text를 통해 원문 근거를 제시할 수 있어야 한다.
+
+### 14.2 source_node_id 보존
+
+source_node_id는 Reasoning Graph와 Document Graph를 연결하는 핵심 키이다. 이 ID가 깨지면 Rule이 어떤 원문에서 추출되었는지 추적할 수 없다.
+
+### 14.3 parent context 보존
+
+item/subitem/list item은 단독으로 의미가 불완전한 경우가 많다. 따라서 source_context_text 또는 parent_source_node_id를 통해 상위 문맥을 복원할 수 있어야 한다.
+
+### 14.4 physical/logical traceability
+
+Annex logical row/cell은 reasoning 추출에 사용되지만, 원문 검증을 위해 physical row/cell과 연결되어야 한다.
+
+### 14.5 삭제/개정 정보 보존
+
+법령이나 Annex의 삭제/개정 정보는 임의 삭제하지 않고 상태 정보로 보존하는 것이 바람직하다. 이 정보는 법령 적용 시점이나 유효성 판단에서 중요할 수 있다.
+
+---
+
+## 15. Document Graph가 Graph-RAG에서 사용되는 방식
+
+Document Graph는 Graph-RAG에서 다음 방식으로 사용된다.
+
+### 15.1 Rule source citation
+
+검색된 Rule이 어떤 원문에서 추출되었는지 표시한다.
+
+예:
+
+```text
+산업안전보건법 제○조
+산업안전보건법 시행규칙 별표 ○
+산업안전보건기준에 관한 규칙 제○조
+```
+
+### 15.2 Parent context 확장
+
+Rule source가 item/subitem/list item일 경우 상위 paragraph/article을 함께 가져와 문맥을 보강한다.
+
+### 15.3 Annex evidence 제공
+
+Annex logical row/cell을 통해 목록형 질문의 근거를 제공한다.
+
+예:
+
+- 안전검사 대상 기계 목록
+- 특별교육 대상 작업
+- 교육내용
+- 건강진단 항목
+- 자격 기준
+
+### 15.4 Evidence Pack 구성
+
+향후 answer generation에서는 검색된 Rule을 중심으로 다음 source evidence를 함께 구성한다.
+
+```text
+Rule
++ Requirement
++ Threshold
++ Exception
++ TemporalRule
++ EntityType
++ ListItem
++ SourceNode
++ Article/Paragraph/Item/Subitem
++ Annex/LogicalRow/LogicalCell
+```
+
+Document Graph는 이 중 source evidence와 citation을 담당한다.
+
+---
+
+## 16. 논문 Methods에서 설명할 수 있는 핵심 포인트
+
+논문 또는 보고서에서는 Document Graph 전처리를 다음과 같은 관점으로 설명할 수 있다.
+
+1. 법령 본문을 계층적 Document Graph로 구조화하였다.
+2. 각 원문 단위에 source_node_id와 source_text를 부여하여 추적성을 확보하였다.
+3. paragraph-item-subitem 구조의 parent context를 보존하여 rule 추출 시 문맥 손실을 줄였다.
+4. Annex/별표/별지는 physical row/cell과 logical row/cell로 분리하였다.
+5. logical row/cell은 reasoning 추출에 사용하고, physical row/cell은 원문 추적성 검증에 사용하였다.
+6. Annex와 본문 조문은 “제N조 관련” 등의 정보를 이용해 연결하였다.
+7. Document Graph는 이후 Reasoning Graph의 원문 근거와 citation source로 사용된다.
+
+---
+
+## 17. 한계 및 향후 보완
+
+현재 Document Graph와 Annex Source Graph는 Graph-RAG 지식 베이스로 활용 가능한 수준으로 정리되어 있다. 다만 다음 한계와 보완점이 남아 있다.
+
+### 17.1 Source node ID 매칭 검증
+
+Reasoning Graph의 edges_rule_source.to_node_id가 실제 Document/Annex source node와 완전히 일치하는지는 Neo4j loader 구현 시 다시 검증해야 한다.
+
+### 17.2 Physical table full traversal
+
+Annex physical table/row/cell은 원문 표 복원과 감사에는 중요하지만, 초기 answer generation에는 logical row/cell 중심으로도 시작할 수 있다. 따라서 physical 계층은 2차 적재 대상으로 둘 수 있다.
+
+### 17.3 중복 edge 파일 확인
+
+edges_contains.csv와 edges_law_hierarchy.csv, edges_law_rel.csv와 edges_law_relations.csv처럼 역할이 유사한 파일은 loader 구현 전 중복 여부를 확인해야 한다.
+
+### 17.4 Annex 구조 복원 한계
+
+원본 JSON/HWP/PDF 구조에 따라 표 병합, 줄바꿈, 빈 셀 처리에는 한계가 있을 수 있다. 따라서 logical row/cell 기반 reasoning과 physical row/cell 기반 traceability를 함께 유지하는 전략이 필요하다.
+
+### 17.5 Citation granularity
+
+일부 답변에서는 Article 단위 citation으로 충분하지만, 목록형/별표형 질문에서는 LogicalRow 또는 LogicalCell 단위 citation이 필요할 수 있다. 향후 evidence pack 설계에서 citation granularity를 조정해야 한다.
+
+---
+
+## 18. 요약
+
+Document Graph 및 Annex Source Graph 전처리는 Graph-RAG 지식 베이스의 원문 기반을 만드는 단계이다.
+
+핵심 산출물은 다음과 같다.
+
+1. 본문 Document Graph
+   - Law, Heading, Article, Paragraph, Item, Subitem, Addendum node
+   - 계층 edge와 참조 edge
+   - 원문 source_text와 source_node_id 보존
+
+2. Annex Source Graph
+   - Annex, Section, PhysicalTable, PhysicalRow, PhysicalCell
+   - LogicalRow, LogicalCell, AnnexNote
+   - Annex와 Article 연결
+   - Logical source와 physical source 추적 edge
+
+3. Reasoning Graph와의 연결
+   - Rule은 source_node_id를 통해 Document/Annex source로 되돌아간다.
+   - source_context_text를 통해 parent context를 보존한다.
+   - Annex logical row/cell은 list item, 교육내용, 안전검사 대상, 건강진단 항목 등 목록형 evidence의 핵심 source가 된다.
+
+현재 Document Graph 전처리는 1차 완료 상태로 볼 수 있다. 구조적으로 Neo4j 적재를 막는 문제는 확인되지 않았지만, 실제 loader 구현 전에는 source_node_id resolve 방식, 중복 edge 파일 여부, physical/logical source 적재 우선순위를 확정해야 한다.

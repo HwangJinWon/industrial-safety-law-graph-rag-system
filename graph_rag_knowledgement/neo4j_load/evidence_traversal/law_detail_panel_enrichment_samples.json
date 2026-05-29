@@ -1,0 +1,1581 @@
+{
+  "created_at": "2026-05-07T17:46:15",
+  "law_detail_sample": {
+    "id": "lrow_eadf26121ecf",
+    "node_id": "lrow_eadf26121ecf",
+    "type": "SourceNode",
+    "label": "SourceNode",
+    "title": "산업안전보건법 시행규칙",
+    "law_name": "산업안전보건법 시행규칙",
+    "article_no": "",
+    "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+    "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+    "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+    "summary": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+    "why_relevant": "이 체크리스트 항목은 Graph-RAG evidence lookup에서 선택된 node_id를 통해 이 근거 노드와 연결되었습니다.",
+    "requirements": [
+      {
+        "requirement_id": "02084de3-1a28-5791-be84-b025bbab6b20",
+        "text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항"
+      }
+    ],
+    "penalties": [],
+    "citations": [
+      {
+        "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_anchor_label": "",
+        "source_anchor_id": "",
+        "source_node_id": "lrow_eadf26121ecf",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "evidence_kind": "source",
+        "confidence": "medium"
+      },
+      {
+        "citation_text": "LogicalRow:lrow_eadf26121ecf",
+        "law_name": "",
+        "article_no": "",
+        "annex_title": "",
+        "source_anchor_label": "LogicalRow",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_node_id": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "",
+        "evidence_kind": "source",
+        "confidence": "medium"
+      }
+    ],
+    "related_sources": [
+      {
+        "citation_text": "LogicalRow:lrow_eadf26121ecf",
+        "law_name": "",
+        "article_no": "",
+        "annex_title": "",
+        "source_anchor_label": "LogicalRow",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_node_id": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "",
+        "evidence_kind": "source",
+        "confidence": "medium"
+      }
+    ],
+    "warnings": [
+      {
+        "warning_type": "DIRECT_PENALTY_NOT_FOUND",
+        "severity": "medium",
+        "message": "현재 연결된 조항에서는 직접 처벌 근거가 확인되지 않았습니다."
+      }
+    ],
+    "text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+    "article_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+    "context": {
+      "parent": [],
+      "children": []
+    },
+    "children": [],
+    "neighbors": []
+  },
+  "checklist_first_items": [
+    {
+      "id": "compat-risk-assessment",
+      "title": "사전 위험성평가 실시 여부 확인",
+      "text": "사전 위험성평가 실시 여부 확인 - 작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+      "description": "작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+      "risk": "high",
+      "law_title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+      "law_node_id": "lrow_eadf26121ecf",
+      "node_id": "lrow_eadf26121ecf",
+      "completed": false,
+      "evidences": [
+        {
+          "law_name": "산업안전보건법 시행규칙",
+          "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+          "node_id": "lrow_eadf26121ecf",
+          "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "score": null,
+          "type": "source"
+        },
+        {
+          "law_name": "산업안전보건법 시행령",
+          "title": "산업안전보건법 시행령 제15조",
+          "node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+          "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+          "score": null,
+          "type": "source"
+        },
+        {
+          "law_name": "산업안전보건법 시행규칙",
+          "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+          "node_id": "lcell_126568e2feba",
+          "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+          "score": null,
+          "type": "rule"
+        }
+      ],
+      "warnings": [],
+      "evidence_query": "위험성평가를 실시해야 하나?",
+      "evidence_intent": "obligation_check",
+      "evidence_readiness": "READY_WITH_WARNINGS",
+      "answer_policy": "ALLOW_WITH_CAUTION"
+    },
+    {
+      "id": "compat-education-tbm",
+      "title": "작업 전 안전보건교육 및 TBM 실시 여부 확인",
+      "text": "작업 전 안전보건교육 및 TBM 실시 여부 확인 - 작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+      "description": "작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+      "risk": "mid",
+      "law_title": "산업안전보건법 시행규칙 제26조",
+      "law_node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+      "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+      "completed": false,
+      "evidences": [
+        {
+          "law_name": "산업안전보건법 시행규칙",
+          "title": "산업안전보건법 시행규칙 제26조",
+          "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+          "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+          "score": null,
+          "type": "source"
+        },
+        {
+          "law_name": "산업안전보건법 시행규칙",
+          "title": "산업안전보건법 시행규칙 제27조",
+          "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+          "source_text": "④ 법 제30조제1항제3호에 따라 관리감독자가 다음 각 호의 어느 하나에 해당하는 교육을 이수한 경우 별표 4 제1호의2가목의 관리감독자 정기교육시간을 면제할 수 있다. <개정 2025.5.30>",
+          "score": null,
+          "type": "source"
+        },
+        {
+          "law_name": "산업안전보건법 시행규칙",
+          "title": "산업안전보건법 시행규칙 안전보건교육 교육과정별 교육시간(제26조제1항 등 관련)",
+          "node_id": "lrow_1b5d201a73aa",
+          "source_text": "",
+          "score": null,
+          "type": "source"
+        }
+      ],
+      "warnings": [],
+      "evidence_query": "정기 안전보건교육은 몇 시간 해야 하나?",
+      "evidence_intent": "education_time_lookup",
+      "evidence_readiness": "READY_WITH_WARNINGS",
+      "answer_policy": "ALLOW_WITH_CAUTION"
+    },
+    {
+      "id": "compat-fall-prevention",
+      "title": "추락방지 조치 확인",
+      "text": "추락방지 조치 확인 - 안전난간, 작업발판, 안전대 등 추락 예방조치가 준비되었는지 확인합니다.",
+      "description": "안전난간, 작업발판, 안전대 등 추락 예방조치가 준비되었는지 확인합니다.",
+      "risk": "high",
+      "law_title": "산업안전보건법 제43조",
+      "law_node_id": "0fc746c875660b8085159dd8126463e84d063af1",
+      "node_id": "0fc746c875660b8085159dd8126463e84d063af1",
+      "completed": false,
+      "evidences": [
+        {
+          "law_name": "산업안전보건법",
+          "title": "산업안전보건법 제43조",
+          "node_id": "0fc746c875660b8085159dd8126463e84d063af1",
+          "source_text": "③ 고용노동부장관은 제1항 및 제2항 단서에 따른 확인 결과 유해위험방지계획서대로 유해ㆍ위험방지를 위한 조치가 되지 아니하는 경우에는 고용노동부령으로 정하는 바에 따라 시설 등의 개선, 사용중지 또는 작업중지 등 필요한 조치를 명할 수 있다.",
+          "score": null,
+          "type": "source"
+        },
+        {
+          "law_name": "산업안전보건법 시행규칙",
+          "title": "산업안전보건법 시행규칙 제48조",
+          "node_id": "88c223295517a7ee3e12a21d6d00c1ffb51d660b",
+          "source_text": "① 공단은 제46조 및 제47조에 따른 확인 결과 해당 사업장의 유해ㆍ위험의 방지상태가 적정하다고 판단되는 경우에는 5일 이내에 별지 제23호서식의 확인 결과 통지서를 사업주에게 발급해야 하며, 확인결과 경미한 유해ㆍ위험요인이 발견된 경우에는 일정한 기간을 정하여 개선하도록 권고하되, 해당 기간 내에 개선되지 않은 경우에는 기간 만료일부터 10일 이내에 별지 제24호서식의 확인결과 조치 요청서에 그 이유를 적은 서면을 첨부하여 지방고용노동관서의 장에게 보고해야 한다.",
+          "score": null,
+          "type": "source"
+        },
+        {
+          "law_name": "중대재해 처벌 등에 관한 법률",
+          "title": "중대재해 처벌 등에 관한 법률 제4조",
+          "node_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+          "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+          "score": null,
+          "type": "source"
+        }
+      ],
+      "warnings": [],
+      "evidence_query": "고소작업 추락 방지 조치는 무엇인가?",
+      "evidence_intent": "safety_measure_lookup",
+      "evidence_readiness": "READY",
+      "answer_policy": "ALLOW_DIRECT_ANSWER"
+    }
+  ],
+  "risk_guardrail_sample": {
+    "answer": "[결론]\n현재 KB에서는 해당 의무를 직접 뒷받침하는 조문 근거는 확인되지 않았고, 간접 근거만 확인됩니다.\n\n[근거]\n- e6a390cd-532c-56c9-bccf-c46575f4cc7d: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항\n- 95a9d186-fed1-5604-82b2-14064ea64cff: 교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항\n- b26632d5-1cc6-5432-95b7-136e9558389a: 제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.\n\n[주의]\n- 직접 근거가 없으므로 단정적인 예/아니오 답변을 생성하지 않습니다.\n- warning: UNKNOWN_RULE_TYPE - Rule type or subtype is UNKNOWN.\n- warning: UNKNOWN_RULE_TYPE - Rule type or subtype is UNKNOWN.\n- warning: DIRECT_EVIDENCE_NOT_FOUND - 현재 KB에서는 해당 의무를 직접 뒷받침하는 조문 근거가 확인되지 않았으며, 간접 근거만 확인됩니다.\n- missing: DIRECT_OBLIGATION_SOURCE - Direct source wording for risk-assessment result notice/disclosure to workers was not found.\n- claim_check: DIRECT_OBLIGATION_SOURCE_MISSING - Use an indirect-only response policy.\n- claim_check: INDIRECT_ONLY_EVIDENCE - Do not produce a direct affirmative or negative legal answer.\n\n[근거 조항]\n- 산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련) - 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 \n- 산업안전보건법 시행규칙 제9조 - 제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.\n- 산업안전보건법 시행령 제15조 - 가. 유해ㆍ위험요인의 파악에 대한 참여",
+    "mode": "qa",
+    "intent": "obligation_check",
+    "status": "OK_WITH_WARNINGS",
+    "evidence_readiness": "INDIRECT_ONLY",
+    "answer_policy": "INDIRECT_ONLY_RESPONSE",
+    "claim_check": {
+      "query": "위험성평가 결과를 근로자에게 알려야 하나?",
+      "intent": "obligation_check",
+      "pack_status": "OK_WITH_WARNINGS",
+      "evidence_readiness": "INDIRECT_ONLY",
+      "claim_check_status": "RESTRICTED",
+      "answer_policy": "INDIRECT_ONLY_RESPONSE",
+      "issues": [
+        {
+          "issue_type": "DIRECT_OBLIGATION_SOURCE_MISSING",
+          "severity": "high",
+          "message": "Direct obligation source is missing; only indirect evidence is available.",
+          "related_id": "",
+          "recommendation": "Use an indirect-only response policy."
+        },
+        {
+          "issue_type": "INDIRECT_ONLY_EVIDENCE",
+          "severity": "high",
+          "message": "Evidence readiness is INDIRECT_ONLY.",
+          "related_id": "",
+          "recommendation": "Do not produce a direct affirmative or negative legal answer."
+        },
+        {
+          "issue_type": "UNKNOWN_RULE_TYPE",
+          "severity": "medium",
+          "message": "Rule type or subtype is UNKNOWN.",
+          "related_id": "b26632d5-1cc6-5432-95b7-136e9558389a",
+          "recommendation": "Answer with caution if otherwise allowed."
+        },
+        {
+          "issue_type": "UNKNOWN_RULE_TYPE",
+          "severity": "medium",
+          "message": "Rule type or subtype is UNKNOWN.",
+          "related_id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755",
+          "recommendation": "Answer with caution if otherwise allowed."
+        },
+        {
+          "issue_type": "DIRECT_EVIDENCE_NOT_FOUND",
+          "severity": "high",
+          "message": "현재 KB에서는 해당 의무를 직접 뒷받침하는 조문 근거가 확인되지 않았으며, 간접 근거만 확인됩니다.",
+          "related_id": "",
+          "recommendation": "Restrict the answer to indirect evidence status."
+        },
+        {
+          "issue_type": "DIRECT_OBLIGATION_SOURCE",
+          "severity": "high",
+          "message": "Direct source wording for risk-assessment result notice/disclosure to workers was not found.",
+          "related_id": "",
+          "recommendation": "Restrict or refuse direct answer."
+        }
+      ],
+      "badges": [
+        {
+          "label": "간접 근거만 확인",
+          "severity": "warning",
+          "message": "Direct evidence is unavailable; restrict answer wording."
+        }
+      ],
+      "summary": {
+        "primary_evidence_count": 5,
+        "citation_count": 12,
+        "warning_count": 3,
+        "missing_evidence_count": 1,
+        "high_severity_issue_count": 4
+      }
+    },
+    "citations": [
+      {
+        "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_anchor_label": "LogicalRow",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_node_id": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 제9조",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "제9조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "Paragraph",
+        "source_anchor_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "source_node_id": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행령 제15조",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "Subitem",
+        "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_node_id": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_anchor_label": "LogicalRow",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_node_id": "lrow_eadf26121ecf",
+        "rule_id": "e6a390cd-532c-56c9-bccf-c46575f4cc7d",
+        "list_item_id": "",
+        "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "evidence_kind": "rule",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_anchor_label": "",
+        "source_anchor_id": "",
+        "source_node_id": "lrow_eadf26121ecf",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_anchor_label": "LogicalCell",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_node_id": "lcell_126568e2feba",
+        "rule_id": "95a9d186-fed1-5604-82b2-14064ea64cff",
+        "list_item_id": "",
+        "source_text_preview": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+        "evidence_kind": "rule",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_anchor_label": "LogicalCell",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_node_id": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 제9조",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "제9조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "Paragraph",
+        "source_anchor_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "source_node_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+        "rule_id": "b26632d5-1cc6-5432-95b7-136e9558389a",
+        "list_item_id": "",
+        "source_text_preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "evidence_kind": "rule",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행규칙 제9조",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "제9조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "",
+        "source_anchor_id": "",
+        "source_node_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행령 제15조",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "Subitem",
+        "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_node_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+        "rule_id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755",
+        "list_item_id": "",
+        "source_text_preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "evidence_kind": "rule",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행령 제15조",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "",
+        "source_anchor_id": "",
+        "source_node_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+        "rule_id": "",
+        "list_item_id": "",
+        "source_text_preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "evidence_kind": "source",
+        "confidence": "high"
+      },
+      {
+        "citation_text": "산업안전보건법 시행령 제15조",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "paragraph_no": "",
+        "item_no": "",
+        "subitem_no": "",
+        "annex_title": "",
+        "source_anchor_label": "Subitem",
+        "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_node_id": "629bbf803e6fc9e3033f47ee4a5bf36c4dd7dae0",
+        "rule_id": "2ffc23e4-1855-579b-878a-1bd394f86c7f",
+        "list_item_id": "",
+        "source_text_preview": "나. 개선조치의 시행에 대한 참여",
+        "evidence_kind": "rule",
+        "confidence": "high"
+      }
+    ],
+    "evidence_chips": [
+      {
+        "id": "lrow_eadf26121ecf",
+        "label": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "type": "source",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_node_id": "",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_anchor_label": "LogicalRow",
+        "rule_id": "",
+        "list_item_id": "",
+        "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "label": "산업안전보건법 시행규칙 제9조",
+        "type": "source",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "제9조",
+        "annex_title": "",
+        "source_node_id": "",
+        "source_anchor_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "source_anchor_label": "Paragraph",
+        "rule_id": "",
+        "list_item_id": "",
+        "preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "label": "산업안전보건법 시행령 제15조",
+        "type": "source",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "annex_title": "",
+        "source_node_id": "",
+        "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_anchor_label": "Subitem",
+        "rule_id": "",
+        "list_item_id": "",
+        "preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "e6a390cd-532c-56c9-bccf-c46575f4cc7d",
+        "label": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "type": "rule",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_node_id": "lrow_eadf26121ecf",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_anchor_label": "LogicalRow",
+        "rule_id": "e6a390cd-532c-56c9-bccf-c46575f4cc7d",
+        "list_item_id": "",
+        "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "95a9d186-fed1-5604-82b2-14064ea64cff",
+        "label": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "type": "rule",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "",
+        "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "source_node_id": "lcell_126568e2feba",
+        "source_anchor_id": "lrow_eadf26121ecf",
+        "source_anchor_label": "LogicalCell",
+        "rule_id": "95a9d186-fed1-5604-82b2-14064ea64cff",
+        "list_item_id": "",
+        "preview": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "b26632d5-1cc6-5432-95b7-136e9558389a",
+        "label": "산업안전보건법 시행규칙 제9조",
+        "type": "rule",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "제9조",
+        "annex_title": "",
+        "source_node_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+        "source_anchor_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "source_anchor_label": "Paragraph",
+        "rule_id": "b26632d5-1cc6-5432-95b7-136e9558389a",
+        "list_item_id": "",
+        "preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "severity": "warning",
+        "clickable": true
+      },
+      {
+        "id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+        "label": "산업안전보건법 시행규칙 제9조",
+        "type": "source",
+        "law_name": "산업안전보건법 시행규칙",
+        "article_no": "제9조",
+        "annex_title": "",
+        "source_node_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+        "source_anchor_id": "",
+        "source_anchor_label": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "preview": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755",
+        "label": "산업안전보건법 시행령 제15조",
+        "type": "rule",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "annex_title": "",
+        "source_node_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+        "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_anchor_label": "Subitem",
+        "rule_id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755",
+        "list_item_id": "",
+        "preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "severity": "warning",
+        "clickable": true
+      },
+      {
+        "id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+        "label": "산업안전보건법 시행령 제15조",
+        "type": "source",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "annex_title": "",
+        "source_node_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+        "source_anchor_id": "",
+        "source_anchor_label": "",
+        "rule_id": "",
+        "list_item_id": "",
+        "preview": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "severity": "indirect",
+        "clickable": true
+      },
+      {
+        "id": "2ffc23e4-1855-579b-878a-1bd394f86c7f",
+        "label": "산업안전보건법 시행령 제15조",
+        "type": "rule",
+        "law_name": "산업안전보건법 시행령",
+        "article_no": "제15조",
+        "annex_title": "",
+        "source_node_id": "629bbf803e6fc9e3033f47ee4a5bf36c4dd7dae0",
+        "source_anchor_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_anchor_label": "Subitem",
+        "rule_id": "2ffc23e4-1855-579b-878a-1bd394f86c7f",
+        "list_item_id": "",
+        "preview": "나. 개선조치의 시행에 대한 참여",
+        "severity": "indirect",
+        "clickable": true
+      }
+    ],
+    "evidences": [
+      {
+        "law_name": "산업안전보건법 시행규칙",
+        "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "node_id": "lrow_eadf26121ecf",
+        "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+        "score": null,
+        "type": "source"
+      },
+      {
+        "law_name": "산업안전보건법 시행규칙",
+        "title": "산업안전보건법 시행규칙 제9조",
+        "node_id": "d716fe45965cb33bfa4c3b73b6a5dccd2d71ce9d",
+        "source_text": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "score": null,
+        "type": "source"
+      },
+      {
+        "law_name": "산업안전보건법 시행령",
+        "title": "산업안전보건법 시행령 제15조",
+        "node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+        "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "score": null,
+        "type": "source"
+      },
+      {
+        "law_name": "산업안전보건법 시행규칙",
+        "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+        "node_id": "lcell_126568e2feba",
+        "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+        "score": null,
+        "type": "rule"
+      },
+      {
+        "law_name": "산업안전보건법 시행규칙",
+        "title": "산업안전보건법 시행규칙 제9조",
+        "node_id": "eb38824debf228539bdefcf88f6de7d700120fc9",
+        "source_text": "제9조(안전보건관리책임자의 업무) 법 제15조제1항제9호에서 \"고용노동부령으로 정하는 사항\"이란 법 제36조에 따른 위험성평가의 실시에 관한 사항과 안전보건규칙에서 정하는 근로자의 위험 또는 건강장해의 방지에 관한 사항을 말한다.",
+        "score": null,
+        "type": "rule"
+      },
+      {
+        "law_name": "산업안전보건법 시행령",
+        "title": "산업안전보건법 시행령 제15조",
+        "node_id": "a8321587ebae06734ef13ec34c8bbf9d51b81731",
+        "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+        "score": null,
+        "type": "rule"
+      },
+      {
+        "law_name": "산업안전보건법 시행령",
+        "title": "산업안전보건법 시행령 제15조",
+        "node_id": "629bbf803e6fc9e3033f47ee4a5bf36c4dd7dae0",
+        "source_text": "나. 개선조치의 시행에 대한 참여",
+        "score": null,
+        "type": "rule"
+      }
+    ],
+    "warnings": [
+      {
+        "warning_type": "UNKNOWN_RULE_TYPE",
+        "severity": "medium",
+        "message": "Rule type or subtype is UNKNOWN.",
+        "related_id": "b26632d5-1cc6-5432-95b7-136e9558389a"
+      },
+      {
+        "warning_type": "UNKNOWN_RULE_TYPE",
+        "severity": "medium",
+        "message": "Rule type or subtype is UNKNOWN.",
+        "related_id": "b6dbc0d5-d606-5e2c-a3ed-112c2ecaf755"
+      },
+      {
+        "warning_type": "DIRECT_EVIDENCE_NOT_FOUND",
+        "severity": "high",
+        "message": "현재 KB에서는 해당 의무를 직접 뒷받침하는 조문 근거가 확인되지 않았으며, 간접 근거만 확인됩니다.",
+        "related_id": "",
+        "reference": {
+          "audit_report": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_audit.txt",
+          "audit_matches": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_matches.csv",
+          "source_coverage_judgment": "ONLY_INDIRECT_EVIDENCE_FOUND"
+        }
+      }
+    ],
+    "missing_evidence": [
+      {
+        "missing_type": "DIRECT_OBLIGATION_SOURCE",
+        "message": "Direct source wording for risk-assessment result notice/disclosure to workers was not found.",
+        "severity": "high",
+        "reference": {
+          "audit_report": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_audit.txt",
+          "audit_matches": "graph_rag_knowledgement/neo4j_load/evidence_traversal/risk_assessment_notice_source_coverage_matches.csv"
+        }
+      }
+    ],
+    "debug": {
+      "llm_used": false,
+      "graph_db": "graph.v1",
+      "primary_evidence_count": 5,
+      "supporting_evidence_count": 0,
+      "citation_count": 12,
+      "legacy_evidence_count": 7,
+      "query_field_normalized": "query"
+    },
+    "evidence_pack": {
+      "primary_evidence_count": 5,
+      "supporting_evidence_count": 0
+    }
+  },
+  "http_8766": {
+    "created_at": "2026-05-07T17:45:38",
+    "server_started": true,
+    "server_exit_code": 1,
+    "tests": [
+      {
+        "method": "GET",
+        "path": "/health",
+        "status": 200,
+        "elapsed_sec": 1.537,
+        "data": {
+          "status": "ok",
+          "service": "graph-rag-ask-adapter",
+          "graph_db": "graph.v1",
+          "llm_used_default": false
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/site-checklist-ui",
+        "status": 200,
+        "elapsed_sec": 2.406,
+        "data": {
+          "answer": "입력한 현장 조건을 기준으로 기본 안전 점검 항목을 생성했습니다. 본 결과는 1차 compatibility checklist이며, 세부 법령 근거 기반 체크리스트는 후속 Graph-RAG checklist pipeline에서 보강됩니다.",
+          "items": [
+            {
+              "id": "compat-risk-assessment",
+              "title": "사전 위험성평가 실시 여부 확인",
+              "text": "사전 위험성평가 실시 여부 확인 - 작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+              "description": "작업 전 위험요인을 확인하고 필요한 예방조치를 검토합니다.",
+              "risk": "high",
+              "law_title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+              "law_node_id": "lrow_eadf26121ecf",
+              "node_id": "lrow_eadf26121ecf",
+              "completed": false,
+              "evidences": [
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+                  "node_id": "lrow_eadf26121ecf",
+                  "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+                  "score": null,
+                  "type": "source"
+                },
+                {
+                  "law_name": "산업안전보건법 시행령",
+                  "title": "산업안전보건법 시행령 제15조",
+                  "node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+                  "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+                  "score": null,
+                  "type": "source"
+                },
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+                  "node_id": "lcell_126568e2feba",
+                  "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+                  "score": null,
+                  "type": "rule"
+                }
+              ],
+              "warnings": [],
+              "evidence_query": "위험성평가를 실시해야 하나?",
+              "evidence_intent": "obligation_check",
+              "evidence_readiness": "READY_WITH_WARNINGS",
+              "answer_policy": "ALLOW_WITH_CAUTION"
+            },
+            {
+              "id": "compat-education-tbm",
+              "title": "작업 전 안전보건교육 및 TBM 실시 여부 확인",
+              "text": "작업 전 안전보건교육 및 TBM 실시 여부 확인 - 작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+              "description": "작업내용, 위험요인, 보호구, 비상조치를 작업자에게 공유했는지 확인합니다.",
+              "risk": "mid",
+              "law_title": "산업안전보건법 시행규칙 제26조",
+              "law_node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+              "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+              "completed": false,
+              "evidences": [
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 제26조",
+                  "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+                  "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+                  "score": null,
+                  "type": "source"
+                },
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 제27조",
+                  "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+                  "source_text": "④ 법 제30조제1항제3호에 따라 관리감독자가 다음 각 호의 어느 하나에 해당하는 교육을 이수한 경우 별표 4 제1호의2가목의 관리감독자 정기교육시간을 면제할 수 있다. <개정 2025.5.30>",
+                  "score": null,
+                  "type": "source"
+                },
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 안전보건교육 교육과정별 교육시간(제26조제1항 등 관련)",
+                  "node_id": "lrow_1b5d201a73aa",
+                  "source_text": "",
+                  "score": null,
+                  "type": "source"
+                }
+              ],
+              "warnings": [],
+              "evidence_query": "정기 안전보건교육은 몇 시간 해야 하나?",
+              "evidence_intent": "education_time_lookup",
+              "evidence_readiness": "READY_WITH_WARNINGS",
+              "answer_policy": "ALLOW_WITH_CAUTION"
+            },
+            {
+              "id": "compat-safety-state-1",
+              "title": "미완료 안전조치 확인: ???? ??",
+              "text": "미완료 안전조치 확인: ???? ?? - 현장 안전상태 입력에서 미완료로 표시된 항목을 우선 점검합니다.",
+              "description": "현장 안전상태 입력에서 미완료로 표시된 항목을 우선 점검합니다.",
+              "risk": "mid",
+              "law_title": "산업안전보건법 시행규칙 제27조",
+              "law_node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+              "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+              "completed": false,
+              "evidences": [
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 제27조",
+                  "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+                  "source_text": "② 영 제16조 및 제20조에 따른 안전관리자 및 보건관리자를 선임할 의무가 없는 사업장의 사업주가 법 제11조제3호에 따라 노무를 제공하는 자의 건강 유지ㆍ증진을 위하여 설치된 근로자건강센터(이하 \"근로자건강센터\"라 한다)에서 실시하는 안전보건교육, 건강상담, 건강관리프로그램 등 근로자 건강관리 활동에 해당 사업장의 근로자를 참여하게 한 경우에는 해당 시간을 제26조제1항에 따른 교육 중 해당 반기(관리감독자의 지위에 있는 사람의 경우 해당 연도)의 근로자 정기교육 시간에서 면제할 수 있다. 이 경우 사업주는 해당 사업장의 ...",
+                  "score": null,
+                  "type": "source"
+                },
+                {
+                  "law_name": "중대재해 처벌 등에 관한 법률",
+                  "title": "중대재해 처벌 등에 관한 법률 제5조",
+                  "node_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+                  "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+                  "score": null,
+                  "type": "source"
+                },
+                {
+                  "law_name": "산업안전보건법 시행규칙",
+                  "title": "산업안전보건법 시행규칙 제26조",
+                  "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+                  "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+                  "score": null,
+                  "type": "source"
+                }
+              ],
+              "warnings": [],
+              "evidence_query": "작업 전 안전보건 조치 의무는 무엇인가?",
+              "evidence_intent": "obligation_check",
+              "evidence_readiness": "READY",
+              "answer_policy": "ALLOW_DIRECT_ANSWER"
+            }
+          ],
+          "evidences": [
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+              "node_id": "lrow_eadf26121ecf",
+              "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "산업안전보건법 시행령",
+              "title": "산업안전보건법 시행령 제15조",
+              "node_id": "01858e27e8f5978a5ebe27d98d11be9a96f5cc3e",
+              "source_text": "가. 유해ㆍ위험요인의 파악에 대한 참여",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+              "node_id": "lcell_126568e2feba",
+              "source_text": "교육대상: 관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항",
+              "score": null,
+              "type": "rule"
+            },
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 제26조",
+              "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+              "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 제27조",
+              "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+              "source_text": "④ 법 제30조제1항제3호에 따라 관리감독자가 다음 각 호의 어느 하나에 해당하는 교육을 이수한 경우 별표 4 제1호의2가목의 관리감독자 정기교육시간을 면제할 수 있다. <개정 2025.5.30>",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 안전보건교육 교육과정별 교육시간(제26조제1항 등 관련)",
+              "node_id": "lrow_1b5d201a73aa",
+              "source_text": "",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 제27조",
+              "node_id": "a8b0fa5f73299bdfd7e2dcb9b2a1865807531c2d",
+              "source_text": "② 영 제16조 및 제20조에 따른 안전관리자 및 보건관리자를 선임할 의무가 없는 사업장의 사업주가 법 제11조제3호에 따라 노무를 제공하는 자의 건강 유지ㆍ증진을 위하여 설치된 근로자건강센터(이하 \"근로자건강센터\"라 한다)에서 실시하는 안전보건교육, 건강상담, 건강관리프로그램 등 근로자 건강관리 활동에 해당 사업장의 근로자를 참여하게 한 경우에는 해당 시간을 제26조제1항에 따른 교육 중 해당 반기(관리감독자의 지위에 있는 사람의 경우 해당 연도)의 근로자 정기교육 시간에서 면제할 수 있다. 이 경우 사업주는 해당 사업장의 ...",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제5조",
+              "node_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "산업안전보건법 시행규칙",
+              "title": "산업안전보건법 시행규칙 제26조",
+              "node_id": "1911c8e5de17c506d90a34b569c0543feaa899dd",
+              "source_text": "① 법 제29조제1항부터 제3항까지의 규정에 따라 사업주가 근로자에게 실시해야 하는 안전보건교육의 교육시간은 별표 4와 같고, 교육내용은 별표 5와 같다. 이 경우 사업주가 법 제29조제3항에 따른 유해하거나 위험한 작업에 필요한 안전보건교육(이하 \"특별교육\"이라 한다)을 실시한 때에는 해당 근로자에 대하여 법 제29조제2항에 따라 채용할 때 해야 하는 교육(이하 \"채용 시 교육\"이라 한다) 및 작업내용을 변경할 때 해야 하는 교육(이하 \"작업내용 변경 시 교육\"이라 한다)을 실시한 것으로 본다.",
+              "score": null,
+              "type": "source"
+            }
+          ],
+          "warnings": [],
+          "debug": {
+            "adapter_type": "compatibility_checklist",
+            "llm_used": false,
+            "graph_db": "graph.v1",
+            "item_count": 3,
+            "linked_item_count": 3,
+            "evidence_item_count": 3
+          }
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/law/lrow_eadf26121ecf",
+        "status": 200,
+        "elapsed_sec": 0.076,
+        "data": {
+          "id": "lrow_eadf26121ecf",
+          "node_id": "lrow_eadf26121ecf",
+          "type": "SourceNode",
+          "label": "SourceNode",
+          "title": "산업안전보건법 시행규칙",
+          "law_name": "산업안전보건법 시행규칙",
+          "article_no": "",
+          "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+          "source_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "summary": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "why_relevant": "이 체크리스트 항목은 Graph-RAG evidence lookup에서 선택된 node_id를 통해 이 근거 노드와 연결되었습니다.",
+          "requirements": [
+            {
+              "requirement_id": "02084de3-1a28-5791-be84-b025bbab6b20",
+              "text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+              "preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항"
+            }
+          ],
+          "penalties": [],
+          "citations": [
+            {
+              "citation_text": "산업안전보건법 시행규칙 안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+              "law_name": "산업안전보건법 시행규칙",
+              "article_no": "",
+              "annex_title": "안전보건교육 교육대상별 교육내용(제26조제1항 등 관련)",
+              "source_anchor_label": "",
+              "source_anchor_id": "",
+              "source_node_id": "lrow_eadf26121ecf",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+              "evidence_kind": "source",
+              "confidence": "medium"
+            },
+            {
+              "citation_text": "LogicalRow:lrow_eadf26121ecf",
+              "law_name": "",
+              "article_no": "",
+              "annex_title": "",
+              "source_anchor_label": "LogicalRow",
+              "source_anchor_id": "lrow_eadf26121ecf",
+              "source_node_id": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "",
+              "evidence_kind": "source",
+              "confidence": "medium"
+            }
+          ],
+          "related_sources": [
+            {
+              "citation_text": "LogicalRow:lrow_eadf26121ecf",
+              "law_name": "",
+              "article_no": "",
+              "annex_title": "",
+              "source_anchor_label": "LogicalRow",
+              "source_anchor_id": "lrow_eadf26121ecf",
+              "source_node_id": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "",
+              "evidence_kind": "source",
+              "confidence": "medium"
+            }
+          ],
+          "warnings": [
+            {
+              "warning_type": "DIRECT_PENALTY_NOT_FOUND",
+              "severity": "medium",
+              "message": "현재 연결된 조항에서는 직접 처벌 근거가 확인되지 않았습니다."
+            }
+          ],
+          "text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "article_text": "관리자 역할에 관한 사항 10) 보건관리계획 및 운용에 관한 사 11) 근로자 건강관리 및 응급처치에 관한 사항 12) 위험성평가에 관한 사항 13) 감염병 예방에 관한 사항 14) 자살 예방에 관한 사항 15) 그 밖에 보건관리자의 직무 향상 을 위하여 필요한 사항 | 위하여 필요한 사항",
+          "context": {
+            "parent": [],
+            "children": []
+          },
+          "children": [],
+          "neighbors": []
+        }
+      },
+      {
+        "method": "POST",
+        "path": "/ask",
+        "status": 200,
+        "elapsed_sec": 0.417,
+        "data": {
+          "answer": "[결론]\n확인된 근거를 기준으로 답변할 수 있습니다.\n\n[근거]\n- 4d6b714d-5695-5896-8156-4438ef8877e2: ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.\n- 014c4942-6b2c-5e27-a5c9-b3b1c0f78413: 제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.\n- 0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec: ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.\n\n[근거 조항]\n- 중대재해 처벌 등에 관한 법률 제4조 - ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.\n- 중대재해 처벌 등에 관한 법률 제5조 - 제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이\n- 중대재해 처벌 등에 관한 법률 제9조 - ① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한",
+          "mode": "qa",
+          "intent": "obligation_check",
+          "status": "OK",
+          "evidence_readiness": "READY",
+          "answer_policy": "ALLOW_DIRECT_ANSWER",
+          "claim_check": {
+            "query": "????? ??? ????? ??? ???",
+            "intent": "obligation_check",
+            "pack_status": "OK",
+            "evidence_readiness": "READY",
+            "claim_check_status": "PASS",
+            "answer_policy": "ALLOW_DIRECT_ANSWER",
+            "issues": [],
+            "badges": [
+              {
+                "label": "직접 근거 확인",
+                "severity": "success",
+                "message": "Citation-backed direct answer is allowed."
+              }
+            ],
+            "summary": {
+              "primary_evidence_count": 5,
+              "citation_count": 11,
+              "warning_count": 0,
+              "missing_evidence_count": 0,
+              "high_severity_issue_count": 0
+            }
+          },
+          "citations": [
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제4조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제4조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+              "source_node_id": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "source",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제5조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제5조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "source_node_id": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "evidence_kind": "source",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_node_id": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "source",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제4조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제4조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+              "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+              "rule_id": "4d6b714d-5695-5896-8156-4438ef8877e2",
+              "list_item_id": "",
+              "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "rule",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제4조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제4조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "",
+              "source_anchor_id": "",
+              "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "source",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제5조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제5조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+              "rule_id": "014c4942-6b2c-5e27-a5c9-b3b1c0f78413",
+              "list_item_id": "",
+              "source_text_preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "evidence_kind": "rule",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제5조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제5조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "",
+              "source_anchor_id": "",
+              "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "evidence_kind": "source",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+              "rule_id": "0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec",
+              "list_item_id": "",
+              "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "rule",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "",
+              "source_anchor_id": "",
+              "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+              "rule_id": "",
+              "list_item_id": "",
+              "source_text_preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "source",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_node_id": "9e7d2dcd8aefc77a8739dbaa573141f5c45aad6d",
+              "rule_id": "2578ff74-9655-50e8-bfcb-de7dca5cf6d8",
+              "list_item_id": "",
+              "source_text_preview": "② 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 공중이용시설 또는 공중교통수단의 설계, 설치, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "evidence_kind": "rule",
+              "confidence": "high"
+            },
+            {
+              "citation_text": "중대재해 처벌 등에 관한 법률 제9조",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "paragraph_no": "",
+              "item_no": "",
+              "subitem_no": "",
+              "annex_title": "",
+              "source_anchor_label": "Paragraph",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_node_id": "16405701ab74350e7e6457b73bc4a3d02fdaff5b",
+              "rule_id": "353cde78-8164-52da-a217-8d6de93a253f",
+              "list_item_id": "",
+              "source_text_preview": "③ 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 공중이용시설 또는 공중교통수단과 관련하여 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 제2항의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "evidence_kind": "rule",
+              "confidence": "high"
+            }
+          ],
+          "evidence_chips": [
+            {
+              "id": "6adff12319a4d7e0a751a82637484faa48340d94",
+              "label": "중대재해 처벌 등에 관한 법률 제4조",
+              "type": "source",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제4조",
+              "annex_title": "",
+              "source_node_id": "",
+              "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "",
+              "list_item_id": "",
+              "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "label": "중대재해 처벌 등에 관한 법률 제5조",
+              "type": "source",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제5조",
+              "annex_title": "",
+              "source_node_id": "",
+              "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "",
+              "list_item_id": "",
+              "preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "label": "중대재해 처벌 등에 관한 법률 제9조",
+              "type": "source",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "annex_title": "",
+              "source_node_id": "",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "",
+              "list_item_id": "",
+              "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "4d6b714d-5695-5896-8156-4438ef8877e2",
+              "label": "중대재해 처벌 등에 관한 법률 제4조",
+              "type": "rule",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제4조",
+              "annex_title": "",
+              "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+              "source_anchor_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "4d6b714d-5695-5896-8156-4438ef8877e2",
+              "list_item_id": "",
+              "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+              "label": "중대재해 처벌 등에 관한 법률 제4조",
+              "type": "source",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제4조",
+              "annex_title": "",
+              "source_node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+              "source_anchor_id": "",
+              "source_anchor_label": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "014c4942-6b2c-5e27-a5c9-b3b1c0f78413",
+              "label": "중대재해 처벌 등에 관한 법률 제5조",
+              "type": "rule",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제5조",
+              "annex_title": "",
+              "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+              "source_anchor_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "014c4942-6b2c-5e27-a5c9-b3b1c0f78413",
+              "list_item_id": "",
+              "preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+              "label": "중대재해 처벌 등에 관한 법률 제5조",
+              "type": "source",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제5조",
+              "annex_title": "",
+              "source_node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+              "source_anchor_id": "",
+              "source_anchor_label": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "preview": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec",
+              "label": "중대재해 처벌 등에 관한 법률 제9조",
+              "type": "rule",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "annex_title": "",
+              "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "0ccf6969-c3e7-5e67-9fc4-2eac1553a4ec",
+              "list_item_id": "",
+              "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+              "label": "중대재해 처벌 등에 관한 법률 제9조",
+              "type": "source",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "annex_title": "",
+              "source_node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+              "source_anchor_id": "",
+              "source_anchor_label": "",
+              "rule_id": "",
+              "list_item_id": "",
+              "preview": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "2578ff74-9655-50e8-bfcb-de7dca5cf6d8",
+              "label": "중대재해 처벌 등에 관한 법률 제9조",
+              "type": "rule",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "annex_title": "",
+              "source_node_id": "9e7d2dcd8aefc77a8739dbaa573141f5c45aad6d",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "2578ff74-9655-50e8-bfcb-de7dca5cf6d8",
+              "list_item_id": "",
+              "preview": "② 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 공중이용시설 또는 공중교통수단의 설계, 설치, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "severity": "normal",
+              "clickable": true
+            },
+            {
+              "id": "353cde78-8164-52da-a217-8d6de93a253f",
+              "label": "중대재해 처벌 등에 관한 법률 제9조",
+              "type": "rule",
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "article_no": "제9조",
+              "annex_title": "",
+              "source_node_id": "16405701ab74350e7e6457b73bc4a3d02fdaff5b",
+              "source_anchor_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_anchor_label": "Paragraph",
+              "rule_id": "353cde78-8164-52da-a217-8d6de93a253f",
+              "list_item_id": "",
+              "preview": "③ 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 공중이용시설 또는 공중교통수단과 관련하여 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 제2항의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "severity": "normal",
+              "clickable": true
+            }
+          ],
+          "evidences": [
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제4조",
+              "node_id": "6adff12319a4d7e0a751a82637484faa48340d94",
+              "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제5조",
+              "node_id": "92869e797ef5f67a718714a16099f9b57e0f3d28",
+              "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제9조",
+              "node_id": "cc882a48ea9a913b24127b99fe0e8bec11b5af62",
+              "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "score": null,
+              "type": "source"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제4조",
+              "node_id": "46054a4fe12f943d3362f688c33dd06d7d4a9d35",
+              "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 종사자의 안전ㆍ보건상 유해 또는 위험을 방지하기 위하여 그 사업 또는 사업장의 특성 및 규모 등을 고려하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "score": null,
+              "type": "rule"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제5조",
+              "node_id": "6ce11d5cb4c07ada53b7939bac6d4989baf836cb",
+              "source_text": "제5조(도급, 용역, 위탁 등 관계에서의 안전 및 보건 확보의무) 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 제3자의 종사자에게 중대산업재해가 발생하지 아니하도록 제4조의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "score": null,
+              "type": "rule"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제9조",
+              "node_id": "34d01611aa61e4921b21d6c168e7abfc49c72307",
+              "source_text": "① 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 사업 또는 사업장에서 생산ㆍ제조ㆍ판매ㆍ유통 중인 원료나 제조물의 설계, 제조, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "score": null,
+              "type": "rule"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제9조",
+              "node_id": "9e7d2dcd8aefc77a8739dbaa573141f5c45aad6d",
+              "source_text": "② 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 실질적으로 지배ㆍ운영ㆍ관리하는 공중이용시설 또는 공중교통수단의 설계, 설치, 관리상의 결함으로 인한 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 다음 각 호에 따른 조치를 하여야 한다.",
+              "score": null,
+              "type": "rule"
+            },
+            {
+              "law_name": "중대재해 처벌 등에 관한 법률",
+              "title": "중대재해 처벌 등에 관한 법률 제9조",
+              "node_id": "16405701ab74350e7e6457b73bc4a3d02fdaff5b",
+              "source_text": "③ 사업주 또는 경영책임자등은 사업주나 법인 또는 기관이 공중이용시설 또는 공중교통수단과 관련하여 제3자에게 도급, 용역, 위탁 등을 행한 경우에는 그 이용자 또는 그 밖의 사람의 생명, 신체의 안전을 위하여 제2항의 조치를 하여야 한다. 다만, 사업주나 법인 또는 기관이 그 시설, 장비, 장소 등에 대하여 실질적으로 지배ㆍ운영ㆍ관리하는 책임이 있는 경우에 한정한다.",
+              "score": null,
+              "type": "rule"
+            }
+          ],
+          "warnings": [],
+          "missing_evidence": [],
+          "debug": {
+            "llm_used": false,
+            "graph_db": "graph.v1",
+            "primary_evidence_count": 5,
+            "supporting_evidence_count": 0,
+            "citation_count": 11,
+            "legacy_evidence_count": 8,
+            "query_field_normalized": "query"
+          },
+          "evidence_pack": {
+            "primary_evidence_count": 5,
+            "supporting_evidence_count": 0
+          }
+        }
+      }
+    ],
+    "linked_node_id": "lrow_eadf26121ecf",
+    "linked_item_count": 3,
+    "evidence_item_count": 3
+  },
+  "neo4j_write_executed": false,
+  "llm_used": false
+}

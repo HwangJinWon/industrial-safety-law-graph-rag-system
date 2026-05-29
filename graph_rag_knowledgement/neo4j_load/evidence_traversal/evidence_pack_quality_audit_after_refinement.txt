@@ -1,0 +1,63 @@
+Evidence Pack Quality Audit After Refinement
+================================================
+
+Summary:
+- Pack generation PASS for all 6 smoke-test queries.
+- education_time_lookup improved from NEEDS_REFINEMENT to READY_WITH_WARNINGS.
+- inspection_requirement improved from NEEDS_REFINEMENT to READY_WITH_WARNINGS.
+- obligation_check/risk assessment improved from NOT_READY_FOR_THIS_QUERY to NEEDS_REFINEMENT, but should not be used for answer generation until direct notice evidence is retrieved.
+- penalty_lookup and applicability_check remain usable with their prior caveats.
+
+appointment_requirement
+-----------------------
+query: 안전관리자는 어떤 기준으로 선임해야 하나?
+before_status: READY_WITH_NOTES
+after_status: READY_WITH_NOTES
+answer_generation_readiness: READY_WITH_NOTES
+improvement_summary: No targeted change; still strong appointment/reporting evidence.
+remaining_warning: Some broad secondary appointment context remains.
+
+education_time_lookup
+---------------------
+query: 정기 안전보건교육은 몇 시간 해야 하나?
+before_status: NEEDS_REFINEMENT
+after_status: READY_WITH_WARNINGS
+answer_generation_readiness: READY_WITH_WARNINGS
+improvement_summary: Annex logical supporting evidence is now included and missing_evidence for threshold was removed.
+remaining_warning: Some Rule candidates still lack direct threshold; actual hour extraction needs citation formatter/table cell refinement.
+
+inspection_requirement
+----------------------
+query: 안전검사 대상 기계에는 어떤 것들이 있나?
+before_status: NEEDS_REFINEMENT
+after_status: READY_WITH_WARNINGS
+answer_generation_readiness: READY_WITH_WARNINGS
+improvement_summary: Specialized inspection ranking now surfaces equipment/list items such as crane/lift/gondola and EQUIPMENT_ITEM near top.
+remaining_warning: Some ARTICLE_REFERENCE_LIST/procedure-adjacent items still appear; list ranking can be refined further.
+
+obligation_check
+----------------
+query: 위험성평가 결과를 근로자에게 알려야 하나?
+before_status: NOT_READY_FOR_THIS_QUERY
+after_status: NEEDS_REFINEMENT
+answer_generation_readiness: NEEDS_REFINEMENT
+improvement_summary: Risk-assessment-specific retrieval now surfaces ????? candidates.
+remaining_warning: Direct result/worker notice evidence is still weak; needs critical term alignment for ??+???+??/??.
+
+penalty_lookup
+--------------
+query: 과태료가 부과되는 경우는 무엇인가?
+before_status: READY_WITH_WARNINGS
+after_status: READY_WITH_WARNINGS
+answer_generation_readiness: READY_WITH_WARNINGS
+improvement_summary: Penalty evidence remains stable; warnings reduced to related-rule gap.
+remaining_warning: Related violation/obligation rule still missing for detailed penalty answers.
+
+applicability_check
+-------------------
+query: 적용 제외되는 경우가 있나?
+before_status: READY
+after_status: READY
+answer_generation_readiness: READY
+improvement_summary: No targeted change; exclusion/applicability evidence remains aligned.
+remaining_warning: None material.

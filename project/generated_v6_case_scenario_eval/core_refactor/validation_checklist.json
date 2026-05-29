@@ -1,0 +1,7 @@
+{
+  "strict_dataset_count": 27,
+  "auxiliary_dataset_count": 10,
+  "review_only_dataset_count": 3,
+  "expected_counts_preserved": true,
+  "sensitive_output_hits": []
+}

@@ -1,0 +1,115 @@
+﻿Neo4j Evidence Traversal Verification Report
+====================================================
+
+1. Verification Purpose
+Validate that loaded Neo4j graph.v1 can support Graph-RAG evidence pack traversal using read-only Cypher samples.
+
+2. Verification Metadata
+- verification_started: 2026-05-06 22:49:28
+- target_database: graph.v1
+- target_uri: <neo4j-uri>
+- user: neo4j
+- verification_mode: READ_ONLY_VERIFICATION
+- write_queries_executed: NO
+- password_logged: NO
+
+3. Basic Graph Counts
+- total_nodes: 60822
+- total_relationships: 71459
+
+Node label counts:
+- LogicalCell: 16741
+- Rule: 8858
+- SourceNode: 8858
+- LogicalRow: 7972
+- Requirement: 3639
+- ListItem: 3604
+- Item: 2957
+- Paragraph: 2567
+- Threshold: 1782
+- Article: 1270
+- Exception: 647
+- EntityType: 586
+- Subitem: 513
+- TemporalRule: 227
+- Annex: 201
+- Heading: 194
+- AnnexNote: 119
+- Addendum: 81
+- Law: 6
+
+Relationship type counts:
+- HAS_LOGICAL_CELL: 16741
+- RELATED_ENTITY: 8969
+- EXTRACTED_FROM: 8858
+- RESOLVES_TO: 8858
+- HAS_LOGICAL_ROW: 7972
+- CONTAINS: 7582
+- RELATED_RULE: 5881
+- HAS_REQUIREMENT: 3639
+- HAS_THRESHOLD: 1782
+- HAS_EXCEPTION: 647
+- HAS_TEMPORAL_CONDITION: 279
+- HAS_NOTE: 119
+- RELATED_TO_ARTICLE: 101
+- HAS_LIST_ITEM: 31
+
+4. Core Source Connectivity
+- missing_source_text_rules: 0
+- rules_without_source: 0
+- unresolved_source_nodes: 0
+
+5. Evidence Traversal Results
+- requirement_evidence: PASS (sample_rows=10) - sample rows returned: 10
+- threshold_evidence: PASS (sample_rows=10) - sample rows returned: 10
+- exception_evidence: PASS (sample_rows=10) - sample rows returned: 10
+- entity_evidence: PASS (sample_rows=10) - sample rows returned: 10
+- list_item_evidence: WARN (sample_rows=10) - sample rows returned: 10; direct HAS_LIST_ITEM coverage is intentionally limited to 31 relationships
+- unlinked_list_item_source_evidence: PASS (sample_rows=20) - sample rows returned: 20
+- rule_to_rule_reasoning: PASS (sample_rows=20) - sample rows returned: 20
+- source_node_resolution_evidence: PASS (sample_rows=20) - sample rows returned: 20
+
+6. Source Hierarchy Traversal Results
+- law_heading_article: PASS (sample_rows=20) - sample rows returned: 20; actual Article property is article_no_display
+- article_paragraph_item_subitem: PASS (sample_rows=20) - sample rows returned: 20; actual text property is text, not source_text
+- annex_article: PASS (sample_rows=20) - sample rows returned: 20; actual Article property is article_no_display
+- annex_logical_row_cell: PASS (sample_rows=20) - sample rows returned: 20
+- annex_note: PASS (sample_rows=20) - sample rows returned: 20
+
+7. Intent-Specific Evidence Results
+- education_time_evidence: PASS (sample_rows=20) - sample rows returned: 20
+- inspection_list_evidence: PASS (sample_rows=30) - sample rows returned: 30
+- penalty_evidence: PASS (sample_rows=20) - sample rows returned: 20
+- applicability_exception_evidence: PASS (sample_rows=20) - sample rows returned: 20
+
+8. Quality Signals
+- UNKNOWN rule_type/subtype count: 1995
+- needs_review count: 513
+- ListItem without direct Rule edge count: 3573
+
+SourceNode type distribution:
+- annex_logical_row: 2337
+- item: 2099
+- paragraph: 2090
+- annex_logical_cell: 1859
+- subitem: 375
+- annex_note: 98
+
+9. WARN List
+- list_item_evidence: sample rows returned: 10; direct HAS_LIST_ITEM coverage is intentionally limited to 31 relationships
+- UNKNOWN rule_type/subtype count: 1995
+- needs_review count: 513
+- ListItem without direct Rule edge count: 3573
+
+10. FAIL List
+- none
+
+11. Final Decision
+- final_status: EVIDENCE_TRAVERSAL_PASS_WITH_WARNINGS
+- conclusion: Core evidence traversal is available for Graph-RAG evidence pack construction. Remaining warnings are quality/coverage signals, especially ListItem direct edge coverage and UNKNOWN/needs_review rules.
+
+12. Recommended Next Steps
+- Use sample Cypher templates as the basis for Graph-RAG evidence pack assembly.
+- Treat UNKNOWN/needs_review and ListItem direct-edge gaps as quality signals, not load blockers.
+- If list-item reasoning coverage becomes important, patch CSV source edges and reload rather than editing Neo4j directly.
+

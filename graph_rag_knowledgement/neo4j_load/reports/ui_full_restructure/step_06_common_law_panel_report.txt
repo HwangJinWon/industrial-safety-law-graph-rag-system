@@ -1,0 +1,29 @@
+step_id: 06
+step_name: Common law detail panel
+status: PASS
+
+변경 내용:
+- 기존 체크리스트 내부 법령 상세 패널을 renderLawPanel() 공통 함수로 분리했다.
+- 체크리스트, 법령 QA, 근거 탐색 페이지에서 같은 selectedLaw 상세 패널을 재사용한다.
+
+표시 순서:
+- 관련 법령 제목
+- 법령명/조문번호/별표명
+- 요약
+- 조문 원문 또는 근거 내용
+- 이 항목과 연결된 이유
+- 연결된 근거
+- 확인해야 할 사항
+- 위반 시 예상 처벌
+- 직접 처벌 근거
+- 후보 처벌 근거
+- 관련 근거 출처
+- warnings
+- 개발자용 연결 ID(details 접힘)
+
+candidate penalty 안전성:
+- 후보, 검토 필요, 확정 아님 badge를 유지했다.
+- match_type/confidence/candidate_notice를 표시한다.
+
+Neo4j write: 없음
+LLM 호출: 없음

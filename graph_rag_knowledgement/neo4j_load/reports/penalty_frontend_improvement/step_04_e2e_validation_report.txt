@@ -1,0 +1,51 @@
+E2E Validation Report
+=====================
+
+created_at: 2026-05-07
+status: PASS_WITH_BUILD_WARNING
+
+Tests run
+---------
+1. python -B 05_code\graph_rag_pipeline\smoke_test_end_to_end_ask.py --root-dir .
+   - result: PASS
+   - output: graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_report.txt
+   - samples: graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_samples.json
+
+2. python -B 05_code\graph_rag_pipeline\smoke_test_frontend_compat_endpoints.py --root-dir .
+   - result: PASS
+   - output: graph_rag_knowledgement/neo4j_load/reports/frontend_compat_endpoint_implementation_report.txt
+   - samples: graph_rag_knowledgement/neo4j_load/evidence_traversal/site_checklist_evidence_linking_samples.json
+
+3. npm run build
+   - result: FAIL
+   - reason: Vite config loading failed with Windows EPERM during child process spawn.
+   - package.json modified: false
+   - dependency versions modified: false
+
+/ask summary
+------------
+- appointment_requirement: READY / ALLOW_DIRECT_ANSWER
+- education_time_lookup path currently classified by smoke query as obligation_check: READY / ALLOW_DIRECT_ANSWER
+- inspection_requirement: READY_WITH_WARNINGS / ALLOW_WITH_CAUTION
+- risk assessment notice: INDIRECT_ONLY / INDIRECT_ONLY_RESPONSE
+- penalty_lookup: READY_WITH_WARNINGS / ALLOW_WITH_CAUTION
+- applicability_check: READY / ALLOW_DIRECT_ANSWER
+
+Checklist penalty sample
+------------------------
+- compat-risk-assessment: direct penalties=0, candidate penalties=2
+- compat-education-tbm: direct penalties=0, candidate penalties=0
+- compat-confined-space: direct penalties=0, candidate penalties=2
+- compat-safety-state-1: direct penalties=0, candidate penalties=2
+
+Safety
+------
+- Neo4j write: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+- package.json modification: none
+
+Result
+------
+The backend/frontend integration now distinguishes direct penalty evidence from candidate penalty evidence. The UI can display candidate penalty/fine provisions without treating them as confirmed penalty conclusions. The build warning remains an environment issue around Windows process spawning in Vite/Rolldown.

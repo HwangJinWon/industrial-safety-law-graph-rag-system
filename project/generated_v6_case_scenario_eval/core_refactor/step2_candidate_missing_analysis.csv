@@ -1,0 +1,69 @@
+﻿split,case_id,case_name,missing_ref,missing_type,article_family_hit,group,slot
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제62조,article_family_missing,False,supporting,management_system
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제2조 제9호,definition_scope_fine_missing,True,supporting,definition
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제4조,article_family_hit_but_fine_missing,True,core,serious_accident_obligation
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제1항,article_family_hit_but_fine_missing,True,core,primary_obligation
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 시행령 제4조 제5호,detail_rule_fine_missing,True,supporting,enforcement_decree_detail
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제2조 제2호,definition_scope_fine_missing,True,supporting,definition
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제1항,article_family_hit_but_fine_missing,True,core,primary_obligation
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 시행령 제4조 제5호,detail_rule_fine_missing,True,supporting,enforcement_decree_detail
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제2조 제2호,definition_scope_fine_missing,True,supporting,definition
+strict,6,산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사)[중대재해 처벌 등에 관한 법률 부칙 제1조 제1항 단서의 ‘상시 근로자가 50명 미만인 사업 또는 사업장’의 해석이 문제된 사건],중대재해처벌법 제2조 제9호,definition_scope_fine_missing,True,supporting,definition
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조,penalty_fine_missing,True,core,penalty
+strict,13,산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,14,산업안전보건법 위반·업무상과실치사,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,21,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,22,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제13조 제3항,article_family_missing,False,supporting,management_system
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제31조,article_family_missing,False,supporting,management_system
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제14조,article_family_missing,False,supporting,management_system
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제5조 제1항 제2호,article_family_missing,False,supporting,management_system
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제14조 제1항,article_family_missing,False,supporting,management_system
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제14조 제2항,article_family_missing,False,supporting,management_system
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제41조 제1항,article_family_missing,False,supporting,management_system
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제41조 제3항,article_family_missing,False,supporting,management_system
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제5조 제1항,article_family_missing,False,supporting,management_system
+strict,44,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,45,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 시행규칙 제30조 제4항,article_family_missing,False,supporting,enforcement_rule_detail
+strict,45,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,48,산업안전보건법위반,산업안전보건기준에 관한 규칙 제3조 제2항,article_family_missing,False,supporting,safety_health_standard
+strict,48,산업안전보건법위반,산업안전보건기준에 관한 규칙 제619조 제1항,article_family_missing,False,supporting,safety_health_standard
+strict,48,산업안전보건법위반,산업안전보건법 제167조,penalty_fine_missing,True,core,penalty
+strict,48,산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,48,산업안전보건법위반,산업안전보건법 제2조 제6호,definition_scope_fine_missing,True,supporting,definition
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건기준에 관한 규칙 제619조 제1항,article_family_missing,False,supporting,safety_health_standard
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제2조 제10호,definition_scope_fine_missing,True,supporting,definition
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제2조 제4호,definition_scope_fine_missing,True,supporting,definition
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제13조 제3항,article_family_missing,False,supporting,management_system
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제31조,article_family_missing,False,supporting,management_system
+strict,54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],산업안전보건기준에 관한 규칙 제1조,article_family_missing,False,supporting,safety_health_standard
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제2조 제4호,definition_scope_fine_missing,True,supporting,definition
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제2조 제3호,definition_scope_fine_missing,True,supporting,definition
+strict,60,산업안전보건법위반,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+strict,68,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조,corporate_penalty_fine_missing,True,core,corporate_penalty
+auxiliary,15,산업안전보건법 위반,산업안전보건법 시행령 제27조 제2항,article_family_missing,False,supporting,enforcement_decree_detail
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 시행령 제26조 제1항,article_family_missing,False,supporting,enforcement_decree_detail
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제38조,article_family_missing,False,core,primary_obligation
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 시행규칙 제6조,article_family_missing,False,supporting,enforcement_rule_detail
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 시행령 제11조,article_family_missing,False,supporting,enforcement_decree_detail
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건기준에 관한 규칙 제38조,article_family_missing,False,supporting,safety_health_standard
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 시행규칙 제30조 제4항,article_family_missing,False,supporting,enforcement_rule_detail
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제38조,article_family_missing,False,core,primary_obligation
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 시행규칙 제6조,article_family_missing,False,supporting,enforcement_rule_detail
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 시행령 제11조,article_family_missing,False,supporting,enforcement_decree_detail
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건기준에 관한 규칙 제38조 제1항,article_family_missing,False,supporting,safety_health_standard
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제13조,article_family_missing,False,supporting,management_system
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건기준에 관한 규칙 제44조 제1항,article_family_missing,False,supporting,safety_health_standard
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건기준에 관한 규칙 제619조 제1항,article_family_missing,False,supporting,safety_health_standard
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제2조 제6호,definition_scope_fine_missing,True,supporting,definition
+auxiliary,56,산업안전보건법위반,산업안전보건법 시행규칙 제30조 제5항,article_family_missing,False,supporting,enforcement_rule_detail
+auxiliary,62,산업안전보건법위반,산업안전보건법 제38조,article_family_missing,False,core,primary_obligation
+auxiliary,62,산업안전보건법위반,산업안전보건법 제69조 제1호,article_family_missing,False,supporting,other_supporting

@@ -1,0 +1,63 @@
+﻿Source Hierarchy Dry-Run Audit
+==============================
+
+1. dry-run 실행 결과
+- command: python 05_code\neo4j_load\load_graph_rag_knowledge.py --root-dir . --phase source_hierarchy --dry-run
+- status: DRY_RUN_OK
+- warnings: 1
+- errors: 0
+- write 발생: 없음
+- run log folder: 
+graph_rag_knowledgement\manifests\neo4j_load_runs\run_20260506_222627
+
+2. 본문 hierarchy 후보 비교
+- edges_contains.csv: exists=True, rows=7745, header=from_id,to_id,rel, from=from_id, to=to_id, rel=rel, duplicate_pairs=0
+- edges_law_hierarchy.csv: exists=True, rows=7745, header=from_id,to_id,rel, from=from_id, to=to_id, rel=rel, duplicate_pairs=0
+- overlapping unique pairs between contains/hierarchy: 7745
+- rel distribution edges_contains.csv: 
+HAS_ITEM=2957; HAS_PARAGRAPH=2567; HAS_ARTICLE=1270; HAS_SUBITEM=513; HAS_HEADING=194; HAS_ANNEX=163; HAS_ADDENDUM=81
+- rel distribution edges_law_hierarchy.csv: 
+HAS_ITEM=2957; HAS_PARAGRAPH=2567; HAS_ARTICLE=1270; HAS_SUBITEM=513; HAS_HEADING=194; HAS_ANNEX=163; HAS_ADDENDUM=81
+- 판단: 둘 다 같은 header/from_id/to_id/rel 구조이며 row count와 overlap을 기준으로 중복 가능성이 높다. 이름상 edges_law_hierarchy.csv가 source hierarchy 목적에 더 명확하므로 1차 후보로 더 적합하다.
+
+3. law relation 후보 비교
+- edges_law_rel.csv: exists=True, rows=10, header=from_law_node_id,to_law_node_id,base_law_id,related_law_id,rel_code,rel_label,rel, duplicate_pairs=0
+- edges_law_relations.csv: exists=True, rows=10, header=from_law_node_id,to_law_node_id,base_law_id,related_law_id,rel_code,rel_label,rel, duplicate_pairs=0
+- overlapping unique pairs between law_rel/law_relations: 10
+- 판단: law-to-law relation 파일이며 containment hierarchy가 아니다. 1차 source_hierarchy에는 포함하지 않는 것을 권장.
+
+4. Annex hierarchy 후보 검토
+- edges_annex_to_articles.csv: rows=102, from=from, to=to, rel=edge_type, duplicate_pairs=1, rel_distribution=
+REFERS_ARTICLE=102
+- edges_logical_row_to_logical_cells.csv: rows=16741, from=from_logical_row_id, to=to_logical_cell_id, rel=rel, duplicate_pairs=0
+- annex_logical_rows.csv: rows=7972, can_generate Annex->LogicalRow with annex_id/logical_row_id, duplicate_pairs=0
+- annex_logical_cells.csv: rows=16741, can_generate LogicalRow->LogicalCell with logical_row_id/logical_cell_id, duplicate_pairs=0
+- annex_notes.csv: rows=119, can_generate Annex->AnnexNote with annex_id/note_id, duplicate_pairs=0
+
+5. 1차 적재 추천 edge 목록
+- (:Law)-[:CONTAINS]->(:Article), (:Article)-[:CONTAINS]->(:Paragraph), (:Paragraph)-[:CONTAINS]->(:Item), (:Item)-[:CONTAINS]->(:Subitem): edges_law_hierarchy.csv를 우선 후보로 하되, rel/type 분포 확인 후 한 파일만 사용.
+- (:Annex)-[:RELATED_TO_ARTICLE]->(:Article): edges_annex_to_articles.csv 사용.
+- (:Annex)-[:HAS_LOGICAL_ROW]->(:LogicalRow): annex_logical_rows.csv에서 생성.
+- (:LogicalRow)-[:HAS_LOGICAL_CELL]->(:LogicalCell): edges_logical_row_to_logical_cells.csv 또는 annex_logical_cells.csv 중 하나만 사용. edge CSV를 우선 추천.
+- (:Annex)-[:HAS_NOTE]->(:AnnexNote): annex_notes.csv에서 생성 가능.
+
+6. 2차 적재 또는 제외 권장
+- edges_contains.csv: edges_law_hierarchy.csv와 중복 가능성이 있어 첫 execute에서는 제외 또는 비교 후 대체 후보로 유지.
+- edges_law_rel.csv / edges_law_relations.csv: law relation graph용이며 source hierarchy 1차 대상 아님.
+- edges_physical_table_to_logical_rows.csv 및 physical row/cell provenance edges: PhysicalTable/Row/Cell 2차 적재 때 검토.
+- section_to_notes / section_to_physical_tables: Section node 적재 정책 확정 후 2차 검토.
+
+7. source_hierarchy execute 가능 여부
+- 가능하나 전체 source_hierarchy를 한 번에 execute하지 말고, body hierarchy와 annex hierarchy를 분리한 phase 또는 옵션으로 제한 실행 권장.
+- 현재 loader의 source_hierarchy execute는 보수적으로 미구현/검토 경고 상태이므로, execute 전 명시적 edge plan을 코드에 반영해야 한다.
+
+8. 위험 요소
+- edges_contains.csv와 edges_law_hierarchy.csv 중복 적재 위험.
+- LogicalRow->LogicalCell을 edge CSV와 annex_logical_cells.csv 양쪽에서 생성하면 중복 위험.
+- edges_annex_to_articles.csv의 to 값이 Article.article_id인지 article_no인지 매핑 확인 필요.
+- source_hierarchy가 이미 적재된 1차 Graph-RAG 핵심 validation을 훼손하지 않도록 MERGE key를 엄격히 해야 함.
+
+9. 최종 추천
+- source_hierarchy execute는 지금 즉시 하지 말 것.
+- 먼저 edges_law_hierarchy.csv의 rel 값과 endpoint label mapping을 샘플링하여 Law/Article/Paragraph/Item/Subitem만 명시 매핑하는 loader 보강을 권장.
+- Annex hierarchy는 Annex->LogicalRow, LogicalRow->LogicalCell, Annex->Article부터 제한적으로 추가하는 것이 안전하다.

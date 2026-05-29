@@ -1,0 +1,73 @@
+﻿split,case_id,case_name,missing_chain_gt_ref,group,slot,level,article_in_chain,exact_in_candidate,article_in_candidate,exact_in_selected,failure_cause
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,1,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,False,selected_promotion_failure
+strict,2,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,False,selected_promotion_failure
+strict,3,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,False,selected_promotion_failure
+strict,4,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제1항,core,primary_obligation,fine,True,False,True,True,candidate_fine_missing
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,False,selected_promotion_failure
+strict,5,산업안전보건법위반·업무상과실치사·중대재해처벌등에관한법률위반(산업재해치사),산업안전보건법 제38조 제1항,core,primary_obligation,fine,True,False,True,True,candidate_fine_missing
+strict,7,업무상과실치사·산업안전보건법위반·중대재해처벌등에관한법률위반(산업재해치사),중대재해처벌법 제6조,core,penalty,article,True,False,True,False,candidate_fine_missing
+strict,13,산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,False,False,True,False,candidate_fine_missing
+strict,13,산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,13,산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,14,산업안전보건법 위반·업무상과실치사,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,14,산업안전보건법 위반·업무상과실치사,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+strict,21,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,21,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+strict,22,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,22,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,False,False,True,False,candidate_fine_missing
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,26,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,False,False,True,False,candidate_fine_missing
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,27,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,False,False,True,False,candidate_fine_missing
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,30,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,False,selected_promotion_failure
+strict,35,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+strict,44,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,44,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,49,산업안전보건법위반·업무상과실치사,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+strict,51,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,False,False,True,False,candidate_fine_missing
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,52,증거인멸·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+strict,54,건축물관리법위반·업무상과실치사·업무상과실치상·산업안전보건법위반[도급인이 산업안전보건법 제63조에 따라 부담하는 안전·보건조치의무의 내용이 문제된 사건],산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+strict,55,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,False,selected_promotion_failure
+strict,57,업무상과실치사(변경된 죄명: 산업안전보건법위반),산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+strict,60,산업안전보건법위반,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,60,산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+strict,68,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조,core,corporate_penalty,article,True,False,True,False,candidate_fine_missing
+strict,68,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제39조,core,health_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,15,산업안전보건법 위반,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제38조,core,primary_obligation,article,False,False,False,False,candidate_article_missing
+auxiliary,28,업무상과실치사·업무상과실치상·산업안전보건법위반,산업안전보건법 제39조,core,health_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,36,업무상과실치사ㆍ업무상과실치상ㆍ산업안전보건법위반[대형 조선소 작업 현장에서 크레인끼리 충돌하여 근로자들이 사망 및 부상당한 사건],산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+auxiliary,40,업무상과실치사·산업안전보건법위반,산업안전보건법 제38조,core,primary_obligation,article,False,False,False,False,candidate_article_missing
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,41,업무상과실치사·산업안전보건법위반·업무상과실치상,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,43,업무상과실치사·산업안전보건법위반,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,50,산업안전보건법위반·업무상과실치사,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,56,산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,56,산업안전보건법위반,산업안전보건법 제39조,core,health_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,56,산업안전보건법위반,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,59,산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,True,True,True,True,chain_fine_granularity_mismatch
+auxiliary,59,산업안전보건법위반,산업안전보건법 제63조,core,contractor_obligation,article,False,True,True,True,chain_connection_failure
+auxiliary,62,산업안전보건법위반,산업안전보건법 제173조 제1호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+auxiliary,62,산업안전보건법위반,산업안전보건법 제173조 제2호,core,corporate_penalty,fine,False,True,True,True,chain_connection_failure
+auxiliary,62,산업안전보건법위반,산업안전보건법 제38조,core,primary_obligation,article,False,False,False,False,candidate_article_missing

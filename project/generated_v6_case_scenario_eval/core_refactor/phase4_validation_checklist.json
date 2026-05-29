@@ -1,0 +1,19 @@
+{
+  "existing_v6_reviewed_dataset_unmodified": true,
+  "gt_unmodified": true,
+  "existing_evaluator_unmodified": true,
+  "phase1_2_3_outputs_not_overwritten": true,
+  "all_new_files_phase4_prefix": true,
+  "article_38_39_no_unsupported_auto_fix": true,
+  "article_173_not_unconditionally_selected": true,
+  "no_case_id_hardcoding": true,
+  "candidate_not_evaluated_as_selected": true,
+  "old_current_ambiguity_review_flag": true,
+  "sensitive_output_hits": [],
+  "py_compile_passed": true,
+  "strict_aux_review_only_count": [
+    27,
+    10,
+    3
+  ]
+}

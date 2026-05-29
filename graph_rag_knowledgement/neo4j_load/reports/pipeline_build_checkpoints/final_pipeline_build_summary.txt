@@ -1,0 +1,83 @@
+Final Pipeline Build Summary
+============================
+
+created_at: 2026-05-07 13:00:00
+
+Step results:
+- Step 1 CitationFormatter + ClaimChecker: PASS
+- Step 2 AnswerGenerator: PASS
+- Step 3 FastAPI Ask Adapter: PASS_WITH_WARNINGS
+- Step 4 Frontend Minimal Graph-RAG Update: PASS_WITH_WARNINGS
+- Step 5 End-to-End Smoke Test and Final Documentation: PASS
+
+Created files:
+- 05_code/graph_rag_pipeline/answer_generator.py
+- 05_code/graph_rag_pipeline/smoke_test_answer_generator.py
+- 05_code/graph_rag_pipeline/ask_adapter.py
+- 05_code/graph_rag_pipeline/smoke_test_ask_adapter.py
+- 05_code/graph_rag_pipeline/smoke_test_end_to_end_ask.py
+- graph_rag_knowledgement/neo4j_load/reports/answer_generator_implementation_note.md
+- graph_rag_knowledgement/neo4j_load/reports/frontend_graph_rag_ui_update_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/graph_rag_pipeline_final_status_report.md
+- graph_rag_knowledgement/neo4j_load/reports/team_share_summary_graph_rag_pipeline.txt
+- graph_rag_knowledgement/neo4j_load/reports/pipeline_build_checkpoints/step_01_citation_claim_check_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/pipeline_build_checkpoints/step_02_answer_generator_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/pipeline_build_checkpoints/step_03_ask_adapter_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/pipeline_build_checkpoints/step_04_frontend_update_report.txt
+- graph_rag_knowledgement/neo4j_load/reports/pipeline_build_checkpoints/step_05_end_to_end_report.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/answer_generator_smoke_test_report.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/answer_generator_smoke_test_samples.json
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/ask_adapter_smoke_test_report.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/ask_adapter_smoke_test_samples.json
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_report.txt
+- graph_rag_knowledgement/neo4j_load/evidence_traversal/end_to_end_ask_smoke_test_samples.json
+
+Modified files:
+- 05_code/graph_rag_pipeline/citation_formatter.py
+- 05_code/graph_rag_pipeline/claim_check.py
+- 05_code/graph_rag_pipeline/smoke_test_citation_and_claim_check.py
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+- graph_rag_knowledgement/neo4j_load/reports/citation_and_claim_check_implementation_note.md
+- graph_rag_knowledgement/neo4j_load/reports/pipeline_build_checkpoints/pipeline_build_status.csv
+
+Deleted files:
+- none
+
+Smoke test results:
+- citation_claim_check: PASS
+- answer_generator: PASS
+- ask_adapter: PASS
+- end_to_end_ask: PASS
+- frontend build: PASS_WITH_WARNINGS because dependencies are unavailable and npm install was not run
+
+Query answer_policy summary:
+- appointment_requirement: ALLOW_DIRECT_ANSWER
+- education_time_lookup: ALLOW_WITH_CAUTION
+- inspection_requirement: ALLOW_WITH_CAUTION
+- obligation_check risk-assessment notice: INDIRECT_ONLY_RESPONSE
+- penalty_lookup: ALLOW_WITH_CAUTION
+- applicability_check: ALLOW_DIRECT_ANSWER
+
+Blockers:
+- none for backend direct /ask schema smoke test
+
+Remaining warnings:
+- FastAPI server runtime not launched
+- frontend build/browser verification not completed because node_modules/vite are unavailable
+- /law source-detail compatibility remains future work
+- template answers are not final production legal prose
+
+Safety:
+- Neo4j write during pipeline build: none
+- LLM call: none
+- CSV modification: none
+- loader modification: none
+- important file deletion: none
+- password value logged: no
+
+Next recommended work:
+1. Install frontend dependencies in a controlled environment and run npm build.
+2. Launch the FastAPI adapter and test the real HTTP /ask endpoint.
+3. Add /law or /source-detail compatibility for evidence chip clicks.
+4. Review template answer wording before adding any LLM-based generator.

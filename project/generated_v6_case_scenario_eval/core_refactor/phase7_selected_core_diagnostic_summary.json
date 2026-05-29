@@ -1,0 +1,15 @@
+{
+  "original_precision": 0.4597295708406819,
+  "original_recall": 0.806496178718401,
+  "original_f1": 0.5558814642147976,
+  "adjusted_precision": 0.7020576131687243,
+  "adjusted_recall": 0.806496178718401,
+  "adjusted_f1": 0.7216249799583133,
+  "selected_law_count": 6.925925925925926,
+  "neutral_chain_completion_count": 2.4074074074074074,
+  "sample_count": 27,
+  "official_phase3_selected_core_f1": 0.5814706898040233,
+  "official_phase3_selected_core_precision": 0.482363315696649,
+  "official_phase3_selected_core_recall": 0.8139035861258083,
+  "interpretation": "Adjusted metric does not change prediction or GT; it treats legally necessary chain-completion refs as neutral rather than false positives when GT only contains downstream penalty/corporate refs."
+}

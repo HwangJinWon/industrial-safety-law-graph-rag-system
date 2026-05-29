@@ -1,0 +1,72 @@
+﻿Evidence Pack Assembler Smoke Test Report
+========================================
+- created_at: 2026-05-07 11:41:11
+- root_dir: <project-root>
+- target_uri: <neo4j-uri>
+- target_database: graph.v1
+- user: neo4j
+- credential_note: password value intentionally omitted
+- mode: READ_ONLY_EVIDENCE_PACK_SMOKE_TEST
+- llm_used: false
+- neo4j_write_executed: false
+- final_status: PASS
+
+Query Results:
+- query: 안전관리자는 어떤 기준으로 선임해야 하나?
+  intent: appointment_requirement
+  pack_type: rule_centered
+  status: OK
+  evidence_readiness: READY
+  primary_evidence_count: 5
+  citation_candidate_count: 5
+  warning_count: 0
+  missing_evidence_count: 0
+- query: 정기 안전보건교육은 몇 시간 해야 하나?
+  intent: education_time_lookup
+  pack_type: mixed
+  status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  primary_evidence_count: 5
+  citation_candidate_count: 11
+  warning_count: 4
+  missing_evidence_count: 0
+- query: 안전검사 대상 기계에는 어떤 것들이 있나?
+  intent: inspection_requirement
+  pack_type: mixed
+  status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  primary_evidence_count: 10
+  citation_candidate_count: 8
+  warning_count: 2
+  missing_evidence_count: 0
+- query: 위험성평가 결과를 근로자에게 알려야 하나?
+  intent: obligation_check
+  pack_type: rule_centered
+  status: OK_WITH_WARNINGS
+  evidence_readiness: INDIRECT_ONLY
+  primary_evidence_count: 5
+  citation_candidate_count: 3
+  warning_count: 3
+  missing_evidence_count: 1
+- query: 과태료가 부과되는 경우는 무엇인가?
+  intent: penalty_lookup
+  pack_type: rule_centered
+  status: OK_WITH_WARNINGS
+  evidence_readiness: READY_WITH_WARNINGS
+  primary_evidence_count: 5
+  citation_candidate_count: 2
+  warning_count: 1
+  missing_evidence_count: 0
+- query: 적용 제외되는 경우가 있나?
+  intent: applicability_check
+  pack_type: rule_centered
+  status: OK
+  evidence_readiness: READY
+  primary_evidence_count: 5
+  citation_candidate_count: 5
+  warning_count: 0
+  missing_evidence_count: 0
+
+Errors:
+- none
+

@@ -1,0 +1,7 @@
+﻿rule_id,rule,condition,action,auto_fix_allowed
+R1,osh_death_obligation_to_167_1,OSH obligation article 38/39/63/64 + death + candidate penalty 167(1),connect obligation -> Article 167(1),True
+R2,serious_obligation_to_6_1,Serious Accident Act article 4/5 + death + candidate penalty 6(1),connect obligation -> Article 6(1),True
+R3,167_1_to_173_1,selected/candidate penalty Article 167(1) + candidate Article 173 item 1,connect penalty -> corporate penalty Article 173 item 1,True
+R4,168_172_to_173_2,selected/candidate penalty Article 168-172 + candidate Article 173 item 2,connect penalty -> corporate penalty Article 173 item 2,True
+R5,article_chain_to_fine_chain,2+ article-level chain matches + candidate fine refs exist,promote fine refs into selected chain candidate,True
+R6,detail_rule_demotion,detail/enforcement/rule refs are not direct core violation,keep as supporting/candidate chain,False

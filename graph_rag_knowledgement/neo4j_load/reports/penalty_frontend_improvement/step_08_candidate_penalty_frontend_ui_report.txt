@@ -1,0 +1,40 @@
+﻿Step 08 Candidate Penalty Frontend UI Report
+============================================
+
+created_at: 2026-05-08
+status: PASS
+
+Modified files
+--------------
+- 05_code/frontend reference/src/App.jsx
+- 05_code/frontend reference/src/index.css
+
+Rendering changes
+-----------------
+- openLaw() now preserves detail.penalties as selectedLaw.penalties[] instead of only joined text.
+- openLaw() now preserves detail.candidate_penalties as selectedLaw.candidatePenalties[] instead of joining candidates into one long string.
+- selectedLaw.penalty remains as a legacy/fallback string, but rendering now prioritizes structured penalties[] and candidatePenalties[].
+
+Penalty display separation
+--------------------------
+- Direct penalties are shown under "직접 연결된 벌칙·과태료 근거" style content with a direct-linked badge.
+- Candidate penalties are shown under "관련 가능성이 있는 벌칙·과태료 조항 후보" as separate cards.
+- Candidate cards show law_name/article_no, preview/text, match_type, confidence, match_reason, and candidate_notice.
+- Candidate cards use warning/info styling and show "후보", "검토 필요", and "확정 아님" badges.
+- When no direct or candidate penalty exists, the panel shows a single conservative no-direct-penalty message.
+
+User-facing wording
+-------------------
+- The detail panel now favors "연결된 근거" and "관련 근거" language rather than developer-oriented Graph-RAG wording.
+- Developer node id remains behind the existing details disclosure.
+
+Remaining limitation
+--------------------
+- Candidate penalties are still article-reference review candidates, not final violation-to-penalty conclusions.
+- Frontend display is a minimal structured improvement, not a full penalty reasoning UI.
+
+Safety
+------
+- Frontend package.json modified: false
+- LLM call executed: false
+- Neo4j write executed: false

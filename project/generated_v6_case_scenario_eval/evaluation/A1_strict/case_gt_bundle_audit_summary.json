@@ -1,0 +1,17 @@
+{
+  "sample_count": 12,
+  "total_expected_refs": 62,
+  "avg_expected_refs": 5.166666666666667,
+  "slot_case_counts": {
+    "primary_obligation": 6,
+    "penalty": 7,
+    "corporate_penalty": 10,
+    "definition_or_scope": 9,
+    "contractor_obligation": 3,
+    "serious_accident_obligation": 1,
+    "detail_rule": 5
+  },
+  "audit_issue_counts": {
+    "ok": 12
+  }
+}

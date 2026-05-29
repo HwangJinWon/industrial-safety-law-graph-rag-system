@@ -1,0 +1,52 @@
+﻿Step 06 Smoke Test Update Report
+================================
+
+created_at: 2026-05-08
+status: UPDATED
+
+Modified file
+-------------
+- 05_code/graph_rag_pipeline/smoke_test_frontend_compat_endpoints.py
+
+Added /ask schema checks
+------------------------
+The smoke test now verifies these top-level /ask response fields:
+- answer
+- evidences
+- citations
+- evidence_chips
+- claim_check
+- answer_policy
+- evidence_readiness
+- warnings
+- missing_evidence
+
+Added claim_check checks
+------------------------
+- claim_check must be a dict.
+- claim_check.answer_policy must not conflict with top-level answer_policy.
+- Risk-assessment notice query must keep claim_check.answer_policy = INDIRECT_ONLY_RESPONSE.
+
+Added evidence_chips checks
+---------------------------
+- evidence_chips must be a list.
+- Each chip should have at least one display field such as label, citation_text, law_name, article_no, annex_title, type, or evidence_kind.
+- If chips exist, at least one chip should expose a detail id through source_node_id, source_anchor_id, rule_id, list_item_id, or node_id.
+
+Added warnings/missing_evidence checks
+--------------------------------------
+- warnings and missing_evidence must be lists.
+- duplicate warnings are rejected.
+- configured mojibake patterns in warning/missing user-facing fields are rejected.
+
+Guardrail checks retained
+-------------------------
+- 위험성평가 결과를 근로자에게 알려야 하나? must remain INDIRECT_ONLY / INDIRECT_ONLY_RESPONSE.
+- Direct obligation assertion phrases remain blocked.
+- 과태료 query must keep answer, evidence/citation, and an answer_policy.
+
+Safety
+------
+- Neo4j write executed: false
+- LLM call executed: false
+- CSV/loader/package changes: false
