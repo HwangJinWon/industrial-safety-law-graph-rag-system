@@ -10,3 +10,10 @@ __pycache__/
 venv/
 .DS_Store
 Thumbs.db
+data/*.db
+*.db
+*.sqlite
+*.sqlite3
+logs/
+*.log
+node_modules/

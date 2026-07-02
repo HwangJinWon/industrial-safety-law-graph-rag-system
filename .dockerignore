@@ -1,0 +1,20 @@
+.git
+.agents
+.venv
+venv
+__pycache__
+*.pyc
+.env
+.env.*
+data/*.db
+*.db
+*.sqlite
+*.sqlite3
+logs
+*.log
+node_modules
+.neo4j
+Neo4j Desktop
+frontend/node_modules
+project
+graph_rag_knowledgement/neo4j_load/evidence_traversal/*.log

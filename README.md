@@ -30,6 +30,16 @@ This repository is a public-safe copy of the current industrial safety law Graph
 python -m uvicorn graph_rag_pipeline.ask_adapter:app --app-dir app --host 127.0.0.1 --port 8000
 ```
 
+### Combined Graph-RAG and operations API
+
+Run the combined FastAPI entrypoint to serve the existing Graph-RAG routes together with the smartwatch and dashboard routes:
+
+```bash
+python -m uvicorn main:app --app-dir app --host 0.0.0.0 --port 8000
+```
+
+Dashboard CORS origins can be added as a comma-separated `WORKFIT_CORS_ORIGINS` environment variable. The smartwatch and dashboard routes under `/api` require `X-API-Key` only when `WORKFIT_API_KEY` is configured; existing Graph-RAG routes remain unchanged.
+
 ## Public-safe cleanup
 
 - Live secrets and the original root `.env` are excluded.

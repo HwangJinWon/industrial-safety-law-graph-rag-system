@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: workfit-staging-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    envVars:
+      - key: WORKFIT_API_KEY
+        sync: false
+      - key: WORKFIT_CORS_ORIGINS
+        sync: false
+      - key: NEO4J_URI
+        sync: false
+      - key: NEO4J_USER
+        sync: false
+      - key: NEO4J_PASSWORD
+        sync: false
+      - key: NEO4J_DATABASE
+        sync: false
+      - key: WATCH_DATABASE_PATH
+        value: /app/data/watch_data.db
+    disk:
+      name: workfit-staging-data
+      mountPath: /app/data
+      sizeGB: 1
