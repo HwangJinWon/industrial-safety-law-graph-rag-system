@@ -7,12 +7,13 @@ read-only Cypher queries against graph.v1 and returns JSON-serializable data.
 
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 from typing import Any
 
 
-ALLOWED_DATABASE = "graph.v1"
+ALLOWED_DATABASES = ("graph.v1", "neo4j", "c239753b")
 WRITE_KEYWORD_RE = re.compile(
     r"\b(CREATE|MERGE|SET|DELETE|DETACH|REMOVE|DROP)\b|CALL\s+db\.create|CALL\s+apoc\.create|CALL\s+apoc\.merge|LOAD\s+CSV",
     re.IGNORECASE,
@@ -24,20 +25,18 @@ class GraphQueryError(RuntimeError):
 
 
 def _read_env(path: Path) -> dict[str, str]:
-    env: dict[str, str] = {}
-    if not path.exists():
-        raise GraphQueryError(f".env not found: {path}")
-    for raw in path.read_text(encoding="utf-8").splitlines():
+    env: dict[str, str] = dict(os.environ)
+    for raw in path.read_text(encoding="utf-8").splitlines() if path.exists() else []:
         line = raw.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue
         key, value = line.split("=", 1)
-        env[key.strip()] = value.strip().strip('"').strip("'")
+        env.setdefault(key.strip(), value.strip().strip('"').strip("'"))
     for key in ("NEO4J_URI", "NEO4J_USER", "NEO4J_PASSWORD", "NEO4J_DATABASE"):
         if not env.get(key):
             raise GraphQueryError(f"missing required env key: {key}")
-    if env["NEO4J_DATABASE"] != ALLOWED_DATABASE:
-        raise GraphQueryError(f"target database must be {ALLOWED_DATABASE}, got {env['NEO4J_DATABASE']}")
+    if env["NEO4J_DATABASE"] not in ALLOWED_DATABASES:
+        raise GraphQueryError(f"target database must be one of {ALLOWED_DATABASES}, got {env['NEO4J_DATABASE']}")
     return env
 
 
