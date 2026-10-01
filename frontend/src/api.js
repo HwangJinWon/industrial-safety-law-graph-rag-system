@@ -78,3 +78,11 @@ export function listExportHistory() {
 export function saveExportHistory(row) {
   return post("/history/exports", row);
 }
+
+export async function fetchLatestWatchData() {
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const data = await request("/api/dashboard/workers", {
+    headers: apiKey ? { "X-API-Key": apiKey } : {},
+  });
+  return data.workers;
+}

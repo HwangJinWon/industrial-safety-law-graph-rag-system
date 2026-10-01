@@ -4,8 +4,9 @@ from __future__ import annotations
 
 import sqlite3
 import os
+import json
 from contextlib import closing
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -14,6 +15,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATABASE_PATH = Path(
     os.environ.get("WATCH_DATABASE_PATH") or str(PROJECT_ROOT / "data" / "watch_data.db")
 ).expanduser().resolve()
+
+# Operational review triggers, not legal limits. Korea calendar day (UTC+09:00).
+WORK_DAY_TIMEZONE = timezone(timedelta(hours=9))
+WORK_TIME_WARNING_MINUTES = 480
+WORK_TIME_EXCEEDED_MINUTES = 540
 
 
 def _connect() -> sqlite3.Connection:
@@ -86,6 +92,10 @@ def initialize_database() -> None:
             ON work_sessions(worker_id, session_id DESC);
             """
         )
+        columns = {row[1] for row in connection.execute("PRAGMA table_info(work_sessions)")}
+        if "break_intervals" not in columns:
+            # NULL marks legacy sessions whose completed break intervals are unknown.
+            connection.execute("ALTER TABLE work_sessions ADD COLUMN break_intervals TEXT")
         connection.commit()
 
 def save_heart_rate(worker_id: str, heart_rate: int, measured_at: datetime) -> None:
@@ -111,16 +121,22 @@ def list_latest_workers() -> list[dict[str, Any]]:
     with closing(_connect()) as connection:
         rows = connection.execute(
             """
-            SELECT worker_id, heart_rate, measured_at
-            FROM (
+            WITH workers AS (
+                SELECT worker_id FROM heart_rates
+                UNION
+                SELECT worker_id FROM work_sessions
+            ), latest_rates AS (
                 SELECT worker_id, heart_rate, measured_at,
                        ROW_NUMBER() OVER (
                            PARTITION BY worker_id ORDER BY measured_at DESC, id DESC
                        ) AS row_number
                 FROM heart_rates
             )
-            WHERE row_number = 1
-            ORDER BY worker_id
+            SELECT workers.worker_id, latest_rates.heart_rate, latest_rates.measured_at
+            FROM workers
+            LEFT JOIN latest_rates
+              ON latest_rates.worker_id = workers.worker_id AND latest_rates.row_number = 1
+            ORDER BY workers.worker_id
             """
         ).fetchall()
     return [dict(row) for row in rows]
@@ -216,7 +232,7 @@ def apply_attendance_action(worker_id: str, action: str, occurred_at: datetime) 
             if row and not row["clock_out"]:
                 raise ValueError("The worker already has an active work session.")
             cursor = connection.execute(
-                "INSERT INTO work_sessions(worker_id, clock_in) VALUES (?, ?)",
+                "INSERT INTO work_sessions(worker_id, clock_in, break_intervals) VALUES (?, ?, '[]')",
                 (worker_id, event_time),
             )
             session_id = int(cursor.lastrowid)
@@ -237,13 +253,15 @@ def apply_attendance_action(worker_id: str, action: str, occurred_at: datetime) 
                 if not row["break_started_at"]:
                     raise ValueError("Start a break before ending it.")
                 added = max(0, int((_parse_datetime(event_time) - _parse_datetime(row["break_started_at"])).total_seconds()))
+                intervals = _append_break(row, event_time)
                 connection.execute(
                     """
                     UPDATE work_sessions
-                    SET total_break_seconds = total_break_seconds + ?, break_started_at = NULL
+                    SET total_break_seconds = total_break_seconds + ?, break_started_at = NULL,
+                        break_intervals = ?
                     WHERE session_id = ?
                     """,
-                    (added, session_id),
+                    (added, intervals, session_id),
                 )
             elif action == "CLOCK_OUT":
                 total_break = int(row["total_break_seconds"])
@@ -252,16 +270,85 @@ def apply_attendance_action(worker_id: str, action: str, occurred_at: datetime) 
                 connection.execute(
                     """
                     UPDATE work_sessions
-                    SET clock_out = ?, break_started_at = NULL, total_break_seconds = ?
+                    SET clock_out = ?, break_started_at = NULL, total_break_seconds = ?,
+                        break_intervals = ?
                     WHERE session_id = ?
                     """,
-                    (event_time, total_break, session_id),
+                    (event_time, total_break, _append_break(row, event_time), session_id),
                 )
         connection.commit()
         result = connection.execute(
             "SELECT * FROM work_sessions WHERE session_id = ?", (session_id,)
         ).fetchone()
     return _session_result(result, _parse_datetime(event_time))
+
+
+def _append_break(row: sqlite3.Row, end: str) -> str | None:
+    if row["break_intervals"] is None:
+        return None
+    intervals = json.loads(row["break_intervals"])
+    if row["break_started_at"]:
+        intervals.append([row["break_started_at"], end])
+    return json.dumps(intervals)
+
+
+def get_work_time_today(worker_id: str, now: datetime | None = None) -> dict[str, Any]:
+    now = (now or datetime.now(timezone.utc)).astimezone(WORK_DAY_TIMEZONE)
+    midnight = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    with closing(_connect()) as connection:
+        rows = connection.execute(
+            "SELECT * FROM work_sessions WHERE worker_id = ? AND "
+            "(clock_out IS NULL OR clock_out >= ?)",
+            (worker_id, normalize_datetime(midnight)),
+        ).fetchall()
+    seconds = 0.0
+    complete = True
+    active_work_started_at = None
+    clock_in_at = None
+    completed_work_seconds_today = 0.0
+    current_break_seconds_today = 0.0
+    for row in rows:
+        start = _parse_datetime(row["clock_in"])
+        if not row["clock_out"]:
+            clock_in_at = row["clock_in"]
+        if not row["clock_out"] and not row["break_started_at"]:
+            active_work_started_at = normalize_datetime(max(start, midnight))
+        end = min(_parse_datetime(row["clock_out"]) if row["clock_out"] else now, now)
+        lower = max(start, midnight)
+        if end <= lower:
+            continue
+        elapsed = (end - lower).total_seconds()
+        if row["break_intervals"] is None:
+            if start < midnight and row["total_break_seconds"]:
+                # Never invent a daily allocation for historical overnight breaks.
+                complete = False
+            else:
+                elapsed -= row["total_break_seconds"]
+        else:
+            for break_start, break_end in json.loads(row["break_intervals"]):
+                elapsed -= max(0, (min(end, _parse_datetime(break_end)) -
+                                   max(lower, _parse_datetime(break_start))).total_seconds())
+        if row["break_started_at"]:
+            elapsed -= max(0, (end - max(lower, _parse_datetime(row["break_started_at"]))).total_seconds())
+        worked = max(0, elapsed)
+        seconds += worked
+        if row["clock_out"]:
+            completed_work_seconds_today += worked
+        else:
+            current_break_seconds_today = max(0, (end - lower).total_seconds() - worked)
+    minutes = int(seconds // 60) if complete else None
+    status = ("WARNING" if minutes is None else
+              "EXCEEDED" if minutes >= WORK_TIME_EXCEEDED_MINUTES else
+              "WARNING" if minutes >= WORK_TIME_WARNING_MINUTES else "NORMAL")
+    return {"worked_minutes_today": minutes, "work_time_status": status,
+            "work_time_complete": complete,
+            "worked_seconds_today": int(seconds) if complete else None,
+            "work_date": now.date().isoformat(),
+            "work_time_calculated_at": normalize_datetime(now),
+            "active_work_started_at": active_work_started_at,
+            "clock_in_at": clock_in_at,
+            "completed_work_seconds_today": int(completed_work_seconds_today) if complete else None,
+            "current_break_seconds_today": int(current_break_seconds_today) if complete else None}
 
 
 def get_worker_status(worker_id: str) -> dict[str, Any]:

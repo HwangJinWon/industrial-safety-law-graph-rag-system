@@ -16,6 +16,7 @@ from .storage import (
     acknowledge_alert,
     apply_attendance_action,
     get_worker_status,
+    get_work_time_today,
     list_attendance,
     list_latest_equipment,
     list_latest_workers,
@@ -111,7 +112,8 @@ def get_workers() -> dict[str, list[dict[str, Any]]]:
     workers = []
     for worker in list_latest_workers():
         status = get_worker_status(worker["worker_id"])
-        workers.append({**worker, "work_state": status["state"], "worked_minutes": status["worked_minutes"]})
+        workers.append({**worker, "work_state": status["state"], "worked_minutes": status["worked_minutes"],
+                        **get_work_time_today(worker["worker_id"])})
     return {"workers": workers}
 
 

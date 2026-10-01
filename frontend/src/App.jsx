@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { Menu, PanelLeftClose } from "lucide-react";
+import { formatWorkSeconds, workedSecondsToday, workDateTitle, workTimeNow, workTimeQuestion } from "./workTime";
 import {
   askChat,
   createProject,
   fetchLawDetail,
+  fetchLatestWatchData,
   generateChecklist as generateChecklistFromApi,
   listChatHistory,
   listChecklistHistory,
@@ -324,11 +326,55 @@ function toggleValue(list, value) {
   return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
 }
 
+function formatWatchTime(value) {
+  if (!value) return "미수신";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "시간 확인 필요";
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("ko-KR", {
+    timeZone: "Asia/Seoul",
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit", hourCycle: "h23",
+  }).formatToParts(date).map(({ type, value: part }) => [type, part]));
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+}
+
 function saveQuietly(promise) {
   promise?.catch(() => undefined);
 }
 
 export default function App() {
+  const [watchRows, setWatchRows] = useState([]);
+  const [watchError, setWatchError] = useState("");
+  const [watchNow, setWatchNow] = useState(Date.now);
+  useEffect(() => {
+    const timer = setInterval(() => setWatchNow(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+  useEffect(() => {
+    let cancelled = false;
+    let timer;
+    const refresh = async () => {
+      try {
+        const rows = await fetchLatestWatchData();
+        if (!cancelled) {
+          const receivedAt = Date.now();
+          setWatchRows(rows.map((row) => ({ ...row, _received_at: receivedAt })));
+          setWatchNow(receivedAt);
+          setWatchError("");
+        }
+      } catch (error) {
+        if (!cancelled) setWatchError(error.message || "조회 실패");
+      } finally {
+        if (!cancelled) timer = setTimeout(refresh, 5000);
+      }
+    };
+    refresh();
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, []);
+
   const [page, setPage] = useState("checklist");
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [projects, setProjects] = useState(defaultProjects);
@@ -1167,6 +1213,7 @@ export default function App() {
         <nav className="sidebar-nav">
           {[
             ["checklist", "체크리스트"],
+            ["watch", "워치 데이터"],
             ["qa", "법령 QA"],
             ["explore", "근거 탐색"],
             ["validation", "검증·리포트"],
@@ -1198,6 +1245,41 @@ export default function App() {
           </div>
           <button className="button" onClick={saveExportEvent}>PDF 출력</button>
         </header>
+        {page === "watch" && (
+        <div className="worker-summary-grid">
+        <section className="watch-status" aria-label="작업자 상태">
+          <h2>작업자 상태 <small>· 5초마다 갱신</small></h2>
+          {watchError && <p role="alert">조회 실패: {watchError} (기존 표시는 마지막 수신 값입니다.)</p>}
+          {!watchRows.length && <p>수신한 작업자 데이터가 없습니다.</p>}
+          {watchRows.map((worker) => (
+            <div className="watch-status-row" key={worker.worker_id}>
+              <strong>{worker.worker_id}</strong>
+              <span>근무 상태: {worker.work_state}</span>
+              <span>심박수: {worker.heart_rate == null ? "미수신" : `${worker.heart_rate} bpm`}</span>
+              <span className="watch-measured-at">측정시각: {formatWatchTime(worker.measured_at)}</span>
+            </div>
+          ))}
+        </section>
+
+        <section className="watch-status" aria-label="오늘 근무시간">
+          <h2>{workDateTitle(workTimeNow(watchRows[0], watchNow))}</h2>
+          {watchError && <p role="alert">조회 실패: 마지막 수신 값입니다.</p>}
+          {!watchRows.length && <p>수신한 작업자 데이터가 없습니다.</p>}
+          {watchRows.map((worker) => (
+            <div className="watch-status-row work-time-row" key={worker.worker_id}>
+              <strong>{worker.worker_id}</strong>
+              <span>현재 상태: {worker.work_state}</span>
+              <span>{formatWorkSeconds(workedSecondsToday(worker, watchNow))}</span>
+              <button className="button" onClick={() => {
+                setPage("qa");
+                submitQuestion(workTimeQuestion(worker), setQaInput);
+              }}>관련 법령 확인</button>
+            </div>
+          ))}
+          <p className="watch-note">법령 검토용 알림이며 법 위반 판정이 아닙니다.</p>
+        </section>
+        </div>
+        )}
 
         {page === "checklist" && (
           <div className="checklist-layout">
